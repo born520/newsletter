@@ -28,6 +28,45 @@
         .content-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
         .footer { background-color: #3C1E1E; color: #ccc; text-align: center; padding: 30px; font-size: 12px; }
         .footer a { color: #FEE500; text-decoration: none; }
+        
+         
+        .collapsible-content {
+            max-height: 150px;  
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.5s ease-out;
+        }
+         
+        .collapsible-content:not(.expanded)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, white);
+        }
+        .collapsible-content.expanded {
+            max-height: 2000px;  
+            transition: max-height 0.5s ease-in;
+        }
+        .toggle-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            margin-top: 10px;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #3C1E1E;
+            transition: background-color 0.2s;
+        }
+        .toggle-button:hover {
+            background-color: #efefef;
+        }
     </style>
 </head>
 <body>
@@ -38,25 +77,87 @@
             <p class="date">2025년 8월 29일 · 제 1호</p>
         </div>
 
+        
         <div class="section">
             <h2>양미혁의 시선</h2>
-                        <div class="highlight"><h3>양산미래혁신연구원을 설립하며 드리는 말씀</h3><p>안녕하십니까, 한옥문입니다.
+            <div class="collapsible-content">
+                <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" class="content-image" alt="양미혁의 시선 이미지">                <div class="highlight"><h3>양산미래혁신연구원을 설립하며 드리는 말씀</h3><p>안녕하세요. 양산미래혁신연구원 원장 한옥문입니다.
 
-시민과 함께 양산의 미래를 열고자 '양산미래혁신연구원'을 설립하였습니다.
+양산의 미래를 위한 첫걸음을 시작하게 되어 진심으로 기쁩니다. 저는 양산의 현안을 해결하고 장기적인 성장 비전을 제시하기 위해 민간연구기관인 '양산미래혁신연구원'을 설립했습니다.
 
-"양산의 내일, 시민의 삶"을 위한 저의 약속과 연구원의 활동을 카카오톡 채널로 공유하며 여러분의 목소리를 듣겠습니다. 채널 추가로 힘을 보태주십시오.
+우리 연구원은 양산의 발전을 위한 다양한 활동을 펼쳐나갈 것입니다. 구체적으로는 다음과 같습니다.
+
+정책 연구 및 개발: 지역 발전에 필요한 정책들을 연구하고 개발하겠습니다.
+
+시민참여형 소통: 포럼, 토론회, 전문가 세미나 등을 열어 시민들의 의견을 적극적으로 수렴하겠습니다.
+
+여론 수렴 및 아이디어 공모: 지역 현안에 대한 여론조사를 진행하고, 시민들의 참신한 아이디어를 받겠습니다.
+
+연구 자료 공유: 연구 보고서, 출판물, 뉴스레터 등을 발간하여 시민 여러분과 연구 성과를 공유하겠습니다.
+
+특히, 최근 논의가 활발한 **'부울경 행정통합'**과 정부 예비타당성 조사를 통과한 '웅상선 광역철도 개통' 문제에 대해 집중적으로 연구하고 시민들의 목소리를 듣는 데 주력할 예정입니다. 지리적으로 세 지역의 중심에 있는 양산의 역할과, 광역철도 개통에 따른 배후 시설을 선제적으로 준비하는 것은 우리 양산의 미래에 매우 중요한 일입니다.
+
+그동안 공공기관 중심의 도시 설계와 현안 해결에는 많은 한계가 있었습니다. 저는 바로 이 점 때문에 양산의 성장이 멈추지 않았나 생각합니다. 시민들이 자발적으로 참여해 양산의 내일을 논의하고 스스로 답을 찾아가는 통로가 필요하다는 생각에 많은 분들이 공감해주셨고, 덕분에 연구원 설립이라는 새로운 시작을 준비할 수 있었습니다.
+
+'양산의 내일을! 시민의 삶을! 함께 연구하고 답을 찾겠다'는 것이 우리 연구원의 설립 이념입니다. 앞으로 시민 속에서 시민들이 공감하고 참여할 수 있는 실질적인 사업들을 추진하고, 그 성과를 통해 가장 양산다운 새로운 성장 모델을 만들어가겠습니다. 시민 여러분의 많은 관심과 참여를 부탁드립니다.
 
 ▶️ '양산미래혁신연구원' 채널 추가하기
 [<a href="http://pf.kakao.com/_jmfNn/friend" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">http://pf.kakao.com/_jmfNn/friend</a>]</p></div>
+            </div>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
         </div>
         <div class="section">
             <h2>양산담론</h2>
-                        <h3>50만 자족도시로의 발전 가능한 것인가?</h3><p>기고자: 영산대 김도시 교수
-흔이 50만 자족도시를 애기하는데 양산은 아직 37만 인구에 머무르고 있다. 인가증가 속도가 정체되는 이시점에 과연 50만 도시로의 발전 가능성에 대한 비판적 검토를 해보고자 한다.</p>
+            <div class="collapsible-content">
+                                <h3>50만 자족도시로의 발전 가능한 것인가?</h3><p>기고자: 영산대 김도시 교수
+양산의 미래, ‘계획’은 있으나 ‘철학’은 있는가
+
+최근 경상남도가 양산을 포함한 동부경남을 대한민국의 미래 산업 중심지로 육성하기 위한 구체적인 청사진을 발표했습니다. 이 계획의 핵심 중 하나로, 490억 원을 투입해 양산부산대병원 유휴부지에 ‘바이오메디컬 이노베이션 센터’를 구축하겠다는 내용이 포함되었습니다. 이는 양산시가 오랫동안 그려온 ‘바이오헬스 허브’라는 원대한 꿈을 향한 의미 있는 첫걸음이라 할 수 있습니다.
+
+하지만 이처럼 거대한 계획이 발표될수록, 우리는 장밋빛 약속 너머의 그림자를 냉철하게 들여다봐야 합니다. 비로소 그때, 우리는 진정한 성공의 길을 찾을 수 있을 것입니다.
+
+'장밋빛 약속’ 너머의 냉정한 질문
+
+'바이오헬스 허브'는 양산에 최첨단 연구단지와 양질의 일자리를 약속합니다. 이는 양산부산대병원이라는 독보적인 자산을 기반으로 한 합리적인 비전이며, 성공한다면 도시의 미래 성장 동력이 될 것이라는 점에는 의심의 여지가 없습니다. 양산시도도 역시 이를 '100년 먹거리'라 칭하며 강한 추진 의지를 보이고 있습니다.
+
+그러나 우리는 질문을 던져야 합니다. 전국의 수많은 도시가 '미래 산업 허브'를 외치지만, 성공 사례는 손에 꼽는 이유는 무엇일까요? 문제는 건물을 짓고 기업을 유치하는 '하드웨어'에만 집중할 때 발생합니다. 멋진 연구동과 첨단 장비만으로 최고의 인재들이 모여들고, 혁신이 저절로 일어날 것이라는 생각은 위험한 착각입니다. 이는 도시 정책의 가장 흔한 맹점 중 하나이기도 합니다.
+
+⚠️ 인천 송도의 사례는 우리에게 중요한 교훈을 줍니다.
+
+송도는 세계적인 바이오 클러스터로 성장했지만, 그 과정은 순탄치 않았습니다. 개발 초기, 장밋빛 청사진과 달리 기업 유치는 더디었고, 수익성 확보를 위한 아파트만 빠르게 들어서면서 ‘업무지구 없는 아파트촌’이 되는 것 아니냐는 우려가 컸습니다. 심지어 해외 언론으로부터 ‘사람이 없는 유령도시’라는 뼈아픈 지적을 받기도 했습니다. 학교, 교통, 문화시설 같은 생활 인프라가 인구 증가 속도를 따라가지 못해 주민들이 불편을 겪었고, 이는 도시의 자족 기능을 떨어뜨리는 원인이 되었습니다. 핵심은 '어떻게 채울 것인가'에 대한 구체적인 계획과 철학이 하드웨어의 속도를 따라가지 못했던 것입니다. 양산의 바이오헬스 허브가 첨단 기술의 외딴섬이 되지 않으리라는 보장은 어디에 있습니까?
+
+‘건물’이 아닌 ‘사람’이 핵심이다: 성공한 도시들의 교훈
+
+세계 최고의 바이오 클러스터로 꼽히는 미국 보스턴과 샌디에이고의 성공 비결은 화려한 건물이 아니었습니다. 그 중심에는 사람이 있었습니다. 연구자와 기업가, 학생들이 자유롭게 만나 교류하고, 아이디어를 나누며, 실패를 용납하는 '문화'와 '생태계'가 바로 성공의 핵심 동력이었습니다.
+
+샌디에이고의 비영리단체 '커넥트(CONNECT)'는 이제 막 씨앗을 틔운 스타트업과 노련한 사업가, 투자자를 끈끈하게 연결해주는 '사람 중심의 플랫폼' 역할을 했습니다. 이들은 단순히 사업을 연결하는 것을 넘어, 지역 대학, 연구소, 그리고 주민들이 함께 어우러지는 공동체를 만드는 데 집중했습니다.
+
+"경상남도와 양산시가 발표한 계획에도 '혁신지원센터' 설립과 같은 구상이 포함되어 있습니다. 그러나 이것이 단순한 행정 지원 창구로 전락해서는 안 됩니다. 현재 시정의 방향이 대규모 토목 사업이나 기반 시설 확충과 같은 '하드웨어' 구축에 익숙해져 있다면, 사람과 문화라는 '소프트웨어'를 채우는 데에는 미숙할 수 있다는 비판적 시선이 필요합니다."
+
+양산을 위한 두 가지 제언: ‘연결’과 ‘매력’
+
+📌 첫째, 허브와 도시를 유기적으로 ‘연결’해야 합니다.
+
+허브를 양산부산대병원 옆에 고립된 첨단 단지로 만들어서는 안 됩니다. 허브에서 일하는 연구원들이 점심 식사를 위해 물금 신도시의 상가를 찾고, 퇴근 후에는 원도심의 문화 공간에서 여가를 즐기며, 주말에는 자녀와 함께 황산공원에서 휴식을 취하는 그림을 그려야 합니다. 이를 위해서는 허브와 도심을 잇는 편리한 교통망, 그리고 연구 단지 안팎에 다양한 상업 및 문화 시설을 전략적으로 배치하여 자연스러운 교류를 유도하는 도시 설계가 필요합니다.
+
+📌 둘째, 양산만의 ‘매력’을 극대화해야 합니다.
+
+최고의 인재는 높은 연봉만으로 움직이지 않습니다. 그들은 '살고 싶은 도시'를 찾습니다. 양산은 부산과 울산이라는 대도시 사이에 위치한 지리적 이점, 천성산과 낙동강을 품은 쾌적한 자연환경, 그리고 신도시의 편리함과 농촌 지역의 여유로움이 공존하는 독특한 매력을 지니고 있습니다. 이 장점을 적극적으로 활용하여 '일과 삶의 균형(워라밸)'을 추구하는 인재들에게 대한민국 그 어느 곳보다 매력적인 정주 여건을 제공해야 합니다. 이는 단순히 아파트를 더 짓는 것을 넘어, 특색 있는 교육 환경, 수준 높은 문화 예술 프로그램, 공동체 중심의 주거 모델을 고민하는 것을 의미합니다.
+
+진정한 성공의 열쇠는 우리 손에
+
+'바이오메디컬 혁신 거점' 조성 계획은 양산에 찾아온 소중한 기회이자, 동시에 우리에게 어려운 숙제를 던지고 있습니다. 거대한 계획의 숫자들에 취해 건물을 올리는 데에만 집중한다면, 우리는 속이 텅 빈 거대한 조형물만을 남기게 될지도 모릅니다.
+
+이 사업의 성공 여부는 예산의 크기나 건물의 높이가 아닌, '어떤 도시를 만들고 싶은가'에 대한 우리의 철학에 달려 있습니다. 우리는 과연 ‘기업이 오고 싶은 도시’를 넘어, ‘최고의 인재들이 머물며 살고 싶은 도시’를 만들 준비가 되어 있습니까? 이 질문에 대한 답을 찾아가는 과정이야말로, 양산의 빛나는 내일을 여는 진정한 열쇠가 될 것입니다.</p>
+            </div>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
         </div>
         <div class="section">
             <h2>한옥문 원장의 발걸음</h2>
-                        <h3>양산 신도시 현장을...</h3><p>어제 양산 신도시...</p>
+            <div class="collapsible-content">
+                                <h3>양산 신도시 현장을...</h3><p>어제 양산 신도시...</p>
+            </div>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
         </div>
 
         <div class="section">
@@ -67,13 +168,14 @@
 
         <div class="section">
             <h2>양산 이슈!</h2>
-            
             <img src="https://i.postimg.cc/QNFqyhtL/image.jpg" class="content-image" alt="양산 이슈 이미지">                            <p>이번 주 주요 이슈가 없습니다.</p>
                     </div>
         <div class="section">
             <h2>양미혁이 먼저 읽어봤습니다</h2>
-            
-            <img src="https://i.postimg.cc/0jy0k1GS/image.jpg" class="content-image" alt="추천 도서 이미지">            <div class="book-review" style="white-space: pre-wrap;">📚 이번 주 추천도서...</div>
+            <div class="collapsible-content">
+                <img src="https://i.postimg.cc/0jy0k1GS/image.jpg" class="content-image" alt="추천 도서 이미지">                <div class="book-review" style="white-space: pre-wrap;">📚 이번 주 추천도서...</div>
+            </div>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
         </div>
 
         <div class="footer">
@@ -82,6 +184,21 @@
             <p style="margin-top: 15px;"><a href="../archive.html">지난 뉴스레터 전체 보기</a></p>
         </div>
     </div>
+
+    
+    <script>
+        function toggleContent(button) {
+            const content = button.previousElementSibling;
+            if (content.classList.contains('collapsible-content')) {
+                content.classList.toggle('expanded');
+                if (content.classList.contains('expanded')) {
+                    button.textContent = '접기';
+                } else {
+                    button.textContent = '더 보기';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
 
