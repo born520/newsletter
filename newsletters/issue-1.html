@@ -36,16 +36,6 @@
             position: relative;
             transition: max-height 0.5s ease-out;
         }
-         
-        .collapsible-content:not(.expanded)::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: linear-gradient(to bottom, transparent, white);
-        }
         .collapsible-content.expanded {
             max-height: 2000px;  
             transition: max-height 0.5s ease-in;
@@ -80,8 +70,8 @@
         
         <div class="section">
             <h2>양미혁의 시선</h2>
-            <div class="collapsible-content">
-                <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" class="content-image" alt="양미혁의 시선 이미지">                <div class="highlight"><h3>양산미래혁신연구원을 설립하며 드리는 말씀</h3><p>안녕하세요. 양산미래혁신연구원 원장 한옥문입니다.
+            <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" class="content-image" alt="양미혁의 시선 이미지">            <div class="collapsible-content">
+                <div class="highlight"><h3>양산미래혁신연구원을 설립하며 드리는 말씀</h3><p>안녕하세요. 양산미래혁신연구원 원장 한옥문입니다.
 
 양산의 미래를 위한 첫걸음을 시작하게 되어 진심으로 기쁩니다. 저는 양산의 현안을 해결하고 장기적인 성장 비전을 제시하기 위해 민간연구기관인 '양산미래혁신연구원'을 설립했습니다.
 
@@ -108,8 +98,8 @@
         </div>
         <div class="section">
             <h2>양산담론</h2>
-            <div class="collapsible-content">
-                                <h3>50만 자족도시로의 발전 가능한 것인가?</h3><p>기고자: 영산대 김도시 교수
+                        <div class="collapsible-content">
+                <h3>50만 자족도시로의 발전 가능한 것인가?</h3><p>기고자: 영산대 김도시 교수
 양산의 미래, ‘계획’은 있으나 ‘철학’은 있는가
 
 최근 경상남도가 양산을 포함한 동부경남을 대한민국의 미래 산업 중심지로 육성하기 위한 구체적인 청사진을 발표했습니다. 이 계획의 핵심 중 하나로, 490억 원을 투입해 양산부산대병원 유휴부지에 ‘바이오메디컬 이노베이션 센터’를 구축하겠다는 내용이 포함되었습니다. 이는 양산시가 오랫동안 그려온 ‘바이오헬스 허브’라는 원대한 꿈을 향한 의미 있는 첫걸음이라 할 수 있습니다.
@@ -154,8 +144,8 @@
         </div>
         <div class="section">
             <h2>한옥문 원장의 발걸음</h2>
-            <div class="collapsible-content">
-                                <h3>양산 신도시 현장을...</h3><p>어제 양산 신도시...</p>
+                        <div class="collapsible-content">
+                <h3>양산 신도시 현장을...</h3><p>어제 양산 신도시...</p>
             </div>
             <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
         </div>
@@ -172,8 +162,8 @@
                     </div>
         <div class="section">
             <h2>양미혁이 먼저 읽어봤습니다</h2>
-            <div class="collapsible-content">
-                <img src="https://i.postimg.cc/0jy0k1GS/image.jpg" class="content-image" alt="추천 도서 이미지">                <div class="book-review" style="white-space: pre-wrap;">📚 이번 주 추천도서...</div>
+            <img src="https://i.postimg.cc/0jy0k1GS/image.jpg" class="content-image" alt="추천 도서 이미지">            <div class="collapsible-content">
+                <div class="book-review" style="white-space: pre-wrap;">📚 이번 주 추천도서...</div>
             </div>
             <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
         </div>
