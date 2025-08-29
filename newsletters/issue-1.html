@@ -31,31 +31,31 @@
         
          
         .collapsible-content {
-            max-height: 200px;  
+            max-height: 220px;  
             overflow: hidden;
             position: relative;
             transition: max-height 0.5s ease-out;
         }
         .collapsible-content.expanded {
-            max-height: 2000px;  
+            max-height: 2000px; 
             transition: max-height 0.5s ease-in;
         }
+         
         .toggle-button {
             display: block;
             width: 100%;
             text-align: center;
-            padding: 8px;
-            margin-top: 10px;
-            background-color: #f7f7f7;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 10px 0 0 0;
+            background-color: transparent;
+            border: none;
             cursor: pointer;
             font-weight: bold;
-            color: #3C1E1E;
-            transition: background-color 0.2s;
+            font-size: 14px;
+            color: #888;
+            transition: color 0.2s;
         }
         .toggle-button:hover {
-            background-color: #efefef;
+            color: #3C1E1E;
         }
     </style>
 </head>
@@ -67,7 +67,6 @@
             <p class="date">2025년 8월 29일 · 제 1호</p>
         </div>
 
-        
         <div class="section">
             <h2>양미혁의 시선</h2>
             <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" class="content-image" alt="양미혁의 시선 이미지">            <div class="collapsible-content">
@@ -94,7 +93,7 @@
 ▶️ '양산미래혁신연구원' 채널 추가하기
 [<a href="http://pf.kakao.com/_jmfNn/friend" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline;">http://pf.kakao.com/_jmfNn/friend</a>]</p></div>
             </div>
-            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기 ▼</button>
         </div>
         <div class="section">
             <h2>양산담론</h2>
@@ -140,14 +139,14 @@
 
 이 사업의 성공 여부는 예산의 크기나 건물의 높이가 아닌, '어떤 도시를 만들고 싶은가'에 대한 우리의 철학에 달려 있습니다. 우리는 과연 ‘기업이 오고 싶은 도시’를 넘어, ‘최고의 인재들이 머물며 살고 싶은 도시’를 만들 준비가 되어 있습니까? 이 질문에 대한 답을 찾아가는 과정이야말로, 양산의 빛나는 내일을 여는 진정한 열쇠가 될 것입니다.</p>
             </div>
-            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기 ▼</button>
         </div>
         <div class="section">
             <h2>한옥문 원장의 발걸음</h2>
                         <div class="collapsible-content">
                 <h3>양산 신도시 현장을...</h3><p>어제 양산 신도시...</p>
             </div>
-            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기 ▼</button>
         </div>
 
         <div class="section">
@@ -165,7 +164,7 @@
             <img src="https://i.postimg.cc/0jy0k1GS/image.jpg" class="content-image" alt="추천 도서 이미지">            <div class="collapsible-content">
                 <div class="book-review" style="white-space: pre-wrap;">📚 이번 주 추천도서...</div>
             </div>
-            <button class="toggle-button" onclick="toggleContent(this)">더 보기</button>
+            <button class="toggle-button" onclick="toggleContent(this)">더 보기 ▼</button>
         </div>
 
         <div class="footer">
@@ -182,9 +181,9 @@
             if (content.classList.contains('collapsible-content')) {
                 content.classList.toggle('expanded');
                 if (content.classList.contains('expanded')) {
-                    button.textContent = '접기';
+                    button.textContent = '접기 ▲';
                 } else {
-                    button.textContent = '더 보기';
+                    button.textContent = '더 보기 ▼';
                 }
             }
         }
