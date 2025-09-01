@@ -295,6 +295,7 @@
             document.querySelectorAll('.section').forEach(section => {
                 const content = section.querySelector('.collapsible-content');
                 const button = section.querySelector('.toggle-button');
+                const sectionTitle = section.querySelector('h2');
                 
                 if (!content || !button) return;
 
@@ -315,17 +316,22 @@
                 let threshold;
                 
                 if (hasMedia) {
-                    threshold = isMobile ? 300 : 400;
+                    threshold = isMobile ? 350 : 450; 
                 } else {
-                    threshold = isMobile ? 180 : 250;
+                    threshold = isMobile ? 200 : 280; 
                 }
                 
-                console.log(`Section: ${section.querySelector('h2')?.textContent}, Height: ${actualHeight}, Threshold: ${threshold}, HasMedia: ${hasMedia}`);
+                const sectionName = sectionTitle ? sectionTitle.textContent.trim() : 'Unknown';
+                console.log(`Section: ${sectionName}, Height: ${actualHeight}, Threshold: ${threshold}, HasMedia: ${hasMedia}`);
                 
                 
                 if (actualHeight > threshold) {
                     
-                    content.style.maxHeight = threshold + 'px';
+                    const limitedHeight = hasMedia ? 
+                        (isMobile ? 320 : 420) :  
+                        (isMobile ? 180 : 250);   
+                    
+                    content.style.maxHeight = limitedHeight + 'px';
                     content.style.overflow = 'hidden';
                     content.classList.add('collapsed');
                     button.style.display = 'block';
@@ -333,6 +339,7 @@
                     
                     content.style.maxHeight = 'none';
                     content.style.overflow = 'visible';
+                    content.classList.remove('collapsed');
                     button.style.display = 'none';
                 }
 
@@ -351,7 +358,9 @@
         }
 
         
-        document.addEventListener('DOMContentLoaded', setupCollapsibleContent);
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(setupCollapsibleContent, 100);
+        });
         
         
         document.addEventListener('DOMContentLoaded', () => {
@@ -359,7 +368,7 @@
             let loadedImages = 0;
             
             if (images.length === 0) {
-                setupCollapsibleContent();
+                setTimeout(setupCollapsibleContent, 100);
                 return;
             }
             
@@ -370,14 +379,21 @@
                     img.addEventListener('load', () => {
                         loadedImages++;
                         if (loadedImages === images.length) {
-                            setTimeout(setupCollapsibleContent, 100);
+                            setTimeout(setupCollapsibleContent, 200);
+                        }
+                    });
+                    
+                    img.addEventListener('error', () => {
+                        loadedImages++;
+                        if (loadedImages === images.length) {
+                            setTimeout(setupCollapsibleContent, 200);
                         }
                     });
                 }
             });
             
             if (loadedImages === images.length) {
-                setTimeout(setupCollapsibleContent, 100);
+                setTimeout(setupCollapsibleContent, 200);
             }
         });
         
@@ -385,7 +401,15 @@
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(setupCollapsibleContent, 300);
+            resizeTimeout = setTimeout(() => {
+                
+                document.querySelectorAll('.section').forEach(section => {
+                    const content = section.querySelector('.collapsible-content');
+                    if (content && !content.classList.contains('expanded')) {
+                        setupCollapsibleContent();
+                    }
+                });
+            }, 300);
         });
     </script>
 </body>
