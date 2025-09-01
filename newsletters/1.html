@@ -99,16 +99,16 @@
         
          
         .collapsible-content { 
-            max-height: 220px; 
             overflow: hidden; 
             transition: max-height 0.5s ease-out;
             position: relative;
+             
         }
         .collapsible-content.expanded { 
-            max-height: none;
+            max-height: none !important;
             overflow: visible;
         }
-        .collapsible-content:not(.expanded)::after {
+        .collapsible-content.collapsed::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -117,17 +117,10 @@
             height: 30px;
             background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
             pointer-events: none;
+            z-index: 5;
         }
-        .section:nth-child(even) .collapsible-content:not(.expanded)::after {
+        .section:nth-child(even) .collapsible-content.collapsed::after {
             background: linear-gradient(transparent, rgba(248, 249, 250, 0.95));
-        }
-        
-         
-        .collapsible-content.has-media {
-            max-height: 400px;  
-        }
-        .collapsible-content.has-media:not(.expanded)::after {
-            height: 40px;  
         }
         
         .toggle-button {
@@ -176,23 +169,11 @@
                 font-size: 13px;
                 border-radius: 18px;
             }
-            .collapsible-content { 
-                max-height: 160px;
-            }
-            .collapsible-content.has-media {
-                max-height: 300px;  
-            }
-            .collapsible-content.expanded {
-                max-height: none;
-            }
-            .collapsible-content:not(.expanded)::after {
+            .collapsible-content.collapsed::after {
                 height: 25px;
                 background: linear-gradient(transparent, rgba(255, 255, 255, 0.98));
             }
-            .collapsible-content.has-media:not(.expanded)::after {
-                height: 35px;
-            }
-            .section:nth-child(even) .collapsible-content:not(.expanded)::after {
+            .section:nth-child(even) .collapsible-content.collapsed::after {
                 background: linear-gradient(transparent, rgba(248, 249, 250, 0.98));
             }
         }
@@ -310,74 +291,101 @@
 
     
     <script>
-        document.querySelectorAll('.section').forEach(section => {
-            const content = section.querySelector('.collapsible-content');
-            const button = section.querySelector('.toggle-button');
-            if(!content || !button) return;
+        function setupCollapsibleContent() {
+            document.querySelectorAll('.section').forEach(section => {
+                const content = section.querySelector('.collapsible-content');
+                const button = section.querySelector('.toggle-button');
+                
+                if (!content || !button) return;
 
-            
-            const hasImage = content.querySelector('img');
-            const hasYoutube = content.querySelector('.youtube-container');
-            const hasMedia = hasImage || hasYoutube;
-
-            
-            if (hasMedia) {
-                content.classList.add('has-media');
-            }
-
-            
-            const baseThreshold = 225;
-            const mediaThreshold = 400; 
-            const mobileBaseThreshold = 160;
-            const mobileMidiaThreshold = 300;
-            
-            const isMobile = window.innerWidth <= 480;
-            const threshold = hasMedia ? 
-                (isMobile ? mobileMidiaThreshold : mediaThreshold) : 
-                (isMobile ? mobileBaseThreshold : baseThreshold);
-
-            
-            const actualHeight = content.scrollHeight;
-            
-            if (actualHeight > threshold) {
-                button.style.display = 'block';
-            } else {
+                
                 content.style.maxHeight = 'none';
-                content.classList.remove('has-media'); 
-            }
+                content.style.overflow = 'visible';
+                
+                
+                const actualHeight = content.offsetHeight;
+                
+                
+                const hasImage = content.querySelector('img');
+                const hasYoutube = content.querySelector('.youtube-container');
+                const hasMedia = hasImage || hasYoutube;
+                
+                
+                const isMobile = window.innerWidth <= 480;
+                let threshold;
+                
+                if (hasMedia) {
+                    threshold = isMobile ? 300 : 400;
+                } else {
+                    threshold = isMobile ? 180 : 250;
+                }
+                
+                console.log(`Section: ${section.querySelector('h2')?.textContent}, Height: ${actualHeight}, Threshold: ${threshold}, HasMedia: ${hasMedia}`);
+                
+                
+                if (actualHeight > threshold) {
+                    
+                    content.style.maxHeight = threshold + 'px';
+                    content.style.overflow = 'hidden';
+                    content.classList.add('collapsed');
+                    button.style.display = 'block';
+                } else {
+                    
+                    content.style.maxHeight = 'none';
+                    content.style.overflow = 'visible';
+                    button.style.display = 'none';
+                }
 
-            button.addEventListener('click', () => {
-                content.classList.add('expanded');
-                button.style.display = 'none';
+                
+                if (!button.hasEventListener) {
+                    button.addEventListener('click', () => {
+                        content.classList.remove('collapsed');
+                        content.classList.add('expanded');
+                        content.style.maxHeight = 'none';
+                        content.style.overflow = 'visible';
+                        button.style.display = 'none';
+                    });
+                    button.hasEventListener = true;
+                }
             });
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', setupCollapsibleContent);
+        
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            let loadedImages = 0;
+            
+            if (images.length === 0) {
+                setupCollapsibleContent();
+                return;
+            }
+            
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedImages++;
+                } else {
+                    img.addEventListener('load', () => {
+                        loadedImages++;
+                        if (loadedImages === images.length) {
+                            setTimeout(setupCollapsibleContent, 100);
+                        }
+                    });
+                }
+            });
+            
+            if (loadedImages === images.length) {
+                setTimeout(setupCollapsibleContent, 100);
+            }
         });
         
         
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                document.querySelectorAll('.section').forEach(section => {
-                    const content = section.querySelector('.collapsible-content');
-                    const button = section.querySelector('.toggle-button');
-                    if (!content || !button || content.classList.contains('expanded')) return;
-                    
-                    const hasMedia = content.classList.contains('has-media');
-                    const isMobile = window.innerWidth <= 480;
-                    
-                    
-                    const threshold = hasMedia ? 
-                        (isMobile ? 300 : 400) : 
-                        (isMobile ? 160 : 225);
-                        
-                    if (content.scrollHeight > threshold) {
-                        button.style.display = 'block';
-                    } else {
-                        button.style.display = 'none';
-                        content.style.maxHeight = 'none';
-                    }
-                });
-            }, 250);
+            resizeTimeout = setTimeout(setupCollapsibleContent, 300);
         });
     </script>
 </body>
