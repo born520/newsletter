@@ -3,45 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한옥문&amp;양산미래혁신연구원 뉴스레터 - 지난 호 보기</title>
+    <title>지난 뉴스레터 전체 보기</title>
     <style>
-         
-        body { font-family: 'Malgun Gothic', sans-serif; background-color: #F0EFE9; margin: 0; padding: 20px; color: #3C1E1E; }
-        .container { max-width: 800px; margin: 40px auto; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 30px 40px; }
-        
-         
-        h1 { color: #3C1E1E; text-align: center; margin-bottom: 10px; line-height: 1.4; }
-        .h1-subtitle { font-size: 0.8em; font-weight: normal; }
-
-        p.subtitle { text-align: center; color: #666; margin-top: 0; margin-bottom: 30px; }
-        ul { list-style-type: none; padding: 0; }
-        li { background-color: #fff; border: 1px solid #eee; border-radius: 8px; margin-bottom: 12px; transition: all 0.2s ease-in-out; }
-        li:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); border-left: 4px solid #FEE500; }
-        a { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; text-decoration: none; color: #3C1E1E; }
-        .issue-number { font-weight: bold; font-size: 1.1em; color: #1E1E1E; }
-        .issue-title { flex-grow: 1; margin: 0 20px; }
-        .issue-date { font-size: 0.9em; color: #888; }
-        footer { text-align: center; margin-top: 40px; color: #999; font-size: 0.9em; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; }
+        .container { max-width: 680px; margin: 0 auto; background-color: white; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
+        .header { background: #FFEB00; color: #3C1E1E; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 800; }
+        .header h1 .sub-title { font-size: 22px; display: block; margin-top: 5px; font-weight: normal; }
+        .archive-list { padding: 20px; }
+        .archive-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s;
+        }
+        .archive-item:hover {
+            background-color: #e9ecef;
+        }
+        .issue-number {
+            background-color: #3C1E1E;
+            color: #FFEB00;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .item-details .item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        .item-details .item-date {
+            font-size: 13px;
+            color: #666;
+        }
+        .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
+        .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
-        
-        <h1>한옥문&amp;양산미래혁신연구원<br><span class="h1-subtitle">뉴스레터</span></h1>
-        
-        <p class="subtitle">지난 뉴스레터 모아보기</p>
-        <ul>
-                                                                    <li>
-                        <a href="newsletters/issue-1.html">
-                            <span class="issue-number">제 1호</span>
-                            <span class="issue-title">양산미래혁신연구원을 설립하며 드리는 말씀</span>
-                            <span class="issue-date">2025. 8. 29.</span>
-                        </a>
-                    </li>
-                                                        </ul>
+        <div class="header">
+            <h1>
+                한옥문&amp;양산미래혁신연구원
+                <span class="sub-title">지난 뉴스레터</span>
+            </h1>
+        </div>
+        <div class="archive-list">
+                                            <a href="./newsletters/1.html" class="archive-item">
+                    <div class="issue-number">제 1호</div>
+                    <div class="item-details">
+                        <div class="item-title">양산미래혁신연구원을 설립하며 드리는 말씀</div>
+                        <div class="item-date">2025년 8월 29일</div>
+                    </div>
+                </a>
+                                    </div>
+        <div class="footer">
+             <p><a href="./index.html">최신 뉴스레터 보기</a></p>
+        </div>
     </div>
-    <footer>
-        <p>한옥문&amp;양산미래혁신연구원</p>
-    </footer>
 </body>
 </html>
