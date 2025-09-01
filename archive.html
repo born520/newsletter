@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline';">
-    <title>???&amp;????????? ???? - ?? ? ?? ??</title>
+    <title>???&????????? ???? - ?? ? ?? ??</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; }
@@ -22,13 +22,20 @@
         .archive-list .issue-date { font-size: 14px; color: #777; }
         .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; margin-top: 30px; }
         .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
+
+         
+        @media (max-width: 480px) {
+            .content { padding: 25px 15px; }
+            .archive-list a { padding: 15px 5px; flex-direction: column; align-items: flex-start; gap: 5px; }
+            .archive-list .issue-date { align-self: flex-end; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
              <h1>
-                ???&amp;?????????
+                ???&?????????
                 <span class="sub-title">????</span>
             </h1>
         </div>
@@ -52,4 +59,3 @@
     </div>
 </body>
 </html>
-
