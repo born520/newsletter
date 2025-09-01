@@ -103,20 +103,18 @@
             overflow: hidden; 
             transition: max-height 0.5s ease-out;
             position: relative;
-            padding-bottom: 10px;
         }
         .collapsible-content.expanded { 
-            max-height: none;  
+            max-height: none;
             overflow: visible;
-            padding-bottom: 0;
         }
         .collapsible-content:not(.expanded)::after {
             content: '';
             position: absolute;
-            bottom: 10px;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 40px;
+            height: 30px;
             background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
             pointer-events: none;
         }
@@ -126,29 +124,44 @@
         .toggle-button {
             display: none; 
             width: fit-content;
-            margin: 20px auto 15px;
+            margin: 10px auto 5px;  
             background: #f8f9fa;
             border: 1px solid #ddd;
-            border-radius: 20px;
-            padding: 8px 15px;
+            border-radius: 15px;  
+            padding: 6px 12px;  
             cursor: pointer;
-            font-size: 13px;
-            color: #555;
-            font-weight: bold;
+            font-size: 12px;  
+            color: #666;
+            font-weight: normal;
             transition: all 0.2s;
             position: relative;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            clear: both;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);  
         }
         .section:nth-child(odd) .toggle-button { 
             background: #fff; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .toggle-button:hover { background: #e9ecef; color: #000; }
+        .toggle-button:hover { 
+            background: #e9ecef; 
+            color: #333; 
+            transform: translateY(-1px);  
+        }
         .toggle-button::after { content: '더 보기 ▼'; }
-         
         .toggle-button.expanded { display: none !important; }
+        
+         
+        .collapsible-content img {
+            position: relative;
+            z-index: 5;  
+            margin-bottom: 15px;
+        }
+        
+         
+        .collapsible-content .youtube-container {
+            position: relative;
+            z-index: 5;
+            margin-bottom: 15px;
+        }
 
          
         .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
@@ -157,32 +170,25 @@
 
          
         @media (max-width: 480px) {
-            .section { padding: 25px 15px 30px 15px; }
+            .section { padding: 25px 15px 20px 15px; }  
             .header h1 { font-size: 24px; }
             .header h1 .sub-title { font-size: 20px; }
             .section p, .content-div { text-align: left; }
             .content-div { padding: 15px; margin-top: 10px; }
             .toggle-button { 
-                margin: 25px auto 20px;
-                padding: 12px 20px;
-                font-size: 14px;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-                position: relative;
-                display: block !important;
+                margin: 8px auto 8px;  
+                padding: 8px 14px;
+                font-size: 13px;
+                border-radius: 18px;
             }
             .collapsible-content { 
                 max-height: 160px;
-                padding-bottom: 20px;
-                margin-bottom: 10px;
             }
             .collapsible-content.expanded {
-                padding-bottom: 10px;
-                margin-bottom: 0;
-                max-height: none;  
+                max-height: none;
             }
             .collapsible-content:not(.expanded)::after {
-                bottom: 20px;
-                height: 30px;
+                height: 25px;
                 background: linear-gradient(transparent, rgba(255, 255, 255, 0.98));
             }
             .section:nth-child(even) .collapsible-content:not(.expanded)::after {
@@ -308,16 +314,44 @@
             const button = section.querySelector('.toggle-button');
             if(!content || !button) return;
 
-            if (content.scrollHeight > 225) {
+            
+            const hasImage = content.querySelector('img') || content.querySelector('.youtube-container');
+            const threshold = hasImage ? 350 : 225;
+
+            if (content.scrollHeight > threshold) {
                 button.style.display = 'block';
+                
+                if (hasImage) {
+                    content.style.maxHeight = '350px';
+                    if (window.innerWidth <= 480) {
+                        content.style.maxHeight = '280px'; 
+                    }
+                }
             } else {
                 content.style.maxHeight = 'none';
             }
 
             button.addEventListener('click', () => {
                 content.classList.add('expanded');
-                button.style.display = 'none'; 
+                button.style.display = 'none';
             });
+        });
+        
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                document.querySelectorAll('.section').forEach(section => {
+                    const content = section.querySelector('.collapsible-content');
+                    if (content && content.classList.contains('expanded')) return;
+                    
+                    const hasImage = content && (content.querySelector('img') || content.querySelector('.youtube-container'));
+                    if (hasImage && content) {
+                        content.style.maxHeight = window.innerWidth <= 480 ? '280px' : '350px';
+                    }
+                });
+            }, 250);
         });
     </script>
 </body>
