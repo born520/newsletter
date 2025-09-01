@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://www.youtube.com; frame-src https://www.youtube.com; img-src * data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.youtube.com; frame-src https://*.youtube.com; img-src * data:;">
     <title>한옥문&amp;양산미래혁신연구원 뉴스레터 - 제 1호</title>
     <style>
          
@@ -61,6 +61,7 @@
             color: #555;
             font-weight: bold;
             transition: all 0.2s;
+            display: none;  
         }
         .section:nth-child(odd) .toggle-button { background: #fff; }  
         .toggle-button:hover { background: #e9ecef; color: #000; }
@@ -307,17 +308,20 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         
-        document.querySelectorAll('.toggle-button').forEach(button => {
-            const contentWrapper = button.previousElementSibling;
-            if (contentWrapper.scrollHeight > 220) { 
+        document.querySelectorAll('.collapsible-content-wrapper').forEach(wrapper => {
+            const content = wrapper.querySelector('.collapsible-content');
+            const button = wrapper.querySelector('.toggle-button');
+
+            
+            if (content.scrollHeight > 220) {
                 button.style.display = 'block';
             } else {
                 button.style.display = 'none';
-                contentWrapper.style.maxHeight = 'none';
+                content.style.maxHeight = 'none';
             }
 
             button.addEventListener('click', () => {
-                contentWrapper.classList.toggle('expanded');
+                content.classList.toggle('expanded');
                 button.classList.toggle('expanded');
             });
         });
