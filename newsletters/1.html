@@ -396,12 +396,14 @@
     </div>
 
     <script>
+        history.scrollRestoration = 'manual'; 
+
         function setupCollapsibleContent() {
             document.querySelectorAll('.section').forEach(section => {
                 const content = section.querySelector('.collapsible-content');
                 const button = section.querySelector('.toggle-button');
                 
-                if (!content || !button) return;
+                if (!content || !button || content.classList.contains('expanded')) return;
 
                 content.style.maxHeight = 'none';
                 content.style.overflow = 'visible';
