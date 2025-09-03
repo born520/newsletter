@@ -24,7 +24,20 @@
         .section:last-of-type { border-bottom: none; }
         .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
         .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
-        .section p, .content-div { margin-bottom: 15px; text-align: justify; color: #495057; line-height: 1.8; }
+        .section p, .content-div { 
+            margin-bottom: 15px; text-align: justify; 
+            color: #495057; 
+            line-height: 1.8;
+        }
+
+         
+        .section-subtitle {
+            font-size: 15px;
+            color: #555;
+            margin-top: -15px;  
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
         
          
         .dot-text-container .char-dot {
@@ -39,7 +52,7 @@
             transform: translateX(-50%);
             font-weight: bold;
         }
-
+        
          
         .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; }
         .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
@@ -58,14 +71,20 @@
         .content-div li { margin-bottom: 8px; line-height: 1.8; }
         .content-div blockquote { border-left: 4px solid #FFD400; margin: 15px 0; padding: 15px 20px; background: rgba(255, 235, 0, 0.1); border-radius: 0 8px 8px 0; font-style: italic; color: #495057; line-height: 1.8; font-size: 1.05em; font-weight: 500; }
         .content-div code { background: #f8f9fa; padding: 3px 6px; border-radius: 4px; font-family: 'Consolas', 'Monaco', monospace; font-size: 0.9em; color: #3C1E1E; border: 1px solid #e9ecef; }
+        
+         
         .content-div .text-xs { font-size: 0.7em; }
         .content-div .text-sm { font-size: 0.8em; }
         .content-div .text-base { font-size: 1em; }
         .content-div .text-lg { font-size: 1.1em; }
         .content-div .text-xl { font-size: 1.2em; }
+        
+         
         .content-div .text-small { font-size: 0.8em; color: #888; }
         .content-div .text-large { font-size: 1em; font-weight: 600; }
         .content-div .text-highlight { background: #FFD400; color: #3C1E1E; padding: 2px 6px; border-radius: 4px; font-weight: 500; font-size: 1em; }
+        
+         
         .content-div .text-center { text-align: center; }
         .content-div .text-right { text-align: right; }
         .content-div .text-left { text-align: left; }
@@ -74,10 +93,13 @@
         .content-div .text-primary { color: #3C1E1E; font-weight: 600; }
         .content-div .text-accent { color: #e74c3c; font-weight: 500; }
         .content-div .text-brand { color: #FFD400; font-weight: bold; background: #3C1E1E; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        
         @media (max-width: 480px) {
             .content-div p, .content-div li { text-align: left; }
             .content-div blockquote { padding: 12px 15px; }
         }
+        
+         
         .content-div br + br { display: block; content: ""; margin-top: 15px; }
         .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
@@ -103,18 +125,41 @@
         .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }
 
          
-        .kakao-button, .youtube-subscribe-button { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; vertical-align: middle; }
-        .kakao-button:hover, .youtube-subscribe-button:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
-        .kakao-button svg, .youtube-subscribe-button svg { vertical-align: middle; margin-right: 8px; width: 20px; height: 20px; }
-        .kakao-button { background-color: #FEE500; color: #191919; margin-top: 20px; }
-        .youtube-subscribe-button { background-color: #FF0000; color: #ffffff; margin: 5px auto 20px; display: table; }
-        .youtube-subscribe-button svg { fill: #ffffff; }
+        .kakao-button, .youtube-subscribe-button {
+            display: inline-block; padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;
+            vertical-align: middle;
+        }
+        .kakao-button:hover, .youtube-subscribe-button:hover {
+            transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .kakao-button svg, .youtube-subscribe-button svg {
+            vertical-align: middle; margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        .kakao-button {
+            background-color: #FEE500; color: #191919;
+            margin-top: 20px;
+        }
+        .youtube-subscribe-button {
+            background-color: #FF0000; color: #ffffff;
+            margin: 5px auto 20px;
+            display: table;  
+        }
+        .youtube-subscribe-button svg {
+            fill: #ffffff; }
         
          
         .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
         .collapsible-content.expanded { max-height: none !important; overflow: visible; }
         .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
         .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
+        
         .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; transition: all 0.2s; position: relative; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .section:nth-child(odd) .toggle-button { background: #fff; }
         .toggle-button:hover { background: #e9ecef; color: #333; transform: translateY(-1px); }
@@ -146,17 +191,20 @@
                 한옥문&amp;양산미래혁신연구원
                 <span class="sub-title">뉴스레터</span>
             </h1>
-                            <p class="subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></p>
+                            <p class="subtitle"><p>양미혁의 시선</p></p>
                         <p class="date">2025년 8월 29일 · 제 1호</p>
             <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
                 <span>카카오톡 채널 추가</span>
             </a>
         </div>
 
                                         <div class="section">
-                <h2>양산미래혁신연구원을 설립하며 드리는 말씀</h2>
-                                    <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양산미래혁신연구원을 설립하며 드리는 말씀 이미지">
+                <h2>양미혁의 시선</h2>
+                                    <p class="section-subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></p>
+                
+                                    <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지">
+                                
                                 <div class="collapsible-content">
                     <div class="content-div"><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
 
@@ -185,10 +233,12 @@
 <p><a href="http://pf.kakao.com/_jmfNn/friend">▶️ '양산미래혁신연구원' 채널 추가하기</a></p></div>
                 </div>
                 <button class="toggle-button"></button>
-            </div>
+                            </div>
                                             <div class="section">
                 <h2>50만 자족도시로의 발전 가능한 것인가?</h2>
+                
                                     <img src="https://i.postimg.cc/3rmdX7Fh/AKR20190429118100052-01-i-P4.jpg" alt="50만 자족도시로의 발전 가능한 것인가? 이미지">
+                                
                                 <div class="collapsible-content">
                     <div class="content-div"><p><span class="text-muted">기고자: 영산대 김도시 교수</span></p>
 <h1>양산의 미래, ‘계획’은 있으나 ‘철학’은 있는가</h1>
@@ -215,10 +265,13 @@
 <p>이 질문에 대한 답을 찾아가는 과정이야말로, 양산의 빛나는 내일을 여는 진정한 열쇠가 될 것입니다.</p></div>
                 </div>
                 <button class="toggle-button"></button>
-            </div>
+                            </div>
                                             <div class="section">
-                <h2>웅상선 건설 현장을 가다.</h2>
-                                    <img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="웅상선 건설 현장을 가다. 이미지">
+                <h2>양산담론</h2>
+                                    <p class="section-subtitle"><p>웅상선 건설 현장을 가다.</p></p>
+                
+                                    <img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="양산담론 이미지">
+                                
                                 <div class="collapsible-content">
                     <div class="content-div"><h1>웅상선 예타 통과: 양산의 미래를 바꿀 역사적 전환점</h1>
 <p>지난 7월 10일, "부산~양산~울산을 잇는 광역철도 ‘웅상선’이 마침내 예비타당성조사를 통과했다"는 한 문장이 양산시민들의 가슴을 뜨겁게 달궜습니다. 총 2조 5,745억 원이 투입될 이 거대한 사업은 단순히 철도 하나를 놓는 것을 넘어, 양산의 미래를 송두리째 바꿀 역사적 전환점이 될 것이 분명합니다.</p>
@@ -248,11 +301,12 @@
 <p>이것이 웅상선이 만들 양산의 미래입니다. 꿈이 아닌 현실이 될 그날을 위해, 이제 우리 모두가 함께 뛰어야 할 때입니다. 비수도권 최초의 광역철도, 웅상선. 이는 양산이 대한민국 지역균형발전의 새로운 모델을 제시하는 시작점이 될 것입니다. <strong>양산의 성공이 곧 대한민국의 성공입니다.</strong> 2031년을 향한 카운트다운은 이미 시작됐습니다. <strong>한옥문</strong>은 양산의 진정한 발전을 응원하며, 시민들과 함께 이 길을 걸어갈 것입니다.</p></div>
                 </div>
                 <button class="toggle-button"></button>
-            </div>
+                            </div>
                             
                 <div class="section">
             <h2>[유튜브]한옥문의 양산이야기</h2>
-            <div class="collapsible-content">
+                            <p class="section-subtitle"><p>[유튜브]한옥문의 양산이야기</p></p>
+                        <div class="collapsible-content">
                 <div class="youtube-container">
                     <iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -280,6 +334,8 @@
         
         <div class="section">
             <h2>NOW 양산</h2>
+                            <p class="section-subtitle"><p>NOW 양산</p></p>
+            
                             <img src="https://i.postimg.cc/d3zpScx8/NISI20240828-0001639392-web.jpg" alt="양산 이슈 이미지">
                         <div class="collapsible-content">
                                                                                     <div class="issue-item">
@@ -318,7 +374,8 @@
 
                 <div class="section">
             <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
-                            <img src="https://i.postimg.cc/Kv1mqZRg/28585-2-2574.jpg" alt="추천 도서 이미지">
+                            <p class="section-subtitle"><p>양미혁이 먼저 읽어봤습니다</p></p>
+                                        <img src="https://i.postimg.cc/Kv1mqZRg/28585-2-2574.jpg" alt="추천 도서 이미지">
                         <div class="collapsible-content">
                 <div class="book-review">
                     <div class="book-title">📚 이번 주 추천도서</div>
@@ -392,6 +449,9 @@
             });
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(setupCollapsibleContent, 100);
+        });
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('img');
             let loadedImages = 0;
