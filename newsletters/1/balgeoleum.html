@@ -6,54 +6,51 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
     <title>한옥문&amp;양산미래혁신연구원 뉴스레터 - 제 1호</title>
     <style>
-         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; word-break: keep-all; font-size: 16px; }
         .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
-
-         
         .header { background: #FFEB00; color: #3C1E1E; text-align: center; padding: 40px 20px; }
         .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 800; line-height: 1.3; }
         .header h1 .sub-title { font-size: 22px; display: block; margin-top: 5px; font-weight: normal; }
         .header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 15px; }
         .header .date { font-size: 13px; margin-top: 10px; opacity: 0.8; }
         
-         
-        .toc, .back-to-full { padding: 20px 25px; background-color: #f8f9fa; border-bottom: 1px solid #eee; }
+        .toc { padding: 20px 25px; background-color: #f8f9fa; border-bottom: 1px solid #eee; }
         .toc h3 { font-size: 16px; font-weight: bold; color: #3C1E1E; margin-bottom: 10px; }
-        .back-to-full p { font-size: 16px; font-weight: bold; color: #3C1E1E; margin: 0; }
         .toc ul { list-style: none; padding-left: 0; margin: 0; }
         .toc li a { display: block; padding: 8px 0; text-decoration: none; color: #495057; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
         .toc li:last-child a { border-bottom: none; }
         .toc li a:hover { color: #000; }
-        .back-to-full a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; }
         
-         
+        .section-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background-color: #f8f9fa; border-bottom: 1px solid #eee; gap: 10px; flex-wrap: wrap; }
+        .section-nav a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; white-space: nowrap; }
+        .section-nav select { flex-grow: 1; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 5px; min-width: 150px; }
+
+        .post-nav { display: flex; justify-content: space-between; padding: 20px 25px; border-top: 1px solid #eee; margin-top: 20px; }
+        .post-nav a { color: #3C1E1E; text-decoration: none; font-size: 14px; padding: 8px 12px; border: 1px solid #eee; border-radius: 5px; max-width: 48%; }
+        .post-nav a:hover { background-color: #f8f9fa; }
+        .post-nav .nav-title { display: block; font-size: 12px; color: #777; }
+        .post-nav .nav-text { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .post-nav .prev-link { text-align: left; }
+        .post-nav .next-link { text-align: right; }
+
         .section { padding: 30px 25px; border-bottom: 1px solid #eee; }
         .section:last-of-type { border-bottom: none; }
         .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
         .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
         .section-subtitle { font-size: 15px; color: #555; margin-top: -15px; margin-bottom: 20px; font-weight: normal; }
-        
-         
         .dot-text-container .char-dot { position: relative; display: inline-block; }
         .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; }
-        
-         
         .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; font-size: 15px; color: #495057; line-height: 1.8; }
         .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
-        .content-div p { margin-bottom: 1em; }  
+        .content-div p { margin-bottom: 1em; }
         .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 { color: #3C1E1E; margin: 1.5em 0 1em; line-height: 1.4; }
-        .content-div h1 { font-size: 1.2em; }
-        .content-div h2 { font-size: 1.15em; }
-        .content-div h3 { font-size: 1.1em; }
-        .content-div h4 { font-size: 1.05em; }
-        .content-div h5, .content-div h6 { font-size: 1em; }
+        .content-div h1 { font-size: 1.2em; } .content-div h2 { font-size: 1.15em; } .content-div h3 { font-size: 1.1em; }
+        .content-div h4 { font-size: 1.05em; } .content-div h5, .content-div h6 { font-size: 1em; }
         .content-div strong { font-weight: 700; color: #3C1E1E; }
         .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
         .content-div li { margin-bottom: 0.5em; }
-        
         .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         .youtube-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px; }
         .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -62,16 +59,12 @@
         .issue-item h3 { font-size: 1.1em; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
         .book-review { background: #fff; padding: 20px; border-radius: 8px; margin-top: 10px; border: 1px solid #eee; }
         .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 1.1em; }
-        
-         
         .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
         .collapsible-content.expanded { max-height: none !important; overflow: visible; }
         .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
         .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
         .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; }
         .toggle-button::after { content: '더 보기 ▼'; }
-        
-         
         .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
         .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
     </style>
@@ -86,13 +79,24 @@
                 <span>카카오톡 채널 추가</span>
             </a>
         </div>
-
-                
+        
         
         
         
                 <div class="section">
-             <div class="back-to-full"><p><a href="./index.html">← 전체 뉴스레터 보기</a></p></div>            <h2>한옥문의 발걸음</h2>
+                         <div class="section-nav">
+                <a href="./index.html">← 전체 보기</a>
+                <select onchange="if(this.value) window.location.href=this.value">
+                    <option value="">다른 섹션으로 이동...</option>
+                                                                  <option value="./siseon.html" >양미혁의 시선</option>
+                                                                                        <option value="./damron.html" >양산담론</option>
+                                                                                        <option value="./balgeoleum.html" selected>한옥문 원장의 발걸음</option>
+                                                                                        <option value="./youtube.html" >[유튜브]한옥문의 양산이야기</option>
+                                                                                        <option value="./issue.html" >NOW 양산</option>
+                                                                                        <option value="./book.html" >양미혁이 먼저 읽어봤습니다</option>
+                                                          </select>
+            </div>
+                        <h2>한옥문의 발걸음</h2>
             <p class="section-subtitle"><p>웅상선 건설 현장을 가다.</p></p>            <div class="collapsible-content">
                 <img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="이미지">                <div class="content-div"><h1>웅상선 예타 통과: 양산의 미래를 바꿀 역사적 전환점</h1>
 <p>지난 7월 10일, "부산~양산~울산을 잇는 광역철도 ‘웅상선’이 마침내 예비타당성조사를 통과했다"는 한 문장이 양산시민들의 가슴을 뜨겁게 달궜습니다. 총 2조 5,745억 원이 투입될 이 거대한 사업은 단순히 철도 하나를 놓는 것을 넘어, 양산의 미래를 송두리째 바꿀 역사적 전환점이 될 것이 분명합니다.</p>
@@ -122,7 +126,9 @@
 <p>이것이 웅상선이 만들 양산의 미래입니다. 꿈이 아닌 현실이 될 그날을 위해, 이제 우리 모두가 함께 뛰어야 할 때입니다. 비수도권 최초의 광역철도, 웅상선. 이는 양산이 대한민국 지역균형발전의 새로운 모델을 제시하는 시작점이 될 것입니다. <strong>양산의 성공이 곧 대한민국의 성공입니다.</strong> 2031년을 향한 카운트다운은 이미 시작됐습니다. <strong>한옥문</strong>은 양산의 진정한 발전을 응원하며, 시민들과 함께 이 길을 걸어갈 것입니다.</p></div>
             </div>
             <button class="toggle-button"></button>
-        </div>
+                        <div class="post-nav">
+                <a href="./damron.html" class="prev-link"><span class="nav-title">이전글</span><span class="nav-text">양산담론</span></a>                <a href="./youtube.html" class="next-link"><span class="nav-title">다음글</span><span class="nav-text">[유튜브]한옥문의 양산이야기</span></a>            </div>
+                    </div>
                 
         
         
