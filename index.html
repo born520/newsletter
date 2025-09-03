@@ -400,9 +400,8 @@
             document.querySelectorAll('.section').forEach(section => {
                 const content = section.querySelector('.collapsible-content');
                 const button = section.querySelector('.toggle-button');
-                const sectionTitle = section.querySelector('h2');
                 
-                if (!content || !button || content.classList.contains('expanded')) return; 
+                if (!content || !button || content.classList.contains('expanded')) return;
 
                 content.style.maxHeight = 'none';
                 content.style.overflow = 'visible';
@@ -466,6 +465,10 @@
                       content.style.maxHeight = 'none';
                       content.style.overflow = 'visible';
                       button.style.display = 'none';
+                      
+                      setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 50);
                     }
                   }
                 } catch (e) {
