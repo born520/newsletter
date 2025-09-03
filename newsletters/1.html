@@ -24,27 +24,25 @@
         .section:last-of-type { border-bottom: none; }
         .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
         .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
-        .section p, .content-div { 
-            margin-bottom: 15px;
-            text-align: justify; 
-            color: #495057; 
-            line-height: 1.8;
-        }
+        .section p, .content-div { margin-bottom: 15px; text-align: justify; color: #495057; line-height: 1.8; }
         
          
-        .content-div {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #FFD400;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            margin-top: 15px;
+        .dot-text-container .char-dot {
+            position: relative;
+            display: inline-block;
         }
-        .section:nth-child(even) .content-div {
-            background: rgba(255, 255, 255, 0.9);
+        .dot-text-container .char-dot::after {
+            content: '·';  
+            position: absolute;
+            top: -0.7em;  
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
         }
-        
+
          
+        .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; }
+        .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
         .content-div h1 { font-size: 1em; color: #3C1E1E; margin: 20px 0 15px; font-weight: 800; line-height: 1.3; }
         .content-div h2 { font-size: 0.95em; color: #3C1E1E; margin: 18px 0 12px; font-weight: 700; line-height: 1.4; }
         .content-div h3 { font-size: 0.9em; color: #1e1e1e; margin: 16px 0 10px; font-weight: 600; line-height: 1.4; }
@@ -60,20 +58,14 @@
         .content-div li { margin-bottom: 8px; line-height: 1.8; }
         .content-div blockquote { border-left: 4px solid #FFD400; margin: 15px 0; padding: 15px 20px; background: rgba(255, 235, 0, 0.1); border-radius: 0 8px 8px 0; font-style: italic; color: #495057; line-height: 1.8; font-size: 1.05em; font-weight: 500; }
         .content-div code { background: #f8f9fa; padding: 3px 6px; border-radius: 4px; font-family: 'Consolas', 'Monaco', monospace; font-size: 0.9em; color: #3C1E1E; border: 1px solid #e9ecef; }
-        
-         
         .content-div .text-xs { font-size: 0.7em; }
         .content-div .text-sm { font-size: 0.8em; }
         .content-div .text-base { font-size: 1em; }
         .content-div .text-lg { font-size: 1.1em; }
         .content-div .text-xl { font-size: 1.2em; }
-        
-         
         .content-div .text-small { font-size: 0.8em; color: #888; }
         .content-div .text-large { font-size: 1em; font-weight: 600; }
         .content-div .text-highlight { background: #FFD400; color: #3C1E1E; padding: 2px 6px; border-radius: 4px; font-weight: 500; font-size: 1em; }
-        
-         
         .content-div .text-center { text-align: center; }
         .content-div .text-right { text-align: right; }
         .content-div .text-left { text-align: left; }
@@ -82,13 +74,10 @@
         .content-div .text-primary { color: #3C1E1E; font-weight: 600; }
         .content-div .text-accent { color: #e74c3c; font-weight: 500; }
         .content-div .text-brand { color: #FFD400; font-weight: bold; background: #3C1E1E; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
-        
         @media (max-width: 480px) {
             .content-div p, .content-div li { text-align: left; }
             .content-div blockquote { padding: 12px 15px; }
         }
-        
-         
         .content-div br + br { display: block; content: ""; margin-top: 15px; }
         .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
@@ -114,48 +103,18 @@
         .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }
 
          
-        .kakao-button, .youtube-subscribe-button {
-            display: inline-block;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            vertical-align: middle;
-        }
-        .kakao-button:hover, .youtube-subscribe-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .kakao-button svg, .youtube-subscribe-button svg {
-            vertical-align: middle;
-            margin-right: 8px;
-            width: 20px;
-            height: 20px;
-        }
-        .kakao-button {
-            background-color: #FEE500;
-            color: #191919;
-            margin-top: 20px;
-        }
-        .youtube-subscribe-button {
-            background-color: #FF0000;
-            color: #ffffff;
-            margin: 5px auto 20px;
-            display: table;  
-        }
-        .youtube-subscribe-button svg {
-            fill: #ffffff;
-        }
+        .kakao-button, .youtube-subscribe-button { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; vertical-align: middle; }
+        .kakao-button:hover, .youtube-subscribe-button:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        .kakao-button svg, .youtube-subscribe-button svg { vertical-align: middle; margin-right: 8px; width: 20px; height: 20px; }
+        .kakao-button { background-color: #FEE500; color: #191919; margin-top: 20px; }
+        .youtube-subscribe-button { background-color: #FF0000; color: #ffffff; margin: 5px auto 20px; display: table; }
+        .youtube-subscribe-button svg { fill: #ffffff; }
         
          
         .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
         .collapsible-content.expanded { max-height: none !important; overflow: visible; }
         .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
         .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
-        
         .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; transition: all 0.2s; position: relative; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .section:nth-child(odd) .toggle-button { background: #fff; }
         .toggle-button:hover { background: #e9ecef; color: #333; transform: translateY(-1px); }
@@ -292,7 +251,7 @@
             </div>
                             
                 <div class="section">
-            <h2>한옥문 유튜브 업데이트</h2>
+            <h2>[유튜브]한옥문의 양산이야기</h2>
             <div class="collapsible-content">
                 <div class="youtube-container">
                     <iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -320,7 +279,7 @@
         </div>
         
         <div class="section">
-            <h2>양산 이슈!</h2>
+            <h2>NOW 양산</h2>
                             <img src="https://i.postimg.cc/d3zpScx8/NISI20240828-0001639392-web.jpg" alt="양산 이슈 이미지">
                         <div class="collapsible-content">
                                                                                     <div class="issue-item">
@@ -358,7 +317,7 @@
         </div>
 
                 <div class="section">
-            <h2>양미혁이 먼저 읽어봤습니다</h2>
+            <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
                             <img src="https://i.postimg.cc/Kv1mqZRg/28585-2-2574.jpg" alt="추천 도서 이미지">
                         <div class="collapsible-content">
                 <div class="book-review">
@@ -405,6 +364,7 @@
                 
                 const sectionName = sectionTitle ? sectionTitle.textContent.trim() : 'Unknown';
                 console.log(`Section: ${sectionName}, Height: ${actualHeight}, Threshold: ${threshold}, HasMedia: ${hasMedia}`);
+
                 if (actualHeight > threshold) {
                     const limitedHeight = hasMedia ? (isMobile ? 320 : 420) : (isMobile ? 180 : 250);
                     
@@ -431,10 +391,6 @@
                 }
             });
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(setupCollapsibleContent, 100);
-        });
 
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('img');
