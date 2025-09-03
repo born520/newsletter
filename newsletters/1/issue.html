@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
+    <title>한옥문&amp;양산미래혁신연구원 뉴스레터 - 제 1호</title>
+    <style>
+         
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; word-break: keep-all; }
+        .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
+
+         
+        .header { background: #FFEB00; color: #3C1E1E; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 800; line-height: 1.3; }
+        .header h1 .sub-title { font-size: 22px; display: block; margin-top: 5px; font-weight: normal; }
+        .header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 15px; }
+        .header .date { font-size: 13px; margin-top: 10px; opacity: 0.8; }
+
+         
+        .toc, .back-to-full {
+            padding: 20px 25px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        .toc h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #3C1E1E;
+            margin-bottom: 10px;
+        }
+        .back-to-full p {
+             font-size: 16px;
+            font-weight: bold;
+            color: #3C1E1E;
+            margin: 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .toc li a {
+            display: block;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #495057;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc li:last-child a {
+            border-bottom: none;
+        }
+        .toc li a:hover {
+            color: #000;
+        }
+        .back-to-full a {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3C1E1E;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+         
+        .section { padding: 30px 25px; border-bottom: 1px solid #eee; }
+        .section:nth-child(even) { background-color: #f8f9fa; }
+        .section:last-of-type { border-bottom: none; }
+        .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
+        .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
+        .section p, .content-div { 
+            margin-bottom: 15px; text-align: justify; 
+            color: #495057; 
+            line-height: 1.8;
+        }
+
+         
+        .section-subtitle {
+            font-size: 15px;
+            color: #555;
+            margin-top: -15px;  
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+         
+        .dot-text-container .char-dot {
+            position: relative;
+            display: inline-block;
+        }
+        .dot-text-container .char-dot::after {
+            content: '·';  
+            position: absolute;
+            top: -0.7em;  
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        
+         
+        .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; }
+        .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
+        .content-div h1 { font-size: 1em; color: #3C1E1E; margin: 20px 0 15px; font-weight: 800; line-height: 1.3; }
+        .content-div h2 { font-size: 0.95em; color: #3C1E1E; margin: 18px 0 12px; font-weight: 700; line-height: 1.4; }
+        .content-div h3 { font-size: 0.9em; color: #1e1e1e; margin: 16px 0 10px; font-weight: 600; line-height: 1.4; }
+        .content-div h4 { font-size: 0.85em; color: #34495e; margin: 14px 0 8px; font-weight: 600; }
+        .content-div h5 { font-size: 0.8em; color: #3C1E1E; margin: 12px 0 6px; font-weight: bold; }
+        .content-div h6 { font-size: 0.75em; color: #495057; margin: 10px 0 5px; font-weight: 600; }
+        .content-div p { margin-bottom: 15px; line-height: 1.8; color: #495057; text-align: justify; font-size: inherit; }
+        .content-div strong { font-weight: 700; color: #3C1E1E; }
+        .content-div em { font-style: italic; color: #495057; }
+        .content-div u { text-decoration: underline; color: #3C1E1E; }
+        .content-div mark { background: #FFD400; color: #3C1E1E; padding: 2px 4px; border-radius: 3px; }
+        .content-div ul, .content-div ol { margin: 15px 0 15px 20px; color: #495057; }
+        .content-div li { margin-bottom: 8px; line-height: 1.8; }
+        .content-div blockquote { border-left: 4px solid #FFD400; margin: 15px 0; padding: 15px 20px; background: rgba(255, 235, 0, 0.1); border-radius: 0 8px 8px 0; font-style: italic; color: #495057; line-height: 1.8; font-size: 1.05em; font-weight: 500; }
+        .content-div code { background: #f8f9fa; padding: 3px 6px; border-radius: 4px; font-family: 'Consolas', 'Monaco', monospace; font-size: 0.9em; color: #3C1E1E; border: 1px solid #e9ecef; }
+        
+         
+        .content-div .text-xs { font-size: 0.7em; }
+        .content-div .text-sm { font-size: 0.8em; }
+        .content-div .text-base { font-size: 1em; }
+        .content-div .text-lg { font-size: 1.1em; }
+        .content-div .text-xl { font-size: 1.2em; }
+        
+         
+        .content-div .text-small { font-size: 0.8em; color: #888; }
+        .content-div .text-large { font-size: 1em; font-weight: 600; }
+        .content-div .text-highlight { background: #FFD400; color: #3C1E1E; padding: 2px 6px; border-radius: 4px; font-weight: 500; font-size: 1em; }
+        
+         
+        .content-div .text-center { text-align: center; }
+        .content-div .text-right { text-align: right; }
+        .content-div .text-left { text-align: left; }
+        .content-div .text-justify { text-align: justify; }
+        .content-div .text-muted { color: #888; }
+        .content-div .text-primary { color: #3C1E1E; font-weight: 600; }
+        .content-div .text-accent { color: #e74c3c; font-weight: 500; }
+        .content-div .text-brand { color: #FFD400; font-weight: bold; background: #3C1E1E; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        
+        @media (max-width: 480px) {
+            .content-div p, .content-div li { text-align: left; }
+            .content-div blockquote { padding: 12px 15px; }
+        }
+        
+         
+        .content-div br + br { display: block; content: ""; margin-top: 15px; }
+        .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+         
+        .youtube-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px; }
+        .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+         
+        .issue-item { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #FFD400; min-height: auto; }
+        .issue-item:last-child { margin-bottom: 0; }
+        .issue-item h3 { font-size: 16px; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
+        .issue-item .meta-info { font-size: 12px; color: #888; margin: 5px 0 10px; }
+        .issue-item .section-tag { font-size: 14px; font-weight: bold; color: #3C1E1E; margin-bottom: 8px; }
+        .issue-item .content-div { margin-top: 10px; }
+        .issue-item:empty,
+        .issue-item .section-tag:empty,
+        .issue-item h3:empty,
+        .issue-item .meta-info:empty,
+        .issue-item .content-div:empty { display: none; }
+        
+         
+        .book-review { background: #fff; padding: 20px; border-radius: 8px; margin-top: 10px; border: 1px solid #eee; }
+        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }
+
+         
+        .kakao-button, .youtube-subscribe-button {
+            display: inline-block; padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;
+            vertical-align: middle;
+        }
+        .kakao-button:hover, .youtube-subscribe-button:hover {
+            transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .kakao-button svg, .youtube-subscribe-button svg {
+            vertical-align: middle; margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        .kakao-button {
+            background-color: #FEE500; color: #191919;
+            margin-top: 20px;
+        }
+        .youtube-subscribe-button {
+            background-color: #FF0000; color: #ffffff;
+            margin: 5px auto 20px;
+            display: table;  
+        }
+        .youtube-subscribe-button svg {
+            fill: #ffffff; }
+        
+         
+        .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
+        .collapsible-content.expanded { max-height: none !important; overflow: visible; }
+        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
+        .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
+        
+        .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; transition: all 0.2s; position: relative; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .section:nth-child(odd) .toggle-button { background: #fff; }
+        .toggle-button:hover { background: #e9ecef; color: #333; transform: translateY(-1px); }
+        .toggle-button::after { content: '더 보기 ▼'; }
+        .toggle-button.expanded { display: none !important; }
+
+         
+        .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
+        .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
+        .footer p { text-align: center; }
+
+         
+        @media (max-width: 480px) {
+            .section { padding: 25px 15px 20px 15px; }
+            .header h1 { font-size: 24px; }
+            .header h1 .sub-title { font-size: 20px; }
+            .section p, .content-div { text-align: left; }
+            .content-div { padding: 15px; margin-top: 10px; }
+            .toggle-button { margin: 8px auto 8px; padding: 8px 14px; font-size: 13px; border-radius: 18px; }
+            .collapsible-content.collapsed::after { height: 25px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.98)); }
+            .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.98)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                한옥문&amp;양산미래혁신연구원
+                <span class="sub-title">뉴스레터</span>
+            </h1>
+                            <p class="subtitle"><p>양미혁의 시선</p></p>
+                        <p class="date">2025년 8월 29일 · 제 1호</p>
+            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
+                <span>카카오톡 채널 추가</span>
+            </a>
+        </div>
+
+                
+        
+        
+        
+                
+        
+                <div class="section">
+                        <div class="back-to-full"><p><a href="index.html">← 전체 뉴스레터 보기</a></p></div>
+                        <h2>NOW 양산</h2>
+            <p class="section-subtitle"><p>양산소식 이모저모</p></p>            <img src="https://i.postimg.cc/d3zpScx8/NISI20240828-0001639392-web.jpg" alt="양산 이슈 이미지">            <div class="collapsible-content">
+                                                            <div class="issue-item">
+                            <div class="section-tag">양산시 소식</div>                            <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
+                            <div class="meta-info">(보도일자: 2025.08.26 / 출처: 환경일보)</div>                            <div class="content-div"><p>양산시가 지난 26일, 하반기 공공일자리 사업에 참여하는 340명을 대상으로 산업안전보건교육을 실시했습니다. 이번 사업은 공공근로자 318명과 지역공동체일자리 사업 참여자 22명으로 구성되어 있으며, 8월 25일부터 12월 12일까지 4개월간 진행됩니다. 시는 이번 교육을 통해 폭염 등 계절적 위험 요인에 대비하고, 안전한 근로 환경을 조성하는 데 만전을 기하겠다고 밝혔습니다.</p></div>                        </div>
+                                            <div class="issue-item">
+                            <div class="section-tag">한옥문의 도시읽기</div>                            <h3>일자리는 시민들의 생활 안정과 직결되는 가장 중요한 복지입니다. 특히 공공일자리 사업은 취약계층의 생계 지원뿐만 아니라, 지역 사회에 활력을 불어넣는 중요한 역할을 합니다. 안전 교육을 통해 근로자들이 위험 없이 일할 수 있는 환경을 만드는 것은 시민의 삶을 최우선으로 생각하는 행정의 기본입니다. 앞으로도 더 많은 양질의 일자리를 창출하여 양산 시민 모두가 안정된 삶을 누릴 수 있도록 힘쓰겠습니다.</h3>
+                                                                                </div>
+                                            <div class="issue-item">
+                            <div class="section-tag">함께 보면 좋은 경상남도 소식</div>                            <h3>경상남도-양산시, 동부양산 시민과의 대화 개최</h3>
+                            <div class="meta-info">(보도일자: 2025.08.05 / 출처: 2025년 양산팩토리)</div>                            <div class="content-div"><p>경상남도와 양산시가 동부양산 시민과의 대화를 열고 교통, 문화, 관광 등 지역 현안에 대한 시민들의 목소리를 직접 들었습니다. 나동현 양산시장은 "시민들의 목소리를 들어 뜻깊은 시간이었다"며 동부양산이 교통, 문화, 관광의 중심지로 거듭날 수 있도록 경남도와 긴밀히 협력하겠다고 밝혔습니다.</p></div>                        </div>
+                                            <div class="issue-item">
+                            <div class="section-tag">한옥문의 정책돋보기</div>                            <h3>소통은 정책 수립의 출발점입니다. 시민들의 삶의 터전에서 직접 목소리를 듣는 것은 행정의 방향을 올바르게 설정하는 데 필수적인 과정입니다. 특히 동부양산은 교통과 문화 인프라 확충에 대한 요구가 큰 만큼, 이번 대화가 실질적인 정책으로 이어져 지역 발전을 가속화하는 계기가 되어야 합니다. 시민들의 의견이 단순한 제안으로 그치지 않고 구체적인 사업으로 실현될 수 있도록 지속적으로 관심을 갖고 지원해야 합니다.</h3>
+                                                                                </div>
+                                            <div class="issue-item">
+                            <div class="section-tag">알아두면 좋은 전국 소식</div>                            <h3>양산 원동 매실, 특산품 개발 경진대회 열려</h3>
+                            <div class="meta-info">(보도일자: 2025.08.19 / 출처: 2025년 양산팩토리)</div>                            <div class="content-div"><p>양산의 대표 특산물인 원동 매실을 활용한 '2025년 원동매실 특산품 개발 경진대회'가 개최되었습니다. 이번 대회는 상품화가 가능한 베이커리 및 공산품 분야에서 우수 제품을 발굴하여 원동 매실의 부가가치를 높이고, 지역 경제 활성화에 기여하기 위해 마련되었습니다.</p></div>                        </div>
+                                            <div class="issue-item">
+                            <div class="section-tag">한옥문의 경제산책</div>                            <h3>지역 특산물을 활용한 상품 개발은 단순한 소비를 넘어 지역의 문화와 정체성을 담는 중요한 경제 활동입니다. 원동 매실은 이미 전국적으로 그 명성을 알리고 있지만, 이번 경진대회를 통해 더욱 다양한 형태로 재탄생하여 우리 양산의 브랜드 가치를 높일 수 있습니다. 지역 자원을 활용한 창의적인 아이디어가 양산 경제를 한 단계 더 도약시키는 원동력이 될 것입니다.</h3>
+                                                                                </div>
+                                                </div>
+            <button class="toggle-button"></button>
+        </div>
+        
+        
+
+        <div class="footer">
+            <p><strong>한옥문&양산미래혁신연구원</strong></p>
+            <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
+        </div>
+    </div>
+    
+    <script>
+        history.scrollRestoration = 'manual';
+
+        function setupCollapsibleContent() {
+            document.querySelectorAll('.collapsible-content:not(.expanded)').forEach(content => {
+                const section = content.closest('.section');
+                const button = section.querySelector('.toggle-button');
+                if (!button) return;
+
+                content.style.maxHeight = 'none';
+                content.style.overflow = 'visible';
+             
+                const actualHeight = content.offsetHeight;
+                
+                const hasMedia = content.querySelector('img, .youtube-container');
+                const isMobile = window.innerWidth <= 480;
+                let threshold = hasMedia ? (isMobile ? 350 : 450) : (isMobile ? 200 : 280);
+                
+                if (actualHeight > threshold) {
+                    const limitedHeight = hasMedia ? (isMobile ? 320 : 420) : (isMobile ? 180 : 250);
+                    content.style.maxHeight = limitedHeight + 'px';
+                    content.style.overflow = 'hidden';
+                    content.classList.add('collapsed');
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+
+                if (!button.hasEventListener) {
+                    button.addEventListener('click', () => {
+                        content.classList.remove('collapsed');
+                        content.classList.add('expanded');
+                        content.style.maxHeight = 'none';
+                        content.style.overflow = 'visible';
+                        button.style.display = 'none';
+                    });
+                    button.hasEventListener = true;
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            let loadedImages = 0;
+            const totalImages = images.length;
+
+            const init = () => {
+                
+                if ("issue" === "all") {
+                    setupCollapsibleContent();
+                }
+            };
+            
+            if (totalImages === 0) {
+                init();
+                return;
+            }
+            
+            images.forEach(img => {
+                const checkCompletion = () => {
+                    loadedImages++;
+                    if (loadedImages === totalImages) {
+                        init();
+                    }
+                };
+                if (img.complete) {
+                    checkCompletion();
+                } else {
+                    img.addEventListener('load', checkCompletion);
+                    img.addEventListener('error', checkCompletion);
+                }
+            });
+        });
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            if ("issue" === "all") {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(setupCollapsibleContent, 300);
+            }
+        });
+    </script>
+</body>
+</html>
