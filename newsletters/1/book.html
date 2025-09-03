@@ -6,242 +6,59 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
     <title>한옥문&amp;양산미래혁신연구원 뉴스레터 - 제 1호</title>
     <style>
-         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; word-break: keep-all; }
         .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
-
-         
         .header { background: #FFEB00; color: #3C1E1E; text-align: center; padding: 40px 20px; }
         .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 800; line-height: 1.3; }
         .header h1 .sub-title { font-size: 22px; display: block; margin-top: 5px; font-weight: normal; }
         .header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 15px; }
         .header .date { font-size: 13px; margin-top: 10px; opacity: 0.8; }
-
-         
-        .toc, .back-to-full {
-            padding: 20px 25px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-        .toc h3 {
-            font-size: 16px;
-            font-weight: bold;
-            color: #3C1E1E;
-            margin-bottom: 10px;
-        }
-        .back-to-full p {
-             font-size: 16px;
-            font-weight: bold;
-            color: #3C1E1E;
-            margin: 0;
-        }
-        .toc ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        .toc li a {
-            display: block;
-            padding: 8px 0;
-            text-decoration: none;
-            color: #495057;
-            font-size: 14px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .toc li:last-child a {
-            border-bottom: none;
-        }
-        .toc li a:hover {
-            color: #000;
-        }
-        .back-to-full a {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #3C1E1E;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        
-         
+        .toc, .back-to-full { padding: 20px 25px; background-color: #f8f9fa; border-bottom: 1px solid #eee; }
+        .toc h3 { font-size: 16px; font-weight: bold; color: #3C1E1E; margin-bottom: 10px; }
+        .back-to-full p { font-size: 16px; font-weight: bold; color: #3C1E1E; margin: 0; }
+        .toc ul { list-style: none; padding-left: 0; margin: 0; }
+        .toc li a { display: block; padding: 8px 0; text-decoration: none; color: #495057; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+        .toc li:last-child a { border-bottom: none; }
+        .toc li a:hover { color: #000; }
+        .back-to-full a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; }
         .section { padding: 30px 25px; border-bottom: 1px solid #eee; }
-        .section:nth-child(even) { background-color: #f8f9fa; }
         .section:last-of-type { border-bottom: none; }
         .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
         .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
-        .section p, .content-div { 
-            margin-bottom: 15px; text-align: justify; 
-            color: #495057; 
-            line-height: 1.8;
-        }
-
-         
-        .section-subtitle {
-            font-size: 15px;
-            color: #555;
-            margin-top: -15px;  
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-        
-         
-        .dot-text-container .char-dot {
-            position: relative;
-            display: inline-block;
-        }
-        .dot-text-container .char-dot::after {
-            content: '·';  
-            position: absolute;
-            top: -0.7em;  
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-        }
-        
-         
+        .section-subtitle { font-size: 15px; color: #555; margin-top: -15px; margin-bottom: 20px; font-weight: normal; }
+        .dot-text-container .char-dot { position: relative; display: inline-block; }
+        .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; }
         .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; }
         .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
-        .content-div h1 { font-size: 1em; color: #3C1E1E; margin: 20px 0 15px; font-weight: 800; line-height: 1.3; }
-        .content-div h2 { font-size: 0.95em; color: #3C1E1E; margin: 18px 0 12px; font-weight: 700; line-height: 1.4; }
-        .content-div h3 { font-size: 0.9em; color: #1e1e1e; margin: 16px 0 10px; font-weight: 600; line-height: 1.4; }
-        .content-div h4 { font-size: 0.85em; color: #34495e; margin: 14px 0 8px; font-weight: 600; }
-        .content-div h5 { font-size: 0.8em; color: #3C1E1E; margin: 12px 0 6px; font-weight: bold; }
-        .content-div h6 { font-size: 0.75em; color: #495057; margin: 10px 0 5px; font-weight: 600; }
-        .content-div p { margin-bottom: 15px; line-height: 1.8; color: #495057; text-align: justify; font-size: inherit; }
-        .content-div strong { font-weight: 700; color: #3C1E1E; }
-        .content-div em { font-style: italic; color: #495057; }
-        .content-div u { text-decoration: underline; color: #3C1E1E; }
-        .content-div mark { background: #FFD400; color: #3C1E1E; padding: 2px 4px; border-radius: 3px; }
-        .content-div ul, .content-div ol { margin: 15px 0 15px 20px; color: #495057; }
-        .content-div li { margin-bottom: 8px; line-height: 1.8; }
-        .content-div blockquote { border-left: 4px solid #FFD400; margin: 15px 0; padding: 15px 20px; background: rgba(255, 235, 0, 0.1); border-radius: 0 8px 8px 0; font-style: italic; color: #495057; line-height: 1.8; font-size: 1.05em; font-weight: 500; }
-        .content-div code { background: #f8f9fa; padding: 3px 6px; border-radius: 4px; font-family: 'Consolas', 'Monaco', monospace; font-size: 0.9em; color: #3C1E1E; border: 1px solid #e9ecef; }
-        
-         
-        .content-div .text-xs { font-size: 0.7em; }
-        .content-div .text-sm { font-size: 0.8em; }
-        .content-div .text-base { font-size: 1em; }
-        .content-div .text-lg { font-size: 1.1em; }
-        .content-div .text-xl { font-size: 1.2em; }
-        
-         
-        .content-div .text-small { font-size: 0.8em; color: #888; }
-        .content-div .text-large { font-size: 1em; font-weight: 600; }
-        .content-div .text-highlight { background: #FFD400; color: #3C1E1E; padding: 2px 6px; border-radius: 4px; font-weight: 500; font-size: 1em; }
-        
-         
-        .content-div .text-center { text-align: center; }
-        .content-div .text-right { text-align: right; }
-        .content-div .text-left { text-align: left; }
-        .content-div .text-justify { text-align: justify; }
-        .content-div .text-muted { color: #888; }
-        .content-div .text-primary { color: #3C1E1E; font-weight: 600; }
-        .content-div .text-accent { color: #e74c3c; font-weight: 500; }
-        .content-div .text-brand { color: #FFD400; font-weight: bold; background: #3C1E1E; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
-        
-        @media (max-width: 480px) {
-            .content-div p, .content-div li { text-align: left; }
-            .content-div blockquote { padding: 12px 15px; }
-        }
-        
-         
-        .content-div br + br { display: block; content: ""; margin-top: 15px; }
         .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        
-         
         .youtube-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px; }
         .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
-         
-        .issue-item { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #FFD400; min-height: auto; }
-        .issue-item:last-child { margin-bottom: 0; }
+        .youtube-subscribe-button { display: table; margin: 5px auto 20px; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
+        .issue-item { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #FFD400; }
         .issue-item h3 { font-size: 16px; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
-        .issue-item .meta-info { font-size: 12px; color: #888; margin: 5px 0 10px; }
-        .issue-item .section-tag { font-size: 14px; font-weight: bold; color: #3C1E1E; margin-bottom: 8px; }
-        .issue-item .content-div { margin-top: 10px; }
-        .issue-item:empty,
-        .issue-item .section-tag:empty,
-        .issue-item h3:empty,
-        .issue-item .meta-info:empty,
-        .issue-item .content-div:empty { display: none; }
-        
-         
         .book-review { background: #fff; padding: 20px; border-radius: 8px; margin-top: 10px; border: 1px solid #eee; }
         .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }
-
-         
-        .kakao-button, .youtube-subscribe-button {
-            display: inline-block; padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;
-            vertical-align: middle;
-        }
-        .kakao-button:hover, .youtube-subscribe-button:hover {
-            transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .kakao-button svg, .youtube-subscribe-button svg {
-            vertical-align: middle; margin-right: 8px;
-            width: 20px;
-            height: 20px;
-        }
-        .kakao-button {
-            background-color: #FEE500; color: #191919;
-            margin-top: 20px;
-        }
-        .youtube-subscribe-button {
-            background-color: #FF0000; color: #ffffff;
-            margin: 5px auto 20px;
-            display: table;  
-        }
-        .youtube-subscribe-button svg {
-            fill: #ffffff; }
-        
-         
         .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
         .collapsible-content.expanded { max-height: none !important; overflow: visible; }
         .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
         .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
-        
         .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; transition: all 0.2s; position: relative; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .section:nth-child(odd) .toggle-button { background: #fff; }
         .toggle-button:hover { background: #e9ecef; color: #333; transform: translateY(-1px); }
         .toggle-button::after { content: '더 보기 ▼'; }
         .toggle-button.expanded { display: none !important; }
-
-         
         .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
         .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
-        .footer p { text-align: center; }
-
-         
-        @media (max-width: 480px) {
-            .section { padding: 25px 15px 20px 15px; }
-            .header h1 { font-size: 24px; }
-            .header h1 .sub-title { font-size: 20px; }
-            .section p, .content-div { text-align: left; }
-            .content-div { padding: 15px; margin-top: 10px; }
-            .toggle-button { margin: 8px auto 8px; padding: 8px 14px; font-size: 13px; border-radius: 18px; }
-            .collapsible-content.collapsed::after { height: 25px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.98)); }
-            .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.98)); }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>
-                한옥문&amp;양산미래혁신연구원
-                <span class="sub-title">뉴스레터</span>
-            </h1>
-                            <p class="subtitle"><p>양미혁의 시선</p></p>
-                        <p class="date">2025년 8월 29일 · 제 1호</p>
-            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
+            <h1>한옥문&amp;양산미래혁신연구원 <span class="sub-title">뉴스레터</span></h1>
+            <p class="subtitle"><p>양미혁의 시선</p></p>            <p class="date">2025년 8월 29일 · 제 1호</p>
+            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background-color:#FEE500;color:#191919;text-decoration:none;font-weight:bold;border-radius:8px;vertical-align:middle;">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
                 <span>카카오톡 채널 추가</span>
             </a>
@@ -255,10 +72,9 @@
         
         
                 <div class="section">
-                        <div class="back-to-full"><p><a href="index.html">← 전체 뉴스레터 보기</a></p></div>
-                        <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
-            <p class="section-subtitle"><p>추천도서</p></p>            <img src="https://i.postimg.cc/Kv1mqZRg/28585-2-2574.jpg" alt="추천 도서 이미지">            <div class="collapsible-content">
-                <div class="book-review">
+            <div class="back-to-full"><p><a href="./index.html">← 전체 뉴스레터 보기</a></p></div>            <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
+            <p class="section-subtitle"><p>추천도서</p></p>            <div class="collapsible-content">
+                <img src="https://i.postimg.cc/Kv1mqZRg/28585-2-2574.jpg" alt="추천 도서 이미지">                <div class="book-review">
                     <div class="book-title">📚 이번 주 추천도서</div>
                     <div class="content-div"><p>도심 속 힐링, 책으로 떠나는 양산 여행<br>따스한 햇살 아래 공원 벤치에 앉아 책장을 넘기거나, 조용한 카페에서 커피 한 잔과 함께 독서에 빠져보는 건 어떨까요? 양산 시민들에게 특별한 의미를 더해줄, 양산과 관련된 흥미로운 도서들을 소개합니다. 단순히 지역 정보를 얻는 것을 넘어, 양산의 역사와 문화, 그리고 사람들의 이야기에 깊이 공감할 수 있는 책들로 일상에 새로운 활력을 불어넣어 보세요.</p><p>양산의 역사와 문화를 담은 책<br>1. 《양산 통도사》 - 한국 불교의 심장, 그 신비로운 이야기</p><p>영축산 자락에 자리한 통도사는 양산의 대표적인 명소이자 한국 3대 사찰 중 하나입니다. 이 책은 통도사의 창건부터 현재까지의 역사, 건축미, 그리고 그 안에 담긴 의미를 깊이 있게 다룹니다. 통도사를 자주 찾는 시민이라면, 이 책을 통해 알고 있던 풍경을 더욱 의미 있는 시선으로 바라볼 수 있을 것입니다. 단순한 관광을 넘어, 통도사의 문화적, 정신적 가치를 이해하는 데 큰 도움이 됩니다.</p><p>2. 《양산의 옛이야기》 - 사라져가는 양산의 구전 설화</p><p>양산에는 신비롭고 재미있는 옛이야기들이 많이 전해 내려옵니다. 이 책은 양산의 산과 강, 마을마다 전해지는 구전 설화들을 한데 모아 정리했습니다. 무성산의 전설, 황산강의 비밀 등 우리가 무심코 지나쳤던 장소에 얽힌 흥미로운 이야기들을 만날 수 있습니다. 아이들과 함께 읽으면 양산에 대한 자긍심과 호기심을 키우는 좋은 기회가 될 것입니다.</p><p>양산의 자연을 느낄 수 있는 책<br>1. 《양산의 들꽃》 - 우리가 몰랐던 양산의 아름다움</p><p>양산천을 따라 걷다 보면, 혹은 천성산 등산로를 오르다 보면 수많은 들꽃을 마주하게 됩니다. 이 책은 양산 곳곳에서 자라는 다양한 야생화를 사진과 함께 상세하게 소개합니다. 평소에 자주 보던 들꽃의 이름과 특징을 알게 되면, 산책이나 등산의 즐거움이 두 배가 됩니다. 자연을 사랑하는 양산 시민들에게 이 책은 훌륭한 길잡이가 되어 줄 것입니다.</p><p>2. 《내 고향 양산》 - 사진으로 만나는 양산의 사계절</p><p>양산의 아름다운 풍경을 담은 사진집입니다. 봄의 매화부터 여름의 푸른 숲, 가을의 단풍, 겨울의 설경까지 양산의 사계절을 생생하게 느낄 수 있습니다. 익숙한 풍경도 사진 작가의 시선을 통해 새롭게 다가옵니다. 바쁜 일상 속에서 잠시 멈춰 서서 양산의 자연이 주는 위로와 아름다움을 느껴보세요.</p></div>
                 </div>
@@ -266,7 +82,6 @@
             <button class="toggle-button"></button>
         </div>
         
-
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
@@ -277,7 +92,7 @@
         history.scrollRestoration = 'manual';
 
         function setupCollapsibleContent() {
-            document.querySelectorAll('.collapsible-content:not(.expanded)').forEach(content => {
+            document.querySelectorAll('.collapsible-content').forEach(content => {
                 const section = content.closest('.section');
                 const button = section.querySelector('.toggle-button');
                 if (!button) return;
@@ -315,36 +130,36 @@
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img');
-            let loadedImages = 0;
-            const totalImages = images.length;
+            
+            if ("book" === "all") {
+                const images = document.querySelectorAll('img');
+                let loadedImages = 0;
+                const totalImages = images.length;
 
-            const init = () => {
-                
-                if ("book" === "all") {
+                const init = () => {
                     setupCollapsibleContent();
-                }
-            };
-            
-            if (totalImages === 0) {
-                init();
-                return;
-            }
-            
-            images.forEach(img => {
-                const checkCompletion = () => {
-                    loadedImages++;
-                    if (loadedImages === totalImages) {
-                        init();
-                    }
                 };
-                if (img.complete) {
-                    checkCompletion();
-                } else {
-                    img.addEventListener('load', checkCompletion);
-                    img.addEventListener('error', checkCompletion);
+                
+                if (totalImages === 0) {
+                    setTimeout(init, 50);
+                    return;
                 }
-            });
+                
+                images.forEach(img => {
+                    const checkCompletion = () => {
+                        loadedImages++;
+                        if (loadedImages === totalImages) {
+                            setTimeout(init, 50);
+                        }
+                    };
+                    if (img.complete) {
+                        checkCompletion();
+                    } else {
+                        img.addEventListener('load', checkCompletion);
+                        img.addEventListener('error', checkCompletion);
+                    }
+                });
+            }
         });
         
         let resizeTimeout;
