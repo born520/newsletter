@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
+    <title>한옥문&amp;양산미래혁신연구원 뉴스레터 - 제 1호</title>
+    <style>
+         
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; word-break: keep-all; }
+        .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
+
+         
+        .header { background: #FFEB00; color: #3C1E1E; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; font-weight: 800; line-height: 1.3; }
+        .header h1 .sub-title { font-size: 22px; display: block; margin-top: 5px; font-weight: normal; }
+        .header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 15px; }
+        .header .date { font-size: 13px; margin-top: 10px; opacity: 0.8; }
+
+         
+        .toc, .back-to-full {
+            padding: 20px 25px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        .toc h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #3C1E1E;
+            margin-bottom: 10px;
+        }
+        .back-to-full p {
+             font-size: 16px;
+            font-weight: bold;
+            color: #3C1E1E;
+            margin: 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .toc li a {
+            display: block;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #495057;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc li:last-child a {
+            border-bottom: none;
+        }
+        .toc li a:hover {
+            color: #000;
+        }
+        .back-to-full a {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3C1E1E;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+         
+        .section { padding: 30px 25px; border-bottom: 1px solid #eee; }
+        .section:nth-child(even) { background-color: #f8f9fa; }
+        .section:last-of-type { border-bottom: none; }
+        .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
+        .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
+        .section p, .content-div { 
+            margin-bottom: 15px; text-align: justify; 
+            color: #495057; 
+            line-height: 1.8;
+        }
+
+         
+        .section-subtitle {
+            font-size: 15px;
+            color: #555;
+            margin-top: -15px;  
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+         
+        .dot-text-container .char-dot {
+            position: relative;
+            display: inline-block;
+        }
+        .dot-text-container .char-dot::after {
+            content: '·';  
+            position: absolute;
+            top: -0.7em;  
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        
+         
+        .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; }
+        .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
+        .content-div h1 { font-size: 1em; color: #3C1E1E; margin: 20px 0 15px; font-weight: 800; line-height: 1.3; }
+        .content-div h2 { font-size: 0.95em; color: #3C1E1E; margin: 18px 0 12px; font-weight: 700; line-height: 1.4; }
+        .content-div h3 { font-size: 0.9em; color: #1e1e1e; margin: 16px 0 10px; font-weight: 600; line-height: 1.4; }
+        .content-div h4 { font-size: 0.85em; color: #34495e; margin: 14px 0 8px; font-weight: 600; }
+        .content-div h5 { font-size: 0.8em; color: #3C1E1E; margin: 12px 0 6px; font-weight: bold; }
+        .content-div h6 { font-size: 0.75em; color: #495057; margin: 10px 0 5px; font-weight: 600; }
+        .content-div p { margin-bottom: 15px; line-height: 1.8; color: #495057; text-align: justify; font-size: inherit; }
+        .content-div strong { font-weight: 700; color: #3C1E1E; }
+        .content-div em { font-style: italic; color: #495057; }
+        .content-div u { text-decoration: underline; color: #3C1E1E; }
+        .content-div mark { background: #FFD400; color: #3C1E1E; padding: 2px 4px; border-radius: 3px; }
+        .content-div ul, .content-div ol { margin: 15px 0 15px 20px; color: #495057; }
+        .content-div li { margin-bottom: 8px; line-height: 1.8; }
+        .content-div blockquote { border-left: 4px solid #FFD400; margin: 15px 0; padding: 15px 20px; background: rgba(255, 235, 0, 0.1); border-radius: 0 8px 8px 0; font-style: italic; color: #495057; line-height: 1.8; font-size: 1.05em; font-weight: 500; }
+        .content-div code { background: #f8f9fa; padding: 3px 6px; border-radius: 4px; font-family: 'Consolas', 'Monaco', monospace; font-size: 0.9em; color: #3C1E1E; border: 1px solid #e9ecef; }
+        
+         
+        .content-div .text-xs { font-size: 0.7em; }
+        .content-div .text-sm { font-size: 0.8em; }
+        .content-div .text-base { font-size: 1em; }
+        .content-div .text-lg { font-size: 1.1em; }
+        .content-div .text-xl { font-size: 1.2em; }
+        
+         
+        .content-div .text-small { font-size: 0.8em; color: #888; }
+        .content-div .text-large { font-size: 1em; font-weight: 600; }
+        .content-div .text-highlight { background: #FFD400; color: #3C1E1E; padding: 2px 6px; border-radius: 4px; font-weight: 500; font-size: 1em; }
+        
+         
+        .content-div .text-center { text-align: center; }
+        .content-div .text-right { text-align: right; }
+        .content-div .text-left { text-align: left; }
+        .content-div .text-justify { text-align: justify; }
+        .content-div .text-muted { color: #888; }
+        .content-div .text-primary { color: #3C1E1E; font-weight: 600; }
+        .content-div .text-accent { color: #e74c3c; font-weight: 500; }
+        .content-div .text-brand { color: #FFD400; font-weight: bold; background: #3C1E1E; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        
+        @media (max-width: 480px) {
+            .content-div p, .content-div li { text-align: left; }
+            .content-div blockquote { padding: 12px 15px; }
+        }
+        
+         
+        .content-div br + br { display: block; content: ""; margin-top: 15px; }
+        .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+         
+        .youtube-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px; }
+        .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+         
+        .issue-item { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #FFD400; min-height: auto; }
+        .issue-item:last-child { margin-bottom: 0; }
+        .issue-item h3 { font-size: 16px; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
+        .issue-item .meta-info { font-size: 12px; color: #888; margin: 5px 0 10px; }
+        .issue-item .section-tag { font-size: 14px; font-weight: bold; color: #3C1E1E; margin-bottom: 8px; }
+        .issue-item .content-div { margin-top: 10px; }
+        .issue-item:empty,
+        .issue-item .section-tag:empty,
+        .issue-item h3:empty,
+        .issue-item .meta-info:empty,
+        .issue-item .content-div:empty { display: none; }
+        
+         
+        .book-review { background: #fff; padding: 20px; border-radius: 8px; margin-top: 10px; border: 1px solid #eee; }
+        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }
+
+         
+        .kakao-button, .youtube-subscribe-button {
+            display: inline-block; padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s;
+            vertical-align: middle;
+        }
+        .kakao-button:hover, .youtube-subscribe-button:hover {
+            transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .kakao-button svg, .youtube-subscribe-button svg {
+            vertical-align: middle; margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        .kakao-button {
+            background-color: #FEE500; color: #191919;
+            margin-top: 20px;
+        }
+        .youtube-subscribe-button {
+            background-color: #FF0000; color: #ffffff;
+            margin: 5px auto 20px;
+            display: table;  
+        }
+        .youtube-subscribe-button svg {
+            fill: #ffffff; }
+        
+         
+        .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
+        .collapsible-content.expanded { max-height: none !important; overflow: visible; }
+        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
+        .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
+        
+        .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; transition: all 0.2s; position: relative; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .section:nth-child(odd) .toggle-button { background: #fff; }
+        .toggle-button:hover { background: #e9ecef; color: #333; transform: translateY(-1px); }
+        .toggle-button::after { content: '더 보기 ▼'; }
+        .toggle-button.expanded { display: none !important; }
+
+         
+        .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
+        .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
+        .footer p { text-align: center; }
+
+         
+        @media (max-width: 480px) {
+            .section { padding: 25px 15px 20px 15px; }
+            .header h1 { font-size: 24px; }
+            .header h1 .sub-title { font-size: 20px; }
+            .section p, .content-div { text-align: left; }
+            .content-div { padding: 15px; margin-top: 10px; }
+            .toggle-button { margin: 8px auto 8px; padding: 8px 14px; font-size: 13px; border-radius: 18px; }
+            .collapsible-content.collapsed::after { height: 25px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.98)); }
+            .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.98)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                한옥문&amp;양산미래혁신연구원
+                <span class="sub-title">뉴스레터</span>
+            </h1>
+                            <p class="subtitle"><p>양미혁의 시선</p></p>
+                        <p class="date">2025년 8월 29일 · 제 1호</p>
+            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
+                <span>카카오톡 채널 추가</span>
+            </a>
+        </div>
+
+                
+        
+        
+                <div class="section">
+                         <div class="back-to-full"><p><a href="index.html">← 전체 뉴스레터 보기</a></p></div>
+                        <h2>양산담론</h2>
+            <p class="section-subtitle"><p>50만 자족도시로의 발전 가능한 것인가?</p></p>            <img src="https://i.postimg.cc/3rmdX7Fh/AKR20190429118100052-01-i-P4.jpg" alt="이미지">                        <div class="collapsible-content"><div class="content-div"><p><span class="text-muted">기고자: 영산대 김도시 교수</span></p>
+<h1>양산의 미래, ‘계획’은 있으나 ‘철학’은 있는가</h1>
+<p>최근 경상남도가 양산을 포함한 동부경남을 대한민국의 미래 산업 중심지로 육성하기 위한 구체적인 청사진을 발표했습니다. 이 계획의 핵심 중 하나로, 490억 원을 투입해 양산부산대병원 유휴부지에 ‘바이오메디컬 이노베이션 센터’를 구축하겠다는 내용이 포함되었습니다. 이는 양산시가 오랫동안 그려온 <strong>‘바이오헬스 허브’</strong>라는 원대한 꿈을 향한 의미 있는 첫걸음이라 할 수 있습니다.</p>
+<p>하지만 이처럼 거대한 계획이 발표될수록, 우리는 장밋빛 약속 너머의 그림자를 냉철하게 들여다봐야 합니다. 비로소 그때, 우리는 진정한 성공의 길을 찾을 수 있을 것입니다.</p>
+<h2>'장밋빛 약속’ 너머의 냉정한 질문</h2>
+<p>'바이오헬스 허브'는 양산에 최첨단 연구단지와 양질의 일자리를 약속합니다. 이는 양산부산대병원이라는 독보적인 자산을 기반으로 한 합리적인 비전이며, 성공한다면 도시의 미래 성장 동력이 될 것이라는 점에는 의심의 여지가 없습니다. 양산시도도 역시 이를 <strong>'100년 먹거리'</strong>라 칭하며 강한 추진 의지를 보이고 있습니다.</p>
+<p>그러나 우리는 질문을 던져야 합니다. 전국의 수많은 도시가 '미래 산업 허브'를 외치지만, 성공 사례는 손에 꼽는 이유는 무엇일까요? 문제는 건물을 짓고 기업을 유치하는 '하드웨어'에만 집중할 때 발생합니다. 멋진 연구동과 첨단 장비만으로 최고의 인재들이 모여들고, 혁신이 저절로 일어날 것이라는 생각은 위험한 착각입니다. 이는 도시 정책의 가장 흔한 맹점 중 하나이기도 합니다.</p>
+<blockquote>⚠️ 인천 송도의 사례는 우리에게 중요한 교훈을 줍니다.</blockquote>
+<p>송도는 세계적인 바이오 클러스터로 성장했지만, 그 과정은 순탄치 않았습니다. 개발 초기, 장밋빛 청사진과 달리 기업 유치는 더디었고, 수익성 확보를 위한 아파트만 빠르게 들어서면서 <strong>‘업무지구 없는 아파트촌’</strong>이 되는 것 아니냐는 우려가 컸습니다. 심지어 해외 언론으로부터 <strong>‘사람이 없는 유령도시’</strong>라는 뼈아픈 지적을 받기도 했습니다. 학교, 교통, 문화시설 같은 생활 인프라가 인구 증가 속도를 따라가지 못해 주민들이 불편을 겪었고, 이는 도시의 자족 기능을 떨어뜨리는 원인이 되었습니다. 핵심은 <strong>'어떻게 채울 것인가'</strong>에 대한 구체적인 계획과 철학이 하드웨어의 속도를 따라가지 못했던 것입니다. 양산의 바이오헬스 허브가 첨단 기술의 외딴섬이 되지 않으리라는 보장은 어디에 있습니까?</p>
+<h2>‘건물’이 아닌 ‘사람’이 핵심이다: 성공한 도시들의 교훈</h2>
+<p>세계 최고의 바이오 클러스터로 꼽히는 미국 보스턴과 샌디에이고의 성공 비결은 화려한 건물이 아니었습니다. 그 중심에는 사람이 있었습니다. 연구자와 기업가, 학생들이 자유롭게 만나 교류하고, 아이디어를 나누며, 실패를 용납하는 <strong>'문화'</strong>와 <strong>'생태계'</strong>가 바로 성공의 핵심 동력이었습니다.</p>
+<p>샌디에이고의 비영리단체 <strong>'커넥트(CONNECT)'</strong>는 이제 막 씨앗을 틔운 스타트업과 노련한 사업가, 투자자를 끈끈하게 연결해주는 <strong>'사람 중심의 플랫폼'</strong> 역할을 했습니다. 이들은 단순히 사업을 연결하는 것을 넘어, 지역 대학, 연구소, 그리고 주민들이 함께 어우러지는 공동체를 만드는 데 집중했습니다.</p>
+<blockquote>경상남도와 양산시가 발표한 계획에도 '혁신지원센터' 설립과 같은 구상이 포함되어 있습니다. 그러나 이것이 단순한 행정 지원 창구로 전락해서는 안 됩니다. 현재 시정의 방향이 대규모 토목 사업이나 기반 시설 확충과 같은 <strong>'하드웨어'</strong> 구축에 익숙해져 있다면, 사람과 문화라는 <strong>'소프트웨어'</strong>를 채우는 데에는 미숙할 수 있다는 비판적 시선이 필요합니다.</blockquote>
+<h2>양산을 위한 두 가지 제언: ‘연결’과 ‘매력’</h2>
+<h3>📌 첫째, 허브와 도시를 유기적으로 ‘연결’해야 합니다.</h3>
+<p>허브를 양산부산대병원 옆에 고립된 첨단 단지로 만들어서는 안 됩니다. 허브에서 일하는 연구원들이 점심 식사를 위해 물금 신도시의 상가를 찾고, 퇴근 후에는 원도심의 문화 공간에서 여가를 즐기며, 주말에는 자녀와 함께 황산공원에서 휴식을 취하는 그림을 그려야 합니다. 이를 위해서는 허브와 도심을 잇는 편리한 교통망, 그리고 연구 단지 안팎에 다양한 상업 및 문화 시설을 전략적으로 배치하여 자연스러운 교류를 유도하는 도시 설계가 필요합니다.</p>
+<h3>📌 둘째, 양산만의 ‘매력’을 극대화해야 합니다.</h3>
+<p>최고의 인재는 높은 연봉만으로 움직이지 않습니다. 그들은 <strong>'살고 싶은 도시'</strong>를 찾습니다. 양산은 부산과 울산이라는 대도시 사이에 위치한 지리적 이점, 천성산과 낙동강을 품은 쾌적한 자연환경, 그리고 신도시의 편리함과 농촌 지역의 여유로움이 공존하는 독특한 매력을 지니고 있습니다. 이 장점을 적극적으로 활용하여 <strong>'일과 삶의 균형(워라밸)'</strong>을 추구하는 인재들에게 대한민국 그 어느 곳보다 매력적인 정주 여건을 제공해야 합니다. 이는 단순히 아파트를 더 짓는 것을 넘어, 특색 있는 교육 환경, 수준 높은 문화 예술 프로그램, 공동체 중심의 주거 모델을 고민하는 것을 의미합니다.</p>
+<h2>진정한 성공의 열쇠는 우리 손에</h2>
+<p>'바이오메디컬 혁신 거점' 조성 계획은 양산에 찾아온 소중한 기회이자, 동시에 우리에게 어려운 숙제를 던지고 있습니다. 거대한 계획의 숫자들에 취해 건물을 올리는 데에만 집중한다면, 우리는 속이 텅 빈 거대한 조형물만을 남기게 될지도 모릅니다.</p>
+<p>이 사업의 성공 여부는 예산의 크기나 건물의 높이가 아닌, <strong>'어떤 도시를 만들고 싶은가'</strong>에 대한 우리의 철학에 달려 있습니다.</p>
+<blockquote>우리는 과연 ‘기업이 오고 싶은 도시’를 넘어, ‘최고의 인재들이 머물며 살고 싶은 도시’를 만들 준비가 되어 있습니까?</blockquote>
+<p>이 질문에 대한 답을 찾아가는 과정이야말로, 양산의 빛나는 내일을 여는 진정한 열쇠가 될 것입니다.</p></div></div>
+            <button class="toggle-button"></button>
+                    </div>
+        
+                
+        
+        
+        
+
+        <div class="footer">
+            <p><strong>한옥문&양산미래혁신연구원</strong></p>
+            <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
+        </div>
+    </div>
+    
+    <script>
+        history.scrollRestoration = 'manual';
+
+        function setupCollapsibleContent() {
+            document.querySelectorAll('.collapsible-content:not(.expanded)').forEach(content => {
+                const section = content.closest('.section');
+                const button = section.querySelector('.toggle-button');
+                if (!button) return;
+
+                content.style.maxHeight = 'none';
+                content.style.overflow = 'visible';
+             
+                const actualHeight = content.offsetHeight;
+                
+                const hasMedia = content.querySelector('img, .youtube-container');
+                const isMobile = window.innerWidth <= 480;
+                let threshold = hasMedia ? (isMobile ? 350 : 450) : (isMobile ? 200 : 280);
+                
+                if (actualHeight > threshold) {
+                    const limitedHeight = hasMedia ? (isMobile ? 320 : 420) : (isMobile ? 180 : 250);
+                    content.style.maxHeight = limitedHeight + 'px';
+                    content.style.overflow = 'hidden';
+                    content.classList.add('collapsed');
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+
+                if (!button.hasEventListener) {
+                    button.addEventListener('click', () => {
+                        content.classList.remove('collapsed');
+                        content.classList.add('expanded');
+                        content.style.maxHeight = 'none';
+                        content.style.overflow = 'visible';
+                        button.style.display = 'none';
+                    });
+                    button.hasEventListener = true;
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            let loadedImages = 0;
+            const totalImages = images.length;
+
+            const init = () => {
+                
+                if ("damron" === "all") {
+                    setupCollapsibleContent();
+                }
+            };
+            
+            if (totalImages === 0) {
+                init();
+                return;
+            }
+            
+            images.forEach(img => {
+                const checkCompletion = () => {
+                    loadedImages++;
+                    if (loadedImages === totalImages) {
+                        init();
+                    }
+                };
+                if (img.complete) {
+                    checkCompletion();
+                } else {
+                    img.addEventListener('load', checkCompletion);
+                    img.addEventListener('error', checkCompletion);
+                }
+            });
+        });
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            if ("damron" === "all") {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(setupCollapsibleContent, 300);
+            }
+        });
+    </script>
+</body>
+</html>
