@@ -401,7 +401,7 @@
                 const content = section.querySelector('.collapsible-content');
                 const button = section.querySelector('.toggle-button');
                 
-                if (!content || !button || content.classList.contains('expanded')) return;
+                if (!content || !button) return;
 
                 content.style.maxHeight = 'none';
                 content.style.overflow = 'visible';
@@ -448,37 +448,6 @@
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            
-            function expandAnchoredSection() {
-              if (window.location.hash) {
-                try {
-                  const targetId = window.location.hash.substring(1);
-                  const targetSection = document.getElementById(targetId);
-
-                  if (targetSection) {
-                    const content = targetSection.querySelector('.collapsible-content');
-                    const button = targetSection.querySelector('.toggle-button');
-
-                    if (content && button) {
-                      content.classList.remove('collapsed');
-                      content.classList.add('expanded');
-                      content.style.maxHeight = 'none';
-                      content.style.overflow = 'visible';
-                      button.style.display = 'none';
-                      
-                      setTimeout(() => {
-                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }, 50);
-                    }
-                  }
-                } catch (e) {
-                  console.error("Error expanding anchored section:", e);
-                }
-              }
-            }
-            
-            expandAnchoredSection();
-
             const images = document.querySelectorAll('img');
             let loadedImages = 0;
             
