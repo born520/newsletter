@@ -201,7 +201,7 @@
         </div>
 
                                         <div class="section" id="siseon">
-                <h2>양미혁의 시선</h2>
+                <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</h2>
                                     <p class="section-subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></p>
                 
                                     <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지">
@@ -402,7 +402,7 @@
                 const button = section.querySelector('.toggle-button');
                 const sectionTitle = section.querySelector('h2');
                 
-                if (!content || !button) return;
+                if (!content || !button || content.classList.contains('expanded')) return; 
 
                 content.style.maxHeight = 'none';
                 content.style.overflow = 'visible';
@@ -421,9 +421,6 @@
                     threshold = isMobile ? 200 : 280;
                 }
                 
-                const sectionName = sectionTitle ? sectionTitle.textContent.trim() : 'Unknown';
-                console.log(`Section: ${sectionName}, Height: ${actualHeight}, Threshold: ${threshold}, HasMedia: ${hasMedia}`);
-
                 if (actualHeight > threshold) {
                     const limitedHeight = hasMedia ? (isMobile ? 320 : 420) : (isMobile ? 180 : 250);
                     
@@ -450,11 +447,35 @@
                 }
             });
         }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            function expandAnchoredSection() {
+              if (window.location.hash) {
+                try {
+                  const targetId = window.location.hash.substring(1);
+                  const targetSection = document.getElementById(targetId);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(setupCollapsibleContent, 100);
-        });
-        document.addEventListener('DOMContentLoaded', () => {
+                  if (targetSection) {
+                    const content = targetSection.querySelector('.collapsible-content');
+                    const button = targetSection.querySelector('.toggle-button');
+
+                    if (content && button) {
+                      content.classList.remove('collapsed');
+                      content.classList.add('expanded');
+                      content.style.maxHeight = 'none';
+                      content.style.overflow = 'visible';
+                      button.style.display = 'none';
+                    }
+                  }
+                } catch (e) {
+                  console.error("Error expanding anchored section:", e);
+                }
+              }
+            }
+            
+            expandAnchoredSection();
+
             const images = document.querySelectorAll('img');
             let loadedImages = 0;
             
