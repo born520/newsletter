@@ -143,17 +143,6 @@
         .content-div strong { color: #000; }
         .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
         .content-div li { margin-bottom: 0.5em; }
-        
-         
-        .content-div *[style*="background-color: #FEE500"],
-        .content-div *[style*="background-color:#FEE500"],
-        .content-div *[style*="background: #FEE500"],
-        .content-div *[style*="background:#FEE500"],
-        .content-div .highlight {
-            border-radius: 6px !important;
-            padding: 4px 8px !important;
-            display: inline-block !important;
-        }
 
          
         .issue-item { 
@@ -301,6 +290,31 @@
     </div>
     
     <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const contentDivs = document.querySelectorAll('.content-div');
+            contentDivs.forEach(function(contentDiv) {
+                const allElements = contentDiv.querySelectorAll('*');
+                allElements.forEach(function(el) {
+                    const style = window.getComputedStyle(el);
+                    const bgColor = style.backgroundColor;
+                    
+                    if (bgColor === 'rgb(254, 229, 0)' || bgColor === 'rgb(255, 255, 0)' || 
+                        bgColor === 'rgb(255, 235, 59)' || bgColor.includes('yellow') ||
+                        el.style.backgroundColor.includes('#FEE500') || 
+                        el.style.backgroundColor.includes('#FFEB00') ||
+                        el.style.backgroundColor.includes('yellow')) {
+                        el.style.borderRadius = '6px';
+                        if (!el.style.padding) {
+                            el.style.padding = '2px 6px';
+                        }
+                        el.style.display = 'inline-block';
+                    }
+                });
+            });
+        });
+
         history.scrollRestoration = 'manual';
 
         function setupCollapsibleContent() {
@@ -355,28 +369,3 @@
                     setTimeout(init, 50);
                     return;
                 }
-                images.forEach(img => {
-                    const checkCompletion = () => {
-                        loadedImages++;
-                        if (loadedImages === totalImages) { setTimeout(init, 50); }
-                    };
-                    if (img.complete) {
-                        checkCompletion();
-                    } else {
-                        img.addEventListener('load', checkCompletion);
-                        img.addEventListener('error', checkCompletion);
-                    }
-                });
-            }
-        });
-        
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            if ("book" === "all") {
-                clearTimeout resizeTimeout);
-                resizeTimeout = setTimeout(setupCollapsibleContent, 300);
-            }
-        });
-    </script>
-</body>
-</html>
