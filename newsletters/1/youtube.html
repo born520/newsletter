@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -242,15 +241,19 @@
 
          
         .collapsible-content { 
+            overflow: visible; 
+            max-height: none; 
+        }
+        .collapsible-content.all-view { 
             overflow: hidden; 
             transition: max-height 0.5s ease-out; 
             position: relative; 
         }
-        .collapsible-content.expanded { 
+        .collapsible-content.all-view.expanded { 
             max-height: none !important; 
             overflow: visible; 
         }
-        .collapsible-content.collapsed::after { 
+        .collapsible-content.all-view.collapsed::after { 
             content: ''; 
             position: absolute; 
             bottom: 0; 
@@ -278,6 +281,49 @@
         }
 
          
+        .section-navigation {
+            margin: 20px 15px 0;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-navigation a {
+            padding: 10px 20px;
+            background-color: #FEE500;
+            color: #191919;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+        .section-navigation a:hover {
+            background-color: #FFD700;
+        }
+        .section-navigation a.disabled {
+            background-color: #ddd;
+            color: #999;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 480px) {
+            .section-navigation {
+                margin: 15px 10px 0;
+                padding: 15px;
+            }
+            .section-navigation a {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+
+         
         .dot-text-container .char-dot {
             position: relative;
             display: inline-block;
@@ -298,28 +344,6 @@
             text-align: center; 
             padding: 40px 20px; 
             font-size: 12px; 
-        }
-        .footer .navigation {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .footer .navigation a {
-            padding: 10px 20px;
-            background-color: #FEE500;
-            color: #191919;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .footer .navigation a.disabled {
-            background-color: #ddd;
-            color: #999;
-            pointer-events: none;
         }
     </style>
 </head>
@@ -363,7 +387,7 @@
                 <a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">
                     <span>한옥문 유튜브 구독하기</span>
                 </a>
-                                <div class="collapsible-content">
+                                <div class="collapsible-content ">
                     <div class="content-div"><h1>주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</h1>
 <p>양산시 상북면에 위치한 원적산 봉수대가 지역 주민들의 오랜 노력 끝에 2023년 1월 <strong>국가 사적</strong>으로 지정되었습니다. 이는 부산, 경남을 거쳐 한양까지 이어지는 봉수 체계의 중요한 거점이었던 이곳의 <strong>역사적 중요성을 재조명</strong>하는 계기가 되었습니다.</p>
 
@@ -379,21 +403,21 @@
 <p>원적산 봉수대 정상에서 바라본 양산은 남북으로 시가지가 잘 발달되어 있지만, 천성산으로 인해 <strong>동서 지역 간의 연결이 단절</strong>되어 있다는 아쉬움이 남아있습니다. 이러한 동서 간의 이질감을 극복하고 양산을 하나의 생활권으로 통합하기 위해 천성산을 관통하는 <strong>1028번 지방도로 건설</strong>이 추진되고 있습니다. 이 사업은 현재 국지도로의 승격을 검토 중이며, 양산의 지속 가능한 발전을 위해 조속한 추진이 필요한 과제입니다.</p>
 <blockquote>시민들의 열정으로 봉수대가 되살아난 것처럼, 양산 동서 간의 소통과 연결을 위한 노력 또한 이어지기를 기대해 봅니다.</blockquote></div>
                 </div>
-                <button class="toggle-button"></button>
-                            </div>
+                                            </div>
         </div>
         
         
         
+        
+                <div class="section-navigation">
+                                        <a href="./balgeoleum.html">이전</a>
+                                        <a href="./issue.html">다음</a>
+                    </div>
+        
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
-            
-                        <div class="navigation">
-                                                    <a href="./balgeoleum.html">이전 섹션</a>
-                                                    <a href="./issue.html">다음 섹션</a>
-                            </div>
-                    </div>
+        </div>
     </div>
     
     <script>
@@ -434,7 +458,10 @@
         history.scrollRestoration = 'manual';
 
         function setupCollapsibleContent() {
-            document.querySelectorAll('.collapsible-content').forEach(content => {
+            
+            if ("youtube" !== "all") return;
+            
+            document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
                 const section = content.closest('.section');
                 const button = section.querySelector('.toggle-button');
                 if (!button) return;
@@ -498,6 +525,7 @@
                     }
                 });
             } else {
+                
                 setupCollapsibleContent();
             }
         });
