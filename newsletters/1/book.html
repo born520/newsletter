@@ -15,7 +15,7 @@
             color: #191919;
             background-color: #F9F9F9;
             word-break: keep-all;
-            font-size: 17px;  
+            font-size: 17px;
         }
         .container {
             max-width: 680px;
@@ -58,22 +58,25 @@
             overflow: hidden;
             padding: 0;
         }
+        .section-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background-color: #f8f9fa; border-top: 1px solid #eee; gap: 10px; flex-wrap: wrap; }
+        .section-nav a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; white-space: nowrap; }
+        .section-nav select { flex-grow: 1; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 5px; min-width: 150px; }
         .section-content {
-            padding: 25px;  
+            padding: 25px;
         }
         
          
         .section h2 {
             display: flex;
             align-items: center;
-            font-size: 22px;  
+            font-size: 22px;
             font-weight: 800;
             color: #191919;
             background-color: #FEE500;
             padding: 18px 25px;
             margin: 0;
             border: none;
-            line-height: 1.4;  
+            line-height: 1.4;
         }
         .section h2::before {
             content: '💬';
@@ -81,9 +84,9 @@
             font-size: 22px;
         }
         .section-subtitle {
-            font-size: 16px;  
+            font-size: 16px;
             color: #555;
-            margin-bottom: 25px;  
+            margin-bottom: 25px;
             font-weight: normal;
         }
 
@@ -95,17 +98,21 @@
             border: 1px solid #F0F0F0;
             box-shadow: none;
             margin-top: 15px;
-            font-size: 16px;  
+            font-size: 16px;
             color: #333;
         }
-        
+        .content-div p { margin-bottom: 1em; }
+        .content-div h1, .content-div h2, .content-div h3 { color: #191919; }
+        .content-div strong { color: #000; }
+        .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
+        .content-div li { margin-bottom: 0.5em; }
+
          
         .section .media-wrapper {
-             
             margin: 0 -25px 25px -25px;
-            line-height: 0;  
+            line-height: 0;
         }
-        .section img, .youtube-container {
+        .section img {
             width: 100%;
             height: auto;
             display: block;
@@ -122,20 +129,24 @@
         }
 
          
-        .toggle-button {
-            display: none;
-            margin: 20px auto 0;
-            background: #F0F0F0;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 18px;
-            cursor: pointer;
-            font-size: 13px;
-            color: #555;
-            font-weight: bold;
-        }
+        .issue-item { margin-bottom: 25px; padding: 20px; border-radius: 8px; background-color: #F9F9F9; border: 1px solid #F0F0F0; }
+        .issue-item h3 { font-size: 1.1em; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
+        .book-review { background: #F9F9F9; border: 1px solid #F0F0F0; padding: 20px; border-radius: 8px; margin-top: 10px; }
+        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 1.1em; }
+        .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
+        .collapsible-content.expanded { max-height: none !important; overflow: visible; }
+        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
+        .toggle-button { display: none; margin: 20px auto 0; background: #F0F0F0; border: none; border-radius: 20px; padding: 8px 18px; cursor: pointer; font-size: 13px; color: #555; font-weight: bold; }
         .toggle-button::after { content: '내용 더 보기 ▼'; }
-        
+        .post-nav { display: flex; justify-content: space-between; padding: 20px 25px; border-top: 1px solid #eee; margin-top: 20px; gap: 10px; }
+        .post-nav a { color: #3C1E1E; text-decoration: none; font-size: 14px; padding: 8px 12px; border: 1px solid #eee; border-radius: 5px; max-width: 48%; }
+        .post-nav a:hover { background-color: #f8f9fa; }
+        .post-nav .nav-title { display: block; font-size: 12px; color: #777; }
+        .post-nav .nav-text { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .post-nav .prev-link { text-align: left; }
+        .post-nav .next-link { text-align: right; }
+        .youtube-subscribe-button { display: table; margin: 5px auto 20px; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
+
         .footer {
             background-color: #f0f0f0;
             color: #777;
@@ -157,16 +168,35 @@
                 <span>채널 추가</span>
             </a>
         </div>
-
+        
+        
         
                 
+        
+        
+                <div class="section">
+                        <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
+            <div class="section-content">
+                <p class="section-subtitle"><p>추천도서</p></p>                                <div class="media-wrapper">
+                    <img src="https://i.postimg.cc/bv3Ycxkz/image.png" alt="추천 도서 이미지">
+                </div>
+                                <div class="collapsible-content">
+                    <div class="book-review">
+                        <div class="book-title">📚 이번 주 추천도서</div>
+                        <div class="content-div"><p>도심 속 힐링, 책으로 떠나는 양산 여행<br>따스한 햇살 아래 공원 벤치에 앉아 책장을 넘기거나, 조용한 카페에서 커피 한 잔과 함께 독서에 빠져보는 건 어떨까요? 양산 시민들에게 특별한 의미를 더해줄, 양산과 관련된 흥미로운 도서들을 소개합니다. 단순히 지역 정보를 얻는 것을 넘어, 양산의 역사와 문화, 그리고 사람들의 이야기에 깊이 공감할 수 있는 책들로 일상에 새로운 활력을 불어넣어 보세요.</p><p>양산의 역사와 문화를 담은 책<br>1. 《양산 통도사》 - 한국 불교의 심장, 그 신비로운 이야기</p><p>영축산 자락에 자리한 통도사는 양산의 대표적인 명소이자 한국 3대 사찰 중 하나입니다. 이 책은 통도사의 창건부터 현재까지의 역사, 건축미, 그리고 그 안에 담긴 의미를 깊이 있게 다룹니다. 통도사를 자주 찾는 시민이라면, 이 책을 통해 알고 있던 풍경을 더욱 의미 있는 시선으로 바라볼 수 있을 것입니다. 단순한 관광을 넘어, 통도사의 문화적, 정신적 가치를 이해하는 데 큰 도움이 됩니다.</p><p>2. 《양산의 옛이야기》 - 사라져가는 양산의 구전 설화</p><p>양산에는 신비롭고 재미있는 옛이야기들이 많이 전해 내려옵니다. 이 책은 양산의 산과 강, 마을마다 전해지는 구전 설화들을 한데 모아 정리했습니다. 무성산의 전설, 황산강의 비밀 등 우리가 무심코 지나쳤던 장소에 얽힌 흥미로운 이야기들을 만날 수 있습니다. 아이들과 함께 읽으면 양산에 대한 자긍심과 호기심을 키우는 좋은 기회가 될 것입니다.</p><p>양산의 자연을 느낄 수 있는 책<br>1. 《양산의 들꽃》 - 우리가 몰랐던 양산의 아름다움</p><p>양산천을 따라 걷다 보면, 혹은 천성산 등산로를 오르다 보면 수많은 들꽃을 마주하게 됩니다. 이 책은 양산 곳곳에서 자라는 다양한 야생화를 사진과 함께 상세하게 소개합니다. 평소에 자주 보던 들꽃의 이름과 특징을 알게 되면, 산책이나 등산의 즐거움이 두 배가 됩니다. 자연을 사랑하는 양산 시민들에게 이 책은 훌륭한 길잡이가 되어 줄 것입니다.</p><p>2. 《내 고향 양산》 - 사진으로 만나는 양산의 사계절</p><p>양산의 아름다운 풍경을 담은 사진집입니다. 봄의 매화부터 여름의 푸른 숲, 가을의 단풍, 겨울의 설경까지 양산의 사계절을 생생하게 느낄 수 있습니다. 익숙한 풍경도 사진 작가의 시선을 통해 새롭게 다가옵니다. 바쁜 일상 속에서 잠시 멈춰 서서 양산의 자연이 주는 위로와 아름다움을 느껴보세요.</p></div>
+                    </div>
+                </div>
+                <button class="toggle-button"></button>
+            </div>
+                    </div>
+        
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
         </div>
     </div>
     
-    <script>
+        <script>
         history.scrollRestoration = 'manual';
 
         
