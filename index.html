@@ -569,3 +569,28 @@
                     setTimeout(init, 50);
                     return;
                 }
+                images.forEach(img => {
+                    const checkCompletion = () => {
+                        loadedImages++;
+                        if (loadedImages === totalImages) { setTimeout(init, 50); }
+                    };
+                    if (img.complete) {
+                        checkCompletion();
+                    } else {
+                        img.addEventListener('load', checkCompletion);
+                        img.addEventListener('error', checkCompletion);
+                    }
+                });
+            }
+        });
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            if ("all" === "all") {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(setupCollapsibleContent, 300);
+            }
+        });
+    </script>
+</body>
+</html>
