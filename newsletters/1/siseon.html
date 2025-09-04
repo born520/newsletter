@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -60,11 +61,22 @@
             padding: 10px 20px;
             background-color: #ffffff;
             border-bottom: 1px solid #F0F0F0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-nav .all-button {
+            padding: 8px 15px;
+            background-color: #FEE500;
+            color: #191919;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 18px;
+            font-size: 13px;
+            white-space: nowrap;
         }
         .section-nav select {
-            width: 100%;
-            max-width: 300px;
+            flex-grow: 1;
             padding: 8px 12px;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -325,10 +337,10 @@
         </div>
 
         
-        <div class="section-nav">
+                <div class="section-nav">
+            <a href="./index.html" class="all-button">전체보기</a>
             <select id="sectionSelect" onchange="navigateToSection()">
-                <option value="" selected disabled>섹션 선택</option>
-                <option value="all">전체 보기</option>
+                <option value="" selected disabled>다른 섹션 보기</option>
                                     <option value="siseon" selected>양미혁의 시선</option>
                                     <option value="damron" ZautoescZ>양산담론</option>
                                     <option value="balgeoleum" ZautoescZ>한옥문의 발걸음</option>
@@ -337,7 +349,7 @@
                                     <option value="book" ZautoescZ>양미혁이 먼저 읽어봤습니다</option>
                             </select>
         </div>
-        
+                
                 <div class="section">
             <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</h2>
             <div class="section-content">
@@ -385,11 +397,11 @@
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
             
-            <div class="navigation">
-                                                    <a class="disabled">이전호</a>
-                                                    <a class="disabled">다음호</a>
+                        <div class="navigation">
+                                                    <a class="disabled">이전 섹션</a>
+                                                    <a href="./damron.html">다음 섹션</a>
                             </div>
-        </div>
+                    </div>
     </div>
     
     <script>
@@ -398,15 +410,11 @@
             const select = document.getElementById('sectionSelect');
             const selectedValue = select.value;
             if (selectedValue) {
-                if (selectedValue === 'all') {
-                    window.location.href = './index.html'; 
-                } else {
-                    window.location.href = `./${selectedValue}.html`; // 섹션 페이지: 같은 이슈의 섹션.html
-                }
+                window.location.href = `./${selectedValue}.html`;
             }
         }
         
-        
+        // 콘텐츠 내 노란색 박스 라운드 처리 스크립트
         document.addEventListener('DOMContentLoaded', function() {
             
             const contentDivs = document.querySelectorAll('.content-div');
@@ -497,15 +505,15 @@
                         img.addEventListener('error', checkCompletion);
                     }
                 });
+            } else {
+                setupCollapsibleContent();
             }
         });
         
         let resizeTimeout;
         window.addEventListener('resize', () => {
-            if ("siseon" === "all") {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(setupCollapsibleContent, 300);
-            }
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(setupCollapsibleContent, 300);
         });
     </script>
 </body>
