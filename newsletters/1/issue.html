@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
     <title>뉴스레터 - 제 1호</title>
     <style>
@@ -43,11 +43,11 @@
         .section h2 {
             display: flex;
             align-items: center;
-            font-size: 22px;  
+            font-size: 22px;
             font-weight: 800;
             color: #191919;
             background-color: #FEE500;
-            padding: 15px 22px;  
+            padding: 15px 22px;
             margin: 0;
             border: none;
             line-height: 1.4;
@@ -56,24 +56,27 @@
         
          
         .section-subtitle {
-            font-size: 18px;  
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 25px;
-            padding: 5px 0 5px 15px;
-            border-left: 4px solid #FEE500;
+            display: inline-block;  
+            font-size: 18px;
+            font-weight: 700;  
+            color: #191919;
+            background-color: #FEE500;  
+            padding: 4px 10px;  
+            margin: 0 0 25px 0;  
+            border-radius: 5px;  
             line-height: 1.5;
+             
+            border-left: none;
         }
 
          
         .content-div {
             background: #F9F9F9; padding: 20px; border-radius: 8px; border: 1px solid #F0F0F0; box-shadow: none; margin-top: 15px;
-            font-size: 16px;  
+            font-size: 16px;
             color: #333;
         }
-         
         .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
-            font-size: 17px !important;  
+            font-size: 17px !important;
             font-weight: 700;
             color: #191919;
             margin: 1.5em 0 1em;
@@ -85,6 +88,21 @@
         .content-div li { margin-bottom: 0.5em; }
 
          
+        .dot-text-container .char-dot {
+            position: relative;
+            display: inline-block;
+        }
+        .dot-text-container .char-dot::after {
+            content: '·';
+            position: absolute;
+            top: -0.7em;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            color: #191919;
+        }
+
+         
         .section .media-wrapper { margin: 0 -25px 25px -25px; line-height: 0; }
         .section img { width: 100%; height: auto; display: block; border-radius: 0; }
         .youtube-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
@@ -92,9 +110,10 @@
 
          
         .issue-item { margin-bottom: 25px; padding: 20px; border-radius: 8px; background-color: #F9F9F9; border: 1px solid #F0F0F0; }
-        .issue-item h3 { font-size: 17px; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }  
+         
+        .issue-item h3 { font-size: 17px !important; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
         .book-review { background: #F9F9F9; border: 1px solid #F0F0F0; padding: 20px; border-radius: 8px; margin-top: 10px; }
-        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }  
+        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 17px; }
         .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
         .collapsible-content.expanded { max-height: none !important; overflow: visible; }
         .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
