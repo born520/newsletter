@@ -148,7 +148,9 @@
             padding: 6px 10px;
             border-radius: 6px;
             margin: 20px 0 10px 0;
-            display: inline-block;
+            display: block;
+            width: 100%;
+            text-align: center;
         }
         .content-div p { margin-bottom: 1em; }
         .content-div strong { color: #000; }
@@ -169,6 +171,21 @@
         .content-div .text-muted {
             font-size: 12px;
             color: #888;
+        }
+
+         
+        @media (max-width: 768px) {
+            .section-content {
+                padding: 15px;
+            }
+            .content-div {
+                padding: 12px;
+                margin-top: 10px;
+            }
+            .content-div blockquote {
+                padding: 10px 12px;
+                margin: 10px 0;
+            }
         }
 
          
