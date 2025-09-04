@@ -11,9 +11,37 @@
         body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; word-break: keep-all; font-size: 16px; }
         .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
         
-        .header { background: #FFEB00; color: #3C1E1E; text-align: center; padding: 0; }  
-        .header img { max-width: 100%; height: auto; display: block; }  
-        .header h1, .header .date, .header .kakao-button { display: none; }  
+        .header { padding: 0; }
+        .header img { max-width: 100%; height: auto; display: block; }
+
+        .info-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 25px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        .info-bar .date {
+            font-size: 14px;
+            color: #3a3a3a;
+        }
+        .info-bar .kakao-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: #FEE500;
+            color: #191919;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        .info-bar .kakao-button svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 6px;
+        }
 
         .section-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background-color: #f8f9fa; border-bottom: 1px solid #eee; gap: 10px; flex-wrap: wrap; }
         .section-nav a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; white-space: nowrap; }
@@ -65,11 +93,12 @@
     <div class="container">
         <div class="header">
             <img src="https://i.postimg.cc/3wDdVnk4/image.png" alt="뉴스레터 배너">
-            <h1>한옥문&amp;양산미래혁신연구원 <span class="sub-title">뉴스레터</span></h1>
+        </div>
+        <div class="info-bar">
             <p class="date">2025년 8월 29일 · 제 1호</p>
-            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 18px;background-color:#FEE500;color:#191919;text-decoration:none;font-weight:bold;border-radius:8px;vertical-align:middle;">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
-                <span>카카오톡 채널 추가</span>
+            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
+                <span>채널 추가</span>
             </a>
         </div>
         
@@ -81,12 +110,12 @@
                 <a href="./index.html">← 전체 보기</a>
                 <select onchange="if(this.value) window.location.href=this.value">
                     <option value="">다른 섹션으로 이동...</option>
-                                                                      <option value="./siseon.html" >양미혁의 시선</option>
-                                                                                              <option value="./damron.html" >양산담론</option>
-                                                                                              <option value="./balgeoleum.html" >한옥문 원장의 발걸음</option>
-                                                                                              <option value="./youtube.html" selected>[유튜브]한옥문의 양산이야기</option>
-                                                                                              <option value="./issue.html" >NOW 양산</option>
-                                                                                              <option value="./book.html" >양미혁이 먼저 읽어봤습니다</option>
+                                                                        <option value="./siseon.html" >양미혁의 시선</option>
+                                                                                                <option value="./damron.html" >양산담론</option>
+                                                                                                <option value="./balgeoleum.html" >한옥문 원장의 발걸음</option>
+                                                                                                <option value="./youtube.html" selected>[유튜브]한옥문의 양산이야기</option>
+                                                                                                <option value="./issue.html" >NOW 양산</option>
+                                                                                                <option value="./book.html" >양미혁이 먼저 읽어봤습니다</option>
                                                             </select>
             </div>
                         <h2>[유튜브]한옥문의 양산이야기</h2>
