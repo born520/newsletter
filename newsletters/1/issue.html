@@ -71,7 +71,7 @@
         .content-div strong { font-weight: 700; color: #3C1E1E; }
         .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
         .content-div li { margin-bottom: 0.5em; }
-        .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
         .youtube-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px; }
         .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .youtube-subscribe-button { display: table; margin: 5px auto 20px; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
@@ -81,8 +81,8 @@
         .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 1.1em; }
         .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
         .collapsible-content.expanded { max-height: none !important; overflow: visible; }
-        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(transparent, rgba(255, 255, 255, 0.95)); pointer-events: none; z-index: 5; }
-        .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, rgba(248, 249, 250, 0.95)); }
+        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
+        .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, #f8f9fa); }
         .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; }
         .toggle-button::after { content: '더 보기 ▼'; }
         .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
@@ -120,8 +120,10 @@
                                                             </select>
             </div>
                         <h2>NOW 양산</h2>
-                        <div class="collapsible-content">
-                <img src="https://i.postimg.cc/ncF8WrXq/image.png" alt="양산 이슈 이미지">                                                            <div class="issue-item">
+                        
+            <img src="https://i.postimg.cc/ncF8WrXq/image.png" alt="양산 이슈 이미지">
+            <div class="collapsible-content">
+                                                            <div class="issue-item">
                             <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">양산시 소식</div>                            <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
                             <div style="font-size:12px;color:#888;">(보도일자: 2025.08.26 / 출처: 환경일보)</div>                            <div class="content-div"><p>양산시가 지난 26일, 하반기 공공일자리 사업에 참여하는 340명을 대상으로 산업안전보건교육을 실시했습니다. 이번 사업은 공공근로자 318명과 지역공동체일자리 사업 참여자 22명으로 구성되어 있으며, 8월 25일부터 12월 12일까지 4개월간 진행됩니다. 시는 이번 교육을 통해 폭염 등 계절적 위험 요인에 대비하고, 안전한 근로 환경을 조성하는 데 만전을 기하겠다고 밝혔습니다.</p></div>                        </div>
                                             <div class="issue-item">
@@ -155,37 +157,41 @@
     <script>
         history.scrollRestoration = 'manual';
 
+        
         function setupCollapsibleContent() {
             document.querySelectorAll('.collapsible-content').forEach(content => {
                 const section = content.closest('.section');
                 const button = section.querySelector('.toggle-button');
                 if (!button) return;
 
+                
                 content.style.maxHeight = 'none';
                 content.style.overflow = 'visible';
-             
+            
                 const actualHeight = content.offsetHeight;
                 
-                const hasMedia = content.querySelector('img, .youtube-container');
+                
                 const isMobile = window.innerWidth <= 480;
-                let threshold = hasMedia ? (isMobile ? 350 : 450) : (isMobile ? 200 : 280);
+                const threshold = isMobile ? 200 : 280; 
+                const limitedHeight = isMobile ? 180 : 250; 
+
                 
                 if (actualHeight > threshold) {
-                    const limitedHeight = hasMedia ? (isMobile ? 320 : 420) : (isMobile ? 180 : 250);
                     content.style.maxHeight = limitedHeight + 'px';
                     content.style.overflow = 'hidden';
                     content.classList.add('collapsed');
                     button.style.display = 'block';
                 } else {
+                    
                     button.style.display = 'none';
+                    content.classList.remove('collapsed'); 
                 }
 
+                
                 if (!button.hasEventListener) {
                     button.addEventListener('click', () => {
                         content.classList.remove('collapsed');
-                        content.classList.add('expanded');
-                        content.style.maxHeight = 'none';
-                        content.style.overflow = 'visible';
+                        content.classList.add('expanded'); 
                         button.style.display = 'none';
                     });
                     button.hasEventListener = true;
@@ -195,7 +201,7 @@
         
         document.addEventListener('DOMContentLoaded', () => {
             if ("issue" === "all") {
-                const images = document.querySelectorAll('img');
+                const images = document.querySelectorAll('.section img');
                 let loadedImages = 0;
                 const totalImages = images.length;
 
