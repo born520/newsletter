@@ -329,6 +329,19 @@
     
     <script>
         
+        function navigateToSection() {
+            const select = document.getElementById('sectionSelect');
+            const selectedValue = select.value;
+            if (selectedValue) {
+                if (selectedValue === 'all') {
+                    window.location.href = '..\/..\/index.html';
+                } else {
+                    window.location.href = '..\/..\/' + selectedValue + '.html';
+                }
+            }
+        }
+        
+        
         document.addEventListener('DOMContentLoaded', function() {
             
             const contentDivs = document.querySelectorAll('.content-div');
