@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
     <title>뉴스레터 - 제 1호</title>
+    
+    <meta property="og:title" content="NOW 양산 - 제 1호">
+    <meta property="og:description" content="양산시민이 찾아낸 우리 역사 원적산 봉수대">
+    <meta property="og:image" content="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg">
+    <meta property="og:url" content="https://newsletter.shorttime.co.kr/newsletters/1/issue.html">
+    <meta property="og:type" content="article">
     <style>
          
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,6 +54,25 @@
             white-space: nowrap; 
         }
         .info-bar .kakao-button svg { width: 16px; height: 16px; margin-right: 6px; }
+
+         
+        .section-nav {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #F0F0F0;
+            text-align: center;
+        }
+        .section-nav select {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
 
          
         .section { 
@@ -262,6 +287,28 @@
             padding: 40px 20px; 
             font-size: 12px; 
         }
+        .footer .navigation {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer .navigation a {
+            padding: 10px 20px;
+            background-color: #FEE500;
+            color: #191919;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .footer .navigation a.disabled {
+            background-color: #ddd;
+            color: #999;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -275,6 +322,20 @@
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
                 <span>채널 추가</span>
             </a>
+        </div>
+
+        
+        <div class="section-nav">
+            <select id="sectionSelect" onchange="navigateToSection()">
+                <option value="" selected disabled>섹션 선택</option>
+                <option value="all">전체 보기</option>
+                                    <option value="siseon" ZautoescZ>양미혁의 시선</option>
+                                    <option value="damron" ZautoescZ>양산담론</option>
+                                    <option value="balgeoleum" ZautoescZ>한옥문의 발걸음</option>
+                                    <option value="youtube" ZautoescZ>[유튜브]한옥문의 양산이야기</option>
+                                    <option value="issue" selected>NOW 양산</option>
+                                    <option value="book" ZautoescZ>양미혁이 먼저 읽어봤습니다</option>
+                            </select>
         </div>
         
         
@@ -317,6 +378,11 @@
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
+            
+            <div class="navigation">
+                                                    <a class="disabled">이전호</a>
+                                                    <a class="disabled">다음호</a>
+                            </div>
         </div>
     </div>
     
@@ -327,9 +393,9 @@
             const selectedValue = select.value;
             if (selectedValue) {
                 if (selectedValue === 'all') {
-                    window.location.href = '..\/..\/index.html';
+                    window.location.href = './index.html'; 
                 } else {
-                    window.location.href = '..\/..\/' + selectedValue + '.html';
+                    window.location.href = `./${selectedValue}.html`; // 섹션 페이지: 같은 이슈의 섹션.html
                 }
             }
         }
