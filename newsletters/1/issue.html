@@ -15,7 +15,7 @@
             color: #191919;
             background-color: #F9F9F9;
             word-break: keep-all;
-            font-size: 17px;  
+            font-size: 17px;
         }
         .container {
             max-width: 680px;
@@ -58,22 +58,25 @@
             overflow: hidden;
             padding: 0;
         }
+        .section-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background-color: #f8f9fa; border-top: 1px solid #eee; gap: 10px; flex-wrap: wrap; }
+        .section-nav a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; white-space: nowrap; }
+        .section-nav select { flex-grow: 1; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 5px; min-width: 150px; }
         .section-content {
-            padding: 25px;  
+            padding: 25px;
         }
         
          
         .section h2 {
             display: flex;
             align-items: center;
-            font-size: 22px;  
+            font-size: 22px;
             font-weight: 800;
             color: #191919;
             background-color: #FEE500;
             padding: 18px 25px;
             margin: 0;
             border: none;
-            line-height: 1.4;  
+            line-height: 1.4;
         }
         .section h2::before {
             content: '💬';
@@ -81,9 +84,9 @@
             font-size: 22px;
         }
         .section-subtitle {
-            font-size: 16px;  
+            font-size: 16px;
             color: #555;
-            margin-bottom: 25px;  
+            margin-bottom: 25px;
             font-weight: normal;
         }
 
@@ -95,17 +98,21 @@
             border: 1px solid #F0F0F0;
             box-shadow: none;
             margin-top: 15px;
-            font-size: 16px;  
+            font-size: 16px;
             color: #333;
         }
-        
+        .content-div p { margin-bottom: 1em; }
+        .content-div h1, .content-div h2, .content-div h3 { color: #191919; }
+        .content-div strong { color: #000; }
+        .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
+        .content-div li { margin-bottom: 0.5em; }
+
          
         .section .media-wrapper {
-             
             margin: 0 -25px 25px -25px;
-            line-height: 0;  
+            line-height: 0;
         }
-        .section img, .youtube-container {
+        .section img {
             width: 100%;
             height: auto;
             display: block;
@@ -122,20 +129,24 @@
         }
 
          
-        .toggle-button {
-            display: none;
-            margin: 20px auto 0;
-            background: #F0F0F0;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 18px;
-            cursor: pointer;
-            font-size: 13px;
-            color: #555;
-            font-weight: bold;
-        }
+        .issue-item { margin-bottom: 25px; padding: 20px; border-radius: 8px; background-color: #F9F9F9; border: 1px solid #F0F0F0; }
+        .issue-item h3 { font-size: 1.1em; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
+        .book-review { background: #F9F9F9; border: 1px solid #F0F0F0; padding: 20px; border-radius: 8px; margin-top: 10px; }
+        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 1.1em; }
+        .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
+        .collapsible-content.expanded { max-height: none !important; overflow: visible; }
+        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
+        .toggle-button { display: none; margin: 20px auto 0; background: #F0F0F0; border: none; border-radius: 20px; padding: 8px 18px; cursor: pointer; font-size: 13px; color: #555; font-weight: bold; }
         .toggle-button::after { content: '내용 더 보기 ▼'; }
-        
+        .post-nav { display: flex; justify-content: space-between; padding: 20px 25px; border-top: 1px solid #eee; margin-top: 20px; gap: 10px; }
+        .post-nav a { color: #3C1E1E; text-decoration: none; font-size: 14px; padding: 8px 12px; border: 1px solid #eee; border-radius: 5px; max-width: 48%; }
+        .post-nav a:hover { background-color: #f8f9fa; }
+        .post-nav .nav-title { display: block; font-size: 12px; color: #777; }
+        .post-nav .nav-text { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .post-nav .prev-link { text-align: left; }
+        .post-nav .next-link { text-align: right; }
+        .youtube-subscribe-button { display: table; margin: 5px auto 20px; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
+
         .footer {
             background-color: #f0f0f0;
             color: #777;
@@ -157,16 +168,49 @@
                 <span>채널 추가</span>
             </a>
         </div>
-
+        
+        
         
                 
+        
+                <div class="section">
+                        <h2>NOW 양산</h2>
+            <div class="section-content">
+                                                <div class="media-wrapper">
+                    <img src="https://i.postimg.cc/cC6ckh9b/image.png" alt="양산 이슈 이미지">
+                </div>
+                                <div class="collapsible-content">
+                                                                        <div class="issue-item">
+                                <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">양산시 소식</div>                                <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
+                                <div style="font-size:12px;color:#888;">(보도일자: 2025.08.26 / 출처: 환경일보)</div>                                <div class="content-div"><p>양산시가 지난 26일, 하반기 공공일자리 사업에 참여하는 340명을 대상으로 산업안전보건교육을 실시했습니다. 이번 사업은 공공근로자 318명과 지역공동체일자리 사업 참여자 22명으로 구성되어 있으며, 8월 25일부터 12월 12일까지 4개월간 진행됩니다. 시는 이번 교육을 통해 폭염 등 계절적 위험 요인에 대비하고, 안전한 근로 환경을 조성하는 데 만전을 기하겠다고 밝혔습니다.</p></div>                            </div>
+                                                    <div class="issue-item">
+                                <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">한옥문의 도시읽기</div>                                <h3>일자리는 시민들의 생활 안정과 직결되는 가장 중요한 복지입니다. 특히 공공일자리 사업은 취약계층의 생계 지원뿐만 아니라, 지역 사회에 활력을 불어넣는 중요한 역할을 합니다. 안전 교육을 통해 근로자들이 위험 없이 일할 수 있는 환경을 만드는 것은 시민의 삶을 최우선으로 생각하는 행정의 기본입니다. 앞으로도 더 많은 양질의 일자리를 창출하여 양산 시민 모두가 안정된 삶을 누릴 수 있도록 힘쓰겠습니다.</h3>
+                                                                                            </div>
+                                                    <div class="issue-item">
+                                <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">함께 보면 좋은 경상남도 소식</div>                                <h3>경상남도-양산시, 동부양산 시민과의 대화 개최</h3>
+                                <div style="font-size:12px;color:#888;">(보도일자: 2025.08.05 / 출처: 2025년 양산팩토리)</div>                                <div class="content-div"><p>경상남도와 양산시가 동부양산 시민과의 대화를 열고 교통, 문화, 관광 등 지역 현안에 대한 시민들의 목소리를 직접 들었습니다. 나동현 양산시장은 "시민들의 목소리를 들어 뜻깊은 시간이었다"며 동부양산이 교통, 문화, 관광의 중심지로 거듭날 수 있도록 경남도와 긴밀히 협력하겠다고 밝혔습니다.</p></div>                            </div>
+                                                    <div class="issue-item">
+                                <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">한옥문의 정책돋보기</div>                                <h3>소통은 정책 수립의 출발점입니다. 시민들의 삶의 터전에서 직접 목소리를 듣는 것은 행정의 방향을 올바르게 설정하는 데 필수적인 과정입니다. 특히 동부양산은 교통과 문화 인프라 확충에 대한 요구가 큰 만큼, 이번 대화가 실질적인 정책으로 이어져 지역 발전을 가속화하는 계기가 되어야 합니다. 시민들의 의견이 단순한 제안으로 그치지 않고 구체적인 사업으로 실현될 수 있도록 지속적으로 관심을 갖고 지원해야 합니다.</h3>
+                                                                                            </div>
+                                                    <div class="issue-item">
+                                <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">알아두면 좋은 전국 소식</div>                                <h3>양산 원동 매실, 특산품 개발 경진대회 열려</h3>
+                                <div style="font-size:12px;color:#888;">(보도일자: 2025.08.19 / 출처: 2025년 양산팩토리)</div>                                <div class="content-div"><p>양산의 대표 특산물인 원동 매실을 활용한 '2025년 원동매실 특산품 개발 경진대회'가 개최되었습니다. 이번 대회는 상품화가 가능한 베이커리 및 공산품 분야에서 우수 제품을 발굴하여 원동 매실의 부가가치를 높이고, 지역 경제 활성화에 기여하기 위해 마련되었습니다.</p></div>                            </div>
+                                                    <div class="issue-item">
+                                <div style="font-size:14px;font-weight:bold;color:#3C1E1E;">한옥문의 경제산책</div>                                <h3>지역 특산물을 활용한 상품 개발은 단순한 소비를 넘어 지역의 문화와 정체성을 담는 중요한 경제 활동입니다. 원동 매실은 이미 전국적으로 그 명성을 알리고 있지만, 이번 경진대회를 통해 더욱 다양한 형태로 재탄생하여 우리 양산의 브랜드 가치를 높일 수 있습니다. 지역 자원을 활용한 창의적인 아이디어가 양산 경제를 한 단계 더 도약시키는 원동력이 될 것입니다.</h3>
+                                                                                            </div>
+                                                            </div>
+                <button class="toggle-button"></button>
+            </div>
+                    </div>
+        
+        
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
         </div>
     </div>
     
-    <script>
+        <script>
         history.scrollRestoration = 'manual';
 
         
