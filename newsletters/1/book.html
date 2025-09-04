@@ -6,25 +6,44 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
     <title>뉴스레터 - 제 1호</title>
     <style>
+         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; color: #3a3a3a; background-color: #f0f0f0; word-break: keep-all; font-size: 16px; }
-        .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 25px rgba(0,0,0,0.08); }
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.8;
+            color: #191919;  
+            background-color: #F9F9F9;  
+            word-break: keep-all;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background-color: transparent;  
+        }
         
+         
         .header { padding: 0; }
-        .header img { max-width: 100%; height: auto; display: block; }
+        .header img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #F0F0F0;
+        }
 
+         
         .info-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 25px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #eee;
+            padding: 12px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #F0F0F0;
         }
         .info-bar .date {
             font-size: 14px;
-            color: #3a3a3a;
+            color: #555;
         }
         .info-bar .kakao-button {
             display: inline-flex;
@@ -34,59 +53,135 @@
             color: #191919;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 18px;  
+            font-size: 13px;
             white-space: nowrap;
         }
         .info-bar .kakao-button svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             margin-right: 6px;
         }
 
-        .section-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background-color: #f8f9fa; border-bottom: 1px solid #eee; gap: 10px; flex-wrap: wrap; }
-        .section-nav a { display: inline-block; padding: 8px 15px; background-color: #3C1E1E; color: #fff; text-decoration: none; border-radius: 5px; font-size: 14px; white-space: nowrap; }
-        .section-nav select { flex-grow: 1; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 5px; min-width: 150px; }
+         
+        .section {
+            background-color: #ffffff;
+            margin: 15px;  
+            border-radius: 12px;  
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);  
+            overflow: hidden;  
+            padding: 0;
+        }
+        .section-nav {
+            padding: 15px;
+            background-color: #f7f7f7;
+            border-top: 1px solid #eee;
+        }
+        .section-content {
+            padding: 20px 25px 30px;  
+        }
+        
+         
+        .section h2 {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 800;
+            color: #191919;
+            background-color: #FEE500;  
+            padding: 18px 25px;
+            margin: 0;
+            border: none;
+        }
+        .section h2::before {
+            content: '💬';  
+            margin-right: 12px;
+            font-size: 20px;
+        }
+        .section-subtitle {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
 
-        .post-nav { display: flex; justify-content: space-between; padding: 20px 25px; border-top: 1px solid #eee; margin-top: 20px; }
-        .post-nav a { color: #3C1E1E; text-decoration: none; font-size: 14px; padding: 8px 12px; border: 1px solid #eee; border-radius: 5px; max-width: 48%; }
-        .post-nav a:hover { background-color: #f8f9fa; }
-        .post-nav .nav-title { display: block; font-size: 12px; color: #777; }
-        .post-nav .nav-text { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .post-nav .prev-link { text-align: left; }
-        .post-nav .next-link { text-align: right; }
-
-        .section { padding: 30px 25px; border-bottom: 1px solid #eee; }
-        .section:last-of-type { border-bottom: none; }
-        .section h2 { color: #3C1E1E; font-size: 20px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFD400; display: flex; align-items: center; }
-        .section h2::before { content: "▶"; margin-right: 10px; font-size: 14px; color: #FFD400; }
-        .section-subtitle { font-size: 15px; color: #555; margin-top: -15px; margin-bottom: 20px; font-weight: normal; }
-        .dot-text-container .char-dot { position: relative; display: inline-block; }
-        .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; }
-        .content-div { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; border-left: 4px solid #FFD400; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 15px; font-size: 15px; color: #495057; line-height: 1.8; }
-        .section:nth-child(even) .content-div { background: rgba(255, 255, 255, 0.9); }
+         
+        .content-div {
+            background: #F9F9F9;  
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #F0F0F0;
+            box-shadow: none;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #333;
+        }
         .content-div p { margin-bottom: 1em; }
-        .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 { color: #3C1E1E; margin: 1.5em 0 1em; line-height: 1.4; }
-        .content-div h1 { font-size: 1.2em; } .content-div h2 { font-size: 1.15em; } .content-div h3 { font-size: 1.1em; }
-        .content-div h4 { font-size: 1.05em; } .content-div h5, .content-div h6 { font-size: 1em; }
-        .content-div strong { font-weight: 700; color: #3C1E1E; }
+        .content-div h1, .content-div h2, .content-div h3 { color: #191919; }
+        .content-div strong { color: #000; }
         .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
         .content-div li { margin-bottom: 0.5em; }
-        .section img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; }
-        .youtube-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px; }
-        .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .youtube-subscribe-button { display: table; margin: 5px auto 20px; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
-        .issue-item { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #FFD400; }
-        .issue-item h3 { font-size: 1.1em; font-weight: bold; color: #1e1e1E; margin-bottom: 8px; }
-        .book-review { background: #fff; padding: 20px; border-radius: 8px; margin-top: 10px; border: 1px solid #eee; }
-        .book-title { font-weight: bold; color: #3C1E1E; margin-bottom: 8px; font-size: 1.1em; }
-        .collapsible-content { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
-        .collapsible-content.expanded { max-height: none !important; overflow: visible; }
-        .collapsible-content.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
-        .section:nth-child(even) .collapsible-content.collapsed::after { background: linear-gradient(transparent, #f8f9fa); }
-        .toggle-button { display: none; width: fit-content; margin: 10px auto 5px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 15px; padding: 6px 12px; cursor: pointer; font-size: 12px; color: #666; font-weight: normal; }
-        .toggle-button::after { content: '더 보기 ▼'; }
-        .footer { background-color: #f7f7f7; color: #777; text-align: center; padding: 30px; font-size: 12px; border-top: 1px solid #eee; }
-        .footer a { color: #3C1E1E; text-decoration: none; font-weight: bold; }
+
+        .section img, .youtube-container {
+            max-width: calc(100% + 50px);  
+            margin: -20px -25px 20px -25px;  
+            border-radius: 0;
+            box-shadow: none;
+            display: block;
+        }
+        .youtube-container {
+            position: relative;
+            width: calc(100% + 50px);
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+         
+        .issue-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #F9F9F9;
+            border: 1px solid #F0F0F0;
+        }
+        .book-review {
+            background: #F9F9F9;
+            border: 1px solid #F0F0F0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .toggle-button {
+            display: none;
+            margin: 20px auto 0;
+            background: #F0F0F0;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #555;
+            font-weight: bold;
+        }
+        .toggle-button::after { content: '내용 더 보기 ▼'; }
+
+        .post-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0 0;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        .footer {
+            background-color: #f0f0f0;
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -97,43 +192,13 @@
         <div class="info-bar">
             <p class="date">2025년 9월 13일 · 제 1호</p>
             <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w.org/2000/svg"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
                 <span>채널 추가</span>
             </a>
         </div>
         
         
-        
                 
-        
-        
-                <div class="section">
-                        <div class="section-nav">
-                <a href="./index.html">← 전체 보기</a>
-                <select onchange="if(this.value) window.location.href=this.value">
-                    <option value="">다른 섹션으로 이동...</option>
-                                                                        <option value="./siseon.html" >양미혁의 시선</option>
-                                                                                                <option value="./damron.html" >양산담론</option>
-                                                                                                <option value="./balgeoleum.html" >한옥문 원장의 발걸음</option>
-                                                                                                <option value="./youtube.html" >[유튜브]한옥문의 양산이야기</option>
-                                                                                                <option value="./issue.html" >NOW 양산</option>
-                                                                                                <option value="./book.html" selected>양미혁이 먼저 읽어봤습니다</option>
-                                                            </select>
-            </div>
-                        <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
-            <p class="section-subtitle"><p>추천도서</p></p>            
-            <img src="https://i.postimg.cc/bv3Ycxkz/image.png" alt="추천 도서 이미지">            
-            <div class="collapsible-content">
-                <div class="book-review">
-                    <div class="book-title">📚 이번 주 추천도서</div>
-                    <div class="content-div"><p>도심 속 힐링, 책으로 떠나는 양산 여행<br>따스한 햇살 아래 공원 벤치에 앉아 책장을 넘기거나, 조용한 카페에서 커피 한 잔과 함께 독서에 빠져보는 건 어떨까요? 양산 시민들에게 특별한 의미를 더해줄, 양산과 관련된 흥미로운 도서들을 소개합니다. 단순히 지역 정보를 얻는 것을 넘어, 양산의 역사와 문화, 그리고 사람들의 이야기에 깊이 공감할 수 있는 책들로 일상에 새로운 활력을 불어넣어 보세요.</p><p>양산의 역사와 문화를 담은 책<br>1. 《양산 통도사》 - 한국 불교의 심장, 그 신비로운 이야기</p><p>영축산 자락에 자리한 통도사는 양산의 대표적인 명소이자 한국 3대 사찰 중 하나입니다. 이 책은 통도사의 창건부터 현재까지의 역사, 건축미, 그리고 그 안에 담긴 의미를 깊이 있게 다룹니다. 통도사를 자주 찾는 시민이라면, 이 책을 통해 알고 있던 풍경을 더욱 의미 있는 시선으로 바라볼 수 있을 것입니다. 단순한 관광을 넘어, 통도사의 문화적, 정신적 가치를 이해하는 데 큰 도움이 됩니다.</p><p>2. 《양산의 옛이야기》 - 사라져가는 양산의 구전 설화</p><p>양산에는 신비롭고 재미있는 옛이야기들이 많이 전해 내려옵니다. 이 책은 양산의 산과 강, 마을마다 전해지는 구전 설화들을 한데 모아 정리했습니다. 무성산의 전설, 황산강의 비밀 등 우리가 무심코 지나쳤던 장소에 얽힌 흥미로운 이야기들을 만날 수 있습니다. 아이들과 함께 읽으면 양산에 대한 자긍심과 호기심을 키우는 좋은 기회가 될 것입니다.</p><p>양산의 자연을 느낄 수 있는 책<br>1. 《양산의 들꽃》 - 우리가 몰랐던 양산의 아름다움</p><p>양산천을 따라 걷다 보면, 혹은 천성산 등산로를 오르다 보면 수많은 들꽃을 마주하게 됩니다. 이 책은 양산 곳곳에서 자라는 다양한 야생화를 사진과 함께 상세하게 소개합니다. 평소에 자주 보던 들꽃의 이름과 특징을 알게 되면, 산책이나 등산의 즐거움이 두 배가 됩니다. 자연을 사랑하는 양산 시민들에게 이 책은 훌륭한 길잡이가 되어 줄 것입니다.</p><p>2. 《내 고향 양산》 - 사진으로 만나는 양산의 사계절</p><p>양산의 아름다운 풍경을 담은 사진집입니다. 봄의 매화부터 여름의 푸른 숲, 가을의 단풍, 겨울의 설경까지 양산의 사계절을 생생하게 느낄 수 있습니다. 익숙한 풍경도 사진 작가의 시선을 통해 새롭게 다가옵니다. 바쁜 일상 속에서 잠시 멈춰 서서 양산의 자연이 주는 위로와 아름다움을 느껴보세요.</p></div>
-                </div>
-            </div>
-            <button class="toggle-button"></button>
-                        <div class="post-nav">
-                <a href="./issue.html" class="prev-link"><span class="nav-title">이전글</span><span class="nav-text">NOW 양산</span></a>                <div></div>            </div>
-                    </div>
-        
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="../../archive.html">지난 뉴스레터 전체 보기</a></p>
