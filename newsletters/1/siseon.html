@@ -12,27 +12,20 @@
         body {
             font-family: 'Malgun Gothic', sans-serif;
             line-height: 1.8;
-            color: #191919;  
-            background-color: #F9F9F9;  
+            color: #191919;
+            background-color: #F9F9F9;
             word-break: keep-all;
-            font-size: 16px;
+            font-size: 17px;  
         }
         .container {
             max-width: 680px;
             margin: 0 auto;
-            background-color: transparent;  
+            background-color: transparent;
         }
         
          
         .header { padding: 0; }
-        .header img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 1px solid #F0F0F0;
-        }
-
-         
+        .header img { max-width: 100%; height: auto; display: block; }
         .info-bar {
             display: flex;
             justify-content: space-between;
@@ -41,10 +34,7 @@
             background-color: #ffffff;
             border-bottom: 1px solid #F0F0F0;
         }
-        .info-bar .date {
-            font-size: 14px;
-            color: #555;
-        }
+        .info-bar .date { font-size: 14px; color: #555; }
         .info-bar .kakao-button {
             display: inline-flex;
             align-items: center;
@@ -53,106 +43,85 @@
             color: #191919;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 18px;  
+            border-radius: 18px;
             font-size: 13px;
             white-space: nowrap;
         }
-        .info-bar .kakao-button svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 6px;
-        }
+        .info-bar .kakao-button svg { width: 16px; height: 16px; margin-right: 6px; }
 
          
         .section {
             background-color: #ffffff;
-            margin: 15px;  
-            border-radius: 12px;  
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);  
-            overflow: hidden;  
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
             padding: 0;
         }
-        .section-nav {
-            padding: 15px;
-            background-color: #f7f7f7;
-            border-top: 1px solid #eee;
-        }
         .section-content {
-            padding: 20px 25px 30px;  
+            padding: 25px;  
         }
         
          
         .section h2 {
             display: flex;
             align-items: center;
-            font-size: 20px;
+            font-size: 22px;  
             font-weight: 800;
             color: #191919;
-            background-color: #FEE500;  
+            background-color: #FEE500;
             padding: 18px 25px;
             margin: 0;
             border: none;
+            line-height: 1.4;  
         }
         .section h2::before {
-            content: '💬';  
+            content: '💬';
             margin-right: 12px;
-            font-size: 20px;
+            font-size: 22px;
         }
         .section-subtitle {
-            font-size: 15px;
+            font-size: 16px;  
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 25px;  
             font-weight: normal;
         }
 
          
         .content-div {
-            background: #F9F9F9;  
+            background: #F9F9F9;
             padding: 20px;
             border-radius: 8px;
             border: 1px solid #F0F0F0;
             box-shadow: none;
             margin-top: 15px;
-            font-size: 15px;
+            font-size: 16px;  
             color: #333;
         }
-        .content-div p { margin-bottom: 1em; }
-        .content-div h1, .content-div h2, .content-div h3 { color: #191919; }
-        .content-div strong { color: #000; }
-        .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
-        .content-div li { margin-bottom: 0.5em; }
-
+        
+         
+        .section .media-wrapper {
+             
+            margin: 0 -25px 25px -25px;
+            line-height: 0;  
+        }
         .section img, .youtube-container {
-            max-width: calc(100% + 50px);  
-            margin: -20px -25px 20px -25px;  
-            border-radius: 0;
-            box-shadow: none;
+            width: 100%;
+            height: auto;
             display: block;
+            border-radius: 0;
         }
         .youtube-container {
             position: relative;
-            width: calc(100% + 50px);
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%;  
             height: 0;
             overflow: hidden;
         }
+        .youtube-container iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
 
          
-        .issue-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #F9F9F9;
-            border: 1px solid #F0F0F0;
-        }
-        .book-review {
-            background: #F9F9F9;
-            border: 1px solid #F0F0F0;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-
         .toggle-button {
             display: none;
             margin: 20px auto 0;
@@ -166,15 +135,7 @@
             font-weight: bold;
         }
         .toggle-button::after { content: '내용 더 보기 ▼'; }
-
-        .post-nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 0 0;
-            border-top: 1px solid #eee;
-            margin-top: 30px;
-            gap: 10px;
-        }
+        
         .footer {
             background-color: #f0f0f0;
             color: #777;
@@ -192,15 +153,20 @@
         <div class="info-bar">
             <p class="date">2025년 9월 13일 · 제 1호</p>
             <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w.org/2000/svg"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 4.64c-6.96 0-12.64 4.48-12.64 10.08 0 3.52 2.32 6.64 5.76 8.48l-1.68 5.84 6.24-3.28c.72.08 1.52.16 2.24.16 6.96 0 12.64-4.48 12.64-10.08S22.96 4.64 16 4.64z" fill="#191919"></path></svg>
                 <span>채널 추가</span>
             </a>
         </div>
-        
+
                 <div class="section">
             <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</h2>
             <div class="section-content">
-                <p class="section-subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></p>                <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="이미지">                <div class="collapsible-content">
+                <p class="section-subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></p>                
+                                <div class="media-wrapper">
+                    <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="이미지">
+                </div>
+                
+                <div class="collapsible-content">
                     <div class="content-div"><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
 
 <p>안녕하세요. <strong>양산미래혁신연구원 원장 한옥문</strong>입니다.</p>
@@ -229,7 +195,7 @@
                 </div>
                 <button class="toggle-button"></button>
             </div>
-                    </div>
+        </div>
         
                 
         <div class="footer">
