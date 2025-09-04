@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -242,15 +241,19 @@
 
          
         .collapsible-content { 
+            overflow: visible; 
+            max-height: none; 
+        }
+        .collapsible-content.all-view { 
             overflow: hidden; 
             transition: max-height 0.5s ease-out; 
             position: relative; 
         }
-        .collapsible-content.expanded { 
+        .collapsible-content.all-view.expanded { 
             max-height: none !important; 
             overflow: visible; 
         }
-        .collapsible-content.collapsed::after { 
+        .collapsible-content.all-view.collapsed::after { 
             content: ''; 
             position: absolute; 
             bottom: 0; 
@@ -278,6 +281,49 @@
         }
 
          
+        .section-navigation {
+            margin: 20px 15px 0;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-navigation a {
+            padding: 10px 20px;
+            background-color: #FEE500;
+            color: #191919;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+        .section-navigation a:hover {
+            background-color: #FFD700;
+        }
+        .section-navigation a.disabled {
+            background-color: #ddd;
+            color: #999;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 480px) {
+            .section-navigation {
+                margin: 15px 10px 0;
+                padding: 15px;
+            }
+            .section-navigation a {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+
+         
         .dot-text-container .char-dot {
             position: relative;
             display: inline-block;
@@ -298,28 +344,6 @@
             text-align: center; 
             padding: 40px 20px; 
             font-size: 12px; 
-        }
-        .footer .navigation {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .footer .navigation a {
-            padding: 10px 20px;
-            background-color: #FEE500;
-            color: #191919;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .footer .navigation a.disabled {
-            background-color: #ddd;
-            color: #999;
-            pointer-events: none;
         }
     </style>
 </head>
@@ -345,7 +369,7 @@
                                                 <div class="media-wrapper">
                     <img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="이미지">
                 </div>
-                                <div class="collapsible-content">
+                                <div class="collapsible-content all-view">
                     <div class="content-div"><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
 
 <p>안녕하세요. <strong>양산미래혁신연구원 원장 한옥문</strong>입니다.</p>
@@ -372,8 +396,8 @@
 
 <p><a href="http://pf.kakao.com/_jmfNn/friend">▶️ '양산미래혁신연구원' 채널 추가하기</a></p></div>
                 </div>
-                <button class="toggle-button"></button>
-            </div>
+                                <button class="toggle-button"></button>
+                            </div>
         </div>
         
                 <div class="section">
@@ -383,7 +407,7 @@
                                                 <div class="media-wrapper">
                     <img src="https://i.postimg.cc/3rmdX7Fh/AKR20190429118100052-01-i-P4.jpg" alt="이미지">
                 </div>
-                                <div class="collapsible-content">
+                                <div class="collapsible-content all-view">
                     <div class="content-div"><p><span class="text-muted">기고자: 영산대 김도시 교수</span></p>
 <h1>양산의 미래, ‘계획’은 있으나 ‘철학’은 있는가</h1>
 <p>최근 경상남도가 양산을 포함한 동부경남을 대한민국의 미래 산업 중심지로 육성하기 위한 구체적인 청사진을 발표했습니다. 이 계획의 핵심 중 하나로, 490억 원을 투입해 양산부산대병원 유휴부지에 ‘바이오메디컬 이노베이션 센터’를 구축하겠다는 내용이 포함되었습니다. 이는 양산시가 오랫동안 그려온 <strong>‘바이오헬스 허브’</strong>라는 원대한 꿈을 향한 의미 있는 첫걸음이라 할 수 있습니다.</p>
@@ -408,8 +432,8 @@
 <blockquote>우리는 과연 ‘기업이 오고 싶은 도시’를 넘어, ‘최고의 인재들이 머물며 살고 싶은 도시’를 만들 준비가 되어 있습니까?</blockquote>
 <p>이 질문에 대한 답을 찾아가는 과정이야말로, 양산의 빛나는 내일을 여는 진정한 열쇠가 될 것입니다.</p></div>
                 </div>
-                <button class="toggle-button"></button>
-            </div>
+                                <button class="toggle-button"></button>
+                            </div>
         </div>
         
                 <div class="section">
@@ -419,7 +443,7 @@
                                                 <div class="media-wrapper">
                     <img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="이미지">
                 </div>
-                                <div class="collapsible-content">
+                                <div class="collapsible-content all-view">
                     <div class="content-div"><h1>웅상선 예타 통과: 양산의 미래를 바꿀 역사적 전환점</h1>
 <p>지난 7월 10일, "부산~양산~울산을 잇는 광역철도 ‘웅상선’이 마침내 예비타당성조사를 통과했다"는 한 문장이 양산시민들의 가슴을 뜨겁게 달궜습니다. 총 2조 5,745억 원이 투입될 이 거대한 사업은 단순히 철도 하나를 놓는 것을 넘어, 양산의 미래를 송두리째 바꿀 역사적 전환점이 될 것이 분명합니다.</p>
 
@@ -447,8 +471,8 @@
 <p><em>2031년 어느 날, 웅상선을 타고 출근하는 한 청년을 상상해봅니다. 양산의 쾌적한 주거환경에서 아침을 맞고, 10분 만에 부산의 직장에 도착합니다. 퇴근 후에는 울산의 문화공연을 관람하고, 다시 양산의 집으로 돌아옵니다. 주말에는 가족과 함께 통도사를 산책하고, 저녁에는 웅상의 번화가에서 친구들을 만납니다.</em></p>
 <p>이것이 웅상선이 만들 양산의 미래입니다. 꿈이 아닌 현실이 될 그날을 위해, 이제 우리 모두가 함께 뛰어야 할 때입니다. 비수도권 최초의 광역철도, 웅상선. 이는 양산이 대한민국 지역균형발전의 새로운 모델을 제시하는 시작점이 될 것입니다. <strong>양산의 성공이 곧 대한민국의 성공입니다.</strong> 2031년을 향한 카운트다운은 이미 시작됐습니다. <strong>한옥문</strong>은 양산의 진정한 발전을 응원하며, 시민들과 함께 이 길을 걸어갈 것입니다.</p></div>
                 </div>
-                <button class="toggle-button"></button>
-            </div>
+                                <button class="toggle-button"></button>
+                            </div>
         </div>
                 
                 <div class="section">
@@ -461,7 +485,7 @@
                 <a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">
                     <span>한옥문 유튜브 구독하기</span>
                 </a>
-                                <div class="collapsible-content">
+                                <div class="collapsible-content all-view">
                     <div class="content-div"><h1>주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</h1>
 <p>양산시 상북면에 위치한 원적산 봉수대가 지역 주민들의 오랜 노력 끝에 2023년 1월 <strong>국가 사적</strong>으로 지정되었습니다. 이는 부산, 경남을 거쳐 한양까지 이어지는 봉수 체계의 중요한 거점이었던 이곳의 <strong>역사적 중요성을 재조명</strong>하는 계기가 되었습니다.</p>
 
@@ -477,14 +501,14 @@
 <p>원적산 봉수대 정상에서 바라본 양산은 남북으로 시가지가 잘 발달되어 있지만, 천성산으로 인해 <strong>동서 지역 간의 연결이 단절</strong>되어 있다는 아쉬움이 남아있습니다. 이러한 동서 간의 이질감을 극복하고 양산을 하나의 생활권으로 통합하기 위해 천성산을 관통하는 <strong>1028번 지방도로 건설</strong>이 추진되고 있습니다. 이 사업은 현재 국지도로의 승격을 검토 중이며, 양산의 지속 가능한 발전을 위해 조속한 추진이 필요한 과제입니다.</p>
 <blockquote>시민들의 열정으로 봉수대가 되살아난 것처럼, 양산 동서 간의 소통과 연결을 위한 노력 또한 이어지기를 기대해 봅니다.</blockquote></div>
                 </div>
-                <button class="toggle-button"></button>
-                            </div>
+                                <button class="toggle-button"></button>
+                                            </div>
         </div>
         
                 <div class="section">
             <h2>NOW 양산</h2>
             <div class="section-content">
-                                                <div class="collapsible-content">
+                                                <div class="collapsible-content all-view">
                     <div class="content-div"><h2>[양산시 소식]</h2>
 <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
 <p><span class="text-muted">(보도일자: 2025.08.26 / 출처: 환경일보)</span></p>
@@ -509,14 +533,14 @@
 <h2>[한옥문의 경제산책]</h2>
 <blockquote>지역 특산물을 활용한 상품 개발은 단순한 소비를 넘어 지역의 문화와 정체성을 담는 중요한 경제 활동입니다. 원동 매실은 이미 전국적으로 그 명성을 알리고 있지만, 이번 경진대회를 통해 더욱 다양한 형태로 재탄생하여 우리 양산의 브랜드 가치를 높일 수 있습니다. 지역 자원을 활용한 창의적인 아이디어가 양산 경제를 한 단계 더 도약시키는 원동력이 될 것입니다.</blockquote></div>
                 </div>
-                <button class="toggle-button"></button>
-            </div>
+                                <button class="toggle-button"></button>
+                            </div>
         </div>
         
                 <div class="section">
             <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
             <div class="section-content">
-                                                <div class="collapsible-content">
+                                                <div class="collapsible-content all-view">
                     <div class="book-review">
                         <div class="book-title">📚 이번 주 추천도서</div>
                         <div class="content-div"><h1>도심 속 힐링, 책으로 떠나는 양산 여행</h1>
@@ -533,15 +557,16 @@
 </ol></div>
                     </div>
                 </div>
-                <button class="toggle-button"></button>
-            </div>
+                                <button class="toggle-button"></button>
+                            </div>
         </div>
+        
+        
         
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
             <p><a href="./archive.html">지난 뉴스레터 전체 보기</a></p>
-            
-                    </div>
+        </div>
     </div>
     
     <script>
@@ -582,7 +607,10 @@
         history.scrollRestoration = 'manual';
 
         function setupCollapsibleContent() {
-            document.querySelectorAll('.collapsible-content').forEach(content => {
+            
+            if ("all" !== "all") return;
+            
+            document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
                 const section = content.closest('.section');
                 const button = section.querySelector('.toggle-button');
                 if (!button) return;
@@ -646,6 +674,7 @@
                     }
                 });
             } else {
+                
                 setupCollapsibleContent();
             }
         });
