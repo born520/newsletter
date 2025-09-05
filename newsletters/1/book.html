@@ -434,78 +434,17 @@
     
     history.scrollRestoration = 'manual';
 
-    function setupCollapsibleContent() {
-        if ("book" !== "all") return;
-        
-        document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
-            const section = content.closest('.section');
-            const button = section.querySelector('.toggle-button');
-            if (!button) return;
-
-            // 1단계: 모든 제한 제거하고 자연스러운 높이 측정
-            content.style.removeProperty('max-height');
-            content.style.removeProperty('overflow');
-            content.classList.remove('collapsed', 'expanded');
-            button.style.display = 'none';
-            
-            
-            requestAnimationFrame(() => {
-                const naturalHeight = content.offsetHeight;
-                
-                
-                const threshold = 600; 
-                const limitedHeight = 400;
-                
-                console.log(`섹션 높이: ${naturalHeight}px, 임계값: ${threshold}px`);
-
-                if (naturalHeight > threshold) {
-                    
-                    console.log('긴 콘텐츠 - 버튼 표시');
-                    content.style.maxHeight = limitedHeight + 'px';
-                    content.style.overflow = 'hidden';
-                    content.classList.add('collapsed');
-                    button.style.display = 'block';
-                } else {
-                    
-                    console.log('짧은 콘텐츠 - 전체 표시');
-                    
+    // 간단한 버튼 클릭 처리만
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.toggle-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const section = button.closest('.section');
+                const content = section.querySelector('.collapsible-content');
+                if (content) {
+                    content.classList.add('expanded');
                 }
             });
-
-            
-            if (!button.hasEventListener) {
-                button.addEventListener('click', () => {
-                    content.style.removeProperty('max-height');
-                    content.style.removeProperty('overflow');
-                    content.classList.remove('collapsed');
-                    content.classList.add('expanded');
-                    button.style.display = 'none';
-                });
-                button.hasEventListener = true;
-            }
         });
-    }
-    
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            if ("book" === "all") {
-                setTimeout(setupCollapsibleContent, 100);
-            }
-        });
-    } else {
-        if ("book" === "all") {
-            setTimeout(setupCollapsibleContent, 100);
-        }
-    }
-    
-    
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        if ("book" === "all") {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(setupCollapsibleContent, 300);
-        }
     });
     </script>
 </body>
