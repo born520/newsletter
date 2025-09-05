@@ -520,18 +520,131 @@
                                                 <div class="collapsible-content all-view">
                     <div class="book-review">
                         <div class="book-title">📚 이번 주 추천도서</div>
-                        <div class="content-div"><h1>도심 속 힐링, 책으로 떠나는 양산 여행</h1>
-<p>따스한 햇살 아래 공원 벤치에 앉아 책장을 넘기거나, 조용한 카페에서 커피 한 잔과 함께 독서에 빠져보는 건 어떨까요? 양산 시민들에게 특별한 의미를 더해줄, 양산과 관련된 흥미로운 도서들을 소개합니다. 단순히 지역 정보를 얻는 것을 넘어, 양산의 역사와 문화, 그리고 사람들의 이야기에 깊이 공감할 수 있는 책들로 일상에 새로운 활력을 불어넣어 보세요.</p>
-<h2>양산의 역사와 문화를 담은 책</h2>
-<ol>
-<li><h3><strong>《양산 통도사》</strong> - 한국 불교의 심장, 그 신비로운 이야기</h3><p>영축산 자락에 자리한 통도사는 양산의 대표적인 명소이자 한국 3대 사찰 중 하나입니다. 이 책은 통도사의 창건부터 현재까지의 역사, 건축미, 그리고 그 안에 담긴 의미를 깊이 있게 다룹니다. 통도사를 자주 찾는 시민이라면, 이 책을 통해 알고 있던 풍경을 더욱 의미 있는 시선으로 바라볼 수 있을 것입니다. 단순한 관광을 넘어, 통도사의 문화적, 정신적 가치를 이해하는 데 큰 도움이 됩니다.</p></li>
-<li><h3><strong>《양산의 옛이야기》</strong> - 사라져가는 양산의 구전 설화</h3><p>양산에는 신비롭고 재미있는 옛이야기들이 많이 전해 내려옵니다. 이 책은 양산의 산과 강, 마을마다 전해지는 구전 설화들을 한데 모아 정리했습니다. 무성산의 전설, 황산강의 비밀 등 우리가 무심코 지나쳤던 장소에 얽힌 흥미로운 이야기들을 만날 수 있습니다. 아이들과 함께 읽으면 양산에 대한 자긍심과 호기심을 키우는 좋은 기회가 될 것입니다.</p></li>
-</ol>
-<h2>양산의 자연을 느낄 수 있는 책</h2>
-<ol>
-<li><h3><strong>《양산의 들꽃》</strong> - 우리가 몰랐던 양산의 아름다움</h3><p>양산천을 따라 걷다 보면, 혹은 천성산 등산로를 오르다 보면 수많은 들꽃을 마주하게 됩니다. 이 책은 양산 곳곳에서 자라는 다양한 야생화를 사진과 함께 상세하게 소개합니다. 평소에 자주 보던 들꽃의 이름과 특징을 알게 되면, 산책이나 등산의 즐거움이 두 배가 됩니다. 자연을 사랑하는 양산 시민들에게 이 책은 훌륭한 길잡이가 되어 줄 것입니다.</p></li>
-<li><h3><strong>《내 고향 양산》</strong> - 사진으로 만나는 양산의 사계절</h3><p>양산의 아름다운 풍경을 담은 사진집입니다. 봄의 매화부터 여름의 푸른 숲, 가을의 단풍, 겨울의 설경까지 양산의 사계절을 생생하게 느낄 수 있습니다. 익숙한 풍경도 사진 작가의 시선을 통해 새롭게 다가옵니다. 바쁜 일상 속에서 잠시 멈춰 서서 양산의 자연이 주는 위로와 아름다움을 느껴보세요.</p></li>
-</ol></div>
+                        <div class="content-div"><!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책으로 만나는 양산</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .book-intro {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .book-intro:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .book-img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .book-desc {
+            flex: 1;
+        }
+        .book-desc h2 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        .book-desc p {
+            text-align: justify;
+        }
+        .book-desc .author {
+            font-weight: bold;
+            color: #555;
+        }
+        .book-desc .category {
+            font-style: italic;
+            color: #777;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>책으로 떠나는 양산 여행</h1>
+        <p>경상남도 양산시는 수려한 자연경관과 유구한 역사를 품은 도시입니다. 통도사와 내원사 등 천년 고찰의 향기부터 치열했던 근대사의 흔적까지, 양산의 다채로운 이야기는 여러 작가에게 영감을 주었습니다. 문학 작품과 역사서를 통해 우리가 살고 있는 도시, 양산을 더 깊이 이해하고 새롭게 발견하는 시간을 가져보는 것은 어떨까요? 양산의 숨결이 담긴 책들을 소개합니다.</p>
+
+        <div class="book-intro">
+            <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3246399%2F32463996947.20221019102839.jpg&amp;type=w500" alt="신의 그릇 표지" class="book-img">
+            <div class="book-desc">
+                <h2>신의 그릇</h2>
+                <p class="author">저자: 신한균</p>
+                <p class="category">분류: 역사 소설</p>
+                <p>2023년 양산시민이 가장 사랑한 책으로 선정된 작품입니다. 세계문화유산 통도사 인근에서 활동하는 신한균 사기장이 임진왜란 당시 일본으로 끌려간 조선 사기장의 파란만장한 삶과 예술혼을 그려냈습니다. 양산의 법기리 가마터를 중심으로 펼쳐지는 주인공의 이야기는 우리 그릇 '이도다완'에 얽힌 역사적 아픔과 장인정신을 되새기게 합니다. 지역 작가가 쓴, 양산의 혼이 담긴 소설이라는 점에서 더욱 의미가 깊습니다.</p>
+            </div>
+        </div>
+
+        <div class="book-intro">
+            <img src="https://www.idomin.com/news/photo/201910/709289_478950_5348.jpg" alt="수라도 표지" class="book-img">
+            <div class="book-desc">
+                <h2>수라도(修羅道)</h2>
+                <p class="author">저자: 김정한</p>
+                <p class="category">분류: 문학/소설</p>
+                <p>한국 문학의 거목, 요산 김정한 선생의 대표작 중 하나인 '수라도'는 양산을 주요 배경으로 하고 있습니다. 작가의 처가가 있었던 양산시 원동면 화제리 일대의 풍경과 사람들의 삶을 생생하게 묘사하며, 일제강점기부터 해방 전후까지 격동의 시대를 살아낸 한 가문의 이야기를 통해 민족의 수난사를 그리고 있습니다. 소설에 등장하는 '미륵당'은 물금읍의 용화사를 모델로 한 것으로 알려져 있어, 책을 읽고 문학의 배경이 된 장소를 직접 찾아보는 '문학 기행'을 떠나기에도 좋은 작품입니다.</p>
+            </div>
+        </div>
+
+        <div class="book-intro">
+            <img src="https://image.aladin.co.kr/product/28497/35/cover500/k352835229_1.jpg" alt="이야기로 양산하다 표지" class="book-img">
+            <div class="book-desc">
+                <h2>이야기로 양산하다</h2>
+                <p class="author">저자: 메깃들마을학교 엮음</p>
+                <p class="category">분류: 역사/인문</p>
+                <p>양산의 역사와 문학을 아우르며 지역의 가치를 새롭게 조명하는 책입니다. 청소년들을 위한 '지역 교육과정'의 일환으로 만들어졌지만, 양산에 대해 알고 싶은 성인들에게도 훌륭한 길잡이가 되어 줍니다. 우리가 무심코 지나쳤던 양산 곳곳에 숨겨진 이야기와 의미를 풍부한 자료와 함께 풀어내어, 독자들이 자신과 양산의 오늘과 내일을 연결하여 생각해 볼 기회를 제공합니다.</p>
+            </div>
+        </div>
+        
+        <div class="book-intro">
+            <img src="https://www.yangsan.go.kr/museum/resource/img/content/bookdata/e-book-2019-01.jpg" alt="땅속에서 찾은 양산의 역사 표지" class="book-img">
+            <div class="book-desc">
+                <h2>땅속에서 찾은 양산의 역사</h2>
+                <p class="author">발행: 양산시립박물관</p>
+                <p class="category">분류: 역사/고고학</p>
+                <p>양산시립박물관에서 발간한 도서 시리즈 중 하나로, 발굴 유물을 통해 양산의 고대사를 생생하게 보여주는 책입니다. 특히 가야와 신라의 접경지로서 역동적인 역사를 간직한 양산의 고대 유적과 유물을 풍부한 사진 자료와 함께 소개합니다. 이 책 외에도 양산시립박물관은 '금조총이야기', '우산 윤현진' 등 양산의 역사와 인물을 주제로 한 다양한 도서를 꾸준히 발간하고 있어, 양산의 역사를 깊이 있게 탐구하고 싶은 이들에게 귀중한 자료가 됩니다. 대부분의 자료는 박물관 홈페이지에서 전자책(e-book)으로도 만나볼 수 있습니다.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>책과 함께 더 깊어지는 우리 동네, 양산을 만나보세요.</p>
+        </div>
+    </div>
+
+</body>
+</html></div>
                     </div>
                 </div>
                 <button class="toggle-button"></button>            </div>
@@ -540,7 +653,7 @@
                 <div class="section">
             <h2>언론이 만난 &nbsp;<span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></h2>
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 25px 0;"><p>한옥문 원장의 언론기고와 대외활동을 전해드립니다.</p></div>
+                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 25px 0;"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
                                 
                 <div class="media-article-list">
                                                         <a href="https://www.newsis.com/view/NISX20250730_0003271838" target="_blank" rel="noopener noreferrer" class="media-article-card">
@@ -585,7 +698,7 @@
                     </a>
                                         <a href="https://www.fntoday.co.kr/news/articleView.html?idxno=361772" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://cdn.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="">
+                            <img src="https://www.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”</h3>
@@ -595,7 +708,7 @@
                     </a>
                                         <a href="https://www.viva100.com/article/20250904501629" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905111731" alt="">
+                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905112646" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
