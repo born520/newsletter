@@ -439,7 +439,7 @@
                     </a>
                                         <a href="https://www.viva100.com/article/20250904501629" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905151936" alt="">
+                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905152453" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
@@ -481,42 +481,37 @@
             const button = section.querySelector('.toggle-button');
             if (!button) return;
 
-            // 초기 상태: 전체 표시
-            content.style.maxHeight = 'none';
-            content.style.overflow = 'visible';
-            content.classList.remove('collapsed');
+            // 강제로 초기 상태 설정 (CSS !important 무시)
+            content.style.setProperty('max-height', 'none', 'important');
+            content.style.setProperty('overflow', 'visible', 'important');
+            content.classList.remove('collapsed', 'expanded');
             
             
-            const actualHeight = content.scrollHeight;
-            console.log('실제 높이:', actualHeight); 
-            
-            
-            const threshold = window.innerWidth <= 768 ? 400 : 500;
-            const limitedHeight = window.innerWidth <= 768 ? 300 : 350;
-            
-            console.log('임계값:', threshold, '제한높이:', limitedHeight); 
+            setTimeout(() => {
+                const actualHeight = content.scrollHeight;
+                const threshold = window.innerWidth <= 768 ? 400 : 500;
+                const limitedHeight = window.innerWidth <= 768 ? 300 : 350;
 
-            if (actualHeight > threshold) {
-                
-                content.style.maxHeight = limitedHeight + 'px';
-                content.style.overflow = 'hidden';
-                content.classList.add('collapsed');
-                button.style.display = 'block';
-                console.log('버튼 표시'); 
-            } else {
-                
-                button.style.display = 'none';
-                console.log('버튼 숨김'); 
-            }
+                if (actualHeight > threshold) {
+                    
+                    content.style.setProperty('max-height', limitedHeight + 'px', 'important');
+                    content.style.setProperty('overflow', 'hidden', 'important');
+                    content.classList.add('collapsed');
+                    button.style.setProperty('display', 'block', 'important');
+                } else {
+                    
+                    button.style.setProperty('display', 'none', 'important');
+                }
+            }, 50);
 
             
             if (!button.hasEventListener) {
                 button.addEventListener('click', () => {
                     content.classList.remove('collapsed');
                     content.classList.add('expanded');
-                    content.style.maxHeight = 'none';
-                    content.style.overflow = 'visible';
-                    button.style.display = 'none';
+                    content.style.setProperty('max-height', 'none', 'important');
+                    content.style.setProperty('overflow', 'visible', 'important');
+                    button.style.setProperty('display', 'none', 'important');
                 });
                 button.hasEventListener = true;
             }
@@ -526,10 +521,9 @@
     
     window.addEventListener('load', () => {
         if ("media" === "all") {
-            
             if (document.fonts && document.fonts.ready) {
                 document.fonts.ready.then(() => {
-                    setTimeout(setupCollapsibleContent, 100);
+                    setTimeout(setupCollapsibleContent, 200);
                 });
             } else {
                 setTimeout(setupCollapsibleContent, 500);
@@ -542,15 +536,7 @@
     window.addEventListener('resize', () => {
         if ("media" === "all") {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                
-                document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
-                    content.style.maxHeight = 'none';
-                    content.style.overflow = 'visible';
-                    content.classList.remove('collapsed', 'expanded');
-                });
-                setTimeout(setupCollapsibleContent, 100);
-            }, 300);
+            resizeTimeout = setTimeout(setupCollapsibleContent, 300);
         }
     });
     </script>
