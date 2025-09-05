@@ -25,7 +25,7 @@
     .container {
         max-width: 680px;
         margin: 0 auto;
-        background-color: #ffffff;  
+        background-color: #ffffff;
     }
     
      
@@ -94,7 +94,6 @@
         padding: 0; 
     }
     
-     
     .section h2 {
         display: flex;
         align-items: center;
@@ -113,12 +112,10 @@
         font-size: 22px; 
     }
     
-     
     .section-content { 
         padding: 25px; 
     }
 
-     
     .media-wrapper { 
         margin: 0 0 25px 0; 
         line-height: 0; 
@@ -131,7 +128,6 @@
         display: block; 
     }
     
-     
     .youtube-container { 
         position: relative; 
         padding-bottom: 56.25%; 
@@ -158,7 +154,6 @@
         border-radius: 8px; 
     }
 
-     
     .content-div {
         font-size: 16px;
         color: #333;
@@ -172,7 +167,7 @@
             margin-top: 15px;
         }
     }
-     
+    
     .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
         font-size: 17px !important;
         font-weight: 700;
@@ -419,70 +414,59 @@
     
     history.scrollRestoration = 'manual';
 
-function setupCollapsibleContent() {
-    if ("youtube" !== "all") return;
-    
-    document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
-        const section = content.closest('.section');
-        const button = section.querySelector('.toggle-button');
-        if (!button) return;
-
-        const actualHeight = content.offsetHeight;
-        const threshold = window.innerWidth <= 480 ? 200 : 280;
-        const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
-
-        // ✅ [핵심 수정] 버튼이 이전에 이미 화면에 표시되었는지 확인합니다.
-        const wasAlreadyShown = button.style.display === 'block';
-
-        if (actualHeight > threshold) {
-            
-            if (!content.classList.contains('expanded')) {
-                content.style.maxHeight = limitedHeight + 'px';
-                content.style.overflow = 'hidden';
-                content.classList.add('collapsed');
-                button.style.display = 'block';
-            }
-        } else {
-            
-            
-            if (!wasAlreadyShown) {
-                button.style.display = 'none';
-                content.classList.remove('collapsed');
-            }
-        }
-
+    function setupCollapsibleContent() {
+        if ("youtube" !== "all") return;
         
-        if (!button.hasEventListener) {
-            button.addEventListener('click', () => {
-                content.classList.remove('collapsed');
-                content.classList.add('expanded');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                
-                setTimeout(() => {
-                    if(content.classList.contains('expanded')) {
-                        content.style.maxHeight = 'none';
-                    }
-                }, 500);
-                button.style.display = 'none';
-            });
-            button.hasEventListener = true;
-        }
-    });
-}
+        document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
+            const section = content.closest('.section');
+            const button = section.querySelector('.toggle-button');
+            if (!button) return;
 
+            const actualHeight = content.offsetHeight;
+            const threshold = window.innerWidth <= 480 ? 200 : 280;
+            const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
 
-    
+            const wasAlreadyShown = button.style.display === 'block';
+
+            if (actualHeight > threshold) {
+                if (!content.classList.contains('expanded')) {
+                    content.style.maxHeight = limitedHeight + 'px';
+                    content.style.overflow = 'hidden';
+                    content.classList.add('collapsed');
+                    button.style.display = 'block';
+                }
+            } else {
+                if (!wasAlreadyShown) {
+                    button.style.display = 'none';
+                    content.classList.remove('collapsed');
+                }
+            }
+
+            if (!button.hasEventListener) {
+                button.addEventListener('click', () => {
+                    content.classList.remove('collapsed');
+                    content.classList.add('expanded');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    
+                    setTimeout(() => {
+                        if(content.classList.contains('expanded')) {
+                            content.style.maxHeight = 'none';
+                        }
+                    }, 500);
+                    button.style.display = 'none';
+                });
+                button.hasEventListener = true;
+            }
+        });
+    }
     
     window.addEventListener('load', () => {
         if ("youtube" === "all") {
-            
             if (document.fonts && typeof document.fonts.ready === 'object') {
-                
                 document.fonts.ready.then(() => {
                     setTimeout(setupCollapsibleContent, 50);
                 });
             } else {
-                
                 setTimeout(setupCollapsibleContent, 300);
             }
         }
@@ -493,6 +477,6 @@ function setupCollapsibleContent() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(setupCollapsibleContent, 300);
     });
-</script>
+    </script>
 </body>
 </html>
