@@ -5,352 +5,364 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; frame-src https://*.youtube.com; img-src * data:;">
     <title>뉴스레터 - 제 1호</title>
-    
     <meta property="og:title" content="[유튜브]한옥문의 양산이야기 - 제 1호">
     <meta property="og:description" content="양산시민이 찾아낸 우리 역사 원적산 봉수대">
     <meta property="og:image" content="https://i.postimg.cc/rwRmBZ4w/image.jpg">
     <meta property="og:url" content="https://newsletter.shorttime.co.kr/newsletters/1/youtube.html">
     <meta property="og:type" content="article">
     <style>
-         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Malgun Gothic', sans-serif;
-            line-height: 1.8;
-            color: #191919;
-            background-color: #F9F9F9;
-            word-break: keep-all;
-            font-size: 16px;
-        }
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            background-color: transparent;
-        }
-        
-         
-        .header { padding: 0; }
-        .header img { max-width: 100%; height: auto; display: block; }
-        .info-bar { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 12px 20px; 
-            background-color: #ffffff; 
-            border-bottom: 1px solid #F0F0F0; 
-        }
-        .info-bar .date { font-size: 14px; color: #555; }
-        .info-bar .kakao-button { 
-            display: inline-flex; 
-            align-items: center; 
-            padding: 8px 15px; 
-            background-color: #FEE500; 
-            color: #191919; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 18px; 
-            font-size: 13px; 
-            white-space: nowrap; 
-        }
-        .info-bar .kakao-button svg { width: 16px; height: 16px; margin-right: 6px; }
+     
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Malgun Gothic', sans-serif;
+        line-height: 1.8;
+        color: #191919;
+        background-color: #F9F9F9;
+        word-break: keep-all;
+        font-size: 16px;
+    }
+    .container {
+        max-width: 680px;
+        margin: 0 auto;
+        background-color: #ffffff;  
+    }
+    
+     
+    .header { padding: 0; }
+    .header img { max-width: 100%; height: auto; display: block; }
+    .info-bar { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 12px 20px; 
+        background-color: #ffffff; 
+        border-bottom: 1px solid #F0F0F0; 
+    }
+    .info-bar .date { font-size: 14px; color: #555; }
+    .info-bar .kakao-button { 
+        display: inline-flex; 
+        align-items: center; 
+        padding: 8px 15px; 
+        background-color: #FEE500; 
+        color: #191919; 
+        text-decoration: none; 
+        font-weight: bold; 
+        border-radius: 18px; 
+        font-size: 13px; 
+        white-space: nowrap; 
+    }
+    .info-bar .kakao-button svg { width: 16px; height: 16px; margin-right: 6px; }
 
-         
-        .section-nav {
-            padding: 10px 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #F0F0F0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-nav .all-button {
-            padding: 8px 15px;
-            background-color: #FEE500;
-            color: #191919;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 18px;
-            font-size: 13px;
-            white-space: nowrap;
-        }
-        .section-nav select {
-            flex-grow: 1;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-            background-color: #fff;
-            color: #333;
-            cursor: pointer;
-        }
+     
+    .section-nav {
+        padding: 10px 20px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #F0F0F0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .section-nav .all-button {
+        padding: 8px 15px;
+        background-color: #FEE500;
+        color: #191919;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 18px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    .section-nav select {
+        flex-grow: 1;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+    }
 
-         
-        .section { 
-            background-color: #ffffff; 
-            margin: 15px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
-            overflow: hidden; 
-            padding: 0; 
-        }
-        
-         
-        .section h2 {
-            display: flex;
-            align-items: center;
-            font-size: 22px;
-            font-weight: 800;
-            color: #191919;
-            background-color: #FEE500;
-            padding: 15px 22px;
-            margin: 0;
-            border: none;
-            line-height: 1.4;
-        }
-        .section h2::before { 
-            content: '💬'; 
-            margin-right: 12px; 
-            font-size: 22px; 
-        }
-        
-         
-        .section-content { 
-            padding: 25px; 
-        }
+     
+    .section { 
+        background-color: #ffffff; 
+        margin: 15px; 
+        border-radius: 12px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+        overflow: hidden; 
+        padding: 0; 
+    }
+    
+     
+    .section h2 {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 800;
+        color: #191919;
+        background-color: #FEE500;
+        padding: 15px 22px;
+        margin: 0;
+        border: none;
+        line-height: 1.4;
+    }
+    .section h2::before { 
+        content: '💬'; 
+        margin-right: 12px; 
+        font-size: 22px; 
+    }
+    
+     
+    .section-content { 
+        padding: 25px; 
+    }
 
-         
-        .media-wrapper { 
-            margin: 0 -25px 25px -25px; 
-            line-height: 0; 
-        }
-        .media-wrapper img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            border-radius: 0; 
-        }
-        
-         
-        .youtube-container { 
-            position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
-            overflow: hidden; 
-        }
-        .youtube-container iframe { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-        }
-        .youtube-subscribe-button { 
-            display: table; 
-            margin: 5px auto 20px; 
-            padding: 10px 18px; 
-            background-color: #FF0000; 
-            color: #ffffff; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 8px; 
-        }
+     
+    .media-wrapper { 
+        margin: 0 0 25px 0; 
+        line-height: 0; 
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .media-wrapper img { 
+        width: 100%; 
+        height: auto; 
+        display: block; 
+    }
+    
+     
+    .youtube-container { 
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0; 
+        overflow: hidden; 
+        border-radius: 8px;
+    }
+    .youtube-container iframe { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+    }
+    .youtube-subscribe-button { 
+        display: table; 
+        margin: 20px auto 20px; 
+        padding: 10px 18px; 
+        background-color: #FF0000; 
+        color: #ffffff; 
+        text-decoration: none; 
+        font-weight: bold; 
+        border-radius: 8px; 
+    }
 
-         
+     
+    .content-div {
+        font-size: 16px;
+        color: #333;
+    }
+    @media (min-width: 769px) {
         .content-div {
             background: #F9F9F9; 
             padding: 20px; 
             border-radius: 8px; 
             border: 1px solid #F0F0F0; 
-            box-shadow: none; 
             margin-top: 15px;
-            font-size: 16px;
-            color: #333;
         }
-        .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
-            font-size: 17px !important;
-            font-weight: 700;
-            color: #191919;
-            margin: 1.5em 0 1em;
-            line-height: 1.4;
-        }
-         
-        .content-div h2 {
-            font-size: 16px !important;
-            font-weight: 700;
-            color: #191919;
-            background-color: #FEE500;
-            padding: 6px 10px;
-            border-radius: 6px;
-            margin: 20px 0 10px 0;
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-        .content-div p { margin-bottom: 1em; }
-        .content-div strong { color: #000; }
-        .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
-        .content-div li { margin-bottom: 0.5em; }
-         
-        .content-div blockquote {
-            background-color: #ffffff;
-            border: 1px solid #E8E8E8;
-            border-left: 4px solid #FEE500;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: #444;
-        }
-         
-        .content-div .text-muted {
-            font-size: 12px;
-            color: #888;
-        }
-
-         
-        @media (max-width: 768px) {
-            .section-content {
-                padding: 15px;
-            }
-            .content-div {
-                padding: 12px;
-                margin-top: 10px;
-            }
-            .content-div blockquote {
-                padding: 10px 12px;
-                margin: 10px 0;
-            }
-        }
-
-         
-        .book-review { 
+    }
+    .content-div h2 {
+        font-size: 16px !important;
+        font-weight: 700;
+        color: #191919;
+        background-color: #FEE500;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin: 25px 0 15px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .content-div h2:first-child {
+        margin-top: 0;
+    }
+    .content-div h3 {
+        font-size: 18px !important;
+        font-weight: 700;
+        color: #191919;
+        margin: 1em 0 0.5em 0;
+        line-height: 1.5;
+    }
+    .content-div p { margin-bottom: 1em; }
+    .content-div strong { color: #000; }
+    .content-div ul, .content-div ol { margin: 1em 0 1em 20px; }
+    .content-div li { margin-bottom: 0.5em; }
+    .content-div blockquote {
+        background-color: #f7f7f7;
+        border-left: 4px solid #FEE500;
+        padding: 15px 20px;
+        margin: 15px 0 25px 0;
+        border-radius: 0 8px 8px 0;
+        color: #444;
+        font-style: italic;
+    }
+    .content-div .text-muted {
+        font-size: 13px;
+        color: #888;
+    }
+    
+     
+    .media-article-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .media-article-card {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    .media-article-card:hover {
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .media-article-image {
+        flex-shrink: 0;
+        width: 120px;
+        height: 80px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .media-article-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .media-article-text {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .media-article-title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 0 0 5px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .media-article-description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+        margin: 0 0 8px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .media-article-source {
+        font-size: 13px;
+        color: #888;
+        margin-top: auto;
+    }
+    
+     
+    .book-review { 
+        margin-top: 10px; 
+    }
+    @media (min-width: 769px) {
+        .book-review {
             background: #F9F9F9; 
             border: 1px solid #F0F0F0; 
             padding: 20px; 
             border-radius: 8px; 
-            margin-top: 10px; 
         }
-        .book-title { 
-            font-weight: bold; 
-            color: #3C1E1E; 
-            margin-bottom: 8px; 
-            font-size: 17px; 
-        }
+    }
+    .book-title { 
+        font-weight: bold; 
+        color: #3C1E1E; 
+        margin-bottom: 8px; 
+        font-size: 17px; 
+    }
 
-         
-        .collapsible-content { 
-            overflow: visible; 
-            max-height: none; 
-        }
-        .collapsible-content.all-view { 
-            overflow: hidden; 
-            transition: max-height 0.5s ease-out; 
-            position: relative; 
-        }
-        .collapsible-content.all-view.expanded { 
-            max-height: none !important; 
-            overflow: visible; 
-        }
-        .collapsible-content.all-view.collapsed::after { 
-            content: ''; 
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            right: 0; 
-            height: 50px; 
-            background: linear-gradient(transparent, #ffffff); 
-            pointer-events: none; 
-            z-index: 5; 
-        }
-        .toggle-button { 
-            display: none; 
-            margin: 20px auto 0; 
-            background: #F0F0F0; 
-            border: none; 
-            border-radius: 20px; 
-            padding: 8px 18px; 
-            cursor: pointer; 
-            font-size: 13px; 
-            color: #555; 
-            font-weight: bold; 
-        }
-        .toggle-button::after { 
-            content: '내용 더 보기 ▼'; 
-        }
+     
+    .collapsible-content { overflow: visible; max-height: none; }
+    .collapsible-content.all-view { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
+    .collapsible-content.all-view.expanded { max-height: none !important; overflow: visible; }
+    .collapsible-content.all-view.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
+    .toggle-button { display: none; margin: 20px auto 0; background: #F0F0F0; border: none; border-radius: 20px; padding: 8px 18px; cursor: pointer; font-size: 13px; color: #555; font-weight: bold; }
+    .toggle-button::after { content: '내용 더 보기 ▼'; }
 
-         
+     
+    .section-navigation { margin: 20px 15px 0; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+    .section-navigation a { padding: 10px 20px; background-color: #FEE500; color: #191919; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 14px; white-space: nowrap; transition: background-color 0.2s; }
+    .section-navigation a:hover { background-color: #FFD700; }
+    .section-navigation a.disabled { background-color: #ddd; color: #999; pointer-events: none; }
+    
+     
+    .dot-text-container .char-dot { position: relative; display: inline-block; }
+    .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; color: #191919; }
+    .footer { background-color: #f0f0f0; color: #777; text-align: center; padding: 40px 20px; font-size: 12px; }
+    
+     
+    @media (max-width: 768px) {
+        .container {
+             background-color: #F9F9F9;
+        }
+        .section {
+            margin: 0 0 10px 0;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+        .section-content {
+            padding: 25px 0 30px 0; 
+        }
+        .section-content > div:not(.media-wrapper):not(.media-article-list),
+        .content-div,
+        .book-review {
+             padding-left: 15px;
+             padding-right: 15px;
+        }
+        .media-article-list {
+            padding: 0 15px;
+        }
+        .media-article-image {
+            width: 100px;
+            height: 67px;
+        }
+        .media-wrapper, .youtube-container {
+            border-radius: 0;
+        }
+        .content-div blockquote {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
         .section-navigation {
-            margin: 20px 15px 0;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
+            margin: 0;
+            padding: 15px;
+            border-radius: 0;
         }
-        .section-navigation a {
-            padding: 10px 20px;
-            background-color: #FEE500;
-            color: #191919;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            white-space: nowrap;
-            transition: background-color 0.2s;
-        }
-        .section-navigation a:hover {
-            background-color: #FFD700;
-        }
-        .section-navigation a.disabled {
-            background-color: #ddd;
-            color: #999;
-            pointer-events: none;
-        }
-        
-        @media (max-width: 480px) {
-            .section-navigation {
-                margin: 15px 10px 0;
-                padding: 15px;
-            }
-            .section-navigation a {
-                padding: 8px 16px;
-                font-size: 13px;
-            }
-        }
-
-         
-        .dot-text-container .char-dot {
-            position: relative;
-            display: inline-block;
-        }
-        .dot-text-container .char-dot::after {
-            content: '·';
-            position: absolute;
-            top: -0.7em;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            color: #191919;
-        }
-        
-        .footer { 
-            background-color: #f0f0f0; 
-            color: #777; 
-            text-align: center; 
-            padding: 40px 20px; 
-            font-size: 12px; 
-        }
+    }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.postimg.cc/jjFFFP8C/image.png" alt="뉴스레터 배너">
+            <img src="https://i.postimg.cc/Kz2k03yL/Kakao-Talk-20250904-223609126.png" alt="뉴스레터 배너">
         </div>
         <div class="info-bar">
             <p class="date">2025년 9월 13일 · 제 1호</p>
@@ -360,7 +372,6 @@
             </a>
         </div>
 
-        
                 <div class="section-nav">
             <a href="./index.html" class="all-button">전체보기</a>
             <select id="sectionSelect" onchange="navigateToSection()">
@@ -368,12 +379,14 @@
                                     <option value="siseon" ZautoescZ>양미혁의 시선</option>
                                     <option value="damron" ZautoescZ>양산담론</option>
                                     <option value="balgeoleum" ZautoescZ>한옥문의 발걸음</option>
+                                    <option value="media" ZautoescZ>언론이 만난 양미혁</option>
                                     <option value="youtube" selected>[유튜브]한옥문의 양산이야기</option>
                                     <option value="issue" ZautoescZ>NOW 양산</option>
                                     <option value="book" ZautoescZ>양미혁이 먼저 읽어봤습니다</option>
                             </select>
         </div>
                 
+        
         
         
                 
@@ -408,11 +421,10 @@
         
         
         
-        
                 <div class="section-navigation">
-                                        <a href="./balgeoleum.html">이전</a>
-                                        <a href="./issue.html">다음</a>
-                    </div>
+                        <a href="./media.html" class="">이전</a>
+            <a href="./issue.html" class="">다음</a>
+        </div>
         
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
@@ -421,7 +433,6 @@
     </div>
     
     <script>
-        
         function navigateToSection() {
             const select = document.getElementById('sectionSelect');
             const selectedValue = select.value;
@@ -430,35 +441,9 @@
             }
         }
         
-        // 콘텐츠 내 노란색 박스 라운드 처리 스크립트
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            const contentDivs = document.querySelectorAll('.content-div');
-            contentDivs.forEach(function(contentDiv) {
-                const allElements = contentDiv.querySelectorAll('*');
-                allElements.forEach(function(el) {
-                    const style = window.getComputedStyle(el);
-                    const bgColor = style.backgroundColor;
-                    
-                    if (bgColor === 'rgb(254, 229, 0)' || bgColor === 'rgb(255, 255, 0)' || 
-                        bgColor === 'rgb(255, 235, 59)' || bgColor.includes('yellow') ||
-                        el.style.backgroundColor.includes('#FEE500') || 
-                        el.style.backgroundColor.includes('#FFEB00') ||
-                        el.style.backgroundColor.includes('yellow')) {
-                        el.style.borderRadius = '6px';
-                        if (!el.style.padding) {
-                            el.style.padding = '2px 6px';
-                        }
-                        el.style.display = 'inline-block';
-                    }
-                });
-            });
-        });
-
         history.scrollRestoration = 'manual';
 
         function setupCollapsibleContent() {
-            
             if ("youtube" !== "all") return;
             
             document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
@@ -466,14 +451,9 @@
                 const button = section.querySelector('.toggle-button');
                 if (!button) return;
 
-                content.style.maxHeight = 'none';
-                content.style.overflow = 'visible';
-            
                 const actualHeight = content.offsetHeight;
-                
-                const isMobile = window.innerWidth <= 480;
-                const threshold = isMobile ? 200 : 280;
-                const limitedHeight = isMobile ? 180 : 250;
+                const threshold = window.innerWidth <= 480 ? 200 : 280;
+                const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
 
                 if (actualHeight > threshold) {
                     content.style.maxHeight = limitedHeight + 'px';
@@ -507,15 +487,15 @@
                 const images = document.querySelectorAll('.section img');
                 let loadedImages = 0;
                 const totalImages = images.length;
-                const init = () => { setupCollapsibleContent(); };
+                const init = () => { setTimeout(setupCollapsibleContent, 50); };
                 if (totalImages === 0) {
-                    setTimeout(init, 50);
+                    init();
                     return;
                 }
                 images.forEach(img => {
                     const checkCompletion = () => {
                         loadedImages++;
-                        if (loadedImages === totalImages) { setTimeout(init, 50); }
+                        if (loadedImages === totalImages) { init(); }
                     };
                     if (img.complete) {
                         checkCompletion();
@@ -524,9 +504,6 @@
                         img.addEventListener('error', checkCompletion);
                     }
                 });
-            } else {
-                
-                setupCollapsibleContent();
             }
         });
         
