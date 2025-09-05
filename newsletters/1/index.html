@@ -606,7 +606,7 @@
                     </a>
                                         <a href="https://www.fntoday.co.kr/news/articleView.html?idxno=361772" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://www.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="">
+                            <img src="https://cdn.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”</h3>
@@ -616,7 +616,7 @@
                     </a>
                                         <a href="https://www.viva100.com/article/20250904501629" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905150925" alt="">
+                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905151006" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
@@ -668,10 +668,11 @@
                     button.style.display = 'block';
                 }
             } else {
-                if (!wasAlreadyShown) {
-                    button.style.display = 'none';
-                    content.classList.remove('collapsed');
-                }
+                // 콘텐츠가 짧으면 버튼 숨기고 전체 콘텐츠 표시
+                button.style.display = 'none';
+                content.classList.remove('collapsed');
+                content.style.maxHeight = 'none';
+                content.style.overflow = 'visible';
             }
 
             if (!button.hasEventListener) {
