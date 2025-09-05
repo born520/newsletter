@@ -456,10 +456,11 @@
                     button.style.display = 'block';
                 }
             } else {
-                if (!wasAlreadyShown) {
-                    button.style.display = 'none';
-                    content.classList.remove('collapsed');
-                }
+                // 콘텐츠가 짧으면 버튼 숨기고 전체 콘텐츠 표시
+                button.style.display = 'none';
+                content.classList.remove('collapsed');
+                content.style.maxHeight = 'none';
+                content.style.overflow = 'visible';
             }
 
             if (!button.hasEventListener) {
