@@ -172,27 +172,13 @@
             margin-top: 15px;
         }
     }
-    .content-div h2 {
-        font-size: 16px !important;
+     
+    .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
+        font-size: 17px !important;
         font-weight: 700;
         color: #191919;
-        background-color: #FEE500;
-        padding: 8px 12px;
-        border-radius: 6px;
-        margin: 25px 0 15px 0;
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-    .content-div h2:first-child {
-        margin-top: 0;
-    }
-    .content-div h3 {
-        font-size: 18px !important;
-        font-weight: 700;
-        color: #191919;
-        margin: 1em 0 0.5em 0;
-        line-height: 1.5;
+        margin: 1.5em 0 1em;
+        line-height: 1.4;
     }
     .content-div p { margin-bottom: 1em; }
     .content-div strong { color: #000; }
@@ -210,6 +196,25 @@
     .content-div .text-muted {
         font-size: 13px;
         color: #888;
+    }
+
+     
+    .issue-content h2 {
+        font-size: 16px !important;
+        background-color: #FEE500;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin: 25px 0 15px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .issue-content h2:first-child {
+        margin-top: 0;
+    }
+    .issue-content h3 {
+        font-size: 18px !important;
+        margin: 1em 0 0.5em 0;
     }
     
      
@@ -318,44 +323,15 @@
     
      
     @media (max-width: 768px) {
-        .container {
-             background-color: #F9F9F9;
-        }
-        .section {
-            margin: 0 0 10px 0;
-            border-radius: 0;
-            border-left: none;
-            border-right: none;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-        }
-        .section-content {
-            padding: 25px 0 30px 0; 
-        }
-        .section-content > div:not(.media-wrapper):not(.media-article-list),
-        .content-div,
-        .book-review {
-             padding-left: 15px;
-             padding-right: 15px;
-        }
-        .media-article-list {
-            padding: 0 15px;
-        }
-        .media-article-image {
-            width: 100px;
-            height: 67px;
-        }
-        .media-wrapper, .youtube-container {
-            border-radius: 0;
-        }
-        .content-div blockquote {
-            margin-left: 15px;
-            margin-right: 15px;
-        }
-        .section-navigation {
-            margin: 0;
-            padding: 15px;
-            border-radius: 0;
-        }
+        .container { background-color: #F9F9F9; }
+        .section { margin: 0 0 10px 0; border-radius: 0; border-left: none; border-right: none; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+        .section-content { padding: 25px 0 30px 0; }
+        .section-content > div:not(.media-wrapper):not(.media-article-list), .content-div, .book-review { padding-left: 15px; padding-right: 15px; }
+        .media-article-list { padding: 0 15px; }
+        .media-article-image { width: 100px; height: 67px; }
+        .media-wrapper, .youtube-container { border-radius: 0; }
+        .content-div blockquote { margin-left: 15px; margin-right: 15px; }
+        .section-navigation { margin: 0; padding: 15px; border-radius: 0; }
     }
     </style>
 </head>
@@ -379,14 +355,13 @@
                                     <option value="siseon" ZautoescZ>양미혁의 시선</option>
                                     <option value="damron" ZautoescZ>양산담론</option>
                                     <option value="balgeoleum" ZautoescZ>한옥문의 발걸음</option>
-                                    <option value="media" ZautoescZ>언론이 만난 양미혁</option>
                                     <option value="youtube" ZautoescZ>[유튜브]한옥문의 양산이야기</option>
                                     <option value="issue" selected>NOW 양산</option>
                                     <option value="book" ZautoescZ>양미혁이 먼저 읽어봤습니다</option>
+                                    <option value="media" ZautoescZ>언론이 만난  양미혁</option>
                             </select>
         </div>
                 
-        
         
         
                 
@@ -396,7 +371,7 @@
             <div class="section-content">
                                 <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>양산소식 이모저모</p></div>
                                                 <div class="collapsible-content ">
-                    <div class="content-div"><h2>[양산시 소식]</h2>
+                    <div class="content-div issue-content"><h2>[양산시 소식]</h2>
 <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
 <p><span class="text-muted">(보도일자: 2025.08.26 / 출처: 환경일보)</span></p>
 <p>양산시가 지난 26일, 하반기 공공일자리 사업에 참여하는 340명을 대상으로 산업안전보건교육을 실시했습니다. 이번 사업은 공공근로자 318명과 지역공동체일자리 사업 참여자 22명으로 구성되어 있으며, 8월 25일부터 12월 12일까지 4개월간 진행됩니다. 시는 이번 교육을 통해 폭염 등 계절적 위험 요인에 대비하고, 안전한 근로 환경을 조성하는 데 만전을 기하겠다고 밝혔습니다.</p>
@@ -422,6 +397,7 @@
                 </div>
                             </div>
         </div>
+        
         
         
                 <div class="section-navigation">
