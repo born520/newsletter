@@ -520,177 +520,155 @@
                                                 <div class="collapsible-content all-view">
                     <div class="book-review">
                         <div class="book-title">📚 이번 주 추천도서</div>
-                        <div class="content-div"><!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>책으로 만나는 양산</title>
-    <style>
-         
-        body {
-            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
-            line-height: 1.6;
-            margin: 0;  
-            background: #f0f2f5;  
-            color: #333;
+                        <div class="content-div"><style>
+     
+    .book-section-container {
+        font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+        line-height: 1.6;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        max-width: 800px;  
+        margin: 20px auto;  
+    }
+    .book-section-container h1 {
+        text-align: center;
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 15px;
+        margin-top: 0;
+        font-size: 1.8em;
+    }
+    .book-section-container .intro-text {
+        padding: 0 10px 15px 10px;
+        text-align: justify;
+        color: #555;
+    }
+    .book-section-container .book-intro {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 20px;
+    }
+    .book-section-container .book-intro:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .book-section-container .book-img {
+        width: 150px;
+        min-width: 150px;
+        height: auto;
+        margin-right: 25px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+    }
+    .book-section-container .book-desc {
+        flex: 1;
+    }
+    .book-section-container .book-desc h2 {
+        color: #3498db;
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 1.5em;
+    }
+    .book-section-container .book-desc p {
+        text-align: justify;
+        margin: 10px 0 0 0;
+    }
+    .book-section-container .author {
+        font-weight: bold;
+        color: #555;
+    }
+    .book-section-container .category {
+        font-style: italic;
+        color: #777;
+        font-size: 0.9em;
+    }
+    .book-section-container .footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: #888;
+    }
+
+     
+    @media (max-width: 768px) {
+        .book-section-container {
+            padding: 15px;
+            margin: 0;
+            box-shadow: none;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;  
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        .book-section-container .book-intro {
+            flex-direction: column;
+            align-items: center;
         }
-        h1 {
+        .book-section-container .book-img {
+            width: 50%;
+            max-width: 200px;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        .book-section-container .book-desc h2 {
             text-align: center;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 15px;
-            margin-top: 0;
         }
-        .intro-text {
-            padding: 0 10px 15px 10px;
-            text-align: justify;
-            color: #555;
+        .book-section-container .book-desc p {
+             text-align: left;
         }
-        .book-intro {
-            display: flex;  
-            align-items: flex-start;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 20px;
-        }
-        .book-intro:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .book-img {
-            width: 150px;
-            min-width: 150px;  
-            height: auto;
-            margin-right: 25px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
-        }
-        .book-desc {
-            flex: 1;  
-        }
-        .book-desc h2 {
-            color: #3498db;
-            margin-top: 0;
-            margin-bottom: 5px;
-            font-size: 1.5em;
-        }
-        .book-desc p {
-            text-align: justify;
-            margin: 10px 0 0 0;
-        }
-        .book-desc .author {
-            font-weight: bold;
-            color: #555;
-        }
-        .book-desc .category {
-            font-style: italic;
-            color: #777;
-            font-size: 0.9em;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #888;
-        }
+    }
+</style>
 
-         
-         
-        @media (max-width: 768px) {
-            body {
-                margin: 0;
-            }
-            .container {
-                 
-                margin: 0;
-                padding: 15px;
-                border-radius: 0;
-                box-shadow: none;
-            }
-            .book-intro {
-                 
-                flex-direction: column;
-                align-items: center;  
-            }
-            .book-img {
-                width: 50%;  
-                max-width: 200px;  
-                margin-right: 0;  
-                margin-bottom: 20px;  
-            }
-            .book-desc h2 {
-                text-align: center;  
-            }
-            .book-desc p {
-                 text-align: left;  
-            }
-        }
-    </style>
-</head>
-<body>
+<div class="book-section-container">
+    <h1>책으로 떠나는 양산 여행</h1>
+    <p class="intro-text">경상남도 양산시는 수려한 자연경관과 유구한 역사를 품은 도시입니다. 통도사와 내원사 등 천년 고찰의 향기부터 치열했던 근대사의 흔적까지, 양산의 다채로운 이야기는 여러 작가에게 영감을 주었습니다. 문학 작품과 역사서를 통해 우리가 살고 있는 도시, 양산을 더 깊이 이해하고 새롭게 발견하는 시간을 가져보는 것은 어떨까요? 양산의 숨결이 담긴 책들을 소개합니다.</p>
 
-    <div class="container">
-        <h1>책으로 떠나는 양산 여행</h1>
-        <p class="intro-text">경상남도 양산시는 수려한 자연경관과 유구한 역사를 품은 도시입니다. 통도사와 내원사 등 천년 고찰의 향기부터 치열했던 근대사의 흔적까지, 양산의 다채로운 이야기는 여러 작가에게 영감을 주었습니다. 문학 작품과 역사서를 통해 우리가 살고 있는 도시, 양산을 더 깊이 이해하고 새롭게 발견하는 시간을 가져보는 것은 어떨까요? 양산의 숨결이 담긴 책들을 소개합니다.</p>
-
-        <div class="book-intro">
-            <img src="https://i.postimg.cc/g2Tjkc4Q/9791173790072.jpg">
-            <div class="book-desc">
-                <h2>신의 그릇</h2>
-                <p class="author">저자: 신한균</p>
-                <p class="category">분류: 역사 소설</p>
-                <p>2023년 양산시민이 가장 사랑한 책으로 선정된 작품입니다. 세계문화유산 통도사 인근에서 활동하는 신한균 사기장이 임진왜란 당시 일본으로 끌려간 조선 사기장의 파란만장한 삶과 예술혼을 그려냈습니다. 양산의 법기리 가마터를 중심으로 펼쳐지는 주인공의 이야기는 우리 그릇 '이도다완'에 얽힌 역사적 아픔과 장인정신을 되새기게 합니다. 지역 작가가 쓴, 양산의 혼이 담긴 소설이라는 점에서 더욱 의미가 깊습니다.</p>
-            </div>
-        </div>
-
-        <div class="book-intro">
-            <img src="https://i.postimg.cc/rFhFQF6s/9788936616328.jpg" alt="수라도 표지" class="book-img">
-            <div class="book-desc">
-                <h2>수라도(修羅道)</h2>
-                <p class="author">저자: 김정한</p>
-                <p class="category">분류: 문학/소설</p>
-                <p>한국 문학의 거목, 요산 김정한 선생의 대표작 중 하나인 '수라도'는 양산을 주요 배경으로 하고 있습니다. 작가의 처가가 있었던 양산시 원동면 화제리 일대의 풍경과 사람들의 삶을 생생하게 묘사하며, 일제강점기부터 해방 전후까지 격동의 시대를 살아낸 한 가문의 이야기를 통해 민족의 수난사를 그리고 있습니다. 소설에 등장하는 '미륵당'은 물금읍의 용화사를 모델로 한 것으로 알려져 있어, 책을 읽고 문학의 배경이 된 장소를 직접 찾아보는 '문학 기행'을 떠나기에도 좋은 작품입니다.</p>
-            </div>
-        </div>
-
-        <div class="book-intro">
-            <img src="https://image.aladin.co.kr/product/28497/35/cover500/k352835229_1.jpg" alt="이야기로 양산하다 표지" class="book-img">
-            <div class="book-desc">
-                <h2>이야기로 양산하다</h2>
-                <p class="author">저자: 메깃들마을학교 엮음</p>
-                <p class="category">분류: 역사/인문</p>
-                <p>양산의 역사와 문학을 아우르며 지역의 가치를 새롭게 조명하는 책입니다. 청소년들을 위한 '지역 교육과정'의 일환으로 만들어졌지만, 양산에 대해 알고 싶은 성인들에게도 훌륭한 길잡이가 되어 줍니다. 우리가 무심코 지나쳤던 양산 곳곳에 숨겨진 이야기와 의미를 풍부한 자료와 함께 풀어내어, 독자들이 자신과 양산의 오늘과 내일을 연결하여 생각해 볼 기회를 제공합니다.</p>
-            </div>
-        </div>
-        
-        <div class="book-intro">
-            <img src="https://www.yangsan.go.kr/museum/resource/img/content/bookdata/e-book-2019-01.jpg" alt="땅속에서 찾은 양산의 역사 표지" class="book-img">
-            <div class="book-desc">
-                <h2>땅속에서 찾은 양산의 역사</h2>
-                <p class="author">발행: 양산시립박물관</p>
-                <p class="category">분류: 역사/고고학</p>
-                <p>양산시립박물관에서 발간한 도서 시리즈 중 하나로, 발굴 유물을 통해 양산의 고대사를 생생하게 보여주는 책입니다. 특히 가야와 신라의 접경지로서 역동적인 역사를 간직한 양산의 고대 유적과 유물을 풍부한 사진 자료와 함께 소개합니다. 이 책 외에도 양산시립박물관은 '금조총이야기', '우산 윤현진' 등 양산의 역사와 인물을 주제로 한 다양한 도서를 꾸준히 발간하고 있어, 양산의 역사를 깊이 있게 탐구하고 싶은 이들에게 귀중한 자료가 됩니다. 대부분의 자료는 박물관 홈페이지에서 전자책(e-book)으로도 만나볼 수 있습니다.</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>책과 함께 더 깊어지는 우리 동네, 양산을 만나보세요.</p>
+    <div class="book-intro">
+        <img src="https://i.postimg.cc/g2Tjkc4Q/9791173790072.jpg&amp;type=w500" alt="신의 그릇 표지" class="book-img">
+        <div class="book-desc">
+            <h2>신의 그릇</h2>
+            <p class="author">저자: 신한균</p>
+            <p class="category">분류: 역사 소설</p>
+            <p>2023년 양산시민이 가장 사랑한 책으로 선정된 작품입니다. 세계문화유산 통도사 인근에서 활동하는 신한균 사기장이 임진왜란 당시 일본으로 끌려간 조선 사기장의 파란만장한 삶과 예술혼을 그려냈습니다. 양산의 법기리 가마터를 중심으로 펼쳐지는 주인공의 이야기는 우리 그릇 '이도다완'에 얽힌 역사적 아픔과 장인정신을 되새기게 합니다. 지역 작가가 쓴, 양산의 혼이 담긴 소설이라는 점에서 더욱 의미가 깊습니다.</p>
         </div>
     </div>
 
-</body>
-</html></div>
+    <div class="book-intro">
+        <img src="https://i.postimg.cc/rFhFQF6s/9788936616328.jpg" alt="수라도 표지" class="book-img">
+        <div class="book-desc">
+            <h2>수라도(修羅道)</h2>
+            <p class="author">저자: 김정한</p>
+            <p class="category">분류: 문학/소설</p>
+            <p>한국 문학의 거목, 요산 김정한 선생의 대표작 중 하나인 '수라도'는 양산을 주요 배경으로 하고 있습니다. 작가의 처가가 있었던 양산시 원동면 화제리 일대의 풍경과 사람들의 삶을 생생하게 묘사하며, 일제강점기부터 해방 전후까지 격동의 시대를 살아낸 한 가문의 이야기를 통해 민족의 수난사를 그리고 있습니다. 소설에 등장하는 '미륵당'은 물금읍의 용화사를 모델로 한 것으로 알려져 있어, 책을 읽고 문학의 배경이 된 장소를 직접 찾아보는 '문학 기행'을 떠나기에도 좋은 작품입니다.</p>
+        </div>
+    </div>
+
+    <div class="book-intro">
+        <img src="https://image.aladin.co.kr/product/28497/35/cover500/k352835229_1.jpg" alt="이야기로 양산하다 표지" class="book-img">
+        <div class="book-desc">
+            <h2>이야기로 양산하다</h2>
+            <p class="author">저자: 메깃들마을학교 엮음</p>
+            <p class="category">분류: 역사/인문</p>
+            <p>양산의 역사와 문학을 아우르며 지역의 가치를 새롭게 조명하는 책입니다. 청소년들을 위한 '지역 교육과정'의 일환으로 만들어졌지만, 양산에 대해 알고 싶은 성인들에게도 훌륭한 길잡이가 되어 줍니다. 우리가 무심코 지나쳤던 양산 곳곳에 숨겨진 이야기와 의미를 풍부한 자료와 함께 풀어내어, 독자들이 자신과 양산의 오늘과 내일을 연결하여 생각해 볼 기회를 제공합니다.</p>
+        </div>
+    </div>
+    
+    <div class="book-intro">
+        <img src="https://www.yangsan.go.kr/museum/resource/img/content/bookdata/e-book-2019-01.jpg" alt="땅속에서 찾은 양산의 역사 표지" class="book-img">
+        <div class="book-desc">
+            <h2>땅속에서 찾은 양산의 역사</h2>
+            <p class="author">발행: 양산시립박물관</p>
+            <p class="category">분류: 역사/고고학</p>
+            <p>양산시립박물관에서 발간한 도서 시리즈 중 하나로, 발굴 유물을 통해 양산의 고대사를 생생하게 보여주는 책입니다. 특히 가야와 신라의 접경지로서 역동적인 역사를 간직한 양산의 고대 유적과 유물을 풍부한 사진 자료와 함께 소개합니다. 이 책 외에도 양산시립박물관은 '금조총이야기', '우산 윤현진' 등 양산의 역사와 인물을 주제로 한 다양한 도서를 꾸준히 발간하고 있어, 양산의 역사를 깊이 있게 탐구하고 싶은 이들에게 귀중한 자료가 됩니다. 대부분의 자료는 박물관 홈페이지에서 전자책(e-book)으로도 만나볼 수 있습니다.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>책과 함께 더 깊어지는 우리 동네, 양산을 만나보세요.</p>
+    </div>
+</div></div>
                     </div>
                 </div>
                 <button class="toggle-button"></button>            </div>
@@ -754,7 +732,7 @@
                     </a>
                                         <a href="https://www.viva100.com/article/20250904501629" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905113638" alt="">
+                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905114106" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
