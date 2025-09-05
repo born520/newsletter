@@ -132,13 +132,26 @@
     
      
     .section-preview {
-        padding: 20px 25px;
-        border-bottom: 1px solid #F0F0F0;
         cursor: pointer;
         transition: background-color 0.2s ease;
+        position: relative;
     }
     .section-preview:hover {
         background-color: #FAFAFA;
+    }
+    
+     
+    .section-preview.has-content {
+        padding: 20px 25px;
+        border-bottom: 1px solid #F0F0F0;
+    }
+    
+     
+    .section-preview.no-content {
+        padding: 8px 25px;
+        border-bottom: 1px solid #F0F0F0;
+        background: linear-gradient(90deg, #FEE500 0%, #FFD700 100%);
+        opacity: 0.3;
     }
     
     .section-subtitle {
@@ -159,14 +172,6 @@
         width: 100%;
         height: auto;
         display: block;
-    }
-    
-    .expand-hint {
-        font-size: 14px;
-        color: #666;
-        text-align: center;
-        font-style: italic;
-        margin-top: 10px;
     }
     
      
@@ -405,11 +410,10 @@
                 <span class="expand-icon">▼</span>
             </div>
             
-            <div class="section-preview" onclick="toggleSection('youtube')">
-                                <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
-                                <div class="expand-hint">탭하여 유튜브 영상 보기</div>
+                        <div class="section-preview has-content" onclick="toggleSection('youtube')">
+                <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
             </div>
-            
+                        
             <div class="section-content">
                                 <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
                                 <div class="youtube-container"><iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allowfullscreen></iframe></div>
