@@ -412,85 +412,69 @@
     </div>
     
     <script>
-        function navigateToSection() {
-            const select = document.getElementById('sectionSelect');
-            const selectedValue = select.value;
-            if (selectedValue) {
-                window.location.href = `./${selectedValue}.html`;
-            }
+    function navigateToSection() {
+        const select = document.getElementById('sectionSelect');
+        const selectedValue = select.value;
+        if (selectedValue) {
+            window.location.href = `./${selectedValue}.html`;
         }
+    }
+    
+    history.scrollRestoration = 'manual';
+
+    function setupCollapsibleContent() {
+        if ("issue" !== "all") return;
         
-        history.scrollRestoration = 'manual';
+        document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
+            const section = content.closest('.section');
+            const button = section.querySelector('.toggle-button');
+            if (!button) return;
 
-        function setupCollapsibleContent() {
-            if ("issue" !== "all") return;
-            
-            document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
-                const section = content.closest('.section');
-                const button = section.querySelector('.toggle-button');
-                if (!button) return;
+            const actualHeight = content.offsetHeight;
+            const threshold = window.innerWidth <= 480 ? 200 : 280;
+            const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
 
-                const actualHeight = content.offsetHeight;
-                const threshold = window.innerWidth <= 480 ? 200 : 280;
-                const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
+            if (actualHeight > threshold) {
+                content.style.maxHeight = limitedHeight + 'px';
+                content.style.overflow = 'hidden';
+                content.classList.add('collapsed');
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+                content.classList.remove('collapsed');
+            }
 
-                if (actualHeight > threshold) {
-                    content.style.maxHeight = limitedHeight + 'px';
-                    content.style.overflow = 'hidden';
-                    content.classList.add('collapsed');
-                    button.style.display = 'block';
-                } else {
-                    button.style.display = 'none';
+            if (!button.hasEventListener) {
+                button.addEventListener('click', () => {
                     content.classList.remove('collapsed');
-                }
-
-                if (!button.hasEventListener) {
-                    button.addEventListener('click', () => {
-                        content.classList.remove('collapsed');
-                        content.classList.add('expanded');
-                        content.style.maxHeight = actualHeight + 'px';
-                        setTimeout(() => {
-                           if(content.classList.contains('expanded')) {
-                               content.style.maxHeight = 'none';
-                           }
-                        }, 500);
-                        button.style.display = 'none';
-                    });
-                    button.hasEventListener = true;
-                }
-            });
-        }
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            if ("issue" === "all") {
-                const images = document.querySelectorAll('.section img');
-                let loadedImages = 0;
-                const totalImages = images.length;
-                const init = () => { setTimeout(setupCollapsibleContent, 50); };
-                if (totalImages === 0) {
-                    init();
-                    return;
-                }
-                images.forEach(img => {
-                    const checkCompletion = () => {
-                        loadedImages++;
-                        if (loadedImages === totalImages) { init(); }
-                    };
-                    if (img.complete) {
-                        checkCompletion();
-                    } else {
-                        img.addEventListener('load', checkCompletion);
-                        img.addEventListener('error', checkCompletion);
-                    }
+                    content.classList.add('expanded');
+                    content.style.maxHeight = actualHeight + 'px';
+                    setTimeout(() => {
+                        if(content.classList.contains('expanded')) {
+                            content.style.maxHeight = 'none';
+                        }
+                    }, 500);
+                    button.style.display = 'none';
                 });
+                button.hasEventListener = true;
             }
         });
+    }
+    
+    // ✅ [수정된 부분] DOMContentLoaded 대신 window.load 이벤트를 사용합니다.
+    window.addEventListener('load', () => {
         
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(setupCollapsibleContent, 300);
-        });
-    </script>
+        if ("issue" === "all") {
+            
+            setTimeout(setupCollapsibleContent, 100);
+        }
+    });
+    
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(setupCollapsibleContent, 300);
+    });
+</script>
 </body>
 </html>
