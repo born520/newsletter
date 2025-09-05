@@ -443,38 +443,41 @@
             const button = section.querySelector('.toggle-button');
             if (!button) return;
 
-            const actualHeight = content.offsetHeight;
-            const threshold = window.innerWidth <= 480 ? 200 : 280;
-            const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
-
-            const wasAlreadyShown = button.style.display === 'block';
+            // 초기 상태: 전체 표시
+            content.style.maxHeight = 'none';
+            content.style.overflow = 'visible';
+            content.classList.remove('collapsed');
+            
+            
+            const actualHeight = content.scrollHeight;
+            console.log('실제 높이:', actualHeight); 
+            
+            
+            const threshold = window.innerWidth <= 768 ? 400 : 500;
+            const limitedHeight = window.innerWidth <= 768 ? 300 : 350;
+            
+            console.log('임계값:', threshold, '제한높이:', limitedHeight); 
 
             if (actualHeight > threshold) {
-                if (!content.classList.contains('expanded')) {
-                    content.style.maxHeight = limitedHeight + 'px';
-                    content.style.overflow = 'hidden';
-                    content.classList.add('collapsed');
-                    button.style.display = 'block';
-                }
+                
+                content.style.maxHeight = limitedHeight + 'px';
+                content.style.overflow = 'hidden';
+                content.classList.add('collapsed');
+                button.style.display = 'block';
+                console.log('버튼 표시'); 
             } else {
-                // 콘텐츠가 짧으면 버튼 숨기고 전체 콘텐츠 표시
+                
                 button.style.display = 'none';
-                content.classList.remove('collapsed');
-                content.style.maxHeight = 'none';
-                content.style.overflow = 'visible';
+                console.log('버튼 숨김'); 
             }
 
+            
             if (!button.hasEventListener) {
                 button.addEventListener('click', () => {
                     content.classList.remove('collapsed');
                     content.classList.add('expanded');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    
-                    setTimeout(() => {
-                        if(content.classList.contains('expanded')) {
-                            content.style.maxHeight = 'none';
-                        }
-                    }, 500);
+                    content.style.maxHeight = 'none';
+                    content.style.overflow = 'visible';
                     button.style.display = 'none';
                 });
                 button.hasEventListener = true;
@@ -482,22 +485,35 @@
         });
     }
     
+    
     window.addEventListener('load', () => {
         if ("issue" === "all") {
-            if (document.fonts && typeof document.fonts.ready === 'object') {
+            
+            if (document.fonts && document.fonts.ready) {
                 document.fonts.ready.then(() => {
-                    setTimeout(setupCollapsibleContent, 50);
+                    setTimeout(setupCollapsibleContent, 100);
                 });
             } else {
-                setTimeout(setupCollapsibleContent, 300);
+                setTimeout(setupCollapsibleContent, 500);
             }
         }
     });
     
+    
     let resizeTimeout;
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(setupCollapsibleContent, 300);
+        if ("issue" === "all") {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                
+                document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
+                    content.style.maxHeight = 'none';
+                    content.style.overflow = 'visible';
+                    content.classList.remove('collapsed', 'expanded');
+                });
+                setTimeout(setupCollapsibleContent, 100);
+            }, 300);
+        }
     });
     </script>
 </body>
