@@ -94,9 +94,11 @@
         padding: 0; 
     }
     
-    .section h2 {
+     
+    .section-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-size: 22px;
         font-weight: 800;
         color: #191919;
@@ -105,67 +107,91 @@
         margin: 0;
         border: none;
         line-height: 1.4;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        user-select: none;
     }
-    .section h2::before { 
+    .section-header:hover {
+        background-color: #FFD700;
+    }
+    .section-header::before { 
         content: '💬'; 
         margin-right: 12px; 
         font-size: 22px; 
     }
     
-    .section-content { 
-        padding: 25px; 
+     
+    .expand-icon {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+        color: #191919;
     }
-
-    .media-wrapper { 
-        margin: 0 0 25px 0; 
-        line-height: 0; 
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    .media-wrapper img { 
-        width: 100%; 
-        height: auto; 
-        display: block; 
+    .section.expanded .expand-icon {
+        transform: rotate(180deg);
     }
     
-    .youtube-container { 
-        position: relative; 
-        padding-bottom: 56.25%; 
-        height: 0; 
-        overflow: hidden; 
+     
+    .section-preview {
+        padding: 20px 25px;
+        border-bottom: 1px solid #F0F0F0;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    .section-preview:hover {
+        background-color: #FAFAFA;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+        font-weight: 700;
+        color: #191919;
+        margin: 0 0 15px 0;
+        line-height: 1.4;
+    }
+    
+    .preview-image {
+        margin: 0 0 15px 0;
         border-radius: 8px;
+        overflow: hidden;
+        line-height: 0;
     }
-    .youtube-container iframe { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        border: none; 
+    .preview-image img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
-    .youtube-subscribe-button { 
-        display: table; 
-        margin: 20px auto 20px; 
-        padding: 10px 18px; 
-        background-color: #FF0000; 
-        color: #ffffff; 
-        text-decoration: none; 
-        font-weight: bold; 
-        border-radius: 8px; 
+    
+    .expand-hint {
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+    }
+    
+     
+    .section-content { 
+        padding: 25px;
+        display: none;
+        border-top: 1px solid #F0F0F0;
+    }
+    .section.expanded .section-content {
+        display: block;
+    }
+    
+     
+    .section.expanded .section-preview {
+        display: none;
     }
 
     .content-div {
         font-size: 16px;
         color: #333;
-    }
-    @media (min-width: 769px) {
-        .content-div {
-            background: #F9F9F9; 
-            padding: 20px; 
-            border-radius: 8px; 
-            border: 1px solid #F0F0F0; 
-            margin-top: 15px;
-        }
+        background: #F9F9F9; 
+        padding: 20px; 
+        border-radius: 8px; 
+        border: 1px solid #F0F0F0; 
+        margin-top: 15px;
     }
     
     .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
@@ -188,9 +214,33 @@
         color: #444;
         font-style: italic;
     }
-    .content-div .text-muted {
-        font-size: 13px;
-        color: #888;
+
+     
+    .youtube-container { 
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0; 
+        overflow: hidden; 
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .youtube-container iframe { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+    }
+    .youtube-subscribe-button { 
+        display: table; 
+        margin: 20px auto; 
+        padding: 10px 18px; 
+        background-color: #FF0000; 
+        color: #ffffff; 
+        text-decoration: none; 
+        font-weight: bold; 
+        border-radius: 8px; 
     }
 
      
@@ -207,11 +257,7 @@
     .issue-content h2:first-child {
         margin-top: 0;
     }
-    .issue-content h3 {
-        font-size: 18px !important;
-        margin: 1em 0 0.5em 0;
-    }
-    
+
      
     .media-article-list {
         display: flex;
@@ -279,40 +325,6 @@
     }
     
      
-    .book-review { 
-        margin-top: 0; 
-    }
-    @media (min-width: 769px) {
-        .book-review {
-            background: #F9F9F9; 
-            border: 1px solid #F0F0F0; 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin-top: 15px;
-        }
-    }
-    .book-title { 
-        font-weight: bold; 
-        color: #3C1E1E; 
-        margin-bottom: 8px; 
-        font-size: 17px; 
-    }
-
-     
-    .collapsible-content { overflow: visible; max-height: none; }
-    .collapsible-content.all-view { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
-    .collapsible-content.all-view.expanded { max-height: none !important; overflow: visible; }
-    .collapsible-content.all-view.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
-    .toggle-button { display: none; margin: 20px auto 0; background: #F0F0F0; border: none; border-radius: 20px; padding: 8px 18px; cursor: pointer; font-size: 13px; color: #555; font-weight: bold; }
-    .toggle-button::after { content: '내용 더 보기 ▼'; }
-
-     
-    .section-navigation { margin: 20px 15px 0; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-    .section-navigation a { padding: 10px 20px; background-color: #FEE500; color: #191919; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 14px; white-space: nowrap; transition: background-color 0.2s; }
-    .section-navigation a:hover { background-color: #FFD700; }
-    .section-navigation a.disabled { background-color: #ddd; color: #999; pointer-events: none; }
-    
-     
     .dot-text-container .char-dot { position: relative; display: inline-block; }
     .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; color: #191919; }
     .footer { background-color: #f0f0f0; color: #777; text-align: center; padding: 40px 20px; font-size: 12px; }
@@ -327,17 +339,22 @@
             border-right: none; 
             box-shadow: 0 1px 2px rgba(0,0,0,0.04); 
         }
-        .section-content { 
-            padding: 20px 15px 25px 15px; 
+        .section-content, .section-preview { 
+            padding: 20px 15px; 
         }
-        .media-wrapper, .youtube-container {
-            border-radius: 0; 
-            margin: 0 -15px 20px -15px;
-        }
-        .section-navigation {
-            margin: 0;
+        .section-header {
             padding: 15px;
-            border-radius: 0;
+        }
+        .content-div {
+            background: transparent;
+            padding: 0;
+            border: none;
+            margin-top: 15px;
+        }
+        .preview-image, .youtube-container {
+            border-radius: 0; 
+            margin-left: -15px;
+            margin-right: -15px;
         }
         .media-article-card {
             margin: 0 -15px 15px -15px;
@@ -377,14 +394,27 @@
                 
         
         
+        
+        
+        
                 
         
-                <div class="section">
-            <h2>NOW 양산</h2>
+        
+        
+                <div class="section" data-section="issue">
+            <div class="section-header" onclick="toggleSection('issue')">
+                <span>NOW 양산</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('issue')">
+                                <div class="section-subtitle"><p>양산소식 이모저모</p></div>
+                                                <div class="expand-hint">탭하여 전체 내용 보기</div>
+            </div>
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>양산소식 이모저모</p></div>
-                                                <div class="collapsible-content ">
-                    <div class="content-div issue-content"><h2>[양산시 소식]</h2>
+                                <div class="section-subtitle"><p>양산소식 이모저모</p></div>
+                                                <div class="content-div issue-content"><h2>[양산시 소식]</h2>
 <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
 <p><span class="text-muted">(보도일자: 2025.08.26 / 출처: 환경일보)</span></p>
 <p>양산시가 지난 26일, 하반기 공공일자리 사업에 참여하는 340명을 대상으로 산업안전보건교육을 실시했습니다. 이번 사업은 공공근로자 318명과 지역공동체일자리 사업 참여자 22명으로 구성되어 있으며, 8월 25일부터 12월 12일까지 4개월간 진행됩니다. 시는 이번 교육을 통해 폭염 등 계절적 위험 요인에 대비하고, 안전한 근로 환경을 조성하는 데 만전을 기하겠다고 밝혔습니다.</p>
@@ -407,16 +437,12 @@
 
 <h2>[한옥문의 경제산책]</h2>
 <blockquote>지역 특산물을 활용한 상품 개발은 단순한 소비를 넘어 지역의 문화와 정체성을 담는 중요한 경제 활동입니다. 원동 매실은 이미 전국적으로 그 명성을 알리고 있지만, 이번 경진대회를 통해 더욱 다양한 형태로 재탄생하여 우리 양산의 브랜드 가치를 높일 수 있습니다. 지역 자원을 활용한 창의적인 아이디어가 양산 경제를 한 단계 더 도약시키는 원동력이 될 것입니다.</blockquote></div>
-                </div>
-                            </div>
+            </div>
         </div>
         
         
         
-                <div class="section-navigation">
-                        <a href="./youtube.html" class="">이전</a>
-            <a href="./book.html" class="">다음</a>
-        </div>
+        
         
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
@@ -433,19 +459,32 @@
         }
     }
     
-    history.scrollRestoration = 'manual';
-
-    // 간단한 버튼 클릭 처리만
+    function toggleSection(sectionKey) {
+        const section = document.querySelector(`[data-section="${sectionKey}"]`);
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // 펼칠 때 해당 섹션으로 부드럽게 스크롤
+            if (section.classList.contains('expanded')) {
+                setTimeout(() => {
+                    section.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }
+        }
+    }
+    
+    
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.toggle-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const section = button.closest('.section');
-                const content = section.querySelector('.collapsible-content');
-                if (content) {
-                    content.classList.add('expanded');
-                }
-            });
-        });
+        const viewMode = 'issue';
+        if (viewMode !== 'all') {
+            const targetSection = document.querySelector(`[data-section="${viewMode}"]`);
+            if (targetSection) {
+                targetSection.classList.add('expanded');
+            }
+        }
     });
     </script>
 </body>
