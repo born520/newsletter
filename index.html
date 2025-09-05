@@ -732,7 +732,7 @@
                     </a>
                                         <a href="https://www.viva100.com/article/20250904501629" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905122747" alt="">
+                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905123257" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
@@ -762,50 +762,58 @@
     
     history.scrollRestoration = 'manual';
 
-    function setupCollapsibleContent() {
-        if ("all" !== "all") return;
-        
-        document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
-            const section = content.closest('.section');
-            const button = section.querySelector('.toggle-button');
-            if (!button) return;
+function setupCollapsibleContent() {
+    if ("all" !== "all") return;
+    
+    document.querySelectorAll('.collapsible-content.all-view').forEach(content => {
+        const section = content.closest('.section');
+        const button = section.querySelector('.toggle-button');
+        if (!button) return;
 
-            // 콘텐츠의 실제 높이를 측정합니다.
-            const actualHeight = content.offsetHeight;
-            const threshold = window.innerWidth <= 480 ? 200 : 280;
-            const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
+        const actualHeight = content.offsetHeight;
+        const threshold = window.innerWidth <= 480 ? 200 : 280;
+        const limitedHeight = window.innerWidth <= 480 ? 180 : 250;
 
-            if (actualHeight > threshold) {
+        // ✅ [핵심 수정] 버튼이 이전에 이미 화면에 표시되었는지 확인합니다.
+        const wasAlreadyShown = button.style.display === 'block';
+
+        if (actualHeight > threshold) {
+            
+            if (!content.classList.contains('expanded')) {
                 content.style.maxHeight = limitedHeight + 'px';
                 content.style.overflow = 'hidden';
                 content.classList.add('collapsed');
                 button.style.display = 'block';
-            } else {
+            }
+        } else {
+            
+            
+            if (!wasAlreadyShown) {
                 button.style.display = 'none';
                 content.classList.remove('collapsed');
             }
+        }
 
-            
-            
-            if (!button.hasEventListener) {
-                button.addEventListener('click', () => {
-                    content.classList.remove('collapsed');
-                    content.classList.add('expanded');
-                    
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    
-                    setTimeout(() => {
-                        
-                        if(content.classList.contains('expanded')) {
-                            content.style.maxHeight = 'none';
-                        }
-                    }, 500);
-                    button.style.display = 'none';
-                });
-                button.hasEventListener = true;
-            }
-        });
-    }
+        
+        if (!button.hasEventListener) {
+            button.addEventListener('click', () => {
+                content.classList.remove('collapsed');
+                content.classList.add('expanded');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                
+                setTimeout(() => {
+                    if(content.classList.contains('expanded')) {
+                        content.style.maxHeight = 'none';
+                    }
+                }, 500);
+                button.style.display = 'none';
+            });
+            button.hasEventListener = true;
+        }
+    });
+}
+
+
     
     
     window.addEventListener('load', () => {
