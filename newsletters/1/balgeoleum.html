@@ -447,37 +447,44 @@
             const button = section.querySelector('.toggle-button');
             if (!button) return;
 
-            // 강제로 초기 상태 설정 (CSS !important 무시)
-            content.style.setProperty('max-height', 'none', 'important');
-            content.style.setProperty('overflow', 'visible', 'important');
+            // 1단계: 모든 제한 제거하고 자연스러운 높이 측정
+            content.style.removeProperty('max-height');
+            content.style.removeProperty('overflow');
             content.classList.remove('collapsed', 'expanded');
+            button.style.display = 'none';
             
             
-            setTimeout(() => {
-                const actualHeight = content.scrollHeight;
-                const threshold = window.innerWidth <= 768 ? 400 : 500;
-                const limitedHeight = window.innerWidth <= 768 ? 300 : 350;
+            requestAnimationFrame(() => {
+                const naturalHeight = content.offsetHeight;
+                
+                
+                const threshold = 600; 
+                const limitedHeight = 400;
+                
+                console.log(`섹션 높이: ${naturalHeight}px, 임계값: ${threshold}px`);
 
-                if (actualHeight > threshold) {
+                if (naturalHeight > threshold) {
                     
-                    content.style.setProperty('max-height', limitedHeight + 'px', 'important');
-                    content.style.setProperty('overflow', 'hidden', 'important');
+                    console.log('긴 콘텐츠 - 버튼 표시');
+                    content.style.maxHeight = limitedHeight + 'px';
+                    content.style.overflow = 'hidden';
                     content.classList.add('collapsed');
-                    button.style.setProperty('display', 'block', 'important');
+                    button.style.display = 'block';
                 } else {
                     
-                    button.style.setProperty('display', 'none', 'important');
+                    console.log('짧은 콘텐츠 - 전체 표시');
+                    
                 }
-            }, 50);
+            });
 
             
             if (!button.hasEventListener) {
                 button.addEventListener('click', () => {
+                    content.style.removeProperty('max-height');
+                    content.style.removeProperty('overflow');
                     content.classList.remove('collapsed');
                     content.classList.add('expanded');
-                    content.style.setProperty('max-height', 'none', 'important');
-                    content.style.setProperty('overflow', 'visible', 'important');
-                    button.style.setProperty('display', 'none', 'important');
+                    button.style.display = 'none';
                 });
                 button.hasEventListener = true;
             }
@@ -485,17 +492,17 @@
     }
     
     
-    window.addEventListener('load', () => {
-        if ("balgeoleum" === "all") {
-            if (document.fonts && document.fonts.ready) {
-                document.fonts.ready.then(() => {
-                    setTimeout(setupCollapsibleContent, 200);
-                });
-            } else {
-                setTimeout(setupCollapsibleContent, 500);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            if ("balgeoleum" === "all") {
+                setTimeout(setupCollapsibleContent, 100);
             }
+        });
+    } else {
+        if ("balgeoleum" === "all") {
+            setTimeout(setupCollapsibleContent, 100);
         }
-    });
+    }
     
     
     let resizeTimeout;
