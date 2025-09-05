@@ -94,9 +94,11 @@
         padding: 0; 
     }
     
-    .section h2 {
+     
+    .section-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-size: 22px;
         font-weight: 800;
         color: #191919;
@@ -105,67 +107,91 @@
         margin: 0;
         border: none;
         line-height: 1.4;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        user-select: none;
     }
-    .section h2::before { 
+    .section-header:hover {
+        background-color: #FFD700;
+    }
+    .section-header::before { 
         content: '💬'; 
         margin-right: 12px; 
         font-size: 22px; 
     }
     
-    .section-content { 
-        padding: 25px; 
+     
+    .expand-icon {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+        color: #191919;
     }
-
-    .media-wrapper { 
-        margin: 0 0 25px 0; 
-        line-height: 0; 
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    .media-wrapper img { 
-        width: 100%; 
-        height: auto; 
-        display: block; 
+    .section.expanded .expand-icon {
+        transform: rotate(180deg);
     }
     
-    .youtube-container { 
-        position: relative; 
-        padding-bottom: 56.25%; 
-        height: 0; 
-        overflow: hidden; 
+     
+    .section-preview {
+        padding: 20px 25px;
+        border-bottom: 1px solid #F0F0F0;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    .section-preview:hover {
+        background-color: #FAFAFA;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+        font-weight: 700;
+        color: #191919;
+        margin: 0 0 15px 0;
+        line-height: 1.4;
+    }
+    
+    .preview-image {
+        margin: 0 0 15px 0;
         border-radius: 8px;
+        overflow: hidden;
+        line-height: 0;
     }
-    .youtube-container iframe { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        border: none; 
+    .preview-image img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
-    .youtube-subscribe-button { 
-        display: table; 
-        margin: 20px auto 20px; 
-        padding: 10px 18px; 
-        background-color: #FF0000; 
-        color: #ffffff; 
-        text-decoration: none; 
-        font-weight: bold; 
-        border-radius: 8px; 
+    
+    .expand-hint {
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        font-style: italic;
+        margin-top: 10px;
+    }
+    
+     
+    .section-content { 
+        padding: 25px;
+        display: none;
+        border-top: 1px solid #F0F0F0;
+    }
+    .section.expanded .section-content {
+        display: block;
+    }
+    
+     
+    .section.expanded .section-preview {
+        display: none;
     }
 
     .content-div {
         font-size: 16px;
         color: #333;
-    }
-    @media (min-width: 769px) {
-        .content-div {
-            background: #F9F9F9; 
-            padding: 20px; 
-            border-radius: 8px; 
-            border: 1px solid #F0F0F0; 
-            margin-top: 15px;
-        }
+        background: #F9F9F9; 
+        padding: 20px; 
+        border-radius: 8px; 
+        border: 1px solid #F0F0F0; 
+        margin-top: 15px;
     }
     
     .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
@@ -188,9 +214,33 @@
         color: #444;
         font-style: italic;
     }
-    .content-div .text-muted {
-        font-size: 13px;
-        color: #888;
+
+     
+    .youtube-container { 
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0; 
+        overflow: hidden; 
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .youtube-container iframe { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+    }
+    .youtube-subscribe-button { 
+        display: table; 
+        margin: 20px auto; 
+        padding: 10px 18px; 
+        background-color: #FF0000; 
+        color: #ffffff; 
+        text-decoration: none; 
+        font-weight: bold; 
+        border-radius: 8px; 
     }
 
      
@@ -207,11 +257,7 @@
     .issue-content h2:first-child {
         margin-top: 0;
     }
-    .issue-content h3 {
-        font-size: 18px !important;
-        margin: 1em 0 0.5em 0;
-    }
-    
+
      
     .media-article-list {
         display: flex;
@@ -279,40 +325,6 @@
     }
     
      
-    .book-review { 
-        margin-top: 0; 
-    }
-    @media (min-width: 769px) {
-        .book-review {
-            background: #F9F9F9; 
-            border: 1px solid #F0F0F0; 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin-top: 15px;
-        }
-    }
-    .book-title { 
-        font-weight: bold; 
-        color: #3C1E1E; 
-        margin-bottom: 8px; 
-        font-size: 17px; 
-    }
-
-     
-    .collapsible-content { overflow: visible; max-height: none; }
-    .collapsible-content.all-view { overflow: hidden; transition: max-height 0.5s ease-out; position: relative; }
-    .collapsible-content.all-view.expanded { max-height: none !important; overflow: visible; }
-    .collapsible-content.all-view.collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #ffffff); pointer-events: none; z-index: 5; }
-    .toggle-button { display: none; margin: 20px auto 0; background: #F0F0F0; border: none; border-radius: 20px; padding: 8px 18px; cursor: pointer; font-size: 13px; color: #555; font-weight: bold; }
-    .toggle-button::after { content: '내용 더 보기 ▼'; }
-
-     
-    .section-navigation { margin: 20px 15px 0; padding: 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-    .section-navigation a { padding: 10px 20px; background-color: #FEE500; color: #191919; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 14px; white-space: nowrap; transition: background-color 0.2s; }
-    .section-navigation a:hover { background-color: #FFD700; }
-    .section-navigation a.disabled { background-color: #ddd; color: #999; pointer-events: none; }
-    
-     
     .dot-text-container .char-dot { position: relative; display: inline-block; }
     .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; color: #191919; }
     .footer { background-color: #f0f0f0; color: #777; text-align: center; padding: 40px 20px; font-size: 12px; }
@@ -327,17 +339,22 @@
             border-right: none; 
             box-shadow: 0 1px 2px rgba(0,0,0,0.04); 
         }
-        .section-content { 
-            padding: 20px 15px 25px 15px; 
+        .section-content, .section-preview { 
+            padding: 20px 15px; 
         }
-        .media-wrapper, .youtube-container {
-            border-radius: 0; 
-            margin: 0 -15px 20px -15px;
-        }
-        .section-navigation {
-            margin: 0;
+        .section-header {
             padding: 15px;
-            border-radius: 0;
+        }
+        .content-div {
+            background: transparent;
+            padding: 0;
+            border: none;
+            margin-top: 15px;
+        }
+        .preview-image, .youtube-container {
+            border-radius: 0; 
+            margin-left: -15px;
+            margin-right: -15px;
         }
         .media-article-card {
             margin: 0 -15px 15px -15px;
@@ -362,13 +379,25 @@
         </div>
 
                 
-                <div class="section">
-            <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</h2>
+        
+                <div class="section" data-section="siseon">
+            <div class="section-header" onclick="toggleSection('siseon')">
+                <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            
+            <div class="section-preview" onclick="toggleSection('siseon')">
+                                <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></div>
+                                                <div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="이미지"></div>
+                                <div class="expand-hint">탭하여 전체 내용 보기</div>
+            </div>
+            
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></div>
-                                                <div class="media-wrapper"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="이미지"></div>
-                                <div class="collapsible-content all-view long-content">
-                    <div class="content-div"><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
+                                <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며 드리는 말씀</p></div>
+                                                <div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="이미지"></div>
+                                <div class="content-div"><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
 
 <p>안녕하세요. <strong>양산미래혁신연구원 원장 한옥문</strong>입니다.</p>
 
@@ -393,17 +422,26 @@
 <p>앞으로 시민 속에서 시민들이 공감하고 참여할 수 있는 실질적인 사업들을 추진하고, 그 성과를 통해 가장 양산다운 새로운 성장 모델을 만들어가겠습니다. 시민 여러분의 많은 관심과 참여를 부탁드립니다.</p>
 
 <p><a href="http://pf.kakao.com/_jmfNn/friend">▶️ '양산미래혁신연구원' 채널 추가하기</a></p></div>
-                </div>
-                <button class="toggle-button show-button"></button>            </div>
+            </div>
         </div>
         
-                <div class="section">
-            <h2>양산담론</h2>
+        
+                <div class="section" data-section="damron">
+            <div class="section-header" onclick="toggleSection('damron')">
+                <span>양산담론</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('damron')">
+                                <div class="section-subtitle"><p>50만 자족도시로의 발전 가능한 것인가?</p></div>
+                                                <div class="preview-image"><img src="https://i.postimg.cc/3rmdX7Fh/AKR20190429118100052-01-i-P4.jpg" alt="이미지"></div>
+                                <div class="expand-hint">탭하여 전체 내용 보기</div>
+            </div>
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>50만 자족도시로의 발전 가능한 것인가?</p></div>
-                                                <div class="media-wrapper"><img src="https://i.postimg.cc/3rmdX7Fh/AKR20190429118100052-01-i-P4.jpg" alt="이미지"></div>
-                                <div class="collapsible-content all-view long-content">
-                    <div class="content-div"><p><span class="text-muted">기고자: 영산대 김도시 교수</span></p>
+                                <div class="section-subtitle"><p>50만 자족도시로의 발전 가능한 것인가?</p></div>
+                                                <div class="preview-image"><img src="https://i.postimg.cc/3rmdX7Fh/AKR20190429118100052-01-i-P4.jpg" alt="이미지"></div>
+                                <div class="content-div"><p><span class="text-muted">기고자: 영산대 김도시 교수</span></p>
 <h1>양산의 미래, ‘계획’은 있으나 ‘철학’은 있는가</h1>
 <p>최근 경상남도가 양산을 포함한 동부경남을 대한민국의 미래 산업 중심지로 육성하기 위한 구체적인 청사진을 발표했습니다. 이 계획의 핵심 중 하나로, 490억 원을 투입해 양산부산대병원 유휴부지에 ‘바이오메디컬 이노베이션 센터’를 구축하겠다는 내용이 포함되었습니다. 이는 양산시가 오랫동안 그려온 <strong>‘바이오헬스 허브’</strong>라는 원대한 꿈을 향한 의미 있는 첫걸음이라 할 수 있습니다.</p>
 <p>하지만 이처럼 거대한 계획이 발표될수록, 우리는 장밋빛 약속 너머의 그림자를 냉철하게 들여다봐야 합니다. 비로소 그때, 우리는 진정한 성공의 길을 찾을 수 있을 것입니다.</p>
@@ -426,17 +464,26 @@
 <p>이 사업의 성공 여부는 예산의 크기나 건물의 높이가 아닌, <strong>'어떤 도시를 만들고 싶은가'</strong>에 대한 우리의 철학에 달려 있습니다.</p>
 <blockquote>우리는 과연 ‘기업이 오고 싶은 도시’를 넘어, ‘최고의 인재들이 머물며 살고 싶은 도시’를 만들 준비가 되어 있습니까?</blockquote>
 <p>이 질문에 대한 답을 찾아가는 과정이야말로, 양산의 빛나는 내일을 여는 진정한 열쇠가 될 것입니다.</p></div>
-                </div>
-                <button class="toggle-button show-button"></button>            </div>
+            </div>
         </div>
         
-                <div class="section">
-            <h2>한옥문의 발걸음</h2>
+        
+                <div class="section" data-section="balgeoleum">
+            <div class="section-header" onclick="toggleSection('balgeoleum')">
+                <span>한옥문의 발걸음</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('balgeoleum')">
+                                <div class="section-subtitle"><p>웅상선 건설 예정지를 가다.</p></div>
+                                                <div class="preview-image"><img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="이미지"></div>
+                                <div class="expand-hint">탭하여 전체 내용 보기</div>
+            </div>
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>웅상선 건설 예정지를 가다.</p></div>
-                                                <div class="media-wrapper"><img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="이미지"></div>
-                                <div class="collapsible-content all-view long-content">
-                    <div class="content-div"><h1>웅상선 예타 통과: 양산의 미래를 바꿀 역사적 전환점</h1>
+                                <div class="section-subtitle"><p>웅상선 건설 예정지를 가다.</p></div>
+                                                <div class="preview-image"><img src="https://i.postimg.cc/VsSh25W1/84519-51617-5318.jpg" alt="이미지"></div>
+                                <div class="content-div"><h1>웅상선 예타 통과: 양산의 미래를 바꿀 역사적 전환점</h1>
 <p>지난 7월 10일, "부산~양산~울산을 잇는 광역철도 ‘웅상선’이 마침내 예비타당성조사를 통과했다"는 한 문장이 양산시민들의 가슴을 뜨겁게 달궜습니다. 총 2조 5,745억 원이 투입될 이 거대한 사업은 단순히 철도 하나를 놓는 것을 넘어, 양산의 미래를 송두리째 바꿀 역사적 전환점이 될 것이 분명합니다.</p>
 
 <h2>🎯 20년 숙원의 결실, 그러나 과정은?</h2>
@@ -462,22 +509,28 @@
 <h2>🎯 함께 꿈꾸는 2031년: 양산형 행복의 재구성</h2>
 <p><em>2031년 어느 날, 웅상선을 타고 출근하는 한 청년을 상상해봅니다. 양산의 쾌적한 주거환경에서 아침을 맞고, 10분 만에 부산의 직장에 도착합니다. 퇴근 후에는 울산의 문화공연을 관람하고, 다시 양산의 집으로 돌아옵니다. 주말에는 가족과 함께 통도사를 산책하고, 저녁에는 웅상의 번화가에서 친구들을 만납니다.</em></p>
 <p>이것이 웅상선이 만들 양산의 미래입니다. 꿈이 아닌 현실이 될 그날을 위해, 이제 우리 모두가 함께 뛰어야 할 때입니다. 비수도권 최초의 광역철도, 웅상선. 이는 양산이 대한민국 지역균형발전의 새로운 모델을 제시하는 시작점이 될 것입니다. <strong>양산의 성공이 곧 대한민국의 성공입니다.</strong> 2031년을 향한 카운트다운은 이미 시작됐습니다. <strong>한옥문</strong>은 양산의 진정한 발전을 응원하며, 시민들과 함께 이 길을 걸어갈 것입니다.</p></div>
-                </div>
-                <button class="toggle-button show-button"></button>            </div>
+            </div>
         </div>
                 
-                <div class="section">
-            <h2>[유튜브]한옥문의 양산이야기</h2>
+        
+                <div class="section" data-section="youtube">
+            <div class="section-header" onclick="toggleSection('youtube')">
+                <span>[유튜브]한옥문의 양산이야기</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('youtube')">
+                                <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
+                                <div class="expand-hint">탭하여 유튜브 영상 보기</div>
+            </div>
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
-                                <div class="media-wrapper">
-                    <div class="youtube-container"><iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allowfullscreen></iframe></div>
-                </div>
+                                <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
+                                <div class="youtube-container"><iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allowfullscreen></iframe></div>
                 <a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">
                     <span>한옥문 유튜브 구독하기</span>
                 </a>
-                                <div class="collapsible-content all-view">
-                    <div class="content-div"><h1>주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</h1>
+                                <div class="content-div"><h1>주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</h1>
 <p>양산시 상북면에 위치한 원적산 봉수대가 지역 주민들의 오랜 노력 끝에 2023년 1월 <strong>국가 사적</strong>으로 지정되었습니다. 이는 부산, 경남을 거쳐 한양까지 이어지는 봉수 체계의 중요한 거점이었던 이곳의 <strong>역사적 중요성을 재조명</strong>하는 계기가 되었습니다.</p>
 
 <h2>원적산과 봉수대의 역사적 가치</h2>
@@ -491,16 +544,24 @@
 <h2>양산 동서 연결의 과제</h2>
 <p>원적산 봉수대 정상에서 바라본 양산은 남북으로 시가지가 잘 발달되어 있지만, 천성산으로 인해 <strong>동서 지역 간의 연결이 단절</strong>되어 있다는 아쉬움이 남아있습니다. 이러한 동서 간의 이질감을 극복하고 양산을 하나의 생활권으로 통합하기 위해 천성산을 관통하는 <strong>1028번 지방도로 건설</strong>이 추진되고 있습니다. 이 사업은 현재 국지도로의 승격을 검토 중이며, 양산의 지속 가능한 발전을 위해 조속한 추진이 필요한 과제입니다.</p>
 <blockquote>시민들의 열정으로 봉수대가 되살아난 것처럼, 양산 동서 간의 소통과 연결을 위한 노력 또한 이어지기를 기대해 봅니다.</blockquote></div>
-                </div>
-                <button class="toggle-button"></button>                            </div>
+                            </div>
         </div>
         
-                <div class="section">
-            <h2>NOW 양산</h2>
+        
+                <div class="section" data-section="issue">
+            <div class="section-header" onclick="toggleSection('issue')">
+                <span>NOW 양산</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('issue')">
+                                <div class="section-subtitle"><p>양산소식 이모저모</p></div>
+                                                <div class="expand-hint">탭하여 전체 내용 보기</div>
+            </div>
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 20px 0;"><p>양산소식 이모저모</p></div>
-                                                <div class="collapsible-content all-view long-content">
-                    <div class="content-div issue-content"><h2>[양산시 소식]</h2>
+                                <div class="section-subtitle"><p>양산소식 이모저모</p></div>
+                                                <div class="content-div issue-content"><h2>[양산시 소식]</h2>
 <h3>양산시, 하반기 공공일자리 참여자 안전교육 실시</h3>
 <p><span class="text-muted">(보도일자: 2025.08.26 / 출처: 환경일보)</span></p>
 <p>양산시가 지난 26일, 하반기 공공일자리 사업에 참여하는 340명을 대상으로 산업안전보건교육을 실시했습니다. 이번 사업은 공공근로자 318명과 지역공동체일자리 사업 참여자 22명으로 구성되어 있으며, 8월 25일부터 12월 12일까지 4개월간 진행됩니다. 시는 이번 교육을 통해 폭염 등 계절적 위험 요인에 대비하고, 안전한 근로 환경을 조성하는 데 만전을 기하겠다고 밝혔습니다.</p>
@@ -523,15 +584,22 @@
 
 <h2>[한옥문의 경제산책]</h2>
 <blockquote>지역 특산물을 활용한 상품 개발은 단순한 소비를 넘어 지역의 문화와 정체성을 담는 중요한 경제 활동입니다. 원동 매실은 이미 전국적으로 그 명성을 알리고 있지만, 이번 경진대회를 통해 더욱 다양한 형태로 재탄생하여 우리 양산의 브랜드 가치를 높일 수 있습니다. 지역 자원을 활용한 창의적인 아이디어가 양산 경제를 한 단계 더 도약시키는 원동력이 될 것입니다.</blockquote></div>
-                </div>
-                <button class="toggle-button show-button"></button>            </div>
+            </div>
         </div>
         
-                <div class="section">
-            <h2><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</h2>
+        
+                <div class="section" data-section="book">
+            <div class="section-header" onclick="toggleSection('book')">
+                <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('book')">
+                                                <div class="expand-hint">탭하여 전체 리뷰 보기</div>
+            </div>
+            
             <div class="section-content">
-                                                <div class="collapsible-content all-view">
-                    <div class="content-div"><div class="book-section-container">
+                                                <div class="content-div"><div class="book-section-container">
     <h1>책으로 떠나는 양산 여행</h1>
     <p class="intro-text">경상남도 양산시는 수려한 자연경관과 유구한 역사를 품은 도시입니다. 통도사와 내원사 등 천년 고찰의 향기부터 치열했던 근대사의 흔적까지, 양산의 다채로운 이야기는 여러 작가에게 영감을 주었습니다. 문학 작품과 역사서를 통해 우리가 살고 있는 도시, 양산을 더 깊이 이해하고 새롭게 발견하는 시간을 가져보는 것은 어떨까요? 양산의 숨결이 담긴 책들을 소개합니다.</p>
 
@@ -554,14 +622,23 @@
             <p>한국 문학의 거목, 요산 김정한 선생의 대표작 중 하나인 '수라도'는 양산을 주요 배경으로 하고 있습니다. 작가의 처가가 있었던 양산시 원동면 화제리 일대의 풍경과 사람들의 삶을 생생하게 묘사하며, 일제강점기부터 해방 전후까지 격동의 시대를 살아낸 한 가문의 이야기를 통해 민족의 수난사를 그리고 있습니다. 소설에 등장하는 '미륵당'은 물금읍의 용화사를 모델로 한 것으로 알려져 있어, 책을 읽고 문학의 배경이 된 장소를 직접 찾아보는 '문학 기행'을 떠나기에도 좋은 작품입니다.</p>
         </div>
     </div></div>
-                </div>
-                <button class="toggle-button"></button>            </div>
+            </div>
         </div>
         
-                <div class="section">
-            <h2>언론이 만난 &nbsp;<span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></h2>
+        
+                <div class="section" data-section="media">
+            <div class="section-header" onclick="toggleSection('media')">
+                <span>언론이 만난 &nbsp;<span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+            
+            <div class="section-preview" onclick="toggleSection('media')">
+                                <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
+                                <div class="expand-hint">탭하여 관련 기사 보기</div>
+            </div>
+            
             <div class="section-content">
-                                <div style="font-size: 18px; font-weight: 700; color: #191919; margin: 0 0 25px 0;"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
+                                <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
                                 
                 <div class="media-article-list">
                                                         <a href="https://www.newsis.com/view/NISX20250730_0003271838" target="_blank" rel="noopener noreferrer" class="media-article-card">
@@ -616,7 +693,7 @@
                     </a>
                                         <a href="https://www.viva100.com/article/20250904501629" target="_blank" rel="noopener noreferrer" class="media-article-card">
                         <div class="media-article-image">
-                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905154646" alt="">
+                            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250905155935" alt="">
                         </div>
                         <div class="media-article-text">
                             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
@@ -627,7 +704,6 @@
                                                     </div>
             </div>
         </div>
-        
         
         <div class="footer">
             <p><strong>한옥문&양산미래혁신연구원</strong></p>
@@ -644,19 +720,32 @@
         }
     }
     
-    history.scrollRestoration = 'manual';
-
-    // 간단한 버튼 클릭 처리만
+    function toggleSection(sectionKey) {
+        const section = document.querySelector(`[data-section="${sectionKey}"]`);
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // 펼칠 때 해당 섹션으로 부드럽게 스크롤
+            if (section.classList.contains('expanded')) {
+                setTimeout(() => {
+                    section.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }
+        }
+    }
+    
+    
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.toggle-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const section = button.closest('.section');
-                const content = section.querySelector('.collapsible-content');
-                if (content) {
-                    content.classList.add('expanded');
-                }
-            });
-        });
+        const viewMode = 'all';
+        if (viewMode !== 'all') {
+            const targetSection = document.querySelector(`[data-section="${viewMode}"]`);
+            if (targetSection) {
+                targetSection.classList.add('expanded');
+            }
+        }
     });
     </script>
 </body>
