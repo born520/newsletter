@@ -83,13 +83,10 @@
         background: #191919;
     }
 
-     
     #swipe-view .swiper-button-next,
     #swipe-view .swiper-button-prev {
-         
         top: 50px;
     }
-     
 
     .main-content {
         padding: 20px 0;
@@ -169,7 +166,37 @@
     }
     .media-article-card:hover { background-color: #f9f9f9; }
     .media-article-image { 
-        flex-shrink: 0; width: 120px; height: 8
+        flex-shrink: 0; width: 120px; height: 80px;  
+        border-radius: 6px; overflow: hidden; 
+    }
+    .media-article-image img { width: 100%; height: 100%; object-fit: cover; }
+    .media-article-text { flex-grow: 1; }
+    .media-article-title { font-size: 1em; font-weight: 700; margin-bottom: 5px; }
+    .media-article-description { font-size: 0.9em; color: #555; margin-bottom: 8px; }
+    .media-article-source { font-size: 0.8em; color: #888; margin-top: auto; }
+    
+    .dot-text-container .char-dot { position: relative; display: inline-block; }
+    .dot-text-container .char-dot::after { 
+        content: '·'; position: absolute; top: -0.7em; left: 50%; 
+        transform: translateX(-50%); font-weight: bold; 
+    }
+    .footer { 
+        background-color: #f0f0f0; color: #777; 
+        text-align: center; padding: 40px 20px; 
+    }
+    
+    @media (max-width: 768px) {
+        .main-content { padding: 10px 0; }
+        .section { margin: 0 0 10px 0; border-radius: 0; }
+        .main-content .section:last-child { margin-bottom: 0 !important; }
+        .section-header { font-size: 1.2em; padding: 12px 18px; }
+        .content-div { background: transparent; padding: 0; border: none; }
+        .preview-image img { margin-bottom: 0; }
+        .media-article-card { flex-direction: column; }
+        .media-article-image { width: 100%; height: 180px; margin-bottom: 12px; }
+        .youtube-play-button { width: 50px; height: 50px; font-size: 16px; }
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -377,7 +404,7 @@
 </div>
 </div></div>                    </div>
                 </div>
-                                                                                    <div class="section%20expanded" data-section="media" id="media">
+                                                                                    <div class="section expanded" data-section="media" id="media">
                     <div class="section-header" onclick="toggleSection('media')">
                         <span>언론이 만난  <span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></span>
                         <span class="expand-icon">▼</span>
@@ -429,7 +456,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907175418" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907175921" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -671,7 +698,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907175418" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907175921" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -747,20 +774,15 @@
                         el: '.swiper-pagination',
                         clickable: true,
                     },
-                
-                on: {
-                    
-                    slideChangeTransitionEnd: function () {
-                        
-                        
-                        this.el.scrollIntoView();
+                    on: {
+                        slideChangeTransitionEnd: function () {
+                            this.el.scrollIntoView();
+                        }
                     }
-                }
-                
                 });
             }
         }
     }
     </script>
-    </body>
+</body>
 </html>
