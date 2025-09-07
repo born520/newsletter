@@ -12,8 +12,12 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
 .info-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #F0F0F0; }
 .date { font-size: 14px; color: #555; }
 .kakao-button { padding: 8px 15px; background: #FEE500; color: #191919; text-decoration: none; font-weight: bold; border-radius: 18px; font-size: 13px; }
-.section { background: #fff; margin: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 25px; }
-.section:last-child { margin-bottom: 40px; }
+.section { 
+    background: #fff; 
+    margin: 15px 15px 25px; /* ✨ 수정된 부분: 상, 좌우, 하 순서로 마진을 명확하게 설정 */
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+}
 .section-header { display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 800; background: #FEE500; padding: 15px 22px; cursor: pointer; border-radius: 12px 12px 0 0; }
 .section-header:hover { background: #FFD700; }
 .section-header::before { content: '💬'; margin-right: 12px; }
@@ -42,7 +46,13 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
 .media-article-source { font-size: 13px; color: #888; margin-top: auto; }
 .dot-text-container .char-dot { position: relative; display: inline-block; }
 .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; }
-.footer { background: #f0f0f0; color: #777; text-align: center; padding: 40px 20px; margin-top: 30px; }
+.footer { 
+    background: #f0f0f0; 
+    color: #777; 
+    text-align: center; 
+    padding: 40px 20px; 
+    margin-top: 40px; /* ✨ 수정된 부분: 푸터 상단 마진을 늘려 충분한 공간 확보 */
+}
 .footer::before { content: ''; display: block; height: 2px; background: linear-gradient(90deg, transparent 0%, #ddd 50%, transparent 100%); margin-bottom: 30px; }
 @media (max-width: 768px) {
     .container { background: #F9F9F9; }
@@ -272,7 +282,7 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
         <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
         <div class="media-article-list"><a href="https://www.newsis.com/view/NISX20250730_0003271838" target="_blank" class="media-article-card">
         <div class="media-article-image">
-            <img src="https://img1.newsis.com/2025/07/30/NISI20250730_0001906342_web.jpg" alt="">
+            <img src="https://img1.newsis.com/2025/07/30/NISI20250730_0001906342_web.jpg" alt="한옥문 전 양산시의회의장, 양산미래혁신연구원 설립">
         </div>
         <div class="media-article-text">
             <h3 class="media-article-title">한옥문 전 양산시의회의장, 양산미래혁신연구원 설립</h3>
@@ -281,7 +291,7 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
         </div>
     </a><a href="https://www.newscj.com/news/articleView.html?idxno=3301415" target="_blank" class="media-article-card">
         <div class="media-article-image">
-            <img src="https://cdn.newscj.com/news/thumbnail/202508/3301415_3374529_4122_v150.jpg" alt="">
+            <img src="https://cdn.newscj.com/news/thumbnail/202508/3301415_3374529_4122_v150.jpg" alt="한옥문 원장 “웅상 신도시, 투기장 아닌 기회의 땅으로 만들어야”">
         </div>
         <div class="media-article-text">
             <h3 class="media-article-title">한옥문 원장 “웅상 신도시, 투기장 아닌 기회의 땅으로 만들어야”</h3>
@@ -290,7 +300,7 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
         </div>
     </a><a href="https://www.smartfn.co.kr/news/articleView.html?idxno=117124" target="_blank" class="media-article-card">
         <div class="media-article-image">
-            <img src="https://cdn.smartfn.co.kr/news/photo/202508/117124_218213_2851.jpg" alt="">
+            <img src="https://cdn.smartfn.co.kr/news/photo/202508/117124_218213_2851.jpg" alt="한옥문 원장 “양산, 이중 철도망 시대 ···환승·지역 불균형 대책 서둘러야” - 스마트에프엔">
         </div>
         <div class="media-article-text">
             <h3 class="media-article-title">한옥문 원장 “양산, 이중 철도망 시대 ···환승·지역 불균형 대책 서둘러야” - 스마트에프엔</h3>
@@ -299,7 +309,7 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
         </div>
     </a><a href="https://www.newscj.com/news/articleView.html?idxno=3310914" target="_blank" class="media-article-card">
         <div class="media-article-image">
-            <img src="https://cdn.newscj.com/news/thumbnail/202508/3310914_3386385_5350_v150.jpg" alt="">
+            <img src="https://cdn.newscj.com/news/thumbnail/202508/3310914_3386385_5350_v150.jpg" alt="한옥문 원장 “부·울·경 교통 통합관리청 설립하자”">
         </div>
         <div class="media-article-text">
             <h3 class="media-article-title">한옥문 원장 “부·울·경 교통 통합관리청 설립하자”</h3>
@@ -308,7 +318,7 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
         </div>
     </a><a href="https://www.fntoday.co.kr/news/articleView.html?idxno=361772" target="_blank" class="media-article-card">
         <div class="media-article-image">
-            <img src="https://www.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="">
+            <img src="https://cdn.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”">
         </div>
         <div class="media-article-text">
             <h3 class="media-article-title">한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”</h3>
@@ -317,7 +327,7 @@ body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #19191
         </div>
     </a><a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
         <div class="media-article-image">
-            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907120654" alt="">
+            <img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907121808" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결">
         </div>
         <div class="media-article-text">
             <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
