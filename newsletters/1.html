@@ -452,7 +452,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907170528" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907171318" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -694,7 +694,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907170528" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250907171318" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -770,6 +770,16 @@
                         el: '.swiper-pagination',
                         clickable: true,
                     },
+                
+                on: {
+                    
+                    slideChangeTransitionEnd: function () {
+                        
+                        
+                        this.el.scrollIntoView();
+                    }
+                }
+                
                 });
             }
         }
