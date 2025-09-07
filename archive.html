@@ -41,23 +41,56 @@
         list-style: none; 
         padding: 0; 
     }
-    .archive-list li { 
-        margin-bottom: 12px; 
-    }
-    .archive-list a {
-        display: block; 
-        padding: 18px 20px; 
+    .archive-item {
+        margin-bottom: 12px;
         background: #ffffff;
         border: 1px solid #F0F0F0; 
         border-radius: 12px;
-        text-decoration: none; 
-        color: inherit; 
         transition: all 0.2s ease;
     }
-    .archive-list a:hover { 
+    .archive-item:hover {
         background-color: #FFF9E6; 
         border-color: #FEE500; 
         transform: translateY(-2px); 
+    }
+    .main-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px; 
+        text-decoration: none; 
+        color: inherit; 
+        font-weight: 600;
+    }
+    .main-link-title {
+      flex-grow: 1;
+    }
+    .main-link-date {
+      flex-shrink: 0;
+      font-size: 0.9em;
+      color: #555;
+    }
+    .section-links {
+        list-style: none;
+        padding: 0 20px 15px;
+        margin: 0;
+        border-top: 1px dashed #e0e0e0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .section-links li a {
+        display: inline-block;
+        font-size: 0.85em;
+        color: #333;
+        background-color: #f5f5f5;
+        padding: 4px 10px;
+        border-radius: 12px;
+        text-decoration: none;
+    }
+    .section-links li a:hover {
+        background-color: #FEE500;
+        color: #000;
     }
     .footer { 
         padding: 30px 20px; 
@@ -82,14 +115,44 @@
         <div class="content">
             <h2>지난 뉴스레터 전체 보기</h2>
             <ul class="archive-list">
-                                                                                                            <li>
-                            <a href="./newsletters/1.html">
-                                <span>제 1호 | 양산미래혁신연구원을 설립하며 드리는 말씀</span>
-                                <span>2025.9.13</span>
+                                                                                                            <li class="archive-item">
+                            <a href="./newsletters/1.html" class="main-link">
+                                <span class="main-link-title">제 1호 | 양산미래혁신연구원을 설립하며 드리는 말씀</span>
+                                <span class="main-link-date">2025.09.13</span>
                             </a>
+                            <ul class="section-links">
+                                                                                                            <li>
+                                            <a href="./newsletters/1.html#siseon">
+                                                # 양미혁의 시선                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="./newsletters/1.html#damron">
+                                                # 양산담론                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="./newsletters/1.html#balgeoleum">
+                                                # 한옥문의 발걸음                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="./newsletters/1.html#youtube">
+                                                # [유튜브]한옥문의 양산이야기                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="./newsletters/1.html#issue">
+                                                # NOW 양산                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="./newsletters/1.html#book">
+                                                # 양미혁이 먼저 읽어봤습니다                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="./newsletters/1.html#media">
+                                                # 언론이 만난  양미혁                                            </a>
+                                        </li>
+                                                                                                </ul>
                         </li>
                                                                         </ul>
-        </div>
+            </div>
         <div class="footer">
             <p><a href="./index.html">최신호 보기</a></p>
         </div>
