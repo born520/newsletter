@@ -134,10 +134,32 @@
     }
     .section.expanded .section-content { display: block; }
     
-    .section-subtitle { font-size: 1.15em; font-weight: 700; margin-bottom: 15px; }
-    .preview-image img { width: 100%; height: auto; display: block; border-radius: 8px; margin-bottom: 15px; }
+     
+    .section-header-content {
+        border-bottom: 2px solid #FEE500;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .section-subtitle { 
+        font-size: 1.15em; 
+        font-weight: 700; 
+        margin-bottom: 15px; 
+    }
+    .preview-image img { 
+        width: 100%; 
+        height: auto; 
+        display: block; 
+        border-radius: 8px; 
+        margin-bottom: 15px; 
+    }
 
-    .content-div { background: #F9F9F9; padding: 20px; border-radius: 8px; margin-top: 15px; }
+    .content-div { 
+        background: #F9F9F9; 
+        padding: 20px; 
+        border-radius: 8px; 
+        margin-top: 15px; 
+    }
     .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
         font-size: 1.2em; font-weight: 700; margin: 1.5em 0 1em; color: #191919;
     }
@@ -159,30 +181,135 @@
         font-weight: bold; border-radius: 8px; 
     }
     
-    .media-article-list { display: flex; flex-direction: column; gap: 15px; }
+     
+    .media-article-list { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 20px; 
+    }
     .media-article-card { 
-        display: flex; gap: 15px; padding: 15px; border: 1px solid #eee; 
-        border-radius: 8px; text-decoration: none; color: inherit; 
+        display: flex; 
+        gap: 15px; 
+        padding: 20px; 
+        border: 2px solid #E0E0E0; 
+        border-radius: 12px; 
+        text-decoration: none; 
+        color: inherit; 
+        background-color: #FAFAFA;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .media-article-card:hover { background-color: #f9f9f9; }
+    .media-article-card:hover { 
+        background-color: #FFF9E6; 
+        border-color: #FEE500;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+    }
     .media-article-image { 
-        flex-shrink: 0; width: 120px; height: 80px;  
-        border-radius: 6px; overflow: hidden; 
+        flex-shrink: 0; 
+        width: 120px; 
+        height: 80px; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        border: 1px solid #DDD;
     }
-    .media-article-image img { width: 100%; height: 100%; object-fit: cover; }
-    .media-article-text { flex-grow: 1; }
-    .media-article-title { font-size: 1em; font-weight: 700; margin-bottom: 5px; }
-    .media-article-description { font-size: 0.9em; color: #555; margin-bottom: 8px; }
-    .media-article-source { font-size: 0.8em; color: #888; margin-top: auto; }
+    .media-article-image img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+    .media-article-text { 
+        flex-grow: 1; 
+    }
+    .media-article-title { 
+        font-size: 1em; 
+        font-weight: 700; 
+        margin-bottom: 8px; 
+        color: #191919;
+    }
+    .media-article-description { 
+        font-size: 0.9em; 
+        color: #555; 
+        margin-bottom: 10px; 
+        line-height: 1.5;
+    }
+    .media-article-source { 
+        font-size: 0.8em; 
+        color: #888; 
+        margin-top: auto; 
+        font-weight: 600;
+        background-color: #F0F0F0;
+        padding: 2px 8px;
+        border-radius: 12px;
+        display: inline-block;
+    }
     
     .dot-text-container .char-dot { position: relative; display: inline-block; }
     .dot-text-container .char-dot::after { 
         content: '·'; position: absolute; top: -0.7em; left: 50%; 
         transform: translateX(-50%); font-weight: bold; 
     }
+    
+     
     .footer { 
-        background-color: #f0f0f0; color: #777; 
-        text-align: center; padding: 40px 20px; 
+        background-color: #f0f0f0; 
+        color: #777; 
+        text-align: center; 
+        padding: 40px 20px; 
+    }
+    
+    .footer-content {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .footer-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-button {
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-size: 0.95em;
+    }
+    
+    .kakao-footer-button {
+        background-color: #FEE500;
+        color: #191919;
+    }
+    
+    .kakao-footer-button:hover {
+        background-color: #FFD700;
+        transform: translateY(-2px);
+    }
+    
+    .archive-button {
+        background-color: #333;
+        color: #fff;
+    }
+    
+    .archive-button:hover {
+        background-color: #555;
+        transform: translateY(-2px);
+    }
+    
+    .footer-email {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    .footer-title {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
     }
     
     @media (max-width: 768px) {
@@ -192,9 +319,25 @@
         .section-header { font-size: 1.2em; padding: 12px 18px; }
         .content-div { background: transparent; padding: 0; border: none; }
         .preview-image img { margin-bottom: 0; }
-        .media-article-card { flex-direction: column; }
-        .media-article-image { width: 100%; height: 180px; margin-bottom: 12px; }
+        .media-article-card { 
+            flex-direction: column; 
+            padding: 15px;
+        }
+        .media-article-image { 
+            width: 100%; 
+            height: 180px; 
+            margin-bottom: 12px; 
+        }
         .youtube-play-button { width: 50px; height: 50px; font-size: 16px; }
+        
+        .footer-buttons {
+            gap: 12px;
+        }
+        
+        .footer-button {
+            padding: 10px 20px;
+            font-size: 0.9em;
+        }
     }
 </style>
 </head>
@@ -221,6 +364,10 @@
                     <div class="section-preview" onclick="toggleSection('siseon')">
                         <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며</p></div><div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지"></div><div class="preview-description">양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지"></div>
+                                                    </div>
                         <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며</p></div><div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지"></div><div class="content-div "><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
 
 <p>안녕하세요. <strong>양산미래혁신연구원 원장 한옥문</strong>입니다.</p>
@@ -255,6 +402,10 @@
                     <div class="section-preview" onclick="toggleSection('damron')">
                         <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론</p></div><div class="preview-image"><img src="https://i.postimg.cc/7hKsS6my/image.png" alt="양산담론 이미지"></div><div class="preview-description">트럼피즘의 세계와 양산의 제조업</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/7hKsS6my/image.png" alt="양산담론 이미지"></div>
+                                                    </div>
                         <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론</p></div><div class="preview-image"><img src="https://i.postimg.cc/7hKsS6my/image.png" alt="양산담론 이미지"></div><div class="content-div "><h1>트럼피즘의 세계와 양산의 제조업</h1>
 
 <div style="display: flex; align-items: center; margin-bottom: 2em; border-bottom: 1px solid #eee; padding-bottom: 1em;">
@@ -310,6 +461,10 @@
                     <div class="section-preview" onclick="toggleSection('balgeoleum')">
                         <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div><div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div><div class="preview-description">양산 대중교통 환승 무료화, 시민 생활의 새로운 전환점</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div>
+                                                    </div>
                         <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div><div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div><div class="content-div "><hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
 <h1>양산 대중교통 환승 무료화, 시민 생활의 새로운 전환점</h1>
 <h2>교통비 부담 없는 새로운 일상이 시작됩니다</h2>
@@ -432,6 +587,9 @@
                  <div class="youtube-play-button">▶</div>
                </div><div class="preview-description">주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
+                                                                                </div>
                         <div class="youtube-container"><iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allowfullscreen></iframe></div><a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">한옥문 유튜브 구독하기</a><div class="content-div"><h1>주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</h1>
 <p>양산시 상북면에 위치한 원적산 봉수대가 지역 주민들의 오랜 노력 끝에 2023년 1월 <strong>국가 사적</strong>으로 지정되었습니다. 이는 부산, 경남을 거쳐 한양까지 이어지는 봉수 체계의 중요한 거점이었던 이곳의 <strong>역사적 중요성을 재조명</strong>하는 계기가 되었습니다.</p>
 
@@ -455,6 +613,9 @@
                     <div class="section-preview" onclick="toggleSection('issue')">
                         <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="preview-description">주요 개발 및 인프라</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div>
+                                                    </div>
                         <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="content-div issue-content"><hr style="border: 1px solid #eee; margin: 40px 0;">
 
 <h3>주요 개발 및 인프라</h3>
@@ -510,6 +671,9 @@
                     <div class="section-preview" onclick="toggleSection('book')">
                         <div class="preview-image"><img src="https://i.postimg.cc/7Y7HLXpM/image.png" alt="양미혁이 먼저 읽어봤습니다 이미지"></div><div class="preview-description">책으로 떠나는 양산 여행</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/7Y7HLXpM/image.png" alt="양미혁이 먼저 읽어봤습니다 이미지"></div>
+                                                    </div>
                         <div class="preview-image"><img src="https://i.postimg.cc/7Y7HLXpM/image.png" alt="양미혁이 먼저 읽어봤습니다 이미지"></div><div class="content-div"><div class="book-section-container">
 <h1>책으로 떠나는 양산 여행</h1>
 <p class="intro-text">경상남도 양산시는 수려한 자연경관과 유구한 역사를 품은 도시입니다. 통도사와 내원사 등 천년 고찰의 향기부터 치열했던 근대사의 흔적까지, 양산의 다채로운 이야기는 여러 작가에게 영감을 주었습니다. 문학 작품과 역사서를 통해 우리가 살고 있는 도시, 양산을 더 깊이 이해하고 새롭게 발견하는 시간을 가져보는 것은 어떨까요? 양산의 숨결이 담긴 책들을 소개합니다.</p>
@@ -545,6 +709,9 @@
                  <img src="https://img1.newsis.com/2025/07/30/NISI20250730_0001906342_web.jpg" alt="한옥문 전 양산시의회의장, 양산미래혁신연구원 설립">
                </div><div class="preview-description">한옥문 전 양산시의회의장, 양산미래혁신연구원 설립</div><div class="preview-count">총 6개 기사</div>                    </div>
                     <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
+                                                                                </div>
                         <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div><div class="media-article-list">
           <a href="https://www.newsis.com/view/NISX20250730_0003271838" target="_blank" class="media-article-card">
               <div class="media-article-image"><img src="https://img1.newsis.com/2025/07/30/NISI20250730_0001906342_web.jpg" alt="한옥문 전 양산시의회의장, 양산미래혁신연구원 설립"></div>
@@ -587,7 +754,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250908182108" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250908183854" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -605,6 +772,10 @@
                                 <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                            <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며</p></div>
+                                                                                                                <div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지"></div>
+                                                                    </div>
                                 <div class="section-subtitle"><p>양산미래혁신연구원을 설립하며</p></div><div class="preview-image"><img src="https://i.postimg.cc/rwRmBZ4w/image.jpg" alt="양미혁의 시선 이미지"></div><div class="content-div "><h1>양산의 미래를 위한 첫걸음, 양산미래혁신연구원이 함께합니다.</h1>
 
 <p>안녕하세요. <strong>양산미래혁신연구원 원장 한옥문</strong>입니다.</p>
@@ -638,6 +809,10 @@
                                 <span>양산담론</span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                            <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론</p></div>
+                                                                                                                <div class="preview-image"><img src="https://i.postimg.cc/7hKsS6my/image.png" alt="양산담론 이미지"></div>
+                                                                    </div>
                                 <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론</p></div><div class="preview-image"><img src="https://i.postimg.cc/7hKsS6my/image.png" alt="양산담론 이미지"></div><div class="content-div "><h1>트럼피즘의 세계와 양산의 제조업</h1>
 
 <div style="display: flex; align-items: center; margin-bottom: 2em; border-bottom: 1px solid #eee; padding-bottom: 1em;">
@@ -692,6 +867,10 @@
                                 <span>한옥문의 시선집중</span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                            <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div>
+                                                                                                                <div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div>
+                                                                    </div>
                                 <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div><div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div><div class="content-div "><hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
 <h1>양산 대중교통 환승 무료화, 시민 생활의 새로운 전환점</h1>
 <h2>교통비 부담 없는 새로운 일상이 시작됩니다</h2>
@@ -810,6 +989,9 @@
                                 <span>[유튜브]한옥문의 양산이야기</span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                            <div class="section-subtitle"><p>양산시민이 찾아낸 우리 역사 원적산 봉수대</p></div>
+                                                                                                        </div>
                                 <div class="youtube-container"><iframe src="https://www.youtube.com/embed/oiYFqsTU4-U" frameborder="0" allowfullscreen></iframe></div><a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">한옥문 유튜브 구독하기</a><div class="content-div"><h1>주민들의 열정으로 되살아난 원적산 봉수대, 국가 사적으로 지정되다</h1>
 <p>양산시 상북면에 위치한 원적산 봉수대가 지역 주민들의 오랜 노력 끝에 2023년 1월 <strong>국가 사적</strong>으로 지정되었습니다. 이는 부산, 경남을 거쳐 한양까지 이어지는 봉수 체계의 중요한 거점이었던 이곳의 <strong>역사적 중요성을 재조명</strong>하는 계기가 되었습니다.</p>
 
@@ -832,6 +1014,9 @@
                                 <span>NOW 양산</span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                                                                <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div>
+                                                                    </div>
                                 <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="content-div issue-content"><hr style="border: 1px solid #eee; margin: 40px 0;">
 
 <h3>주요 개발 및 인프라</h3>
@@ -886,6 +1071,9 @@
                                 <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>이 먼저 읽어봤습니다</span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                                                                <div class="preview-image"><img src="https://i.postimg.cc/7Y7HLXpM/image.png" alt="양미혁이 먼저 읽어봤습니다 이미지"></div>
+                                                                    </div>
                                 <div class="preview-image"><img src="https://i.postimg.cc/7Y7HLXpM/image.png" alt="양미혁이 먼저 읽어봤습니다 이미지"></div><div class="content-div"><div class="book-section-container">
 <h1>책으로 떠나는 양산 여행</h1>
 <p class="intro-text">경상남도 양산시는 수려한 자연경관과 유구한 역사를 품은 도시입니다. 통도사와 내원사 등 천년 고찰의 향기부터 치열했던 근대사의 흔적까지, 양산의 다채로운 이야기는 여러 작가에게 영감을 주었습니다. 문학 작품과 역사서를 통해 우리가 살고 있는 도시, 양산을 더 깊이 이해하고 새롭게 발견하는 시간을 가져보는 것은 어떨까요? 양산의 숨결이 담긴 책들을 소개합니다.</p>
@@ -918,6 +1106,9 @@
                                 <span>언론이 만난  <span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></span>
                             </div>
                             <div class="section-content" style="display:block; border-top:none;">
+                                <div class="section-header-content">
+                                                                            <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div>
+                                                                                                        </div>
                                 <div class="section-subtitle"><p>한옥문 원장의 언론기고와 연구원 대외활동을 전해드립니다.</p></div><div class="media-article-list">
           <a href="https://www.newsis.com/view/NISX20250730_0003271838" target="_blank" class="media-article-card">
               <div class="media-article-image"><img src="https://img1.newsis.com/2025/07/30/NISI20250730_0001906342_web.jpg" alt="한옥문 전 양산시의회의장, 양산미래혁신연구원 설립"></div>
@@ -960,7 +1151,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250908182108" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250908183854" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -974,9 +1165,22 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
+        
         <div class="footer">
-            <p><strong>한옥문&양산미래혁신연구원</strong></p>
-            <p><a href="/archive.html">지난 뉴스레터 전체 보기</a></p>
+            <div class="footer-content">
+                <p class="footer-title"><strong>한옥문&양산미래혁신연구원</strong></p>
+                
+                <div class="footer-buttons">
+                    <a href="http://pf.kakao.com/_jmfNn/friend" class="footer-button kakao-footer-button" target="_blank">
+                        카카오톡 채널 추가
+                    </a>
+                    <a href="/archive.html" class="footer-button archive-button">
+                        지난 뉴스레터 전체 보기
+                    </a>
+                </div>
+                
+                <p class="footer-email">문의: abc@abc.com</p>
+            </div>
         </div>
     </div>
     
