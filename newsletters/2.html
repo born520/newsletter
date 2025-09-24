@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    let swiperInstance = null;
+    const listView = document.getElementById('list-view');
+    const swipeView = document.getElementById('swipe-view');
+    const btnListView = document.getElementById('btn-list-view');
+    const btnSwipeView = document.getElementById('btn-swipe-view');
+
+    function switchView(mode) {
+        if (mode === 'list') {
+            listView.style.display = 'block';
+            swipeView.style.display = 'none';
+            btnListView.classList.add('active');
+            btnSwipeView.classList.remove('active');
+        } else if (mode === 'swipe') {
+            listView.style.display = 'none';
+            swipeView.style.display = 'block';
+            btnListView.classList.remove('active');
+            btnSwipeView.classList.add('active');
+
+            if (!swiperInstance) {
+                swiperInstance = new Swiper('.swiper', {
+                    loop: false,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        slideChangeTransitionEnd: function () {
+                            this.el.scrollIntoView();
+                        }
+                    }
+                });
+            }
+        }
+    }
+    </script>
+</body>
+</html><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴스레터 - 제 2호</title>
+    
+    
+        <meta property="og:title" content="뉴스레터 - 제 2호">
+        
+        <meta property="og:description" content="양산의 미래를 위한 뉴스레터 제 2호입니다.">
+        
+        <meta property="og:image" content="https://i.postimg.cc/Kz2k03yL/Kakao-Talk-20250904-223609126.png">
+    
+        
+        <meta property="og:site_name" content="한옥문&amp;양산미래혁신연구원">
+        
+        <meta property="og:type" content="article">
+        
+    
+    <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="뉴스레터 - 제 2호">
+        
+        <meta name="twitter:description" content="양산의 미래를 위한 뉴스레터 제 2호입니다.">
+        
+        <meta name="twitter:image" content="https://i.postimg.cc/Kz2k03yL/Kakao-Talk-20250904-223609126.png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Malgun Gothic', sans-serif;
+        line-height: 1.8;
+        color: #191919;
+        background-color: #F9F9F9;
+        font-size: 16px;
+    }
+    .container {
+        max-width: 680px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+    .header img { width: 100%; height: auto; display: block; }
+    .info-bar { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 12px 20px; 
+        border-bottom: 1px solid #F0F0F0; 
+    }
+    .date { font-size: 0.9em; color: #555; }
+    .kakao-button { 
+        padding: 8px 15px; background-color: #FEE500; color: #191919; 
+        text-decoration: none; font-weight: bold; border-radius: 18px; font-size: 0.85em;
+    }
+
+    .view-switcher {
+        padding: 15px 20px;
+        text-align: center;
+        background: #f8f8f8;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .view-switcher button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        background-color: #fff;
+        color: #555;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: all 0.2s ease;
+    }
+    .view-switcher button.active {
+        background-color: #FEE500;
+        border-color: #FEE500;
+        font-weight: bold;
+        color: #191919;
+    }
+
+    #swipe-view {
+        width: 100%;
+        margin: 0 auto;
+        display: none; 
+        padding: 20px 0;
+        overflow: visible;
+    }
+    .swiper-slide {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        color: #191919;
+    }
+    .swiper-pagination-bullet-active {
+        background: #191919;
+    }
+
+    #swipe-view .swiper-button-next,
+    #swipe-view .swiper-button-prev {
+        top: 50px;
+    }
+
+    .main-content {
+        padding: 20px 0;
+    }
+    .section { 
+        background-color: #ffffff; 
+        margin: 0 15px 20px 15px;
+        border-radius: 12px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+        overflow: hidden;
+    }
+    
+    .main-content .section:last-child { margin-bottom: 0 !important; }
+    .main-content .section:last-child .section-preview { display: none; }
+    .main-content .section:last-child .section-content { display: block; }
+    .main-content .section:last-child .expand-icon { transform: rotate(180deg); }
+    
+    .section-header {
+        display: flex; justify-content: space-between; align-items: center;
+        font-size: 1.5em; 
+        font-weight: 800; background-color: #FEE500;
+        padding: 15px 22px; cursor: pointer;
+    }
+    .section-header::before { content: '💬'; margin-right: 12px; }
+    .expand-icon { transition: transform 0.3s ease; }
+    .section.expanded .expand-icon { transform: rotate(180deg); }
+    
+    .section-preview { 
+        padding: 20px 25px; cursor: pointer; position: relative;
+    }
+    .section.expanded .section-preview { display: none; }
+    
+    .more-button {
+        display: inline-block;
+        background-color: #FEE500;
+        color: #191919;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        margin-top: 12px;
+    }
+    
+    .more-button:hover {
+        background-color: #FFD700;
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    
+    .preview-description { font-size: 0.95em; color: #555; line-height: 1.6; margin-top: 12px; }
+    .preview-count { font-size: 0.85em; color: #888; margin-top: 8px; font-weight: 600; }
+    .youtube-preview { position: relative; margin-bottom: 15px; }
+    .youtube-play-button {
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%); background: rgba(255, 0, 0, 0.8);
+        color: white; width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 20px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .section-content { 
+        padding: 25px; display: none; border-top: 1px solid #F0F0F0; 
+    }
+    .section.expanded .section-content { display: block; }
+    
+     
+    .section-header-content {
+        border-bottom: 2px solid #FEE500;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .section-subtitle { 
+        font-size: 1.15em; 
+        font-weight: 700; 
+        margin-bottom: 15px; 
+    }
+    .preview-image img { 
+        width: 100%; 
+        height: auto; 
+        display: block; 
+        border-radius: 8px; 
+        margin-bottom: 15px; 
+    }
+
+    .content-div { 
+        background: #F9F9F9; 
+        padding: 20px; 
+        border-radius: 8px; 
+        margin-top: 15px; 
+    }
+    .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
+        font-size: 1.2em; font-weight: 700; margin: 1.5em 0 1em; color: #191919;
+    }
+    .autolink { color: #0066cc; }
+    .issue-content h1, .issue-content h2, .issue-content h3 { 
+        background-color: #FEE500; padding: 8px 12px; border-radius: 6px; text-align: center; 
+    }
+    
+    .youtube-container { 
+        position: relative; padding-bottom: 56.25%; height: 0; 
+        overflow: hidden; border-radius: 8px; margin-bottom: 20px; 
+    }
+    .youtube-container iframe { 
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; 
+    }
+    .youtube-subscribe-button { 
+        display: table; margin: 20px auto; padding: 10px 18px; 
+        background-color: #FF0000; color: #ffffff; text-decoration: none; 
+        font-weight: bold; border-radius: 8px; 
+    }
+    
+     
+    .media-article-list { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 20px; 
+    }
+    .media-article-card { 
+        display: flex; 
+        gap: 15px; 
+        padding: 20px; 
+        border: 2px solid #E0E0E0; 
+        border-radius: 12px; 
+        text-decoration: none; 
+        color: inherit; 
+        background-color: #FAFAFA;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .media-article-card:hover { 
+        background-color: #FFF9E6; 
+        border-color: #FEE500;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+    }
+    .media-article-image { 
+        flex-shrink: 0; 
+        width: 120px; 
+        height: 80px; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        border: 1px solid #DDD;
+    }
+    .media-article-image img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+    .media-article-text { 
+        flex-grow: 1; 
+    }
+    .media-article-title { 
+        font-size: 1em; 
+        font-weight: 700; 
+        margin-bottom: 8px; 
+        color: #191919;
+    }
+    .media-article-description { 
+        font-size: 0.9em; 
+        color: #555; 
+        margin-bottom: 10px; 
+        line-height: 1.5;
+    }
+    .media-article-source { 
+        font-size: 0.8em; 
+        color: #888; 
+        margin-top: auto; 
+        font-weight: 600;
+        background-color: #F0F0F0;
+        padding: 2px 8px;
+        border-radius: 12px;
+        display: inline-block;
+    }
+    
+    .dot-text-container .char-dot { position: relative; display: inline-block; }
+    .dot-text-container .char-dot::after { 
+        content: '·'; position: absolute; top: -0.7em; left: 50%; 
+        transform: translateX(-50%); font-weight: bold; 
+    }
+    
+     
+    .footer { 
+        background-color: #f0f0f0; 
+        color: #777; 
+        text-align: center; 
+        padding: 40px 20px; 
+    }
+    
+    .footer-content {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .footer-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-button {
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-size: 0.95em;
+    }
+    
+    .kakao-footer-button {
+        background-color: #FEE500;
+        color: #191919;
+    }
+    
+    .kakao-footer-button:hover {
+        background-color: #FFD700;
+        transform: translateY(-2px);
+    }
+    
+    .archive-button {
+        background-color: #333;
+        color: #fff;
+    }
+    
+    .archive-button:hover {
+        background-color: #555;
+        transform: translateY(-2px);
+    }
+    
+    .footer-email {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    .footer-title {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .main-content { padding: 10px 0; }
+        .section { margin: 0 0 10px 0; border-radius: 0; }
+        .main-content .section:last-child { margin-bottom: 0 !important; }
+        .section-header { font-size: 1.2em; padding: 12px 18px; }
+        .content-div { background: transparent; padding: 0; border: none; }
+        .preview-image img { margin-bottom: 0; }
+        .media-article-card { 
+            flex-direction: column; 
+            padding: 15px;
+        }
+        .media-article-image { 
+            width: 100%; 
+            height: 180px; 
+            margin-bottom: 12px; 
+        }
+        .youtube-play-button { width: 50px; height: 50px; font-size: 16px; }
+        
+        .more-button {
+            padding: 5px 14px;
+            font-size: 0.75em;
+            margin-top: 10px;
+        }
+        
+        .footer-buttons {
+            gap: 12px;
+        }
+        
+        .footer-button {
+            padding: 10px 20px;
+            font-size: 0.9em;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.postimg.cc/Kz2k03yL/Kakao-Talk-20250904-223609126.png" alt="뉴스레터 배너">
+        </div>
+        <div class="info-bar">
+            <p class="date">2025년 9월 26일 · 제 2호</p>
+            <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank">채널 추가</a>
+        </div>
+
+        <div class="view-switcher">
+            <button id="btn-list-view" class="active" onclick="switchView('list')">목록으로 보기</button>
+            <button id="btn-swipe-view" onclick="switchView('swipe')">넘겨서 보기</button>
+        </div>
+        <main class="main-content" id="list-view">
+                                                                                            <div class="section expanded" data-section="siseon" id="siseon">
+                        <div class="section-header" onclick="toggleSection('siseon')">
+                            <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</span>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="section-preview" onclick="toggleSection('siseon')">
+                            <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div><div class="preview-description">추석의 기억, 따뜻한 정(情)</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('siseon')">더보기</button></div>
+                        </div>
+                        <div class="section-content">
+                            <div class="section-header-content">
+                                                                    <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div>
+                                                                                            </div>
+                            <div class="content-div "><p>추석의 기억, 따뜻한 정(情)<br>추석이 다가오면 누구나 마음속에 오래된 기억 한 장면쯤은 떠올립니다. 마당에 모여 송편을 빚고, 아이들은 뛰놀며, 어른들은 풍성한 음식을 나누던 모습 말입니다. 무엇보다 환하게 차오른 보름달을 보며 서로의 안녕과 풍요를 빌던 그 순간은, 세대를 넘어 이어져 온 명절의 상징적 풍경입니다. 추석은 단순한 명절 이상의 의미를 지녔습니다. 가족과 이웃이 함께 어울려 마음을 나누고, 공동체의 끈끈한 유대를 확인하는 자리였기 때문입니다.</p><p>하지만 지금 우리 지역이 맞이하는 현실은 예전처럼 풍요롭고 따뜻하지만은 않습니다. 모두가 넉넉한 마음으로 명절을 맞이해야 하지만, 침체된 지역 경제와 소상공인들의 깊은 한숨은 그 기쁨을 온전히 누리기 어렵게 만듭니다.<br>양산 경제에 드리운 긴 그림자</p><p>양산은 경남 도내에서 창원, 김해에 이어 세 번째 규모의 인구를 가진 도시로, 외형적으로는 성장의 가능성이 충분히 보입니다. 그러나 화려한 겉모습 뒤에는 풀리지 않는 구조적 문제들이 숨어 있습니다. 특히 신도시 개발 과정에서 적정 수요와 공급의 균형이 무너지고, 과잉 상가 건축이 이어지면서 지역 상권은 과밀 경쟁에 내몰리고 있습니다.</p><p>지금도 신도시 곳곳을 걸어가다 보면 유리창마다 붙은 ‘임대’ 스티커가 눈에 띕니다. 이는 단순한 빈 점포가 아니라, 양산 지역 경제가 안고 있는 구조적 불균형과 소상공인들의 좌절을 상징하는 그림자입니다. 불필요한 상가 공급은 결국 자영업자들 간의 제살 깎아먹기식 경쟁으로 이어지고, 이는 곧 지역 공동체 전체의 활력을 떨어뜨립니다.<br>국내외 사례에서 얻는 교훈</p><p>사실 이러한 문제는 양산만의 특수한 현상이 아닙니다. 국내에서도 이미 비슷한 사례들이 여러 차례 나타났습니다. 수도권 일부 신도시 역시 무분별한 상가 건축으로 공실률이 높아지고, 자영업자들이 줄줄이 문을 닫는 악순환이 이어졌습니다. 이에 따라 일부 지자체는 상가 용지 공급을 제한하거나, 공공이 나서 청년 창업·문화예술 공간으로 전환하는 등 대응에 나섰습니다.</p><p>해외에서도 교훈을 얻을 수 있습니다. 일본의 지방 중소도시는 ‘빈 점포 리모델링 프로젝트’를 통해 지역 청년 예술가와 사회적 기업을 입주시켜 활력을 불어넣었습니다. 미국 일부 도시는 공실 상가를 공유 오피스나 창업 인큐베이터로 바꿔 지역 스타트업 생태계를 형성했습니다. 단순히 ‘빈 공간을 채운다’는 발상에서 벗어나, 새로운 콘텐츠와 산업을 심어 지역의 경쟁력을 재편한 것입니다.</p><p>시민과 함께 찾을 양산지역경제 재도약 해법<br>양산이 직면한 가장 큰 과제는 바로 지역 경제의 지속 가능성입니다. 이를 위해선 단순한 상가 공급 억제나 임대료 조정 차원을 넘어서는, 구조적 전환 전략이 필요합니다. 청년과 신산업 종사자들이 도전할 수 있는 창업 생태계 조성, 지역 맞춤형 특화산업 육성, 공공과 민간의 협력적 플랫폼 마련 등이 대표적입니다.</p><p>무엇보다 중요한 것은 시민과 함께 답을 찾아가는 과정입니다. 소상공인의 목소리, 청년 세대의 아이디어, 전문가들의 정책 제안이 서로 어우러질 때 비로소 현실적인 해법이 나올 수 있습니다. 양산미래혁신연구원은 이러한 협력의 장을 열고, 지역이 다시 도약할 수 있는 실질적 정책 대안을 고민해 나갈 것입니다.</p><p>보름달처럼 넉넉한 마음으로<br>추석은 언제나 우리에게 “함께 나눔”의 가치를 일깨우는 시간이었습니다. 비록 현실은 녹록지 않지만, 보름달이 어둠을 환히 비추듯 우리 지역도 새로운 희망을 찾을 수 있으리라 믿습니다.</p><p>양산미래혁신연구원은 시민들과 함께 지혜를 모아 침체된 지역 경제를 되살리고, 소상공인들이 다시 웃을 수 있는 길을 찾기 위해 끊임없이 노력할 것입니다. 이번 추석 연휴만큼은 가족과 함께 따뜻한 시간을 보내시고, 그 속에서 작은 행복과 위로를 찾으시길 바랍니다.</p><p>“보름달의 넉넉함으로 가족과 함께하는 추석, 그 마음으로 양산 지역경제 재도약의 해법을 반드시 찾아내겠습니다.”</p></div>                        </div>
+                    </div>
+                                    </main>
+
+        <div id="swipe-view" class="swiper">
+            <div class="swiper-wrapper">
+                                                                                <div class="swiper-slide">
+                            <div class="section expanded" style="margin:0;">
+                                <div class="section-header" style="cursor:default;">
+                                    <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</span>
+                                </div>
+                                <div class="section-content" style="display:block; border-top:none;">
+                                    <div class="section-header-content">
+                                                                                    <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div>
+                                                                                                                    </div>
+                                    <div class="content-div "><p>추석의 기억, 따뜻한 정(情)<br>추석이 다가오면 누구나 마음속에 오래된 기억 한 장면쯤은 떠올립니다. 마당에 모여 송편을 빚고, 아이들은 뛰놀며, 어른들은 풍성한 음식을 나누던 모습 말입니다. 무엇보다 환하게 차오른 보름달을 보며 서로의 안녕과 풍요를 빌던 그 순간은, 세대를 넘어 이어져 온 명절의 상징적 풍경입니다. 추석은 단순한 명절 이상의 의미를 지녔습니다. 가족과 이웃이 함께 어울려 마음을 나누고, 공동체의 끈끈한 유대를 확인하는 자리였기 때문입니다.</p><p>하지만 지금 우리 지역이 맞이하는 현실은 예전처럼 풍요롭고 따뜻하지만은 않습니다. 모두가 넉넉한 마음으로 명절을 맞이해야 하지만, 침체된 지역 경제와 소상공인들의 깊은 한숨은 그 기쁨을 온전히 누리기 어렵게 만듭니다.<br>양산 경제에 드리운 긴 그림자</p><p>양산은 경남 도내에서 창원, 김해에 이어 세 번째 규모의 인구를 가진 도시로, 외형적으로는 성장의 가능성이 충분히 보입니다. 그러나 화려한 겉모습 뒤에는 풀리지 않는 구조적 문제들이 숨어 있습니다. 특히 신도시 개발 과정에서 적정 수요와 공급의 균형이 무너지고, 과잉 상가 건축이 이어지면서 지역 상권은 과밀 경쟁에 내몰리고 있습니다.</p><p>지금도 신도시 곳곳을 걸어가다 보면 유리창마다 붙은 ‘임대’ 스티커가 눈에 띕니다. 이는 단순한 빈 점포가 아니라, 양산 지역 경제가 안고 있는 구조적 불균형과 소상공인들의 좌절을 상징하는 그림자입니다. 불필요한 상가 공급은 결국 자영업자들 간의 제살 깎아먹기식 경쟁으로 이어지고, 이는 곧 지역 공동체 전체의 활력을 떨어뜨립니다.<br>국내외 사례에서 얻는 교훈</p><p>사실 이러한 문제는 양산만의 특수한 현상이 아닙니다. 국내에서도 이미 비슷한 사례들이 여러 차례 나타났습니다. 수도권 일부 신도시 역시 무분별한 상가 건축으로 공실률이 높아지고, 자영업자들이 줄줄이 문을 닫는 악순환이 이어졌습니다. 이에 따라 일부 지자체는 상가 용지 공급을 제한하거나, 공공이 나서 청년 창업·문화예술 공간으로 전환하는 등 대응에 나섰습니다.</p><p>해외에서도 교훈을 얻을 수 있습니다. 일본의 지방 중소도시는 ‘빈 점포 리모델링 프로젝트’를 통해 지역 청년 예술가와 사회적 기업을 입주시켜 활력을 불어넣었습니다. 미국 일부 도시는 공실 상가를 공유 오피스나 창업 인큐베이터로 바꿔 지역 스타트업 생태계를 형성했습니다. 단순히 ‘빈 공간을 채운다’는 발상에서 벗어나, 새로운 콘텐츠와 산업을 심어 지역의 경쟁력을 재편한 것입니다.</p><p>시민과 함께 찾을 양산지역경제 재도약 해법<br>양산이 직면한 가장 큰 과제는 바로 지역 경제의 지속 가능성입니다. 이를 위해선 단순한 상가 공급 억제나 임대료 조정 차원을 넘어서는, 구조적 전환 전략이 필요합니다. 청년과 신산업 종사자들이 도전할 수 있는 창업 생태계 조성, 지역 맞춤형 특화산업 육성, 공공과 민간의 협력적 플랫폼 마련 등이 대표적입니다.</p><p>무엇보다 중요한 것은 시민과 함께 답을 찾아가는 과정입니다. 소상공인의 목소리, 청년 세대의 아이디어, 전문가들의 정책 제안이 서로 어우러질 때 비로소 현실적인 해법이 나올 수 있습니다. 양산미래혁신연구원은 이러한 협력의 장을 열고, 지역이 다시 도약할 수 있는 실질적 정책 대안을 고민해 나갈 것입니다.</p><p>보름달처럼 넉넉한 마음으로<br>추석은 언제나 우리에게 “함께 나눔”의 가치를 일깨우는 시간이었습니다. 비록 현실은 녹록지 않지만, 보름달이 어둠을 환히 비추듯 우리 지역도 새로운 희망을 찾을 수 있으리라 믿습니다.</p><p>양산미래혁신연구원은 시민들과 함께 지혜를 모아 침체된 지역 경제를 되살리고, 소상공인들이 다시 웃을 수 있는 길을 찾기 위해 끊임없이 노력할 것입니다. 이번 추석 연휴만큼은 가족과 함께 따뜻한 시간을 보내시고, 그 속에서 작은 행복과 위로를 찾으시길 바랍니다.</p><p>“보름달의 넉넉함으로 가족과 함께하는 추석, 그 마음으로 양산 지역경제 재도약의 해법을 반드시 찾아내겠습니다.”</p></div>                                </div>
+                            </div>
+                        </div>
+                                                </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <p class="footer-title"><strong>한옥문&양산미래혁신연구원</strong></p>                           
+                <div class="footer-buttons">
+                    <a href="http://pf.kakao.com/_jmfNn/friend" class="footer-button kakao-footer-button" target="_blank">
+                        카카오톡 채널 추가
+                    </a>
+                    <a href="/archive.html" class="footer-button archive-button">
+                        지난 뉴스레터 전체 보기
+                    </a>
+                </div>
+                <p>경남 양산시 삼성1길 41 3층</p>
+                <p class="footer-email">문의: dy31860@naver.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    function toggleSection(sectionKey) {
+        const section = document.querySelector(`[data-section="${sectionKey}"]`);
+        if (section) {
+            section.classList.toggle('expanded');
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const hash = window.location.hash;
+        document.querySelectorAll('.section.expanded').forEach(sec => sec.classList.remove('expanded'));
+        let targetSection;
+        if (hash) { targetSection = document.querySelector(hash); }
+        if (targetSection) {
+            targetSection.classList.add('expanded');
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            const sections = document.querySelectorAll('.section');
+            if (sections.length > 0) {
+                sections[sections.length - 1].classList.add('expanded');
+            }
+        }
+    });
+    </script>
