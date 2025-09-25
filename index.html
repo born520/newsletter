@@ -80,9 +80,13 @@
         font-size: 1.4em; 
         font-weight: 800; background-color: #FEE500;
         padding: 15px 15px; cursor: pointer;
+        user-select: none;
     }
     .section-header::before { content: '💬'; margin-right: 10px; }
-    .expand-icon { transition: transform 0.3s ease; }
+    .expand-icon { 
+        transition: transform 0.3s ease; 
+        font-size: 0.8em;
+    }
     .section.expanded .expand-icon { transform: rotate(180deg); }
     
     .section-preview { 
@@ -149,9 +153,28 @@
         margin-top: 10px; 
         line-height: 1.7;
     }
-    .content-div h1, .content-div h2, .content-div h3, .content-div h4, .content-div h5, .content-div h6 {
-        font-size: 1.2em; font-weight: 700; margin: 1.2em 0 0.8em; color: #191919;
+    
+     
+    .content-div h1, 
+    .content-div h2, 
+    .content-div h3, 
+    .content-div h4, 
+    .content-div h5, 
+    .content-div h6 {
+        font-size: 1.1em !important;  
+        font-weight: 700; 
+        margin: 1em 0 0.6em; 
+        color: #191919;
+        line-height: 1.4;
     }
+    
+    .content-div h1 { font-size: 1.2em !important; }  
+    .content-div h2 { font-size: 1.1em !important; }
+    .content-div h3 { font-size: 1.05em !important; }
+    .content-div h4, 
+    .content-div h5, 
+    .content-div h6 { font-size: 1em !important; }
+    
     .content-div ul, .content-div ol {
         margin: 15px 0;
         padding-left: 25px;
@@ -160,6 +183,13 @@
         margin: 8px 0;
         line-height: 1.6;
     }
+    
+    .content-div p {
+        margin: 0.8em 0;
+        font-size: 1em;
+        line-height: 1.7;
+    }
+    
      
     .content-div > div[style*="background-color"] {
         background: none !important;
@@ -169,7 +199,11 @@
     }
     .autolink { color: #0066cc; }
     .issue-content h1, .issue-content h2, .issue-content h3 { 
-        background-color: #FEE500; padding: 8px 12px; border-radius: 6px; text-align: center; 
+        background-color: #FEE500 !important; 
+        padding: 8px 12px; 
+        border-radius: 6px; 
+        text-align: center; 
+        font-size: 1.1em !important;  
     }
     
     .youtube-container { 
@@ -322,6 +356,14 @@
         .section-content { padding: 10px; }
         .section-preview { padding: 10px; }
         .info-bar { padding: 10px; }
+        
+         
+        .content-div h1 { font-size: 1.1em !important; }
+        .content-div h2 { font-size: 1.05em !important; }
+        .content-div h3 { font-size: 1em !important; }
+        .content-div h4, 
+        .content-div h5, 
+        .content-div h6 { font-size: 0.95em !important; }
         
         .media-article-card { 
             flex-direction: column; 
@@ -819,7 +861,7 @@
               </div>
           </a>
           <a href="https://www.fntoday.co.kr/news/articleView.html?idxno=361772" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://cdn.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”"></div>
+              <div class="media-article-image"><img src="https://www.fntoday.co.kr/news/thumbnail/202508/361772_276757_2513_v150.jpg" alt="한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">한옥문 원장, “웅상선, 고립된 노선 되어선 안 돼… 부울경 교통통합청 설립 시급”</h3>
                   <p class="media-article-description">양산미래혁신연구원 한옥문 원장이 27일 발표한 칼럼에서 동남권 광역철도망 구축을 위한 ‘부울경 교통 통합관리청’ 설립을 제안했다. 양산미래혁신연구원 한옥문 원장(전 양산시의회 의장)은 27일 칼럼을 통해 “웅상선이 홀로 서는 섬이 되어서는 안 된다”며 “2031년 개통</p>
@@ -827,7 +869,7 @@
               </div>
           </a>
           <a href="https://www.viva100.com/article/20250904501629" target="_blank" class="media-article-card">
-              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250925113657" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
+              <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/04/.cache/512/20250904501627.jpg?v=20250925114957" alt="양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결"></div>
               <div class="media-article-text">
                   <h3 class="media-article-title">양산미래혁신연구원, 양산역사문화진흥원과 MOU 체결</h3>
                   <p class="media-article-description">양산미래혁신연구원과 양산역사문화진흥원이 4일 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 체결하고 전략적 협력에 나섰다. 양 기관은 이번 협약을 통해 △양산시 미래 발전 전략과 역사·문화 정책 공동 연구 △부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안</p>
@@ -879,10 +921,20 @@
     </div>
     
     <script>
+    
     function toggleSection(sectionKey) {
         const section = document.querySelector(`[data-section="${sectionKey}"]`);
         if (section) {
-            section.classList.toggle('expanded');
+            
+            const isExpanded = section.classList.contains('expanded');
+            
+            if (isExpanded) {
+                
+                section.classList.remove('expanded');
+            } else {
+                
+                section.classList.add('expanded');
+            }
         }
     }
 
@@ -890,16 +942,28 @@
         
         const hash = window.location.hash;
         
-        let targetSection;
         if (hash) {
-            targetSection = document.querySelector(hash);
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+                targetSection.classList.add('expanded');
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
         
-        if (targetSection) {
-            targetSection.classList.add('expanded');
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
         
+        const sections = document.querySelectorAll('.section');
+        if (sections.length > 0 && !hash) {
+            
+            sections.forEach((section, index) => {
+                if (index === sections.length - 1) {
+                    section.classList.add('expanded');
+                } else {
+                    section.classList.remove('expanded');
+                }
+            });
+        }
     });
     </script>
 </body>
