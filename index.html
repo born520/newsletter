@@ -74,9 +74,6 @@
     }
     
     .main-content .section:last-child { margin-bottom: 0 !important; }
-    .main-content .section:last-child .section-preview { display: none; }
-    .main-content .section:last-child .section-content { display: block; }
-    .main-content .section:last-child .expand-icon { transform: rotate(180deg); }
     
     .section-header {
         display: flex; justify-content: space-between; align-items: center;
@@ -818,7 +815,6 @@ https://www.viva100.com/article/20250904501629" target="_blank" class="media-art
     document.addEventListener('DOMContentLoaded', function() {
         
         const hash = window.location.hash;
-        document.querySelectorAll('.section.expanded').forEach(sec => sec.classList.remove('expanded'));
         
         let targetSection;
         if (hash) {
@@ -828,13 +824,8 @@ https://www.viva100.com/article/20250904501629" target="_blank" class="media-art
         if (targetSection) {
             targetSection.classList.add('expanded');
             targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-            
-            const sections = document.querySelectorAll('.section');
-            if (sections.length > 0) {
-                sections[sections.length - 1].classList.add('expanded');
-            }
         }
+        
     });
     </script>
 </body>
