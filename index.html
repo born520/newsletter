@@ -5,396 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>뉴스레터 - 제 2호</title>
     
-    
-        <meta property="og:title" content="뉴스레터: 한옥문&amp;양산미래혁신연구원">
-        
-        <meta property="og:description" content="양산의 희망찬 미래를 위해 시민과 함께 고민합니다.">
-        
-        <meta property="og:image" content="https://i.postimg.cc/hGkD9Dxy/image.png">
-    
-        <meta property="og:url" content="https://newsletter.shorttime.co.kr/">
-        
-        <meta property="og:site_name" content="양미혁 뉴스레터">
-        
-        <meta property="og:type" content="Newsletter">
-        
-    
+    <meta property="og:title" content="뉴스레터: 한옥문&amp;양산미래혁신연구원">
+    <meta property="og:description" content="양산의 희망찬 미래를 위해 시민과 함께 고민합니다.">
+    <meta property="og:image" content="https://i.postimg.cc/hGkD9Dxy/image.png">
     <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="뉴스레터: 한옥문&amp;양산미래혁신연구원">
-        
-        <meta name="twitter:description" content="양산의 희망찬 미래를 위해 시민과 함께 고민합니다.">
-        
-        <meta name="twitter:image" content="https://i.postimg.cc/hGkD9Dxy/image.png">
-    
+
     <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
-
+    img { max-width: 100%; height: auto; display: block; }
     html { scroll-behavior: smooth; }
-    body {
-        font-family: 'Malgun Gothic', sans-serif;
-        line-height: 1.8;
-        color: #191919;
-        background-color: #F9F9F9;
-        font-size: 16px;
-    }
-    .container {
-        max-width: 680px;
-        margin: 0 auto;
-        background-color: #ffffff;
-    }
+    body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.8; color: #191919; background-color: #F9F9F9; font-size: 16px; }
+    .container { max-width: 680px; margin: 0 auto; background-color: #ffffff; }
     .header img { width: 100%; height: auto; display: block; }
-    .info-bar { 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        padding: 12px 15px; 
-        border-bottom: 1px solid #F0F0F0; 
-    }
+    .info-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; border-bottom: 1px solid #F0F0F0; }
     .date { font-size: 0.9em; color: #555; }
-    .kakao-button { 
-        padding: 8px 15px; background-color: #FEE500; color: #191919; 
-        text-decoration: none; font-weight: bold; border-radius: 18px; font-size: 0.85em;
-    }
-
-    .main-content {
-        padding: 10px 0;
-    }
-    .section { 
-        background-color: #ffffff; 
-        margin: 0 0 15px 0;
-        border-radius: 8px; 
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
-        overflow: hidden;
-    }
-    
+    .kakao-button { padding: 8px 15px; background-color: #FEE500; color: #191919; text-decoration: none; font-weight: bold; border-radius: 18px; font-size: 0.85em; }
+    .main-content { padding: 10px 0; }
+    .section { background-color: #ffffff; margin: 0 0 15px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; }
     .main-content .section:last-child { margin-bottom: 0 !important; }
-    
-    .section-header {
-        display: flex; justify-content: space-between; align-items: center;
-        font-size: 1.4em; 
-        font-weight: 800; background-color: #FEE500;
-        padding: 15px 15px; cursor: pointer;
-        user-select: none;
-    }
-    .section-header::before { content: '💬'; margin-right: 10px; }
-    .expand-icon { 
-        transition: transform 0.3s ease; 
-        font-size: 0.8em;
-    }
+    .section-header { display: flex; justify-content: space-between; align-items: center; font-size: 1.4em; font-weight: 800; background-color: #FEE500; padding: 15px 15px; cursor: pointer; user-select: none; }
+    .expand-icon { transition: transform 0.3s ease; font-size: 0.8em; }
     .section.expanded .expand-icon { transform: rotate(180deg); }
-    
-    .section-preview { 
-        padding: 15px 15px; cursor: pointer; position: relative;
-    }
+    .section-preview { padding: 15px 15px; cursor: pointer; position: relative; }
     .section.expanded .section-preview { display: none; }
-    
-    .more-button {
-        display: inline-block;
-        background-color: #FEE500;
-        color: #191919;
-        border: none;
-        padding: 6px 16px;
-        border-radius: 15px;
-        font-size: 0.8em;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        margin-top: 12px;
-    }
-    
-    .more-button:hover {
-        background-color: #FFD700;
-        transform: translateY(-1px);
-        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    }
-    
+    .more-button { display: inline-block; background-color: #FEE500; color: #191919; border: none; padding: 6px 16px; border-radius: 15px; font-size: 0.8em; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 12px; }
     .preview-description { font-size: 0.95em; color: #555; line-height: 1.6; margin-top: 12px; }
     .preview-count { font-size: 0.85em; color: #888; margin-top: 8px; font-weight: 600; }
     .youtube-preview { position: relative; margin-bottom: 15px; }
-    .youtube-play-button {
-        position: absolute; top: 50%; left: 50%;
-        transform: translate(-50%, -50%); background: rgba(255, 0, 0, 0.8);
-        color: white; width: 60px; height: 60px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 20px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .section-content { 
-        padding: 15px; display: none; border-top: 1px solid #F0F0F0; 
-    }
+    .youtube-play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 0, 0, 0.8); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .section-content { padding: 15px; display: none; border-top: 1px solid #F0F0F0; }
     .section.expanded .section-content { display: block; }
-    
-    .section-header-content {
-        border-bottom: 2px solid #FEE500;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-    }
-    
-    .section-subtitle { 
-        font-size: 1.1em; 
-        font-weight: 700; 
-        margin-bottom: 10px; 
-    }
-    .preview-image img { 
-        width: 100%; 
-        height: auto; 
-        display: block; 
-        border-radius: 6px; 
-        margin-bottom: 10px; 
-    }
-
-    .content-div { 
-        margin-top: 10px; 
-        line-height: 1.7;
-    }
-    
-     
-    .content-div h1, 
-    .content-div h2, 
-    .content-div h3, 
-    .content-div h4, 
-    .content-div h5, 
-    .content-div h6 {
-        font-size: 1.1em !important;  
-        font-weight: 700; 
-        margin: 1em 0 0.6em; 
-        color: #191919;
-        line-height: 1.4;
-    }
-    
-    .content-div h1 { font-size: 1.2em !important; }  
-    .content-div h2 { font-size: 1.1em !important; }
-    .content-div h3 { font-size: 1.05em !important; }
-    .content-div h4, 
-    .content-div h5, 
-    .content-div h6 { font-size: 1em !important; }
-    
-    .content-div ul, .content-div ol {
-        margin: 15px 0;
-        padding-left: 25px;
-    }
-    .content-div li {
-        margin: 8px 0;
-        line-height: 1.6;
-    }
-    
-    .content-div p {
-        margin: 0.8em 0;
-        font-size: 1em;
-        line-height: 1.7;
-    }
-    
-     
-    .content-div > div[style*="background-color"] {
-        background: none !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-    }
+    .section-header-content { border-bottom: 2px solid #FEE500; margin-bottom: 15px; padding-bottom: 10px; }
+    .section-subtitle { font-size: 1.1em; font-weight: 700; margin-bottom: 10px; }
+    .preview-image img { width: 100%; height: auto; display: block; border-radius: 6px; margin-bottom: 10px; }
+    .content-div { margin-top: 10px; line-height: 1.7; }
+    .content-div p { margin: 0.8em 0; }
     .autolink { color: #0066cc; }
-    .issue-content h1, .issue-content h2, .issue-content h3 { 
-        background-color: #FEE500 !important; 
-        padding: 8px 12px; 
-        border-radius: 6px; 
-        text-align: center; 
-        font-size: 1.1em !important;  
-    }
-    
-    .youtube-container { 
-        position: relative; padding-bottom: 56.25%; height: 0; 
-        overflow: hidden; border-radius: 8px; margin-bottom: 15px; 
-    }
-    .youtube-container iframe { 
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; 
-    }
-    .youtube-subscribe-button { 
-        display: table; margin: 15px auto; padding: 10px 18px; 
-        background-color: #FF0000; color: #ffffff; text-decoration: none; 
-        font-weight: bold; border-radius: 8px; 
-    }
-    
-    .media-article-list { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 15px; 
-    }
-    .media-article-card { 
-        display: flex; 
-        gap: 12px; 
-        padding: 15px; 
-        border: 2px solid #E0E0E0; 
-        border-radius: 10px; 
-        text-decoration: none; 
-        color: inherit; 
-        background-color: #FAFAFA;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .media-article-card:hover { 
-        background-color: #FFF9E6; 
-        border-color: #FEE500;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        transform: translateY(-1px);
-    }
-    .media-article-image { 
-        flex-shrink: 0; 
-        width: 100px; 
-        height: 70px; 
-        border-radius: 6px; 
-        overflow: hidden; 
-        border: 1px solid #DDD;
-    }
-    .media-article-image img { 
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; 
-    }
-    .media-article-text { 
-        flex-grow: 1; 
-    }
-    .media-article-title { 
-        font-size: 0.95em; 
-        font-weight: 700; 
-        margin-bottom: 6px; 
-        color: #191919;
-    }
-    .media-article-description { 
-        font-size: 0.85em; 
-        color: #555; 
-        margin-bottom: 8px; 
-        line-height: 1.4;
-    }
-    .media-article-source { 
-        font-size: 0.75em; 
-        color: #888; 
-        margin-top: auto; 
-        font-weight: 600;
-        background-color: #F0F0F0;
-        padding: 2px 6px;
-        border-radius: 10px;
-        display: inline-block;
-    }
-    
+    .youtube-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 15px; }
+    .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .youtube-subscribe-button { display: table; margin: 15px auto; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
+    .media-article-list { display: flex; flex-direction: column; gap: 15px; }
+    .media-article-card { display: flex; gap: 12px; padding: 15px; border: 2px solid #E0E0E0; border-radius: 10px; text-decoration: none; color: inherit; background-color: #FAFAFA; transition: all 0.3s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .media-article-card:hover { background-color: #FFF9E6; border-color: #FEE500; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transform: translateY(-1px); }
+    .media-article-image { flex-shrink: 0; width: 100px; height: 70px; border-radius: 6px; overflow: hidden; border: 1px solid #DDD; }
+    .media-article-image img { width: 100%; height: 100%; object-fit: cover; }
+    .media-article-text { flex-grow: 1; }
+    .media-article-title { font-size: 0.95em; font-weight: 700; margin-bottom: 6px; color: #191919; }
+    .media-article-description { font-size: 0.85em; color: #555; margin-bottom: 8px; line-height: 1.4; }
+    .media-article-source { font-size: 0.75em; color: #888; margin-top: auto; font-weight: 600; background-color: #F0F0F0; padding: 2px 6px; border-radius: 10px; display: inline-block; }
     .dot-text-container .char-dot { position: relative; display: inline-block; }
-    .dot-text-container .char-dot::after { 
-        content: '·'; position: absolute; top: -0.7em; left: 50%; 
-        transform: translateX(-50%); font-weight: bold; 
-    }
-    
-    .footer { 
-        background-color: #f0f0f0; 
-        color: #777; 
-        text-align: center; 
-        padding: 30px 15px; 
-    }
-    
-    .footer-content {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .footer-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 20px;
-    }
-    
-    .footer-button {
-        display: inline-block;
-        padding: 12px 20px;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        font-size: 0.9em;
-    }
-    
-    .kakao-footer-button {
-        background-color: #FEE500;
-        color: #191919;
-    }
-    
-    .kakao-footer-button:hover {
-        background-color: #FFD700;
-        transform: translateY(-1px);
-    }
-    
-    .archive-button {
-        background-color: #333;
-        color: #fff;
-    }
-    
-    .archive-button:hover {
-        background-color: #555;
-        transform: translateY(-1px);
-    }
-    
-    .footer-email {
-        font-size: 0.85em;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    
-    .footer-title {
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 10px;
-    }
-    
+    .dot-text-container .char-dot::after { content: '·'; position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-weight: bold; }
+    .footer { background-color: #f0f0f0; color: #777; text-align: center; padding: 30px 15px; }
     @media (max-width: 768px) {
-        .main-content { padding: 5px 0; }
         .section { margin: 0 0 8px 0; border-radius: 0; }
-        .main-content .section:last-child { margin-bottom: 0 !important; }
         .section-header { font-size: 1.2em; padding: 12px 10px; }
-        .section-content { padding: 10px; }
-        .section-preview { padding: 10px; }
-        .info-bar { padding: 10px; }
-        
-         
-        .content-div h1 { font-size: 1.1em !important; }
-        .content-div h2 { font-size: 1.05em !important; }
-        .content-div h3 { font-size: 1em !important; }
-        .content-div h4, 
-        .content-div h5, 
-        .content-div h6 { font-size: 0.95em !important; }
-        
-        .media-article-card { 
-            flex-direction: column; 
-            padding: 12px;
-        }
-        .media-article-image { 
-            width: 100%; 
-            height: 150px; 
-            margin-bottom: 10px; 
-        }
-        .youtube-play-button { width: 50px; height: 50px; font-size: 16px; }
-        
-        .more-button {
-            padding: 5px 12px;
-            font-size: 0.75em;
-        }
-        
-        .footer {
-            padding: 20px 10px;
-        }
-        
-        .footer-buttons {
-            gap: 10px;
-        }
-        
-        .footer-button {
-            padding: 10px 16px;
-            font-size: 0.85em;
-        }
+        .media-article-card { flex-direction: column; }
+        .media-article-image { width: 100%; height: 150px; }
     }
-</style>
+    </style>
 </head>
 <body>
     <div class="container">
@@ -405,22 +73,22 @@
             <p class="date">2025년 9월 26일 · 제 2호</p>
             <a href="http://pf.kakao.com/_jmfNn/friend" class="kakao-button" target="_blank">채널 추가</a>
         </div>
-
         <main class="main-content">
-                                                                            <div class="section" data-section="siseon" id="siseon">
-                        <div class="section-header" onclick="toggleSection('siseon')">
-                            <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('siseon')">
-                            <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div><div class="preview-image"><img src="https://i.postimg.cc/XYWpHQ5L/image.png" alt="양미혁의 시선 이미지"></div><div class="preview-description">추석의 기억, 따뜻한 정(情)</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('siseon')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div>
-                                                                                                    <div class="preview-image"><img src="https://i.postimg.cc/XYWpHQ5L/image.png" alt="양미혁의 시선 이미지"></div>
-                                                            </div>
-                            <div class="content-div "><h1>추석의 기억, 따뜻한 정(情)</h1>
+                                            <div class="section" data-section="siseon" id="siseon">
+                    <div class="section-header" onclick="toggleSection('siseon')">
+                        <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="section-preview" onclick="toggleSection('siseon')">
+                        <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div><div class="preview-image"><img src="https://i.postimg.cc/XYWpHQ5L/image.png" alt="양미혁의 시선 이미지"></div><div class="preview-description">추석의 기억, 따뜻한 정(情)</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('siseon')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>보름달의 넉넉함처럼, 지역경제의 재도약을 꿈꾸며</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/XYWpHQ5L/image.png" alt="양미혁의 시선 이미지"></div>
+                                                    </div>
+
+                                                                            <div class="content-div"><h1>추석의 기억, 따뜻한 정(情)</h1>
 <p>추석이 다가오면 누구나 마음속에 오래된 기억 한 장면쯤은 떠올립니다. 마당에 모여 송편을 빚고, 아이들은 뛰놀며, 어른들은 풍성한 음식을 나누던 모습 말입니다. 무엇보다 환하게 차오른 보름달을 보며 서로의 안녕과 풍요를 빌던 그 순간은, 세대를 넘어 이어져 온 명절의 상징적 풍경입니다.</p>
 <p>추석은 단순한 명절 이상의 의미를 지녔습니다. 가족과 이웃이 함께 어울려 마음을 나누고, 공동체의 끈끈한 유대를 확인하는 자리였기 때문입니다.</p>
 <p><strong>하지만 지금 우리 지역이 맞이하는 현실은 예전처럼 풍요롭고 따뜻하지만은 않습니다. 모두가 넉넉한 마음으로 명절을 맞이해야 하지만, 침체된 지역 경제와 소상공인들의 깊은 한숨은 그 기쁨을 온전히 누리기 어렵게 만듭니다.</strong></p>
@@ -438,22 +106,24 @@
 <p>추석은 언제나 우리에게 “함께 나눔”의 가치를 일깨우는 시간이었습니다. 비록 현실은 녹록지 않지만, 보름달이 어둠을 환히 비추듯 우리 지역도 새로운 희망을 찾을 수 있으리라 믿습니다.</p>
 <p>양산미래혁신연구원은 시민들과 함께 지혜를 모아 침체된 지역 경제를 되살리고, 소상공인들이 다시 웃을 수 있는 길을 찾기 위해 끊임없이 노력할 것입니다. 이번 추석 연휴만큼은 가족과 함께 따뜻한 시간을 보내시고, 그 속에서 작은 행복과 위로를 찾으시길 바랍니다.</p>
 <p><strong>“보름달의 넉넉함으로 가족과 함께하는 추석, 그 마음으로 양산 지역경제 재도약의 해법을 반드시 찾아내겠습니다.”</strong></p>
-<p>양산미래혁신연구원</p></div>                        </div>
+<p>양산미래혁신연구원</p></div>
+                                            </div>
+                </div>
+                                            <div class="section" data-section="damron" id="damron">
+                    <div class="section-header" onclick="toggleSection('damron')">
+                        <span>양산담론</span>
+                        <span class="expand-icon">▼</span>
                     </div>
-                                                                                <div class="section" data-section="damron" id="damron">
-                        <div class="section-header" onclick="toggleSection('damron')">
-                            <span>양산담론</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('damron')">
-                            <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론<br>정책 실패는 왜 반복되는가?</p></div><div class="preview-image"><img src="https://i.postimg.cc/gjzFS7s8/Kakao-Talk-20250924-173507549.jpg" alt="양산담론 이미지"></div><div class="preview-description">안성봉 양산물금 롯데시네마 상인포럼 사무국장</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('damron')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론<br>정책 실패는 왜 반복되는가?</p></div>
-                                                                                                    <div class="preview-image"><img src="https://i.postimg.cc/gjzFS7s8/Kakao-Talk-20250924-173507549.jpg" alt="양산담론 이미지"></div>
-                                                            </div>
-                            <div class="content-div "><h1> 안성봉 양산물금 롯데시네마 상인포럼 사무국장</h1><br>
+                    <div class="section-preview" onclick="toggleSection('damron')">
+                        <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론<br>정책 실패는 왜 반복되는가?</p></div><div class="preview-image"><img src="https://i.postimg.cc/gjzFS7s8/Kakao-Talk-20250924-173507549.jpg" alt="양산담론 이미지"></div><div class="preview-description">안성봉 양산물금 롯데시네마 상인포럼 사무국장</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('damron')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>전문가의 시선으로 바라본 양산발전 담론<br>정책 실패는 왜 반복되는가?</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/gjzFS7s8/Kakao-Talk-20250924-173507549.jpg" alt="양산담론 이미지"></div>
+                                                    </div>
+
+                                                                            <div class="content-div"><h1> 안성봉 양산물금 롯데시네마 상인포럼 사무국장</h1><br>
 <h1>정책 실패는 왜 반복되는가<br>
 
 <br>- 인재풀의 비밀</h1>
@@ -519,22 +189,24 @@
 <h2>결론 - 6·27의 데자뷰</h2>
 <p>2025년 6월 27일 대책. 수도권 주담대 한도 6억. LTV·DSR 강화. 9월 추가 조치로 강남 3구 LTV 40%. 2017년 8·2, 2020년 규제들과 놀랍도록 닮았다.</p>
 <p>사람은 바뀌었지만 레퍼토리는 남았다. 같은 교육, 같은 경험, 같은 네트워크에서 자란 관료들에게 부동산 정책이란 수요 억제다.</p>
-<p><strong>정책 실패는 사람의 문제가 아니다. 구조의 문제다. 이 고리를 끊지 않으면 2027년에도, 2030년에도 우리는 같은 대책을 보게 될 것이다.</strong></p></div>                        </div>
+<p><strong>정책 실패는 사람의 문제가 아니다. 구조의 문제다. 이 고리를 끊지 않으면 2027년에도, 2030년에도 우리는 같은 대책을 보게 될 것이다.</strong></p></div>
+                                            </div>
+                </div>
+                                            <div class="section" data-section="balgeoleum" id="balgeoleum">
+                    <div class="section-header" onclick="toggleSection('balgeoleum')">
+                        <span>한옥문의 시선집중</span>
+                        <span class="expand-icon">▼</span>
                     </div>
-                                                                                <div class="section" data-section="balgeoleum" id="balgeoleum">
-                        <div class="section-header" onclick="toggleSection('balgeoleum')">
-                            <span>한옥문의 시선집중</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('balgeoleum')">
-                            <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div><div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div><div class="preview-description">양산의 주택 시장, 청약 통장 감소와 현실적인 해법</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('balgeoleum')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div>
-                                                                                                    <div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div>
-                                                            </div>
-                            <div class="content-div "><hr>
+                    <div class="section-preview" onclick="toggleSection('balgeoleum')">
+                        <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div><div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div><div class="preview-description">양산의 주택 시장, 청약 통장 감소와 현실적인 해법</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('balgeoleum')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>더 나은 양산을 만들기 위해</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/SNX8vSWg/image.png" alt="한옥문의 시선집중 이미지"></div>
+                                                    </div>
+
+                                                                            <div class="content-div"><hr>
 <img src="https://i.postimg.cc/rmCDLHrQ/118115-86410-4508.jpg" alt="양산시 청약통장 감소" style="width:100%; max-width:600px; height:auto; display:block; margin: 20px auto; border-radius: 8px;">
 <hr>
 <h1>양산의 주택 시장, 청약 통장 감소와 현실적인 해법</h1>
@@ -597,21 +269,25 @@
 <h3>투명한 행정 절차와 시민 소통 강화:</h3>
 <p>용역 결과와 부산시와의 협상 과정을 시민들에게 투명하게 공개해야 합니다. 주민설명회를 정기적으로 개최하고, 온라인 소통 창구를 활성화하여 시민들의 의견을 적극적으로 수렴해야 합니다. 시민 참여가 보장되는 민관 협력 모델이야말로 신뢰를 바탕으로 문제를 해결하는 가장 확실한 방법입니다.</p>
 <h2>시민과 함께, 양산의 새로운 역사를 씁시다</h2>
-<p>60년간의 규제가 해제되는 것은 동면 5개  마을 주민들에게는 희망을, 양산시 전체에는 새로운 성장의 기회를 가져다줄 것입니다.</p></div>                        </div>
+<p>60년간의 규제가 해제되는 것은 동면 5개  마을 주민들에게는 희망을, 양산시 전체에는 새로운 성장의 기회를 가져다줄 것입니다.</p></div>
+                                            </div>
+                </div>
+                                            <div class="section" data-section="youtube" id="youtube">
+                    <div class="section-header" onclick="toggleSection('youtube')">
+                        <span>한옥문의 양산이야기</span>
+                        <span class="expand-icon">▼</span>
                     </div>
-                                                                                <div class="section" data-section="youtube" id="youtube">
-                        <div class="section-header" onclick="toggleSection('youtube')">
-                            <span>한옥문의 양산이야기</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('youtube')">
-                            <div class="section-subtitle"><p>젤란과 오경농장의 의미를 아시나요?</p></div><div class="preview-image youtube-preview"><img src="https://img.youtube.com/vi/4nV4FG8_tEM/maxresdefault.jpg" alt="유튜브 썸네일"><div class="youtube-play-button">▶</div></div><div class="preview-description">양산 상북면에서 오경농장을 운영하는 92세의 김중경 회장님은 오랜만에 만나뵙는데도 여전히 정정한 모습을 보여주셨습니다. 회장님께서는 올해 아흔둘의 나이에도 불구하고 건강을 유지하는 비결은 그저 "일하는 덕분"이라고 말씀하시며, 다른 직원들과 똑같이 출퇴근하며 지낸다고 밝혔습니다.</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('youtube')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>젤란과 오경농장의 의미를 아시나요?</p></div>
-                                                                                            </div>
-                            <div class="youtube-container"><iframe src="https://www.youtube.com/embed/4nV4FG8_tEM" frameborder="0" allowfullscreen></iframe></div><a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">한옥문 유튜브 구독하기</a><div class="content-div"><p>양산 상북면에서 오경농장을 운영하는 92세의 김중경 회장님은 오랜만에 만나뵙는데도 여전히 정정한 모습을 보여주셨습니다. 회장님께서는 올해 아흔둘의 나이에도 불구하고 건강을 유지하는 비결은 그저 "일하는 덕분"이라고 말씀하시며, 다른 직원들과 똑같이 출퇴근하며 지낸다고 밝혔습니다.</p>
+                    <div class="section-preview" onclick="toggleSection('youtube')">
+                        <div class="section-subtitle"><p>젤란과 오경농장의 의미를 아시나요?</p></div><div class="preview-image youtube-preview"><img src="https://img.youtube.com/vi/4nV4FG8_tEM/maxresdefault.jpg" alt="유튜브 썸네일"><div class="youtube-play-button">▶</div></div><div class="preview-description">양산 상북면에서 오경농장을 운영하는 92세의 김중경 회장님은 오랜만에 만나뵙는데도 여전히 정정한 모습을 보여주셨습니다. 회장님께서는 올해 아흔둘의 나이에도 불구하고 건강을 유지하는 비결은 그저 "일하는 덕분"이라고 말씀하시며, 다른 직원들과 똑같이 출퇴근하며 지낸다고 밝혔습니다.</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('youtube')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>젤란과 오경농장의 의미를 아시나요?</p></div>
+                                                                                </div>
+
+                                                                                                                                                                                                <div class="youtube-container"><iframe src="https://www.youtube.com/embed/4nV4FG8_tEM" frameborder="0" allowfullscreen></iframe></div>
+                                <a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">한옥문 유튜브 구독하기</a>
+                                                                                        <div class="content-div"><p>양산 상북면에서 오경농장을 운영하는 92세의 김중경 회장님은 오랜만에 만나뵙는데도 여전히 정정한 모습을 보여주셨습니다. 회장님께서는 올해 아흔둘의 나이에도 불구하고 건강을 유지하는 비결은 그저 "일하는 덕분"이라고 말씀하시며, 다른 직원들과 똑같이 출퇴근하며 지낸다고 밝혔습니다.</p>
 <p>회장님께서 담당하는 업무는 자동화 기계가 처리하지 못하는 소량 단위의 계란 포장입니다. 열 개 미만의 계란판에 라벨을 붙이는 등 수동으로 해야 하는 작업을 도맡아 하고 있습니다. 이는 매일 필요한 만큼 꾸준히 해야 하는 일입니다.</p>
 
 <h3>'젤란'과 '오경농장' 이름의 의미</h3>
@@ -631,99 +307,113 @@
 
 <h3>양계업의 역사와 문재인 전 대통령과의 인연</h3>
 <p>회장님은 대한민국 양계업의 초창기 역사를 설명하며, 나환자촌에서 생계를 위해 닭을 키우기 시작한 것이 시초였다고 언급했습니다.</p>
-<p>또한, <strong>문재인 전 대통령과의 특별한 인연</strong>을 소개했습니다. 두 사람은 경남고등학교 19년 선후배 사이로, 문 전 대통령의 모친이 6.25 피난 시절 부산에서 달걀을 팔아 생계를 꾸렸던 이야기를 나누며 깊은 유대감을 형성했다고 합니다. 회장님은 문 전 대통령에게 "어머님이 고생하며 달걀을 이고 다닌 덕에 다리가 휘었을 것"이라는 농담을 건넸고, 문 전 대통령 역시 이를 웃으며 받아들였다는 일화를 전하며 오랜 인연을 회상했습니다. 이처럼 회장님의 삶은 대한민국 현대사의 굴곡과 양계 산업의 발전, 그리고 지역 사회와의 깊은 인연 속에 자리하고 있었습니다.</p></div>                        </div>
+<p>또한, <strong>문재인 전 대통령과의 특별한 인연</strong>을 소개했습니다. 두 사람은 경남고등학교 19년 선후배 사이로, 문 전 대통령의 모친이 6.25 피난 시절 부산에서 달걀을 팔아 생계를 꾸렸던 이야기를 나누며 깊은 유대감을 형성했다고 합니다. 회장님은 문 전 대통령에게 "어머님이 고생하며 달걀을 이고 다닌 덕에 다리가 휘었을 것"이라는 농담을 건넸고, 문 전 대통령 역시 이를 웃으며 받아들였다는 일화를 전하며 오랜 인연을 회상했습니다. 이처럼 회장님의 삶은 대한민국 현대사의 굴곡과 양계 산업의 발전, 그리고 지역 사회와의 깊은 인연 속에 자리하고 있었습니다.</p></div>
+                                                                        </div>
+                </div>
+                                            <div class="section" data-section="issue" id="issue">
+                    <div class="section-header" onclick="toggleSection('issue')">
+                        <span>NOW 양산</span>
+                        <span class="expand-icon">▼</span>
                     </div>
-                                                                                <div class="section" data-section="issue" id="issue">
-                        <div class="section-header" onclick="toggleSection('issue')">
-                            <span>NOW 양산</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('issue')">
-                            <div class="section-subtitle"><p>최근 이슈가 되는 양산 뉴스들을 전해드립니다.</p></div><div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="preview-description">낙동강, 생태관광 중심지 되려면?…연구·용역 잇따라</div><div class="preview-count">총 9개 기사</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('issue')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>최근 이슈가 되는 양산 뉴스들을 전해드립니다.</p></div>
-                                                                                                    <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div>
-                                                            </div>
-                            <div class="media-article-list"><a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119459" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">낙동강, 생태관광 중심지 되려면?…연구·용역 잇따라</h3>
-                      <p class="media-article-description">낙동강이 생태관광 중심지로 거듭나기 위한 연구가 이어지고 있다. 낙동강협의회가</p>
-                      <span class="media-article-source">양산신문</span>
-                  </div>
-                 </a><a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119425" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">[사설]맑은 물은 도민의 생명, 낙동강 녹조 대책에 사활을 걸어야</h3>
-                      <p class="media-article-description">낙동강 녹조 문제가 또다시 도마 위에 올랐습니다. 연례행사처럼 되풀이되는 이 문제는 이제 단순히</p>
-                      <span class="media-article-source">양산신문</span>
-                  </div>
-                 </a><a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119420" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">[회야천단상]하천이 되어 흐른다는 것은</h3>
-                      <p class="media-article-description">애초 한 방울의 물이었을 것이다. 방울이라고 부르기도 민망할 만큼 작았다. 수증기로, 구름으로 떠돌 때는 누구도 물이라고 부르지 않았다. 비로, 눈으로 내릴 때는 물이라는 정체성에 조금 가까워졌지만 시한적이었다. 해가 나고 며칠이 지나면 종적이 없어지곤 했다. 그저 흙 속 깊이 미세한 습한 기운으로 남았다.끼리끼리는 자연의 습성이다. 습기가 모여 땅이 물러졌다. 지반이 약해진 틈을 타 물 한 방울이 지상으로 조용히 솟았다. 마치 고전 문학에 등장하는 맑디맑은 소녀의 눈망울 같았다. 그 순수는 또 다른 순수를 부르며 실 날 같은 물줄</p>
-                      <span class="media-article-source">양산신문</span>
-                  </div>
-                 </a><a href="https://n.news.naver.com/mnews/article/003/0013505302?sid=102" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">양산시 승격 30주년 기념, 27일 청년축제 열린다</h3>
-                      <p class="media-article-description">경남 양산시가 시 승격 30주년과 2026 방문의 해를 준비하는 특별한 무대, 청년과 시민이 함께하는 화합의 장을 마련한다. 양산시는 오는 27일 오후 1시부터 양산종합운동장에서 2025 양산시 청년축제 청년 온(O</p>
-                      <span class="media-article-source">n.news.naver.com</span>
-                  </div>
-                 </a><a href="http://www.gndomin.com/news/articleView.html?idxno=449359" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">양산시 대한민국 도시지역혁신 산업박람회 국토부 장관상</h3>
-                      <p class="media-article-description">양산시는 국토교통부 주관 ‘2025 대한민국 도시지역혁신 산업박람회’ 도시재생 지역상권활성화 분야에서 국토교통부 장관상 수상자로 선정됐다고 밝혔다. 
+                    <div class="section-preview" onclick="toggleSection('issue')">
+                        <div class="section-subtitle"><p>최근 이슈가 되는 양산 뉴스들을 전해드립니다.</p></div><div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="preview-description">낙동강, 생태관광 중심지 되려면?…연구·용역 잇따라</div><div class="preview-count">총 9개 기사</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('issue')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>최근 이슈가 되는 양산 뉴스들을 전해드립니다.</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div>
+                                                    </div>
+
+                                                                            <div class="media-article-list">
+                                                                                                            <a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119459" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">낙동강, 생태관광 중심지 되려면?…연구·용역 잇따라</h3>
+                                                <p class="media-article-description">낙동강이 생태관광 중심지로 거듭나기 위한 연구가 이어지고 있다. 낙동강협의회가 &#39;낙동강권역 발전전략 수립 용역&#39;에 착수한 데 이어, 경남연구원이 낙동강 활성화에 대한 구체적인 청사진을 제시하고 나섰다.경남연구원이 최근 &#39;낙동강 생태관광 활성화를 위해 무엇을 해야 할까요?&#39;라는 주제로 경남인포그래픽스 51호를 발표했다.낙동강은 총길이 510km로, 국내에서 한강 다음으로 긴 강이다. 양산을 포함해 창원·김해·밀양·의령·함안·창녕·합천 등 경남도내 8개 시·군이 걸쳐 있다. 때문에 광역형 생태관광이 가능해 경남을 대표하는 생태관광 중심</p>
+                                                <span class="media-article-source">양산신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119425" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">[사설]맑은 물은 도민의 생명, 낙동강 녹조 대책에 사활을 걸어야</h3>
+                                                <p class="media-article-description">낙동강 녹조 문제가 또다시 도마 위에 올랐습니다. 연례행사처럼 되풀이되는 이 문제는 이제 단순히 &#39;강이 녹색으로 변하는 현상&#39;을 넘어 도민의 생명과 직결된 심각한 위협으로 다가서고 있습니다. 최근 이용식 경남도의원께서 5분 자유발언을 통해 낙동강 녹조의 위험성을 경고하며 근본적인 대책 마련을 촉구하신 것은 매우 시의적절합니다.낙동강은 경남 인구 절반 이상이 식수원으로 삼는 생명의 젖줄입니다. 그러나 녹조가 창궐하며 내뿜는 독성 물질인 마이크로시스틴은 세계보건기구(WHO)가 잠재적 발암물질로 분류할 만큼 치명적입니다. 눈에 보이는 녹</p>
+                                                <span class="media-article-source">양산신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119420" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">[회야천단상]하천이 되어 흐른다는 것은</h3>
+                                                <p class="media-article-description">애초 한 방울의 물이었을 것이다. 방울이라고 부르기도 민망할 만큼 작았다. 수증기로, 구름으로 떠돌 때는 누구도 물이라고 부르지 않았다. 비로, 눈으로 내릴 때는 물이라는 정체성에 조금 가까워졌지만 시한적이었다. 해가 나고 며칠이 지나면 종적이 없어지곤 했다. 그저 흙 속 깊이 미세한 습한 기운으로 남았다.끼리끼리는 자연의 습성이다. 습기가 모여 땅이 물러졌다. 지반이 약해진 틈을 타 물 한 방울이 지상으로 조용히 솟았다. 마치 고전 문학에 등장하는 맑디맑은 소녀의 눈망울 같았다. 그 순수는 또 다른 순수를 부르며 실 날 같은 물줄</p>
+                                                <span class="media-article-source">양산신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://n.news.naver.com/mnews/article/003/0013505302?sid=102" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">양산시 승격 30주년 기념, 27일 청년축제 열린다</h3>
+                                                <p class="media-article-description">경남 양산시가 시 승격 30주년과 2026 방문의 해를 준비하는 특별한 무대, 청년과 시민이 함께하는 화합의 장을 마련한다. 양산시는 오는 27일 오후 1시부터 양산종합운동장에서 2025 양산시 청년축제 청년 온(O</p>
+                                                <span class="media-article-source">n.news.naver.com</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="http://www.gndomin.com/news/articleView.html?idxno=449359" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">양산시 대한민국 도시지역혁신 산업박람회 국토부 장관상</h3>
+                                                <p class="media-article-description">양산시는 국토교통부 주관 ‘2025 대한민국 도시지역혁신 산업박람회’ 도시재생 지역상권활성화 분야에서 국토교통부 장관상 수상자로 선정됐다고 밝혔다. 
 
 국토교통부와 강원특별자치도, 삼척시가 공동 주최하는 이번 박람회는 ‘지역에 삶을, 도시에 숨을’이라는 슬로건 아래 도시재생의 성과와 미래 비전을 공유하는 전국 최대 규모의 행사다. 양산시를 비롯해 전국</p>
-                      <span class="media-article-source">경남도민신문</span>
-                  </div>
-                 </a><a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119432" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">양산시청소년합창단 대상</h3>
-                      <p class="media-article-description">양산시와 양산시청소년회관이 주최·주관한</p>
-                      <span class="media-article-source">양산신문</span>
-                  </div>
-                 </a><a href="http://www.gndomin.com/news/articleView.html?idxno=447246" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">남양산FC U15 올해 제천의병 추계U14 유스컵 대회 우승 쾌거</h3>
-                      <p class="media-article-description">양산시 상북면 양주중학교 학생들의 주축으로 구성된 남양산FC U15 의 중등부 축구팀이 2025년 제천의병 추계U14 유스컵 대회에서 우승을 이뤄냈다.
+                                                <span class="media-article-source">경남도민신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119432" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">양산시청소년합창단 대상 &#39;피날레&#39;…제13회 양산전국청소년합창대회</h3>
+                                                <p class="media-article-description">양산시와 양산시청소년회관이 주최·주관한 &#39;제13회 양산전국청소년합창대회&#39;가 지난 20일 문화예술회관 대공연장에서 성황리에 막을 내렸다.이번 대회는 양산을 포함한 청주, 진해, 부산 등 전국 각지에서 모인 청소년들이 &#39;합창&#39;을 통해 우정을 다지고 조화와 배려의 가치를 나누는 뜻깊은 무대로 꾸며졌다.특히 예선엔 22팀이 지원하면서 본선까지의 경쟁이 치열하였고, 선발된 8개 팀이 본선에 참가해 각자의 개성과 음악적 색채를 담아낸 열정적인 공연으로 800여 명의 관객들에게 감동을 선사했다.올해 대회의 대상은 양산시청소년합창단이 수상의 영예</p>
+                                                <span class="media-article-source">양산신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="http://www.gndomin.com/news/articleView.html?idxno=447246" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">남양산FC U15 올해 제천의병 추계U14 유스컵 대회 우승 쾌거</h3>
+                                                <p class="media-article-description">양산시 상북면 양주중학교 학생들의 주축으로 구성된 남양산FC U15 의 중등부 축구팀이 2025년 제천의병 추계U14 유스컵 대회에서 우승을 이뤄냈다.
 
 남양산FC U15는 스포츠클럽인 남양산FC 사회적협동조합에서 지난해 2월 창단시켰다.
 
 남양산FC U15의 이번 우승은 창단 2년 만에 전국 67팀을 재끼고 거머 쥔 의미 있는 우승이다.
 
 특히</p>
-                      <span class="media-article-source">경남도민신문</span>
-                  </div>
-                 </a><a href="http://www.ysnewspark.com/news/articleView.html?idxno=15852" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">아직도 끝나지 않은 우려,</h3>
-                      <p class="media-article-description">[양산뉴스파크=남성봉 기자]=웅상공공의료원설립추진운동본부(공동대표 진재원·이하 운동본부)가 웅상중앙병원으로 인한 의료공백 사태에 따른 공공의료원...</p>
-                      <span class="media-article-source">ysnewspark.com</span>
-                  </div>
-                 </a><a href="http://www.ungsangnews.com/default/index_view_page.php?part_idx=260&amp;idx=43784" target="_blank" class="media-article-card">
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">[웅상뉴스(웅상신문)] 웅상선 광역철도,  지상철을 지하철로 변경하자는 여론</h3>
-                      <p class="media-article-description">웅상발전협의회는 지난 12일 오후 2시 웅상문화체육센터에서 광역철도 웅상선 건설사업의 조속한 추진을 위한 시민 결의대회를 열었다...</p>
-                      <span class="media-article-source">웅상뉴스(웅상신문)</span>
-                  </div>
-                 </a></div>                        </div>
+                                                <span class="media-article-source">경남도민신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="http://www.ysnewspark.com/news/articleView.html?idxno=15852" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">아직도 끝나지 않은 우려, &#39;웅상 의료공백은 진행 중&#39; - 양산뉴스파크 </h3>
+                                                <p class="media-article-description">[양산뉴스파크=남성봉 기자]=웅상공공의료원설립추진운동본부(공동대표 진재원·이하 운동본부)가 웅상중앙병원으로 인한 의료공백 사태에 따른 공공의료원...</p>
+                                                <span class="media-article-source">ysnewspark.com</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="http://www.ungsangnews.com/default/index_view_page.php?part_idx=260&amp;idx=43784" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">[웅상뉴스(웅상신문)] 웅상선 광역철도,  지상철을 지하철로 변경하자는 여론</h3>
+                                                <p class="media-article-description">웅상발전협의회는 지난 12일 오후 2시 웅상문화체육센터에서 광역철도 웅상선 건설사업의 조속한 추진을 위한 시민 결의대회를 열었다...</p>
+                                                <span class="media-article-source">웅상뉴스(웅상신문)</span>
+                                            </div>
+                                        </a>
+                                                                                                </div>
+                                            </div>
+                </div>
+                                            <div class="section" data-section="book" id="book">
+                    <div class="section-header" onclick="toggleSection('book')">
+                        <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span> 문화가 산책</span>
+                        <span class="expand-icon">▼</span>
                     </div>
-                                                                                <div class="section" data-section="book" id="book">
-                        <div class="section-header" onclick="toggleSection('book')">
-                            <span><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span> 문화가 산책</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('book')">
-                            <div class="section-subtitle"><p>공연, 축제, 추천도서들을 소개합니다..</p></div><div class="preview-image"><img src="https://i.postimg.cc/L8j0R6nR/image.png" alt="양미혁 문화가 산책 이미지"></div><div class="preview-description">연극 '광인들의 축제' 무료 공연 안내</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('book')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>공연, 축제, 추천도서들을 소개합니다..</p></div>
-                                                                                                    <div class="preview-image"><img src="https://i.postimg.cc/L8j0R6nR/image.png" alt="양미혁 문화가 산책 이미지"></div>
-                                                            </div>
-                            <div class="content-div"><img src="https://i.postimg.cc/rwy83mV0/image.jpg">
+                    <div class="section-preview" onclick="toggleSection('book')">
+                        <div class="section-subtitle"><p>공연, 축제, 추천도서들을 소개합니다..</p></div><div class="preview-image"><img src="https://i.postimg.cc/L8j0R6nR/image.png" alt="양미혁 문화가 산책 이미지"></div><div class="preview-description">연극 '광인들의 축제' 무료 공연 안내</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('book')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>공연, 축제, 추천도서들을 소개합니다..</p></div>
+                                                                                        <div class="preview-image"><img src="https://i.postimg.cc/L8j0R6nR/image.png" alt="양미혁 문화가 산책 이미지"></div>
+                                                    </div>
+
+                                                                            <div class="content-div"><img src="https://i.postimg.cc/rwy83mV0/image.jpg">
 
 <h1>연극 '광인들의 축제' 무료 공연 안내</h1>
 <p>연극 <strong>‘광인들의 축제’</strong>가 오는 <strong>10월 1일(화) 오후 7시 30분, 양산문화예술회관 대공연장</strong>에서 막을 올립니다. 이번 공연은 <strong>전석 무료</strong>로 진행되며, <strong>13세 이상</strong> 누구나 관람하실 수 있습니다.</p>
@@ -731,21 +421,25 @@
 <p>그동안 시민연극교실은 낭독극과 독백대회를 통해 놀라운 성과를 보여왔고, 이번 무대는 그 여정의 결실이라 할 수 있습니다. 특히 독백대회에서 수상한 시민 배우들이 함께 참여해 더욱 의미 있는 무대가 될 것입니다.</p>
 <p>올가을, 인간의 다양한 얼굴과 삶의 진실을 마주할 수 있는 연극의 장으로 발걸음해 보시길 권합니다.</p>
 
-<img src="https://i.postimg.cc/GpdTtrxv/IMG-9187.jpg"  style="width:100%; max-width:600px; height:auto; display:block; margin: 20px auto; border-radius: 8px;"></div>                        </div>
+<img src="https://i.postimg.cc/GpdTtrxv/IMG-9187.jpg"  style="width:100%; max-width:600px; height:auto; display:block; margin: 20px auto; border-radius: 8px;"></div>
+                                            </div>
+                </div>
+                                            <div class="section" data-section="song" id="song">
+                    <div class="section-header" onclick="toggleSection('song')">
+                        <span>양산을 노래하라</span>
+                        <span class="expand-icon">▼</span>
                     </div>
-                                                                                <div class="section" data-section="song" id="song">
-                        <div class="section-header" onclick="toggleSection('song')">
-                            <span>양산을 노래하라</span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('song')">
-                            <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div><div class="preview-image youtube-preview"><img src="https://img.youtube.com/vi/x7y3vIHoKx0/maxresdefault.jpg" alt="유튜브 썸네일"><div class="youtube-play-button">▶</div></div><div class="preview-description">제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 300년이라는 긴 세월 동안 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, 상북면 신전리의 이팝나무에 대한 노래를 여러분께 소개해 드리고자 합니다.</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('song')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div>
-                                                                                            </div>
-                            <div class="youtube-container"><iframe src="https://www.youtube.com/embed/x7y3vIHoKx0" frameborder="0" allowfullscreen></iframe></div><a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">한옥문 유튜브 구독하기</a><div class="content-div"><p>제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 <strong>300년이라는 긴 세월 동안</strong> 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, <strong>상북면 신전리의 이팝나무</strong>에 대한 노래를 여러분께 소개해 드리고자 합니다.</p>
+                    <div class="section-preview" onclick="toggleSection('song')">
+                        <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div><div class="preview-image youtube-preview"><img src="https://img.youtube.com/vi/x7y3vIHoKx0/maxresdefault.jpg" alt="유튜브 썸네일"><div class="youtube-play-button">▶</div></div><div class="preview-description">제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 300년이라는 긴 세월 동안 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, 상북면 신전리의 이팝나무에 대한 노래를 여러분께 소개해 드리고자 합니다.</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('song')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div>
+                                                                                </div>
+
+                                                                                                                                                                                                <div class="youtube-container"><iframe src="https://www.youtube.com/embed/x7y3vIHoKx0" frameborder="0" allowfullscreen></iframe></div>
+                                <a href="https://www.youtube.com/@yangsanstory" class="youtube-subscribe-button" target="_blank">한옥문 유튜브 구독하기</a>
+                                                                                        <div class="content-div"><p>제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 <strong>300년이라는 긴 세월 동안</strong> 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, <strong>상북면 신전리의 이팝나무</strong>에 대한 노래를 여러분께 소개해 드리고자 합니다.</p>
 <p>이 노래는 단순히 한 그루의 오래된 나무를 위한 찬가가 아닙니다. 눈보라와 뜨거운 태양을 모두 껴안으며 사계절을 견뎌온 나무의 강인함, 그리고 그 곁에서 웃고 울었던 <strong>우리 이웃들의 삶과 희로애락을 담아낸 헌사</strong>입니다.</p>
 <p>가사를 찬찬히 읊어보시면, 비단 이팝나무 이야기만이 아님을 아시게 될 겁니다. 그 안에는 우리 지역의 자랑인 <strong>봉수대의 불빛, 홍룡사의 청아한 소리, 서원의 숨결</strong> 같은 양산의 역사와 문화가 녹아 있습니다. 이는 이팝나무가 우리 공동체의 기억과 삶을 품고 있는 중심이라는 믿음으로 써 내려간 구절들입니다.</p>
 <p>하얗게 피어나는 이팝꽃이 과거와 현재를 이어주고, 우리의 밝은 내일을 비춰주리라는 희망. 세월이 흘러도 변치 않는 약속처럼, <strong>다음 세대에게도 이 소중한 유산을 잘 물려주고 싶은 마음</strong>을 이 노래에 담았습니다.</p>
@@ -868,108 +562,75 @@
 
 신전리 이팝나무의 노래
 </p>
-</div></div>                        </div>
-                    </div>
-                                                                                <div class="section" data-section="media" id="media">
-                        <div class="section-header" onclick="toggleSection('media')">
-                            <span>언론이 만난  <span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></span>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                        <div class="section-preview" onclick="toggleSection('media')">
-                            <div class="section-subtitle"><p>한옥문 원장의 언론기고와 <br>연구원 대외활동을 전해드립니다.</p></div><div class="preview-image"><img src="https://cdn.idomin.com/news/thumbnail/202509/945957_650206_5745_v150.jpg" alt="양산미래혁신연구원·양산역사문화진흥원 협약"></div><div class="preview-description">양산미래혁신연구원·양산역사문화진흥원 협약</div><div class="preview-count">총 4개 기사</div>                            <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('media')">더보기</button></div>
-                        </div>
-                        <div class="section-content">
-                            <div class="section-header-content">
-                                                                    <div class="section-subtitle"><p>한옥문 원장의 언론기고와 <br>연구원 대외활동을 전해드립니다.</p></div>
-                                                                                            </div>
-                            <div class="media-article-list"><a href="https://www.idomin.com/news/articleView.html?idxno=945957" target="_blank" class="media-article-card">
-                  <div class="media-article-image"><img src="https://cdn.idomin.com/news/thumbnail/202509/945957_650206_5745_v150.jpg" alt="양산미래혁신연구원·양산역사문화진흥원 협약"></div>
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">양산미래혁신연구원·양산역사문화진흥원 협약</h3>
-                      <p class="media-article-description">양산미래혁신연구원(원장 한옥문)과 양산역사문화진흥원(원장 장성규)가 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 했다. 미래 발전 전략과 역사·문화 정책 공동 연구, 부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안 정책 자문, 포럼·세미나 개최 등을 협력한다. /이현희</p>
-                      <span class="media-article-source">경남도민일보</span>
-                  </div>
-                 </a><a href="https://www.viva100.com/article/20250902500682" target="_blank" class="media-article-card">
-                  <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/02/.cache/512/20250902500680.png?v=20250925193658" alt="[기획] 웅상선, 이제는 비전과 전략이다(6)"></div>
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">[기획] 웅상선, 이제는 비전과 전략이다(6)</h3>
-                      <p class="media-article-description">1. 웅상선은 동남권 게임체인저가 될 것 2. 투기 방지 없이는 성공할 수 없다 3. 양산은 이중 철도망 시대를 준비해야 4. 부울경 협력, 이번만큼은 달라야 한다 5. 기존 철도망과의 연계가 성공의 열쇠 6. 2050년엔 30분 생활권을 꿈꿔야 6부: “2050년엔3</p>
-                      <span class="media-article-source">브릿지경제</span>
-                  </div>
-                 </a><a href="https://www.tournews21.com/news/articleView.html?idxno=113790" target="_blank" class="media-article-card">
-                  <div class="media-article-image"><img src="https://cdn.tournews21.com/news/photo/202508/113790_228390_217.jpg" alt="한옥문 원장 “부울경 교통 통합관리청 설립하자” - 투어코리아"></div>
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">한옥문 원장 “부울경 교통 통합관리청 설립하자” - 투어코리아</h3>
-                      <p class="media-article-description">[투어코리아=김형석 기자] 양산미래혁신연구원 한옥문 원장(전 양산시의회 의장)이 28일 칼럼을 통해 “웅상선이 홀로 서는 섬이 되어서는 안 된다”며 “2031년</p>
-                      <span class="media-article-source">투어코리아</span>
-                  </div>
-                 </a><a href="https://www.seoulfn.com/news/articleView.html?idxno=602896" target="_blank" class="media-article-card">
-                  <div class="media-article-image"><img src="https://cdn.seoulfn.com/news/photo/202508/602896_402402_63.jpg" alt="한옥문 원장 &#34;웅상 신도시, 투기장이 아닌 기회의 땅으로 만들어야&#34; - 서울파이낸스"></div>
-                  <div class="media-article-text">
-                      <h3 class="media-article-title">한옥문 원장 &quot;웅상 신도시, 투기장이 아닌 기회의 땅으로 만들어야&quot; - 서울파이낸스</h3>
-                      <p class="media-article-description">[서울파이낸스 (부산) 조하연 기자] 웅상선 예비타당성조사(예타) 통과 이후, 경남 양산시 웅상지역이 전국 부동산 시장의 새로운 ‘핫플레이스’로 떠오르고 있다.</p>
-                      <span class="media-article-source">서울파이낸스</span>
-                  </div>
-                 </a></div>                        </div>
-                    </div>
-                                    </main>
-        
-        <div class="footer">
-            <div class="footer-content">
-                <p class="footer-title"><strong>한옥문&양산미래혁신연구원</strong></p>                           
-                <div class="footer-buttons">
-                    <a href="http://pf.kakao.com/_jmfNn/friend" class="footer-button kakao-footer-button" target="_blank">
-                        카카오톡 채널 추가
-                    </a>
-                    <a href="/archive.html" class="footer-button archive-button">
-                        지난 뉴스레터 전체 보기
-                    </a>
+</div></div>
+                                                                        </div>
                 </div>
-                <p>경남 양산시 삼성1길 41 3층</p>
-                <p class="footer-email">문의: dy31860@naver.com</p>
-            </div>
-        </div>
+                                            <div class="section" data-section="media" id="media">
+                    <div class="section-header" onclick="toggleSection('media')">
+                        <span>언론이 만난  <span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="section-preview" onclick="toggleSection('media')">
+                        <div class="section-subtitle"><p>한옥문 원장의 언론기고와<br>연구원 대외활동을 전해드립니다.</p></div><div class="preview-image"><img src="https://cdn.idomin.com/news/thumbnail/202509/945957_650206_5745_v150.jpg" alt="양산미래혁신연구원·양산역사문화진흥원 협약"></div><div class="preview-description">양산미래혁신연구원·양산역사문화진흥원 협약</div><div class="preview-count">총 4개 기사</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('media')">더보기</button></div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-header-content">
+                                                            <div class="section-subtitle"><p>한옥문 원장의 언론기고와<br>연구원 대외활동을 전해드립니다.</p></div>
+                                                                                </div>
+
+                                                                            <div class="media-article-list">
+                                                                                                            <a href="https://www.idomin.com/news/articleView.html?idxno=945957" target="_blank" class="media-article-card">
+                                            <div class="media-article-image"><img src="https://cdn.idomin.com/news/thumbnail/202509/945957_650206_5745_v150.jpg" alt="양산미래혁신연구원·양산역사문화진흥원 협약"></div>
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">양산미래혁신연구원·양산역사문화진흥원 협약</h3>
+                                                <p class="media-article-description">양산미래혁신연구원(원장 한옥문)과 양산역사문화진흥원(원장 장성규)가 ‘양산 미래 발전과 역사문화 진흥을 위한 업무협약’을 했다. 미래 발전 전략과 역사·문화 정책 공동 연구, 부울경 행정통합, 웅상선 광역철도 개통 등 지역 현안 정책 자문, 포럼·세미나 개최 등을 협력한다. /이현희 </p>
+                                                <span class="media-article-source">경남도민일보</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://www.viva100.com/article/20250902500682" target="_blank" class="media-article-card">
+                                            <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/02/.cache/512/20250902500680.png?v=20250925202437" alt="[기획] 웅상선, 이제는 비전과 전략이다(6)"></div>
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">[기획] 웅상선, 이제는 비전과 전략이다(6)</h3>
+                                                <p class="media-article-description">1. 웅상선은 동남권 게임체인저가 될 것 2. 투기 방지 없이는 성공할 수 없다 3. 양산은 이중 철도망 시대를 준비해야 4. 부울경 협력, 이번만큼은 달라야 한다 5. 기존 철도망과의 연계가 성공의 열쇠 6. 2050년엔 30분 생활권을 꿈꿔야 6부: “2050년엔3</p>
+                                                <span class="media-article-source">브릿지경제</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://www.tournews21.com/news/articleView.html?idxno=113790" target="_blank" class="media-article-card">
+                                            <div class="media-article-image"><img src="https://cdn.tournews21.com/news/photo/202508/113790_228390_217.jpg" alt="한옥문 원장 “부울경 교통 통합관리청 설립하자” - 투어코리아"></div>
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">한옥문 원장 “부울경 교통 통합관리청 설립하자” - 투어코리아</h3>
+                                                <p class="media-article-description">[투어코리아=김형석 기자] 양산미래혁신연구원 한옥문 원장(전 양산시의회 의장)이 28일 칼럼을 통해 “웅상선이 홀로 서는 섬이 되어서는 안 된다”며 “2031년 </p>
+                                                <span class="media-article-source">투어코리아</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="https://www.seoulfn.com/news/articleView.html?idxno=602896" target="_blank" class="media-article-card">
+                                            <div class="media-article-image"><img src="https://cdn.seoulfn.com/news/photo/202508/602896_402402_63.jpg" alt="한옥문 원장 &#34;웅상 신도시, 투기장이 아닌 기회의 땅으로 만들어야&#34; - 서울파이낸스"></div>
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">한옥문 원장 &#34;웅상 신도시, 투기장이 아닌 기회의 땅으로 만들어야&#34; - 서울파이낸스</h3>
+                                                <p class="media-article-description">[서울파이낸스 (부산) 조하연 기자] 웅상선 예비타당성조사(예타) 통과 이후, 경남 양산시 웅상지역이 전국 부동산 시장의 새로운 ‘핫플레이스’로 떠오르고 있다. </p>
+                                                <span class="media-article-source">서울파이낸스</span>
+                                            </div>
+                                        </a>
+                                                                                                </div>
+                                            </div>
+                </div>
+                    </main>
+        
+        <div class="footer"></div>
     </div>
     
     <script>
-    
     function toggleSection(sectionKey) {
-        const section = document.querySelector(`[data-section="${sectionKey}"]`);
-        if (section) {
-            
-            const isExpanded = section.classList.contains('expanded');
-            
-            if (isExpanded) {
-                
-                section.classList.remove('expanded');
-            } else {
-                
-                section.classList.add('expanded');
-            }
-        }
+        var section = document.querySelector(`[data-section="${sectionKey}"]`);
+        if (section) section.classList.toggle('expanded');
     }
-
     document.addEventListener('DOMContentLoaded', function() {
-        
-        const hash = window.location.hash;
-        
-        if (hash) {
-            const targetSection = document.querySelector(hash);
+        if (window.location.hash) {
+            var targetSection = document.querySelector(window.location.hash);
             if (targetSection) {
                 targetSection.classList.add('expanded');
-                setTimeout(() => {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                setTimeout(function() { targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
             }
-        }
-        
-        
-        const sections = document.querySelectorAll('.section');
-        if (!hash) {
-            
-            sections.forEach(section => {
-                section.classList.remove('expanded');
-            });
         }
     });
     </script>
