@@ -3,127 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지난 뉴스레터 전체 보기</title>
+    <title>지난 뉴스레터 목록</title>
     <style>
-    body { 
-        font-family: 'Malgun Gothic', sans-serif; 
-        background-color: #F9F9F9; 
-        color: #191919; 
-        margin: 0; 
-    }
-    .container { 
-        max-width: 680px; 
-        margin: 0 auto; 
-        background-color: #ffffff; 
-    }
-    .header { 
-        padding: 0; 
-        text-align: center; 
-        border-bottom: 1px solid #F0F0F0; 
-    }
-    .header img { 
-        width: 100%; 
-        height: auto; 
-        display: block; 
-    }
-    .page-title {
-        padding: 30px 20px;
-        text-align: center;
-        background-color: #FEE500;
-        margin: 0;
-    }
-    .page-title h1 { 
-        font-size: 24px; 
-        font-weight: 800; 
-        margin: 0;
-    }
-    .content { 
-        padding: 30px 20px; 
-    }
-    .archive-list { 
-        list-style: none; 
-        padding: 0; 
-    }
-    .archive-item {
-        margin-bottom: 12px;
-        background: #ffffff;
-        border: 1px solid #F0F0F0; 
-        border-radius: 12px;
-        transition: all 0.2s ease;
-    }
-    .archive-item:hover {
-        background-color: #FFF9E6; 
-        border-color: #FEE500; 
-        transform: translateY(-2px); 
-    }
-    .main-link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 18px 20px; 
-        text-decoration: none; 
-        color: inherit; 
-        font-weight: 600;
-    }
-    .main-link-title {
-      flex-grow: 1;
-    }
-    .main-link-date {
-      flex-shrink: 0;
-      font-size: 0.9em;
-      color: #555;
-    }
-    .section-links {
-        list-style: none;
-        padding: 0 20px 15px;
-        margin: 0;
-        border-top: 1px dashed #e0e0e0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    .section-links li a {
-        display: inline-block;
-        font-size: 0.85em;
-        color: #333;
-        background-color: #f5f5f5;
-        padding: 4px 10px;
-        border-radius: 12px;
-        text-decoration: none;
-    }
-    .section-links li a:hover {
-        background-color: #FEE500;
-        color: #000;
-    }
-    .footer { 
-        padding: 30px 20px; 
-        text-align: center; 
-        background-color: #f0f0f0; 
-    }
-    .footer a { 
-        color: #555; 
-        text-decoration: none; 
-        font-weight: 600; 
-        padding: 8px 16px; 
-        background-color: #FEE500; 
-        border-radius: 20px; 
-    }
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { background-color: #FEE500; padding: 20px; text-align: center; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+        .header h1 { margin: 0; font-size: 1.8em; color: #191919; }
+        .archive-list { padding: 20px; }
+        .issue-card { border: 1px solid #ddd; border-radius: 6px; margin-bottom: 15px; overflow: hidden; transition: box-shadow 0.3s ease; }
+        .issue-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .issue-header { padding: 15px; background-color: #f9f9f9; border-bottom: 1px solid #ddd; }
+        .issue-header h2 { margin: 0; font-size: 1.2em; }
+        .issue-header h2 a { text-decoration: none; color: #333; }
+        .issue-header p { margin: 5px 0 0; color: #777; font-size: 0.9em; }
+        .issue-body { padding: 15px; }
+        .issue-body h3 { font-size: 1em; color: #555; margin-top: 0; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .section-list { list-style: none; padding: 0; margin: 0; }
+        .section-list li { background-color: #FEE500; color: #191919; display: inline-block; padding: 4px 10px; border-radius: 15px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px; }
+        .home-button { display: block; text-align: center; margin-top: 20px; padding: 10px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.postimg.cc/Kz2k03yL/Kakao-Talk-20250904-223609126.png" alt="뉴스레터 배너">
+            <h1>지난 뉴스레터 목록</h1>
         </div>
-        <div class="page-title">
-            <h1>지난 뉴스레터 전체 보기</h1>
-        </div>
-        <div class="content">
-            <ul class="archive-list">
-                                                                                                                                                                                                        </ul>
-        </div>
-        <div class="footer">
-            <p><a href="./index.html">최신호 보기</a></p>
+        <div class="archive-list">
+                                                        <div class="issue-card">
+                    <div class="issue-header">
+                        <h2><a href="newsletters/2.html">제 2호 뉴스레터</a></h2>
+                        <p>2025년 9월 26일 발행</p>
+                    </div>
+                    <div class="issue-body">
+                        <h3>포함된 섹션</h3>
+                        <ul class="section-list">
+                                                                                                                                <li><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</li>
+                                                                                                                                                                <li>양산담론</li>
+                                                                                                                                                                <li>한옥문의 시선집중</li>
+                                                                                                                                                                <li>한옥문의 양산이야기</li>
+                                                                                                                                                                <li>NOW 양산</li>
+                                                                                                                                                                <li><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span> 문화가 산책</li>
+                                                                                                                                                                <li>양산을 노래하라</li>
+                                                                                                                                                                <li>언론이 만난  <span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></li>
+                                                                                    </ul>
+                    </div>
+                </div>
+                                            <div class="issue-card">
+                    <div class="issue-header">
+                        <h2><a href="newsletters/1.html">제 1호 뉴스레터</a></h2>
+                        <p>2025년 9월 12일 발행</p>
+                    </div>
+                    <div class="issue-body">
+                        <h3>포함된 섹션</h3>
+                        <ul class="section-list">
+                                                                                                                                <li><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span>의 시선</li>
+                                                                                                                                                                <li>양산담론</li>
+                                                                                                                                                                <li>한옥문의 시선집중</li>
+                                                                                                                                                                <li>한옥문의 양산이야기</li>
+                                                                                                                                                                <li>NOW 양산</li>
+                                                                                                                                                                <li><span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span> 추천도서</li>
+                                                                                                                                                                                                                                                            <li>언론이 만난  <span class="dot-text-container"><span class="char-dot">양</span><span class="char-dot">미</span><span class="char-dot">혁</span></span></li>
+                                                                                    </ul>
+                    </div>
+                </div>
+                        <a href="index.html" class="home-button">최신 뉴스레터 보기</a>
         </div>
     </div>
 </body>
