@@ -43,12 +43,19 @@
     .content-div ul, .content-div ol { margin: 15px 0; padding-left: 25px; }
     .content-div li { margin: 8px 0; line-height: 1.6; }
     .autolink { color: #0066cc; }
-    .youtube-player-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 15px; background-color: #000; }
+    
+     
+    .youtube-player-container { position: relative; height: 0; overflow: hidden; border-radius: 8px; margin: 0 auto 15px auto; background-color: #000; }
+    .youtube-player-container.shorts-player { padding-top: 177.77%;   max-width: 360px;   }
+    .youtube-player-container.default-player { padding-bottom: 56.25%;   max-width: 100%; }
     .youtube-player-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    .youtube-navigation { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+     
+
+    .youtube-navigation { display: flex; justify-content: space-between; align-items: center; margin: 0 auto 15px auto; max-width: 360px; }
     .youtube-navigation .nav-button { background-color: #333; color: #fff; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background-color 0.2s; }
     .youtube-navigation .nav-button:disabled { background-color: #ccc; cursor: not-allowed; }
     .youtube-navigation #video-counter { font-size: 0.95em; font-weight: bold; color: #555; }
+    .current-video-info { margin: 0 auto 15px auto; max-width: 360px; }
     .current-video-info .video-title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; }
     .current-video-info .video-description { font-size: 0.9em; color: #666; line-height: 1.5; }
     .youtube-subscribe-button { display: table; margin: 15px auto; padding: 10px 18px; background-color: #FF0000; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 8px; }
@@ -305,8 +312,8 @@
                                                             <div class="section-subtitle"><p>쇼츠로 전하는 한옥문의 생각</p></div>
                                                                                 </div>
 
-                                                    <div class="youtube-player-container">
-                                <iframe id="youtube-iframe" width="100%" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    <div class="youtube-player-container shorts-player">
+                                <iframe id="youtube-iframe" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             
                             
@@ -443,14 +450,14 @@
                         <span class="expand-icon">▼</span>
                     </div>
                     <div class="section-preview" onclick="toggleSection('song')">
-                        <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div><div class="preview-image youtube-preview"><img src="https://img.youtube.com/vi/x7y3vIHoKx0/maxresdefault.jpg" alt="유튜브 썸네일"><div class="youtube-play-button">▶</div></div><div class="preview-description">제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 300년이라는 긴 세월 동안 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, 상북면 신전리의 이팝나무에 대한 노래를 여러분께 소개해 드리고자 합니다.</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('song')">더보기</button></div>
+                        <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div><div class="preview-image youtube-preview"><img src="https://i.ytimg.com/vi/x7y3vIHoKx0/hqdefault.jpg" alt="유튜브 썸네일"><div class="youtube-play-button">▶</div></div><div class="preview-description">제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 300년이라는 긴 세월 동안 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, 상북면 신전리의 이팝나무에 대한 노래를 여러분께 소개해 드리고자 합니다.</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('song')">더보기</button></div>
                     </div>
                     <div class="section-content">
                         <div class="section-header-content">
                                                             <div class="section-subtitle"><p>우리양산의 자랑스럽고 소중한 것들 <br>하나하나 가슴에 세겨<br>노래가사에 담아 봅니다.</p></div>
                                                                                 </div>
 
-                                                                                                                                                                        <div class="youtube-player-container"><iframe src="https://www.youtube.com/embed/x7y3vIHoKx0" frameborder="0" allowfullscreen></iframe></div>
+                                                                                                                                                                        <div class="youtube-player-container default-player"><iframe src="https://www.youtube.com/embed/x7y3vIHoKx0" frameborder="0" allowfullscreen></iframe></div>
                                                                                         <div class="content-div"><p>제가 살고 있는 자랑스러운 고장, 양산에는 보석 같은 이야기들이 많이 숨 쉬고 있습니다. 오늘 저는 그중에서도 <strong>300년이라는 긴 세월 동안</strong> 한자리를 지키며 마을의 모든 역사를 묵묵히 지켜본 특별한 어른, <strong>상북면 신전리의 이팝나무</strong>에 대한 노래를 여러분께 소개해 드리고자 합니다.</p>
 <p>이 노래는 단순히 한 그루의 오래된 나무를 위한 찬가가 아닙니다. 눈보라와 뜨거운 태양을 모두 껴안으며 사계절을 견뎌온 나무의 강인함, 그리고 그 곁에서 웃고 울었던 <strong>우리 이웃들의 삶과 희로애락을 담아낸 헌사</strong>입니다.</p>
 <p>가사를 찬찬히 읊어보시면, 비단 이팝나무 이야기만이 아님을 아시게 될 겁니다. 그 안에는 우리 지역의 자랑인 <strong>봉수대의 불빛, 홍룡사의 청아한 소리, 서원의 숨결</strong> 같은 양산의 역사와 문화가 녹아 있습니다. 이는 이팝나무가 우리 공동체의 기억과 삶을 품고 있는 중심이라는 믿음으로 써 내려간 구절들입니다.</p>
@@ -600,7 +607,7 @@
                                             </div>
                                         </a>
                                                                             <a href="https://www.viva100.com/article/20250902500682" target="_blank" class="media-article-card">
-                                            <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/02/.cache/512/20250902500680.png?v=20251002225753" alt="[기획] 웅상선, 이제는 비전과 전략이다(6)"></div>
+                                            <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/02/.cache/512/20250902500680.png?v=20251002230542" alt="[기획] 웅상선, 이제는 비전과 전략이다(6)"></div>
                                             <div class="media-article-text">
                                                 <h3 class="media-article-title">[기획] 웅상선, 이제는 비전과 전략이다(6)</h3>
                                                 <p class="media-article-description">1. 웅상선은 동남권 게임체인저가 될 것 2. 투기 방지 없이는 성공할 수 없다 3. 양산은 이중 철도망 시대를 준비해야 4. 부울경 협력, 이번만큼은 달라야 한다 5. 기존 철도망과의 연계가 성공의 열쇠 6. 2050년엔 30분 생활권을 꿈꿔야 6부: “2050년엔3</p>
@@ -648,85 +655,87 @@
     <script>
     function toggleSection(sectionKey) {
         var section = document.querySelector(`[data-section="${sectionKey}"]`);
-        if (section) section.classList.toggle('expanded');
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            if (sectionKey === 'youtube' && section.classList.contains('expanded')) {
+                var iframe = document.getElementById('youtube-iframe');
+                
+                if (iframe && !iframe.getAttribute('src')) {
+                    updatePlayer(0, true); 
+                }
+            }
+        }
     }
+    
+    
+    var youtubeVideos = '[]';
+    var currentVideoIndex = 0;
+
+    function getYoutubeVideoId(url) {
+        var regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        var match = url.match(regex);
+        return match ? match[1] : null;
+    }
+
+    function updatePlayer(index, play) {
+        currentVideoIndex = index;
+        var iframe = document.getElementById('youtube-iframe');
+        var videoTitle = document.getElementById('current-video-title');
+        var videoDescription = document.getElementById('current-video-description');
+        var videoCounter = document.getElementById('video-counter');
+        var prevBtn = document.getElementById('prev-video');
+        var nextBtn = document.getElementById('next-video');
+
+        if (youtubeVideos.length === 0) return;
+
+        var video = youtubeVideos[currentVideoIndex];
+        var embedUrl = 'https://www.youtube.com/embed/' + getYoutubeVideoId(video.link) + (play ? '?autoplay=1' : '');
+        
+        if (iframe) iframe.src = embedUrl;
+        if (videoTitle) videoTitle.innerText = video.title;
+        if (videoDescription) videoDescription.innerText = video.description;
+
+        if (videoCounter) videoCounter.innerText = (currentVideoIndex + 1) + ' / ' + youtubeVideos.length;
+        if (prevBtn) prevBtn.disabled = (currentVideoIndex === 0);
+        if (nextBtn) nextBtn.disabled = (currentVideoIndex === youtubeVideos.length - 1);
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         if (window.location.hash) {
             var targetSection = document.querySelector(window.location.hash);
             if (targetSection) {
                 targetSection.classList.add('expanded');
+                
+                if (targetSection.id === 'youtube') {
+                    updatePlayer(0, true);
+                }
                 setTimeout(function() { targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
             }
         }
 
         
-        var youtubeVideos = '[]';
-        var currentVideoIndex = 0;
-        var iframe = document.getElementById('youtube-iframe');
         var prevBtn = document.getElementById('prev-video');
         var nextBtn = document.getElementById('next-video');
-        var videoCounter = document.getElementById('video-counter');
-        var videoTitle = document.getElementById('current-video-title');
-        var videoDescription = document.getElementById('current-video-description');
-
-        function updatePlayer() {
-            if (youtubeVideos.length === 0) {
-                if (iframe) iframe.src = '';
-                if (videoTitle) videoTitle.innerText = '재생할 영상이 없습니다.';
-                if (videoDescription) videoDescription.innerText = '';
-                if (prevBtn) prevBtn.style.display = 'none';
-                if (nextBtn) nextBtn.style.display = 'none';
-                if (videoCounter) videoCounter.style.display = 'none';
-                return;
-            }
-
-            var video = youtubeVideos[currentVideoIndex];
-            var embedUrl = 'https://www.youtube.com/embed/' + getYoutubeVideoId(video.link) + '?autoplay=1';
-            if (iframe) iframe.src = embedUrl;
-            if (videoTitle) videoTitle.innerText = video.title;
-            if (videoDescription) videoDescription.innerText = video.description;
-
-            if (videoCounter) videoCounter.innerText = (currentVideoIndex + 1) + ' / ' + youtubeVideos.length;
-
-            if (prevBtn) prevBtn.disabled = (currentVideoIndex === 0);
-            if (nextBtn) nextBtn.disabled = (currentVideoIndex === youtubeVideos.length - 1);
-        }
-
-        function getYoutubeVideoId(url) {
-            var regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-            var match = url.match(regex);
-            return match ? match[1] : null;
-        }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', function() {
                 if (currentVideoIndex > 0) {
-                    currentVideoIndex--;
-                    updatePlayer();
+                    updatePlayer(currentVideoIndex - 1, true);
                 }
             });
         }
-
         if (nextBtn) {
             nextBtn.addEventListener('click', function() {
                 if (currentVideoIndex < youtubeVideos.length - 1) {
-                    currentVideoIndex++;
-                    updatePlayer();
+                    updatePlayer(currentVideoIndex + 1, true);
                 }
             });
         }
         
         
-        var youtubeSection = document.getElementById('youtube');
-        if (youtubeSection && youtubeSection.classList.contains('expanded')) {
-            updatePlayer();
-        } else if (youtubeVideos.length > 0) {
-            
-            if (videoTitle) videoTitle.innerText = youtubeVideos[0].title;
-            if (videoDescription) videoDescription.innerText = youtubeVideos[0].description;
-            if (videoCounter) videoCounter.innerText = '1 / ' + youtubeVideos.length;
-            if (prevBtn) prevBtn.disabled = true; 
-            if (nextBtn) nextBtn.disabled = (youtubeVideos.length === 1); 
+        if (youtubeVideos.length > 0) {
+            updatePlayer(0, false);
         }
     });
     </script>
