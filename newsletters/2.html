@@ -44,16 +44,16 @@
     .content-div li { margin: 8px 0; line-height: 1.6; }
     .autolink { color: #0066cc; }
     
-    .youtube-player-container { position: relative; height: 0; overflow: hidden; border-radius: 8px; margin: 0 auto 15px auto; background-color: #000; }
-    .youtube-player-container.shorts-player { padding-top: 177.77%; max-width: 360px; }
-    .youtube-player-container.default-player { padding-bottom: 56.25%; max-width: 100%; }
+    .youtube-player-container { position: relative; width: 100%; max-width: 315px; margin: 0 auto 15px auto; background-color: #000; border-radius: 8px; overflow: hidden; }
+    .youtube-player-container.shorts-player { aspect-ratio: 9 / 16; }
+    .youtube-player-container.default-player { aspect-ratio: 16 / 9; max-width: 100%; }
     .youtube-player-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-    .youtube-navigation { display: flex; justify-content: space-between; align-items: center; margin: 0 auto 15px auto; max-width: 360px; }
+    .youtube-navigation { display: flex; justify-content: space-between; align-items: center; margin: 0 auto 15px auto; max-width: 315px; }
     .youtube-navigation .nav-button { background-color: #333; color: #fff; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background-color 0.2s; }
     .youtube-navigation .nav-button:disabled { background-color: #ccc; cursor: not-allowed; }
     .youtube-navigation #video-counter { font-size: 0.95em; font-weight: bold; color: #555; }
-    .current-video-info { margin: 0 auto 15px auto; max-width: 360px; }
+    .current-video-info { margin: 0 auto 15px auto; max-width: 315px; }
     .current-video-info .video-title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; }
     .current-video-info .video-description { font-size: 0.9em; color: #666; line-height: 1.5; }
     
@@ -339,7 +339,7 @@
                     </div>
 
                     <div class="section-preview" onclick="toggleSection('issue')">
-                        <div class="section-subtitle"><p>최근 이슈가 되는 양산 뉴스들을 전해드립니다.</p></div><div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="preview-description">낙동강, 생태관광 중심지 되려면?…연구·용역 잇따라</div><div class="preview-count">총 8개 기사</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('issue')">더보기</button></div>
+                        <div class="section-subtitle"><p>최근 이슈가 되는 양산 뉴스들을 전해드립니다.</p></div><div class="preview-image"><img src="https://i.postimg.cc/CL81fvpx/image.png" alt="NOW 양산 이미지"></div><div class="preview-description">낙동강, 생태관광 중심지 되려면?…연구·용역 잇따라</div><div class="preview-count">총 10개 기사</div>                        <div style="text-align: right;"><button class="more-button" onclick="event.stopPropagation(); toggleSection('issue')">더보기</button></div>
                     </div>
 
                     <div class="section-content">
@@ -370,6 +370,13 @@
                                                 <span class="media-article-source">양산신문</span>
                                             </div>
                                         </a>
+                                                                            <a href="https://www.yangsanilbo.com/news/articleView.html?idxno=119432" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">양산시청소년합창단 대상 &#39;피날레&#39;…제13회 양산전국청소년합창대회</h3>
+                                                <p class="media-article-description">양산시와 양산시청소년회관이 주최·주관한 &#39;제13회 양산전국청소년합창대회&#39;가 지난 20일 문화예술회관 대공연장에서 성황리에 막을 내렸다.이번 대회는 양산을 포함한 청주, 진해, 부산 등 전국 각지에서 모인 청소년들이 &#39;합창&#39;을 통해 우정을 다지고 조화와 배려의 가치를 나누는 뜻깊은 무대로 꾸며졌다.특히 예선엔 22팀이 지원하면서 본선까지의 경쟁이 치열하였고, 선발된 8개 팀이 본선에 참가해 각자의 개성과 음악적 색채를 담아낸 열정적인 공연으로 800여 명의 관객들에게 감동을 선사했다.올해 대회의 대상은 양산시청소년합창단이 수상의 영예</p>
+                                                <span class="media-article-source">양산신문</span>
+                                            </div>
+                                        </a>
                                                                             <a href="http://www.gndomin.com/news/articleView.html?idxno=447246" target="_blank" class="media-article-card">
                                             <div class="media-article-text">
                                                 <h3 class="media-article-title">남양산FC U15 올해 제천의병 추계U14 유스컵 대회 우승 쾌거</h3>
@@ -381,6 +388,13 @@
 
 특히</p>
                                                 <span class="media-article-source">경남도민신문</span>
+                                            </div>
+                                        </a>
+                                                                            <a href="http://www.ysnewspark.com/news/articleView.html?idxno=15852" target="_blank" class="media-article-card">
+                                            <div class="media-article-text">
+                                                <h3 class="media-article-title">아직도 끝나지 않은 우려, &#39;웅상 의료공백은 진행 중&#39; - 양산뉴스파크 </h3>
+                                                <p class="media-article-description">[양산뉴스파크=남성봉 기자]=웅상공공의료원설립추진운동본부(공동대표 진재원·이하 운동본부)가 웅상중앙병원으로 인한 의료공백 사태에 따른 공공의료원...</p>
+                                                <span class="media-article-source">ysnewspark.com</span>
                                             </div>
                                         </a>
                                                                             <a href="http://www.ungsangnews.com/default/index_view_page.php?part_idx=260&amp;idx=43784" target="_blank" class="media-article-card">
@@ -608,7 +622,7 @@
                                             </div>
                                         </a>
                                                                             <a href="https://www.viva100.com/article/20250902500682" target="_blank" class="media-article-card">
-                                            <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/02/.cache/512/20250902500680.png?v=20251003002750" alt="[기획] 웅상선, 이제는 비전과 전략이다(6)"></div>
+                                            <div class="media-article-image"><img src="https://stqnq5ux4599.edge.naverncp.com/data2//content/image/2025/09/02/.cache/512/20250902500680.png?v=20251003003429" alt="[기획] 웅상선, 이제는 비전과 전략이다(6)"></div>
                                             <div class="media-article-text">
                                                 <h3 class="media-article-title">[기획] 웅상선, 이제는 비전과 전략이다(6)</h3>
                                                 <p class="media-article-description">1. 웅상선은 동남권 게임체인저가 될 것 2. 투기 방지 없이는 성공할 수 없다 3. 양산은 이중 철도망 시대를 준비해야 4. 부울경 협력, 이번만큼은 달라야 한다 5. 기존 철도망과의 연계가 성공의 열쇠 6. 2050년엔 30분 생활권을 꿈꿔야 6부: “2050년엔3</p>
@@ -668,6 +682,7 @@
 
     var currentVideoIndex = 0;
     var isPlayerInitialized = false;
+    var player = null;
 
     function toggleSection(sectionKey) {
         var section = document.querySelector('[data-section="' + sectionKey + '"]');
@@ -712,7 +727,9 @@
             return;
         }
 
-        var embedUrl = 'https://www.youtube.com/embed/' + videoId + (play ? '?autoplay=1' : '?autoplay=0');
+        var embedUrl = 'https://www.youtube.com/embed/' + videoId + 
+                       '?enablejsapi=1' + 
+                       (play ? '&autoplay=1' : '&autoplay=0');
         
         if (iframe) iframe.src = embedUrl;
         if (videoTitle) videoTitle.innerText = video.title || '제목 없음';
@@ -721,6 +738,38 @@
         if (videoCounter) videoCounter.innerText = (currentVideoIndex + 1) + ' / ' + youtubeVideos.length;
         if (prevBtn) prevBtn.disabled = (currentVideoIndex === 0);
         if (nextBtn) nextBtn.disabled = (currentVideoIndex === youtubeVideos.length - 1);
+    }
+
+    function onYouTubeIframeAPIReady() {
+        var iframe = document.getElementById('youtube-iframe');
+        if (!iframe) return;
+        
+        player = new YT.Player('youtube-iframe', {
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            if (currentVideoIndex < youtubeVideos.length - 1) {
+                updatePlayer(currentVideoIndex + 1, true);
+            }
+        }
+    }
+
+    function loadYouTubeAPI() {
+        if (window.YT) {
+            onYouTubeIframeAPIReady();
+            return;
+        }
+        var tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -732,6 +781,7 @@
                 if (sectionKey === 'youtube' && youtubeVideos.length > 0) {
                     updatePlayer(0, true);
                     isPlayerInitialized = true;
+                    loadYouTubeAPI();
                 }
                 setTimeout(function() { 
                     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
@@ -761,6 +811,19 @@
                     updatePlayer(currentVideoIndex + 1, true);
                 }
             });
+        }
+
+        var youtubeSection = document.getElementById('youtube');
+        if (youtubeSection) {
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.target.classList.contains('expanded') && youtubeVideos.length > 0 && !isPlayerInitialized) {
+                        loadYouTubeAPI();
+                        isPlayerInitialized = true;
+                    }
+                });
+            });
+            observer.observe(youtubeSection, { attributes: true, attributeFilter: ['class'] });
         }
     });
     </script>
